@@ -1,0 +1,14 @@
+Starting Over:
+
+Git Version Control
+Actual Folder Organization
+Clean Out AssetBundles
+Utilize Planning System (MilaNote or Trello)
+Constant Progress with Friends
+Get Demo Finished
+
+Patterns to introduce:
+Singleton on Managers(eg. interrogation)
+Observer for communication
+States for game states or ui states
+

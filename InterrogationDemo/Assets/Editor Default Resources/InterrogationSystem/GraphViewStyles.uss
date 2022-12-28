@@ -1,0 +1,7 @@
+GridBackground
+{
+	--grid-background-color: var(--interro-colors-grid-lightgray-1);
+	--line-color: var(--interro-colors-grid-lightgray-2);
+	--thick-line-color: var(--interro-colors-grid-lightgray-3);
+	--spacing: var(--interro-metrics-grid-25);
+}

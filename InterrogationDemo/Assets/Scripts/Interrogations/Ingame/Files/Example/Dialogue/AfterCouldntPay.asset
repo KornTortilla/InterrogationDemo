@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Name: AfterCouldntPay
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: After Couldnt Pay
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: Went to go drink out my sorrows at the bar. Only sensible
+    thing to do, really.
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
+    <Keys>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: fe8283471b06730459d26756755bfcd7, type: 2}
+  <Position>k__BackingField: {x: 5561, y: 1914}

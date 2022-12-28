@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Name: CouldntBuy
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Couldnt Buy
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: 'Seven: ...
+
+    Annna: Answer the question.
+
+    Seven:
+    Okay... okay. I couldn''t. Even then I couldn''t, okay?'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
+    <Keys>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: da4d504b0c14d5347af464c4fd5cf4bf, type: 2}
+  <Position>k__BackingField: {x: 4124, y: -47}
