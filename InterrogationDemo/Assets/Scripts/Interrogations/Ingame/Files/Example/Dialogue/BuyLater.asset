@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: BuyLater
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Buy Later
@@ -17,8 +17,8 @@ MonoBehaviour:
   <Text>k__BackingField: Yeah. That was the plan anyway.
   <Choices>k__BackingField:
   - <Text>k__BackingField: Why would you buy it later?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: da4d504b0c14d5347af464c4fd5cf4bf, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: abe46c53ac47f7c44a929066b7c8edcb, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: ec3c8dfa4dc8dcd4988da722b35cd020, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: f81d16d23a8c3e240816ce111e83cbc2, type: 2}
+    - {fileID: 11400000, guid: d1937b020cf6afb49870ed4a8e8a966e, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 1d0f00829a5a9f34da2aadc50d7a3140, type: 2}
   <Position>k__BackingField: {x: 3117, y: -47}

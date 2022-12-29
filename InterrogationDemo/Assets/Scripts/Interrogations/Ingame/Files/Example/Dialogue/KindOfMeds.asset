@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: KindOfMeds
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Kind Of Meds
@@ -17,7 +17,7 @@ MonoBehaviour:
   <Text>k__BackingField: Insulin. My ma' has diabetes. Type 1.
   <Choices>k__BackingField:
   - <Text>k__BackingField: How much does it cost?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0e50aaef6627c4b4aae9c0ea173ccfa4, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 82aee950720872146acfbe969ec1bec1, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: d1c56354317a17b4aaf1764164696c6a, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 35f532067cb4d34499712a7124443e6e, type: 2}
   <Position>k__BackingField: {x: 2150, y: -495}

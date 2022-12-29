@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: WhyItsNotYou
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Why Its Not You
@@ -18,8 +18,8 @@ MonoBehaviour:
     me?
   <Choices>k__BackingField:
   - <Text>k__BackingField: You gave it to your friend.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 357e7a2663ace1a45b1042e430f7dac9, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 393f1167adb6e2644a13b171766e4ff4, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: c3618e0e2933dc843a14b5f7cca55388, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 8c398563ae441db4b987015a6cb5f57a, type: 2}
+    - {fileID: 11400000, guid: e5ffa744189c9444585fcfc569f7669f, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: ace5ccbca094bf745bb577d30df524f4, type: 2}
   <Position>k__BackingField: {x: 4542, y: 1103}

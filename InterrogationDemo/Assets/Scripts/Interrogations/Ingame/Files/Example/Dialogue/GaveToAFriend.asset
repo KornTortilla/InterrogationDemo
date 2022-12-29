@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: GaveToAFriend
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Gave To A Friend
@@ -23,8 +23,8 @@ MonoBehaviour:
     just spitballing me.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: You had next to no money on you.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 4751eb133e78d0240959a2a4b0bed1ed, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a3a08313035f47d4d9ceab3e1445ce42, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: 33959f4764296804f90685a7f162b702, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 1130368b59ebb324899bc8aaaf279802, type: 2}
+    - {fileID: 11400000, guid: a79dfc0d01dccd149b7bd4082634d1ee, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 293b5ad436b10dc4997c028ec7e41ece, type: 2}
   <Position>k__BackingField: {x: 5066, y: 1103}

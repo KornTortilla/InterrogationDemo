@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: AnySkills
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Any Skills
@@ -19,5 +19,5 @@ MonoBehaviour:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 53628c70d1d4db3409b0428a11f30d60, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: a8ec3c6733cda1c4899134355bee82b0, type: 2}
   <Position>k__BackingField: {x: 1167, y: 493}

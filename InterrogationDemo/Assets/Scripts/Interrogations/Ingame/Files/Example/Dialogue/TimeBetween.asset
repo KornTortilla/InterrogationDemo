@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: TimeBetween
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Time Between
@@ -18,14 +18,14 @@ MonoBehaviour:
     on the way.
   <Choices>k__BackingField:
   - <Text>k__BackingField: What kind of medicine is it?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 64a1953f60ef0d44e936c164f8575cb8, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: fdd00f7823e89ce40992102b10c452bf, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: Is that all you did?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9a27dc3e93c4b534297714b5de5b0dc6, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0835084edfaf9b6408f69b0684060f0a, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: You didn't actually buy any medication.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: b2c4a359c49199c45a8c2ccd80c6abb4, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: d536348ca22d84c439dc9dcffe0e135b, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: 33959f4764296804f90685a7f162b702, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 3892fa4de59087044b7fa4ebdb405ffb, type: 2}
+    - {fileID: 11400000, guid: a79dfc0d01dccd149b7bd4082634d1ee, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 8dbf07258b8c3714c983d595b9708835, type: 2}
   <Position>k__BackingField: {x: 1669, y: -413}

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: CouldntBuy
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Couldnt Buy
@@ -24,5 +24,5 @@ MonoBehaviour:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: da4d504b0c14d5347af464c4fd5cf4bf, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: abe46c53ac47f7c44a929066b7c8edcb, type: 2}
   <Position>k__BackingField: {x: 4124, y: -47}

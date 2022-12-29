@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: AnyoneElseGettingCheck
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Anyone Else Getting Check
@@ -19,5 +19,5 @@ MonoBehaviour:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: b63d4051f461f3441a4cd97e38b631a2, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: c5e099616f8ec3541bef39826d583a41, type: 2}
   <Position>k__BackingField: {x: 5561, y: 1673}

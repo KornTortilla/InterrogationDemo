@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: NotLookingGood
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Not Looking Good
@@ -21,8 +21,8 @@ MonoBehaviour:
     had everything covered and will have everything covered.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Did you have your mother's medication covered?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 709e238dacceece45b541bf82f7a5f11, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: bc83b2462518eaf42923bb54a523fae2, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: a3c08745855a33d4b963fd8ff34c1673, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: c787616d9f379064cb56156642a7a6e3, type: 2}
+    - {fileID: 11400000, guid: dab62e302c766e543b7a07bdc0cd802f, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 8ebde5690c0fc2641863fc91c5ffe858, type: 2}
   <Position>k__BackingField: {x: 3099, y: 1165}

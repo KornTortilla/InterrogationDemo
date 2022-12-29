@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: MoreThanThat
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MoreThanThat
@@ -21,7 +21,7 @@ MonoBehaviour:
     that night is kinda hazy for me. Drank too much. Prolly spouted some nonsense.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Do you remember whatsoever what that nonsense was?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: d31f43e156fdbd845a99d7503d57067b, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 8211753132430de4081df0ae59133462, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 7af1ebef4e0141c4abb5e883d4d06486, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 67824e8a3a0938642beb7ffd813886c7, type: 2}
   <Position>k__BackingField: {x: 2150, y: 161}

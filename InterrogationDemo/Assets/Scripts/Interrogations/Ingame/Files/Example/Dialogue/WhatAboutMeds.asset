@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: WhatAboutMeds
   m_EditorClassIdentifier: 
   <Name>k__BackingField: What About Meds
@@ -23,7 +23,7 @@ MonoBehaviour:
     ... What about it, huh? Think I can''t get another job? Tryna say I''m worthless?'
   <Choices>k__BackingField:
   - <Text>k__BackingField: You needed that job, didn't you? Is that why you did it?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 8c398563ae441db4b987015a6cb5f57a, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ace5ccbca094bf745bb577d30df524f4, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 019443c5b02c4eb4aa423efeb7426c82, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 2c7743c22f92b0949845c69ce741161d, type: 2}
   <Position>k__BackingField: {x: 3573, y: 1165}

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: AboutMyself
   m_EditorClassIdentifier: 
   <Name>k__BackingField: About Myself
@@ -17,10 +17,10 @@ MonoBehaviour:
   <Text>k__BackingField: Was a simple construction worker, nothing too complicated...
   <Choices>k__BackingField:
   - <Text>k__BackingField: Do you have any other skills?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: d77d6aa3f3d17ee449642dc08dddeafd, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: f3cae76daefde0f479cdf6a48d20dfa9, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: Where did you work?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 1a171fccff793c848915b15277f82744, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: df26f1807f073ef4ea41fa8e868b57b4, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 0b2e681804e67f94a919b65bb5cbb811, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: f8eea54b67808ba42ae34999f20b2484, type: 2}
   <Position>k__BackingField: {x: 698, y: 634}

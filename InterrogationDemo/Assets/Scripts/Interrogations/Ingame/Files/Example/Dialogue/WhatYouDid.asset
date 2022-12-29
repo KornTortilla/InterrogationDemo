@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: WhatYouDid
   m_EditorClassIdentifier: 
   <Name>k__BackingField: WhatYouDid
@@ -18,8 +18,8 @@ MonoBehaviour:
     and drank.
   <Choices>k__BackingField:
   - <Text>k__BackingField: You did more than that.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 7b00e8cd29b85424b90fe86dd10dd969, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a2928cc08eccd304aa664e4409146574, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: 8c95efa52e58048489a0040b7b8dc8f0, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 3892fa4de59087044b7fa4ebdb405ffb, type: 2}
+    - {fileID: 11400000, guid: e69701daa1441394980a1ebf225d2978, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 8dbf07258b8c3714c983d595b9708835, type: 2}
   <Position>k__BackingField: {x: 1669, y: 161}

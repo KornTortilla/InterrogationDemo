@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: RealizedCouldntPay
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Realized Couldnt Pay
@@ -18,7 +18,7 @@ MonoBehaviour:
     my check. Realized I couldn't pay for the whole pack. Left.
   <Choices>k__BackingField:
   - <Text>k__BackingField: What did you do after?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9ce6c9d21fc8f2d4d91fe5e5450864ac, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 2d37b7dbf54bae84c9a89f45112404f4, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 425c27f3d5396c844b332d22be642ff9, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: d873c6eeb2d683d49bbb69af18839daa, type: 2}
   <Position>k__BackingField: {x: 5066, y: 1914}

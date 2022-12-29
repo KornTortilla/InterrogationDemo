@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: WereFired
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Were Fired
@@ -21,10 +21,10 @@ MonoBehaviour:
     of the bad pay and work. Same difference to me.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Why did you lie?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 5eb093b3aefd08042bd06bc5e887b55d, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0df5fd9134417be46b4e7ce2719f82b9, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: Are you resentful?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 42bfc8b41e6aebe4882e0441ee6ef12b, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 735d2ae9e159a8f46a6d35afdc945144, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 1a171fccff793c848915b15277f82744, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: df26f1807f073ef4ea41fa8e868b57b4, type: 2}
   <Position>k__BackingField: {x: 1669, y: 1008}

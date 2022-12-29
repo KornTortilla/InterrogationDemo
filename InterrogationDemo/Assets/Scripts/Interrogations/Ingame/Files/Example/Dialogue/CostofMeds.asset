@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: CostofMeds
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Cost of Meds
@@ -18,9 +18,9 @@ MonoBehaviour:
     so we can handle it.
   <Choices>k__BackingField:
   - <Text>k__BackingField: You're no longer insured though.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 83511697c33aa1149b3e9db4bc2b30fa, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 6bff5d8ca5f49c047b008caa470b9f6d, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: 13ad1e544403a194c9812187fc692464, type: 2}
-    - {fileID: 11400000, guid: 3d0a75e0a74adb741a0a6ae7fc0499b3, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 64a1953f60ef0d44e936c164f8575cb8, type: 2}
+    - {fileID: 11400000, guid: 46c734179e1a07448b2b7ef1c9df64a2, type: 2}
+    - {fileID: 11400000, guid: 47b980580abfda54e9b9125a4f86b908, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: fdd00f7823e89ce40992102b10c452bf, type: 2}
   <Position>k__BackingField: {x: 2638, y: -495}

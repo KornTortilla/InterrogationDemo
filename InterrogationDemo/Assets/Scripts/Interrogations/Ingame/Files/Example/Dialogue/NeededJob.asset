@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: NeededJob
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Needed Job
@@ -20,10 +20,10 @@ MonoBehaviour:
     I ain''t no damn thief!'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Why can't it be you?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 1130368b59ebb324899bc8aaaf279802, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 293b5ad436b10dc4997c028ec7e41ece, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: Let's go over the day again then.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 425c27f3d5396c844b332d22be642ff9, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: d873c6eeb2d683d49bbb69af18839daa, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 709e238dacceece45b541bf82f7a5f11, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: bc83b2462518eaf42923bb54a523fae2, type: 2}
   <Position>k__BackingField: {x: 4050, y: 1165}

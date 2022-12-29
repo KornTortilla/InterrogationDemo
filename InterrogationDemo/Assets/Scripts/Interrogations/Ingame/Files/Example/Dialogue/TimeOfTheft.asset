@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: TimeOfTheft
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Time Of Theft
@@ -20,10 +20,10 @@ MonoBehaviour:
     I left to go get my last paycheck around 2. Then spent my time at a local bar.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: When did you arrive at the bar?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 3892fa4de59087044b7fa4ebdb405ffb, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 8dbf07258b8c3714c983d595b9708835, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: What did you do at home?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9f7dc595fdf17dd45a17be63bbf044d2, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 6e5166016f12d014f85f39c2645ff751, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 0b2e681804e67f94a919b65bb5cbb811, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: f8eea54b67808ba42ae34999f20b2484, type: 2}
   <Position>k__BackingField: {x: 698, y: -89}

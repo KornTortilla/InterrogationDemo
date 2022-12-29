@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: DidntStockUp
   m_EditorClassIdentifier: 
   <Name>k__BackingField: DidntStockUp
@@ -19,7 +19,7 @@ MonoBehaviour:
   <Choices>k__BackingField:
   - <Text>k__BackingField: So you were just going to wait for until next week to
       get it?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 92788355ecc640f4084c68d743947967, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a2606f207432fd04a9da5167803cbe62, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: b2c4a359c49199c45a8c2ccd80c6abb4, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: d536348ca22d84c439dc9dcffe0e135b, type: 2}
   <Position>k__BackingField: {x: 2638, y: -47}

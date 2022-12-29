@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: Resentful
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Resentful
@@ -17,7 +17,7 @@ MonoBehaviour:
   <Text>k__BackingField: Eh, not too much. Like I said, wasn't great work.
   <Choices>k__BackingField:
   - <Text>k__BackingField: You're not worried about what to do next?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c787616d9f379064cb56156642a7a6e3, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 8ebde5690c0fc2641863fc91c5ffe858, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 4a2442c9f3fa7834cb79267159ad1314, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 51eef4d2bcfc63947a00088685f490f1, type: 2}
   <Position>k__BackingField: {x: 2150, y: 1165}

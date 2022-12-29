@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: TellMeTheTruth
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Tell Me The Truth
@@ -19,5 +19,5 @@ MonoBehaviour:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 4751eb133e78d0240959a2a4b0bed1ed, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: a3a08313035f47d4d9ceab3e1445ce42, type: 2}
   <Position>k__BackingField: {x: 6069, y: 1103}

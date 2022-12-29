@@ -1,0 +1,1298 @@
+fileFormatVersion: 2
+guid: 58536abfa7fb5f248a9d41bf1215be25
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3844100089058132974
+    second: SevenIdle0
+  - first:
+      213: 2323367172588121609
+    second: SevenIdle1
+  - first:
+      213: -20123123709561293
+    second: SevenIdle2
+  - first:
+      213: -2804804096220995026
+    second: SevenIdleTalking0
+  - first:
+      213: -8697239193068558916
+    second: SevenIdleTalking1
+  - first:
+      213: -171022857040018308
+    second: SevenShocked0
+  - first:
+      213: 3334478016447578611
+    second: SevenShocked1
+  - first:
+      213: -5165882588970740983
+    second: SevenShocked2
+  - first:
+      213: -4217672535851807828
+    second: SevenShockedTalking0
+  - first:
+      213: 503743589891438587
+    second: SevenShockedTalking1
+  - first:
+      213: 1964214405440455503
+    second: SevenAggressive0
+  - first:
+      213: -6656894432164131497
+    second: SevenAggressiveTalking0
+  - first:
+      213: 3147965119117945566
+    second: SevenAggressiveTalking1
+  - first:
+      213: 2240147665114188908
+    second: SevenSmiling0
+  - first:
+      213: -7739828455004559415
+    second: SevenSmilingTalking0
+  - first:
+      213: -9025540885615414820
+    second: SevenSmilingTalking1
+  - first:
+      213: -7262155308911020611
+    second: SevenRubbing0
+  - first:
+      213: 2262040942528046002
+    second: SevenRubbing1
+  - first:
+      213: -6834789949934761975
+    second: SevenRubbing2
+  - first:
+      213: 7522493790841726533
+    second: SevenRubbing3
+  - first:
+      213: 6888402111880406805
+    second: SevenRubbingTalking0
+  - first:
+      213: 3677168361060255263
+    second: SevenRubbingTalking1
+  - first:
+      213: -2361718949182485094
+    second: SevenLaughing0
+  - first:
+      213: -7392616509032976024
+    second: SevenLaughing1
+  - first:
+      213: 6607319680023706401
+    second: SevenLaughing2
+  - first:
+      213: -291633360937151882
+    second: SevenLaughing3
+  - first:
+      213: -510371710860463077
+    second: SevenLaughing4
+  - first:
+      213: -4710610343423503900
+    second: SevenThinking0
+  - first:
+      213: -6518557002572963493
+    second: SevenThinking1
+  - first:
+      213: -6337631003897261738
+    second: SevenThinking2
+  - first:
+      213: -8099499806972493165
+    second: SevenThinking3
+  - first:
+      213: 6419499570555329773
+    second: SevenThinking4
+  - first:
+      213: -8827613414496720447
+    second: SevenThinking5
+  - first:
+      213: -1954483024703557395
+    second: SevenThinking6
+  - first:
+      213: -5474578262425246940
+    second: SevenThinking7
+  - first:
+      213: 4805463003831927056
+    second: SevenThinking8
+  - first:
+      213: -925482603755853420
+    second: SevenThinkingTalking0
+  - first:
+      213: 6796584896250358399
+    second: SevenThinkingTalking1
+  - first:
+      213: -7935937945185538536
+    second: SevenTransition0
+  - first:
+      213: 8415346886841929622
+    second: SevenTransition1
+  - first:
+      213: 2720496128135831811
+    second: SevenTransition2
+  - first:
+      213: 8585109352954689851
+    second: SevenTransition3
+  - first:
+      213: 3825907246558582636
+    second: SevenTransition4
+  - first:
+      213: -8113704296153557020
+    second: SevenTransition5
+  - first:
+      213: -8460680122870231580
+    second: SevenSorrowful0
+  - first:
+      213: -5034296722328684455
+    second: SevenSorrowfulTalking0
+  - first:
+      213: 7275769860800440756
+    second: SevenSorrowfulTalking1
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SevenIdle0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1813
+        width: 200
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee38b510aacf85530800000000000000
+      internalID: 3844100089058132974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenIdle1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1813
+        width: 200
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e2bec32224e3020800000000000000
+      internalID: 2323367172588121609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenIdle2
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1813
+        width: 200
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3363587202288bff0800000000000000
+      internalID: -20123123709561293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenIdleTalking0
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1813
+        width: 200
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22ef24f8855319d0800000000000000
+      internalID: -2804804096220995026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenIdleTalking1
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1813
+        width: 200
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb52b8aa8033d4780800000000000000
+      internalID: -8697239193068558916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenShocked0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1614
+        width: 211
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7448ad1e9760adf0800000000000000
+      internalID: -171022857040018308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenShocked1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1614
+        width: 211
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f105b1d612764e20800000000000000
+      internalID: 3334478016447578611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenShocked2
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1614
+        width: 211
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9031605c7291f48b0800000000000000
+      internalID: -5165882588970740983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenShockedTalking0
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1614
+        width: 211
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabc1a1cc21d775c0800000000000000
+      internalID: -4217672535851807828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenShockedTalking1
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1614
+        width: 211
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7fb554028adf600800000000000000
+      internalID: 503743589891438587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenAggressive0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1426
+        width: 198
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43cbfa489a424b10800000000000000
+      internalID: 1964214405440455503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenAggressiveTalking0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1426
+        width: 198
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75dc49f98c5fd93a0800000000000000
+      internalID: -6656894432164131497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenAggressiveTalking1
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1426
+        width: 198
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda6852e891dfab20800000000000000
+      internalID: 3147965119117945566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenSmiling0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1222
+        width: 185
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c4d8fbe6a961f10800000000000000
+      internalID: 2240147665114188908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenSmilingTalking0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1222
+        width: 185
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c72efc070b969490800000000000000
+      internalID: -7739828455004559415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenSmilingTalking1
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1223
+        width: 185
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1f0274266deb280800000000000000
+      internalID: -9025540885615414820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenRubbing0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1015
+        width: 167
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db534ac1934a73b90800000000000000
+      internalID: -7262155308911020611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenRubbing1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1015
+        width: 167
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b326ce9042646f10800000000000000
+      internalID: 2262040942528046002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenRubbing2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1015
+        width: 167
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9088ab7b0c2f521a0800000000000000
+      internalID: -6834789949934761975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenRubbing3
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1015
+        width: 167
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546e3343f34456860800000000000000
+      internalID: 7522493790841726533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenRubbingTalking0
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1015
+        width: 167
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517aea47935889f50800000000000000
+      internalID: 6888402111880406805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenRubbingTalking1
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1015
+        width: 167
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f164d44542de70330800000000000000
+      internalID: 3677168361060255263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenLaughing0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 806
+        width: 199
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d4baee02d793fd0800000000000000
+      internalID: -2361718949182485094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenLaughing1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 806
+        width: 201
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861b66ae376286990800000000000000
+      internalID: -7392616509032976024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenLaughing2
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 806
+        width: 201
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bb24ded3ae1bb50800000000000000
+      internalID: 6607319680023706401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenLaughing3
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 806
+        width: 201
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67210bcd009e3fbf0800000000000000
+      internalID: -291633360937151882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenLaughing4
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 806
+        width: 201
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14f0ce02abcae8f0800000000000000
+      internalID: -510371710860463077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 605
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e116fcb9dc80aeb0800000000000000
+      internalID: -4710610343423503900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 605
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51e08561fe6985a0800000000000000
+      internalID: -6518557002572963493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking2
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 605
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651933f1e263c08a0800000000000000
+      internalID: -6337631003897261738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking3
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 605
+        width: 185
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3924f0ba6dbc89f80800000000000000
+      internalID: -8099499806972493165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking4
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 605
+        width: 185
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec19b2f8d4a61950800000000000000
+      internalID: 6419499570555329773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking5
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 605
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c92376ce540e7580800000000000000
+      internalID: -8827613414496720447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 404
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de073095b0840e4e0800000000000000
+      internalID: -1954483024703557395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking7
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 404
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423611d63146604b0800000000000000
+      internalID: -5474578262425246940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinking8
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 404
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0110fac342f60b240800000000000000
+      internalID: 4805463003831927056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinkingTalking0
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 404
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499245da9760823f0800000000000000
+      internalID: -925482603755853420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenThinkingTalking1
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 404
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7aa9ca04f1525e50800000000000000
+      internalID: 6796584896250358399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenTransition0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 202
+        width: 192
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e2ca93c72edd190800000000000000
+      internalID: -7935937945185538536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenTransition1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 202
+        width: 192
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f07eb386159c470800000000000000
+      internalID: 8415346886841929622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenTransition2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 202
+        width: 192
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301ac5290d421c520800000000000000
+      internalID: 2720496128135831811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenTransition3
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 202
+        width: 192
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b397fbc787f642770800000000000000
+      internalID: 8585109352954689851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenTransition4
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 202
+        width: 192
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6797b6ce5a581530800000000000000
+      internalID: 3825907246558582636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenTransition5
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 202
+        width: 192
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7d43f4ee4566f80800000000000000
+      internalID: -8113704296153557020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenSorrowful0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed8c1e3140a59a80800000000000000
+      internalID: -8460680122870231580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenSorrowfulTalking0
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 192
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9587fabcdc5922ab0800000000000000
+      internalID: -5034296722328684455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SevenSorrowfulTalking1
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 192
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9e084c32ab8f460800000000000000
+      internalID: 7275769860800440756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SevenThinking1: -6518557002572963493
+      SevenLaughing1: -7392616509032976024
+      SevenShocked1: 3334478016447578611
+      SevenShockedTalking0: -4217672535851807828
+      SevenLaughing0: -2361718949182485094
+      SevenSmilingTalking0: -7739828455004559415
+      SevenThinkingTalking0: -925482603755853420
+      SevenIdle1: 2323367172588121609
+      SevenRubbingTalking0: 6888402111880406805
+      SevenTransition3: 8585109352954689851
+      SevenRubbing2: -6834789949934761975
+      SevenRubbingTalking1: 3677168361060255263
+      SevenThinking5: -8827613414496720447
+      SevenSorrowful0: -8460680122870231580
+      SevenRubbing0: -7262155308911020611
+      SevenLaughing3: -291633360937151882
+      SevenSorrowfulTalking1: 7275769860800440756
+      SevenAggressiveTalking1: 3147965119117945566
+      SevenThinking0: -4710610343423503900
+      SevenIdle2: -20123123709561293
+      SevenTransition4: 3825907246558582636
+      SevenTransition5: -8113704296153557020
+      SevenSmiling0: 2240147665114188908
+      SevenTransition2: 2720496128135831811
+      SevenShockedTalking1: 503743589891438587
+      SevenThinking4: 6419499570555329773
+      SevenRubbing3: 7522493790841726533
+      SevenAggressiveTalking0: -6656894432164131497
+      SevenRubbing1: 2262040942528046002
+      SevenIdleTalking0: -2804804096220995026
+      SevenThinking7: -5474578262425246940
+      SevenShocked0: -171022857040018308
+      SevenThinkingTalking1: 6796584896250358399
+      SevenAggressive0: 1964214405440455503
+      SevenShocked2: -5165882588970740983
+      SevenThinking2: -6337631003897261738
+      SevenLaughing4: -510371710860463077
+      SevenIdleTalking1: -8697239193068558916
+      SevenThinking6: -1954483024703557395
+      SevenThinking8: 4805463003831927056
+      SevenThinking3: -8099499806972493165
+      SevenSmilingTalking1: -9025540885615414820
+      SevenLaughing2: 6607319680023706401
+      SevenTransition1: 8415346886841929622
+      SevenTransition0: -7935937945185538536
+      SevenSorrowfulTalking0: -5034296722328684455
+      SevenIdle0: 3844100089058132974
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

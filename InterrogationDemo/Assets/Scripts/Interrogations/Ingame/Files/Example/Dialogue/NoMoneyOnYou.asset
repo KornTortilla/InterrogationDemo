@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b1c685980c1cc48a5f2ecc1bcdd658, type: 3}
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: NoMoneyOnYou
   m_EditorClassIdentifier: 
   <Name>k__BackingField: No Money On You
@@ -25,7 +25,7 @@ MonoBehaviour:
     Seven: Then... I...'
   <Choices>k__BackingField:
   - <Text>k__BackingField: You can't keep covering for yourself. Tell me the truth.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: bd8c9425b5d171d40b30aff798c05f66, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 614fb5480cb713d45a81df7e81b6093b, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 357e7a2663ace1a45b1042e430f7dac9, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 393f1167adb6e2644a13b171766e4ff4, type: 2}
   <Position>k__BackingField: {x: 5561, y: 1103}
