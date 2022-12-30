@@ -13,12 +13,14 @@ namespace Interrogation.Ingame
     public class InterrogationDialogueManager : MonoBehaviour
     {
         public static event Action OnTalkingStart;
+        public static event Action OnTalkingEnd;
         public static event Action OnContradictionFound;
         public static event Action<String> OnMusicChange;
 
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private GameObject evidenceLocker;
         [SerializeField] private DialogueTextManager dialogueTextManager;
+        [SerializeField] private GameObject saveDialogueButton;
         [SerializeField] private Animator characterAnimator;
 
         [SerializeField] private DialogueSOManager dialogueManager;
@@ -32,7 +34,10 @@ namespace Interrogation.Ingame
 
             OpenPathsAndGetStartPoint();
 
+            //Once first dialogue found, push it
             pastDialogues.Push(currentDialogue);
+
+            InstantiateEvidence();
 
             StartCoroutine(ParseCurrentDialogue(-1));
         }
@@ -60,24 +65,61 @@ namespace Interrogation.Ingame
 
         private void InstantiateEvidence()
         {
-            /*
+            GameObject evidencePrefab = Resources.Load("Prefabs/EvidenceEntry") as GameObject;
+
             foreach (EvidenceSO evidence in dialogueManager.EvidenceList)
             {
-                GameObject evidenceObject = Instantiate(evidenceEntry, evidenceLocker.transform.GetChild(0));
-                evidenceObject.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = evidence.Name;
-                evidenceObject.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = evidence.Text;
+                //Instantiate object under the locker's first child, being the list
+                GameObject evidenceObject = Instantiate(evidencePrefab, evidenceLocker.transform.GetChild(0));
 
-                evidenceObject.GetComponent<EvidencePassThrough>().sObject = evidence;
-                evidenceObject.GetComponent<EvidencePassThrough>().interroDialogueManager = this.gameObject;
-
-                evidenceObject.GetComponent<DragAndDrop>().evidenceInput = evidenceInput;
-                evidenceObject.GetComponent<DragAndDrop>().startingPos = evidenceObject.transform.GetComponent<RectTransform>().anchoredPosition;
-
-                LayoutRebuilder.ForceRebuildLayoutImmediate(evidenceObject.GetComponent<RectTransform>());
+                InitializeEvidence(evidenceObject, evidence.Name, evidence.Text, evidence);
             }
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(evidenceLocker.transform.GetChild(0).GetComponent<RectTransform>());
-            */
+        }
+
+        public void CreateDialogueEvidence()
+        {
+            GameObject dialoguePrefab = Resources.Load("Prefabs/DialogueEntry") as GameObject;
+
+            string[] sentences = SplitCurrentSentences();
+            string sentence = sentences[sentences.Length - 1];
+
+            if (sentence.Contains(":"))
+            {
+                sentence = sentence.Substring(sentence.IndexOf(":") + 2);
+            }
+
+            //Instantiate object under the locker's first child, being the list
+            GameObject dialogueObject = Instantiate(dialoguePrefab, evidenceLocker.transform.GetChild(0));
+
+            InitializeEvidence(dialogueObject, currentDialogue.Name, sentence, currentDialogue);
+
+            //Adds function to when button is clicked
+            dialogueObject.transform.GetChild(4).gameObject.GetComponent<Button>().onClick.AddListener(() => DestroyedDialogueEvidence(currentDialogue, dialogueObject));
+
+            currentDialogue.Grabbed = true;
+
+            saveDialogueButton.SetActive(false);
+        }
+
+        private void InitializeEvidence(GameObject eObject, string name, string desc, ScriptableObject sObject)
+        {
+            //Changes text of second and third child to match evidence title and description
+            eObject.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = name;
+            eObject.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = desc;
+
+            //Adds function to when event is invoked
+            eObject.GetComponent<EvidenceDragger>().onEvidenceAcccepted.AddListener(() => CheckContradiction(sObject));
+        }
+
+        public void DestroyedDialogueEvidence(DialogueSO dialogue, GameObject dialogueEvidence)
+        {
+            dialogue.Grabbed = false;
+
+            if (currentDialogue == dialogue) saveDialogueButton.SetActive(true);
+
+            Destroy(dialogueEvidence);
         }
 
         IEnumerator ParseCurrentDialogue(int dir)
@@ -124,10 +166,12 @@ namespace Interrogation.Ingame
                 yield return new WaitUntil(() => { return (((Input.GetMouseButtonDown(0)) || i == sentences.Length - 1) && dialogueTextManager.isDone); });
             }
 
-            CreateChoices(dir);
+            OnTalkingEnd?.Invoke();
+
+            CreateChoicesButtons(dir);
         }
 
-        private void CreateChoices(int dir)
+        private void CreateChoicesButtons(int dir)
         {
             //Creates list of buttons to populate
             List<GameObject> buttons = new List<GameObject>();
@@ -235,8 +279,11 @@ namespace Interrogation.Ingame
 
                 dialogueTextManager.ShowText(sentence);
 
-                CreateChoices(dir);
+                CreateChoicesButtons(dir);
             }
+
+            if (currentDialogue.Grabbed) saveDialogueButton.SetActive(false);
+            else saveDialogueButton.SetActive(true);
         }
 
         private string[] SplitCurrentSentences()
@@ -247,6 +294,33 @@ namespace Interrogation.Ingame
             );
 
             return sentences;
+        }
+
+        public void CheckContradiction(ScriptableObject sObject)
+        {
+            bool contradictionFound = false;
+            DialogueChoiceData openedPath = new DialogueChoiceData();
+
+            foreach (DialogueChoiceData choiceData in currentDialogue.Choices)
+            {
+                foreach (ScriptableObject key in choiceData.Keys)
+                {
+                    if (sObject == key)
+                    {
+                        openedPath = choiceData;
+                        contradictionFound = true;
+                    }
+                }
+            }
+
+            if (contradictionFound)
+            {
+                openedPath.Opened = true;
+
+                Decide(openedPath);
+            }
+
+            else Debug.Log("Stupid.");
         }
     }
 }
