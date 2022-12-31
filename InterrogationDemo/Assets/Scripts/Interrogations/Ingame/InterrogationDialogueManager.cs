@@ -22,6 +22,7 @@ namespace Interrogation.Ingame
         [SerializeField] private DialogueTextManager dialogueTextManager;
         [SerializeField] private GameObject saveDialogueButton;
         [SerializeField] private Animator characterAnimator;
+        [SerializeField] private FlowchartManager flowchartManager;
 
         [SerializeField] private DialogueSOManager dialogueManager;
         private DialogueSO currentDialogue;
@@ -40,6 +41,8 @@ namespace Interrogation.Ingame
             InstantiateEvidence();
 
             StartCoroutine(ParseCurrentDialogue(-1));
+
+            flowchartManager.Initialize(currentDialogue, this);
         }
         
         private void OpenPathsAndGetStartPoint()
@@ -239,6 +242,15 @@ namespace Interrogation.Ingame
             AdvanceDialogue(currentDialogue.PreviousDialogue, 1);
         }
 
+        public void Jump(DialogueSO dialogue)
+        {
+            AdvanceDialogue(dialogue, -1);
+
+            pastDialogues.Clear();
+
+            WalkBackDialogueList(currentDialogue);
+        }
+
         private void AdvanceDialogue(DialogueSO nextDialogue, int dir)
         {
             if (nextDialogue == null)
@@ -294,6 +306,16 @@ namespace Interrogation.Ingame
             );
 
             return sentences;
+        }
+
+        private void WalkBackDialogueList(DialogueSO dialogue)
+        {
+            pastDialogues.Push(dialogue);
+
+            if (dialogue.PreviousDialogue != null)
+            {
+                WalkBackDialogueList(dialogue.PreviousDialogue);
+            }
         }
 
         public void CheckContradiction(ScriptableObject sObject)
