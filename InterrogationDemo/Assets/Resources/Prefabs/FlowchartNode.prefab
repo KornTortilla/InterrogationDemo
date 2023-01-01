@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7569586524618177407}
   - component: {fileID: 8617251633700933618}
   - component: {fileID: 3899799123992734211}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: GoToButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +27,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740629069366701481}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 588080268223856779}
-  m_Father: {fileID: 8925900093420341185}
+  m_Father: {fileID: 5164109096079441831}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -148,10 +148,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5164109096079441831}
   - component: {fileID: 2318812081758849669}
-  - component: {fileID: 1290781999487357566}
+  - component: {fileID: 6234876486197872359}
   - component: {fileID: 4227904400985948632}
   - component: {fileID: 2427706734332311033}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +171,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7368424422196148348}
+  - {fileID: 817437593346644610}
   m_Father: {fileID: 8925900093420341185}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -187,7 +188,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3906157353437650818}
   m_CullTransparentMesh: 1
---- !u!114 &1290781999487357566
+--- !u!114 &6234876486197872359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,7 +258,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1290781999487357566}
+  m_TargetGraphic: {fileID: 6234876486197872359}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -284,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3237114414411830376}
   - component: {fileID: 1278343832068691559}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BackConnector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +305,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8925900093420341185}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -328,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4481192836305145175}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: FrontConnector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +349,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8925900093420341185}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -366,7 +367,7 @@ GameObject:
   - component: {fileID: 7368424422196148348}
   - component: {fileID: 7454018381015882485}
   - component: {fileID: 2067227676242824428}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +502,7 @@ GameObject:
   - component: {fileID: 588080268223856779}
   - component: {fileID: 4084641605929342310}
   - component: {fileID: 8531887370711707139}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +638,7 @@ GameObject:
   - component: {fileID: 545627658160585286}
   - component: {fileID: 1940717741384726776}
   - component: {fileID: 4836654711117496528}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: FlowchartNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +658,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5164109096079441831}
-  - {fileID: 817437593346644610}
   - {fileID: 4481192836305145175}
   - {fileID: 3237114414411830376}
   m_Father: {fileID: 0}
@@ -686,7 +686,8 @@ MonoBehaviour:
   goToButton: {fileID: 8617251633700933618}
   frontConnector: {fileID: 6844840345919382683}
   backConnector: {fileID: 5137692431828701680}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.42475083, g: 0.587091, b: 0.7830189, a: 1}
 --- !u!114 &1940717741384726776
 MonoBehaviour:
   m_ObjectHideFlags: 0

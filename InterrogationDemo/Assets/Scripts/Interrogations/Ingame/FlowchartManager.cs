@@ -50,5 +50,47 @@ namespace Interrogation.Ingame
                 }
             }
         }
+
+        public void UpdateFlowchart(DialogueSO dialogue, bool advancing)
+        {
+            if(advancing)
+            {
+                foreach (GameObject node in nodeList)
+                {
+                    if (node.GetComponent<FlowchartNode>().dialogue == dialogue)
+                    {
+                        node.gameObject.SetActive(true);
+                        node.GetComponent<FlowchartNode>().ColorHighlight();
+                    }
+                }
+            }
+            else
+            {
+                foreach (GameObject node in nodeList)
+                {
+                    if (node.GetComponent<FlowchartNode>().dialogue == dialogue)
+                    {
+                        node.GetComponent<FlowchartNode>().ColorDefault();
+                    }
+                }
+            }
+            
+        }
+
+        public void RehighlightedNodes(Stack<DialogueSO> dialogueList)
+        {
+            foreach (GameObject node in nodeList)
+            {
+                if(dialogueList.Contains(node.GetComponent<FlowchartNode>().dialogue))
+                {
+                    
+                    node.GetComponent<FlowchartNode>().ColorHighlight();
+                }
+                else
+                {
+                    node.GetComponent<FlowchartNode>().ColorDefault();
+                }
+            }
+        }
     }
 }

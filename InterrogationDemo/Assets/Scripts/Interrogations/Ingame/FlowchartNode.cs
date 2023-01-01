@@ -17,7 +17,8 @@ namespace Interrogation.Ingame
         public GameObject frontConnector;
         public GameObject backConnector;
 
-        [SerializeField] private Color color;
+        [SerializeField] private Color defaultColor;
+        [SerializeField] private Color highlightColor;
 
         public void Initialize(DialogueSO dialogueSO, InterrogationDialogueManager interroManager)
         {
@@ -48,6 +49,23 @@ namespace Interrogation.Ingame
                 uiLiner.points.Add(backConnector.transform.localPosition);
                 uiLiner.points.Add(previousNodeConnectorPos);
             }
+        }
+
+        public void ColorHighlight()
+        {
+            ColorNode(highlightColor);
+        }
+
+        public void ColorDefault()
+        {
+            ColorNode(defaultColor);
+        }
+
+        private void ColorNode(Color color)
+        {
+            mainButtonObject.GetComponent<Image>().color = color;
+            goToButton.gameObject.GetComponent<Image>().color = color;
+            uiLiner.color = color;
         }
     }
 }

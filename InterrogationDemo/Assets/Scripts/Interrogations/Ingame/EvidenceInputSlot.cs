@@ -19,7 +19,6 @@ namespace Interrogation.Ingame
         {
             if (eventData.pointerDrag != null && canAcceptEvidence)
             {
-                //eventData.pointerDrag.transform.parent.parent.GetComponent<D>().Move();
                 eventData.pointerDrag.GetComponent<EvidenceDragger>().PassEvidence();
             }
         }
@@ -56,7 +55,10 @@ namespace Interrogation.Ingame
 
         private void EnableImage()
         {
-            fader.FadeIn();
+            if(canAcceptEvidence)
+            {
+                fader.FadeIn();
+            }
         }
 
         private void DisableImage()

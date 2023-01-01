@@ -43,6 +43,8 @@ namespace Interrogation.Ingame
             StartCoroutine(ParseCurrentDialogue(-1));
 
             flowchartManager.Initialize(currentDialogue, this);
+
+            flowchartManager.UpdateFlowchart(currentDialogue, true);
         }
         
         private void OpenPathsAndGetStartPoint()
@@ -233,22 +235,30 @@ namespace Interrogation.Ingame
             AdvanceDialogue(choiceData.NextDialogue, -1);
 
             pastDialogues.Push(currentDialogue);
+
+            flowchartManager.UpdateFlowchart(currentDialogue, true);
         }
 
         private void Back()
         {
             pastDialogues.Pop();
 
+            flowchartManager.UpdateFlowchart(currentDialogue, false);
+
             AdvanceDialogue(currentDialogue.PreviousDialogue, 1);
         }
 
         public void Jump(DialogueSO dialogue)
         {
+            GetComponent<CameraController>().AlternateCameras();
+
             AdvanceDialogue(dialogue, -1);
 
             pastDialogues.Clear();
 
             WalkBackDialogueList(currentDialogue);
+
+            flowchartManager.RehighlightedNodes(pastDialogues);
         }
 
         private void AdvanceDialogue(DialogueSO nextDialogue, int dir)
@@ -320,6 +330,8 @@ namespace Interrogation.Ingame
 
         public void CheckContradiction(ScriptableObject sObject)
         {
+            evidenceLocker.GetComponent<HorizontalDrawerTween>().Move();
+
             bool contradictionFound = false;
             DialogueChoiceData openedPath = new DialogueChoiceData();
 
