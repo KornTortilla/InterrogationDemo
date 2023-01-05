@@ -14,13 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Start
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: ...
+  <Text>k__BackingField: 'Anna: Good evening. You''re Seven I presume?
+
+    Seven:
+    Yup, that''s me.
+
+    Anna: Good. Let''s get started, shall we?
+
+    Seven: Sure,
+    why not...
+
+    #music Seven1
+
+    ...'
   <Choices>k__BackingField:
   - <Text>k__BackingField: What were doing on the 12th?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: fff7d77587c97914498f13ac47c0092a, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 23de520714d32014b8306cd039bd44e5, type: 2}
     <Keys>k__BackingField: []
   - <Text>k__BackingField: Tell me about yourself.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a8ec3c6733cda1c4899134355bee82b0, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 2d73d09ee9e8f30459cfa96031407635, type: 2}
     <Keys>k__BackingField: []
   <PreviousDialogue>k__BackingField: {fileID: 0}
-  <Position>k__BackingField: {x: 200, y: 265}
+  <Position>k__BackingField: {x: 198, y: 265}

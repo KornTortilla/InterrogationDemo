@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: AllYouDid
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: AllYouDid
+  <Name>k__BackingField: All You Did
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: Yup. That's all I did.
+  <Text>k__BackingField: '#anim Idle
+
+    Yup. That''s all I did.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 35f532067cb4d34499712a7124443e6e, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: e7dfed6b57acb024d8a883eba79a85c8, type: 2}
   <Position>k__BackingField: {x: 2150, y: -271}

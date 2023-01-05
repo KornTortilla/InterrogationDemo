@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Actually Did At Home
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: I already said what I did, sat and watched TV.
+  <Text>k__BackingField: '#anim Idle
+
+    I already said what I did, sat and watched
+    TV.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: d873c6eeb2d683d49bbb69af18839daa, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 158ce4fec4a945b4ab365da6fcb91824, type: 2}
   <Position>k__BackingField: {x: 5066, y: 1462}

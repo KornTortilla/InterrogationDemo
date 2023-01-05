@@ -1,0 +1,769 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2fe427bada94f4788b6dc75ed92a57, type: 3}
+  m_Name: Example
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Example
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 73110bf8-a57c-4972-b9de-291ad49f5e12
+    <Name>k__BackingField: Kind Of Meds
+    <Text>k__BackingField: '#anim Idle
+
+      Insulin. My ma'' has diabetes. Type
+      2.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: How much does it cost?
+      <NodeID>k__BackingField: d5c5c669-c559-4344-a154-ad3c0ef53bec
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2150, y: -495}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 86e78b1d-8529-4cc1-b8c2-c69b7f06ef55
+    <Name>k__BackingField: What You Did At Bar
+    <Text>k__BackingField: '#anim Idle
+
+      We didn''t really do about anything.
+      Just watched the game and drank.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You did more than that.
+      <NodeID>k__BackingField: 4edba555-c27b-45bf-bd0d-111dab7e3fd6
+      <KeyIDs>k__BackingField:
+      - c41a2a65-eaa6-437d-9e84-46c28f84ff8a
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 1669, y: 161}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 428eeef3-83db-434e-806f-64c79563bb0a
+    <Name>k__BackingField: Realized Couldnt Pay
+    <Text>k__BackingField: '#anim Idle
+
+      When I went to go get it, I checked
+      how much I got from my check. Realized I couldn''t pay for a single vile. Left
+      empty handed.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What did you do after?
+      <NodeID>k__BackingField: 13da5a67-1415-47d3-9231-17b6727bc48d
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5066, y: 1914}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: a144840c-e095-4f10-b18f-f0168d4097ea
+    <Name>k__BackingField: All You Did
+    <Text>k__BackingField: '#anim Idle
+
+      Yup. That''s all I did.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2150, y: -271}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: b164e3c6-8aab-4a53-9caa-e84b001fd24d
+    <Name>k__BackingField: Tell About Yourself
+    <Text>k__BackingField: '#anim Idle
+
+      Was a simple construction worker, nothing
+      too complicated...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Do you have any other skills?
+      <NodeID>k__BackingField: 2d9e1047-d628-4fd1-a846-2fe5b12252ed
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: Where did you work?
+      <NodeID>k__BackingField: 483ba435-9d24-45df-a3c3-e69d842254bf
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 698, y: 634}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 867186ca-ebd3-4f84-87d4-d7629eefd9e2
+    <Name>k__BackingField: Time Between Arriving
+    <Text>k__BackingField: '#anim Thoughtful
+
+      Oh right. I went to the pharmacy
+      to get my ma''s medicine on the way.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What kind of medicine is it?
+      <NodeID>k__BackingField: 73110bf8-a57c-4972-b9de-291ad49f5e12
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: Is that all you did?
+      <NodeID>k__BackingField: a144840c-e095-4f10-b18f-f0168d4097ea
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: You didn't actually buy any medication.
+      <NodeID>k__BackingField: 818560e9-6284-4d84-8452-12596f289623
+      <KeyIDs>k__BackingField:
+      - 367ff0bf-ca1b-48bb-9253-55264557927b
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 1669, y: -413}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 90210b50-19e7-453a-9a83-42079f47b684
+    <Name>k__BackingField: Strom Construction
+    <Text>k__BackingField: A construction company owned by Thurmond Corporation.
+      They advertise great working conditions, health insurance, and even paid leave.
+      The company has quite the bad reputation, however.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 3102, y: -683}
+    <Type>k__BackingField: 1
+  - <ID>k__BackingField: 483ba435-9d24-45df-a3c3-e69d842254bf
+    <Name>k__BackingField: Where You Worked
+    <Text>k__BackingField: '#anim Idle
+
+      Strom Construction. I didn''t like
+      the pay and the conditions were horrible, so I left.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Are you looking for another job?
+      <NodeID>k__BackingField: 9310bf85-293b-473a-a414-12d8fd3cf220
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: You were fired.
+      <NodeID>k__BackingField: 3be17448-8648-492e-ac4e-08f7b1681a20
+      <KeyIDs>k__BackingField:
+      - 5bba2533-65aa-48c1-9162-4946a80de566
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 1167, y: 796}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 367ff0bf-ca1b-48bb-9253-55264557927b
+    <Name>k__BackingField: Possesions
+    <Text>k__BackingField: The suspect had their home keys, a wallet with very little
+      cash, and phone on them before they were taken in.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 2150, y: -692}
+    <Type>k__BackingField: 1
+  - <ID>k__BackingField: 2d9e1047-d628-4fd1-a846-2fe5b12252ed
+    <Name>k__BackingField: Have Any Skills
+    <Text>k__BackingField: '#anim Rubbing
+
+      Can''t... say that I do.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 1167, y: 494}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 9310bf85-293b-473a-a414-12d8fd3cf220
+    <Name>k__BackingField: Looking For Job
+    <Text>k__BackingField: '#anim Rubbing
+
+      Trying, but the market is pretty
+      tough. Nothing I can''t handle though.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 1669, y: 796}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 1169f8b9-4c36-4ebd-84eb-12337997b77b
+    <Name>k__BackingField: Why You Lied
+    <Text>k__BackingField: '#anim Rubbing
+
+      Well, it''s kinda embarrasing to
+      admit you got fired instead of leaving yourself.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2150, y: 926}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: b1443be6-9997-412c-befb-f47de28e9386
+    <Name>k__BackingField: Not Looking Good
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: It isn''t looking good though,
+      by your own admission.
+
+      Seven: Listen... we can manage for awhile. I
+      got time to get back on my feet. Got nothing else to worry about.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Do you have your mother's medication covered?
+      <NodeID>k__BackingField: 1f28a966-9d40-485f-8135-538f8504a088
+      <KeyIDs>k__BackingField:
+      - 850f9860-5896-4b66-b443-b89caf6de85e
+      - e227f156-14a5-46de-a08e-f08bc51d057d
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 3099, y: 1165}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 07896254-bab5-44b8-ab13-32eaeb1bdbfb
+    <Name>k__BackingField: Resentful
+    <Text>k__BackingField: '#anim Idle
+
+      Eh, not too much. Like I said, wasn''t
+      great work.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You're not worried about what to do next?
+      <NodeID>k__BackingField: 7b5699e2-1cbd-476c-8540-743a48ee9793
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2150, y: 1165}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 7b5699e2-1cbd-476c-8540-743a48ee9793
+    <Name>k__BackingField: Not Worried
+    <Text>k__BackingField: '#anim Idle
+
+      I mean, I''ll get by. Always have,
+      always will. I can always get another job.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: It's not looking good though.
+      <NodeID>k__BackingField: b1443be6-9997-412c-befb-f47de28e9386
+      <KeyIDs>k__BackingField:
+      - 9310bf85-293b-473a-a414-12d8fd3cf220
+      - 2d9e1047-d628-4fd1-a846-2fe5b12252ed
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 2624, y: 1165}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 62c6fb70-7a5f-4a2f-9d14-6b5c1a3e245c
+    <Name>k__BackingField: You Needed That Job
+    <Text>k__BackingField: '#music Seven2
+
+      #anim Aggressive
+
+      Hey, I may
+      have needed that job, but I ain''t no damn thief!'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Why can't it be you?
+      <NodeID>k__BackingField: 961a9358-72fe-4fb4-8d1e-977fef93dfeb
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: Let's go over the day again then.
+      <NodeID>k__BackingField: 2a08e088-e18c-4e85-a0a9-e881a27f12e4
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 4050, y: 1165}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 2a08e088-e18c-4e85-a0a9-e881a27f12e4
+    <Name>k__BackingField: Go Over It All
+    <Text>k__BackingField: '#anim Idle
+
+      Okay, what do you want to know?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What were you really doing at home?
+      <NodeID>k__BackingField: 97357c2b-ce2b-4528-af6d-3ccac5ef64e3
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: Was there anything that happened when you got your paycheck?
+      <NodeID>k__BackingField: 4659b070-caec-4d1c-bc08-1f990e67b7db
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: At what point did you realize you couldn't pay for the
+        medication?
+      <NodeID>k__BackingField: 428eeef3-83db-434e-806f-64c79563bb0a
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: What did you do at the bar, specifically?
+      <NodeID>k__BackingField: 9678259b-5417-4138-bc30-fff7621b1c63
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 4542, y: 1758}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 97357c2b-ce2b-4528-af6d-3ccac5ef64e3
+    <Name>k__BackingField: Actually Did At Home
+    <Text>k__BackingField: '#anim Idle
+
+      I already said what I did, sat and
+      watched TV.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5066, y: 1462}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 4659b070-caec-4d1c-bc08-1f990e67b7db
+    <Name>k__BackingField: When Got Paycheck
+    <Text>k__BackingField: '#anim Rubbing
+
+      I... didn''t say much to my boss.
+      Just gave him a couple scowls as he gave me the check.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Was anyone else getting their check on that day?
+      <NodeID>k__BackingField: cef57ec3-4fc6-4c38-84ce-f950c7e09c0c
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5066, y: 1673}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 13da5a67-1415-47d3-9231-17b6727bc48d
+    <Name>k__BackingField: After You Couldnt Pay
+    <Text>k__BackingField: '#anim Thoughtful
+
+      Went to go drink out my sorrows
+      at the bar. Only sensible thing to do, really.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5561, y: 1914}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 9678259b-5417-4138-bc30-fff7621b1c63
+    <Name>k__BackingField: Did At Bar Specifically
+    <Text>k__BackingField: '#anim Idle
+
+      Like I said, I got to the bar late.
+      Tried to catch up on the game as much as possible and while I was getting wasted.
+      That''s it.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Do you not remember how it went?
+      <NodeID>k__BackingField: 73bdd98d-9343-4813-98df-1cfbce304393
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5066, y: 2179}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 73bdd98d-9343-4813-98df-1cfbce304393
+    <Name>k__BackingField: Really Didnt Remember
+    <Text>k__BackingField: '#anim Idle
+
+      Not particularly, given how drunk I
+      must''ve gotten. A buddy of mine there probably made sure I didn''t die.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5561, y: 2179}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 3be17448-8648-492e-ac4e-08f7b1681a20
+    <Name>k__BackingField: You Were Fired
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: You didn''t leave on your own
+      accord, though. You were fired.
+
+      #anim Thoughtful
+
+      Seven: Yeah,
+      that''s true. I wasn''t putting in my all ''cause of the bad pay and work.
+      Same difference to me.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Why did you lie?
+      <NodeID>k__BackingField: 1169f8b9-4c36-4ebd-84eb-12337997b77b
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: Are you resentful?
+      <NodeID>k__BackingField: 07896254-bab5-44b8-ab13-32eaeb1bdbfb
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 1669, y: 1008}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 1f28a966-9d40-485f-8135-538f8504a088
+    <Name>k__BackingField: What About The Meds
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: What about your mother''s medication?
+      You weren''t able to pay for it then. How were you going to pay for it now?
+
+      #music
+      stop
+
+      #anim Aggressive
+
+      Seven: ... What about it, huh? Think I
+      can''t get another job? Tryna say I''m worthless?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You needed that job, didn't you? Is that why you did
+        it?
+      <NodeID>k__BackingField: 62c6fb70-7a5f-4a2f-9d14-6b5c1a3e245c
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 3574, y: 1165}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 4edba555-c27b-45bf-bd0d-111dab7e3fd6
+    <Name>k__BackingField: MoreThanThat
+    <Text>k__BackingField: 'Anna: You did more than you let on, though. According
+      to someone at the bar, you going on about something strange.
+
+      Seven:
+      To be honest, that night is kinda hazy for me. Drank too much. Prolly spouted
+      some nonsense.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Do you remember whatsoever what that nonsense was?
+      <NodeID>k__BackingField: 4673c41b-ffce-4160-a96c-629017b457f0
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2150, y: 161}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 4673c41b-ffce-4160-a96c-629017b457f0
+    <Name>k__BackingField: Do You Remember
+    <Text>k__BackingField: Nope.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2638, y: 161}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 818560e9-6284-4d84-8452-12596f289623
+    <Name>k__BackingField: Didnt Buy
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: But you didn''t have the medication
+      on you when you were apprehended. Did you actually buy it?
+
+      Seven: ...Okay,
+      I didn''t. Realized that we already had some at home.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Why did that stop you?
+      <NodeID>k__BackingField: ffc13da4-e12d-43d0-abce-e62b1043bd02
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2150, y: -47}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: ffc13da4-e12d-43d0-abce-e62b1043bd02
+    <Name>k__BackingField: Why That Stopped You
+    <Text>k__BackingField: '#anim Thoughtful
+
+      Honestly, I got kinda lazy. I
+      could''ve went in and bought it, but I realized we had some at home in the
+      parking lot and left.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: But were you able to buy it still anyway?
+      <NodeID>k__BackingField: ca36f6a0-ac4d-43a9-9fba-cd59ac0a7ac1
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 2638, y: -47}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 5bba2533-65aa-48c1-9162-4946a80de566
+    <Name>k__BackingField: Company Report
+    <Text>k__BackingField: There was a mass layoff in the company a week before the
+      theft, including the suspect.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 1669, y: 1379}
+    <Type>k__BackingField: 1
+  - <ID>k__BackingField: d5c5c669-c559-4344-a154-ad3c0ef53bec
+    <Name>k__BackingField: Cost of Meds
+    <Text>k__BackingField: '#anim Rubbing
+
+      Don''t remember exactly, but not
+      that much. We''re insured, so it doesn''t matter much.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You're no longer insured though.
+      <NodeID>k__BackingField: 040ca9a6-2632-4d37-856d-b38d5a52766b
+      <KeyIDs>k__BackingField:
+      - 5bba2533-65aa-48c1-9162-4946a80de566
+      - 90210b50-19e7-453a-9a83-42079f47b684
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 2638, y: -495}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: ca36f6a0-ac4d-43a9-9fba-cd59ac0a7ac1
+    <Name>k__BackingField: Able To Buy Anyway
+    <Text>k__BackingField: '#anim Idle
+
+      Yeah. Could''ve gotten it anyway. Just
+      didn''t want to.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You were stopped by your insurance.
+      <NodeID>k__BackingField: 850f9860-5896-4b66-b443-b89caf6de85e
+      <KeyIDs>k__BackingField:
+      - 040ca9a6-2632-4d37-856d-b38d5a52766b
+      - 90210b50-19e7-453a-9a83-42079f47b684
+      - 5bba2533-65aa-48c1-9162-4946a80de566
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 3117, y: -47}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: e227f156-14a5-46de-a08e-f08bc51d057d
+    <Name>k__BackingField: You Really Cant
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: That''s what you say, but it
+      makes a lot more sense if you weren''t able to cover it now. Remember how you
+      told me you didn''t actually get your mother''s medication?
+
+      Seven: ...
+
+      Anna:
+      Assuming you want to take care of her, why would you stop there. Only if you
+      really couldn''t.
+
+      Seven: ...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 3606, y: -495}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 850f9860-5896-4b66-b443-b89caf6de85e
+    <Name>k__BackingField: Stopped By Insurance
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: Are you sure? It seems to me
+      that maybe you weren''t able to. It would make a lot more sense, after all
+      you love your mom and want to care of her mom, right?
+
+      Seven: ...
+
+      Anna:
+      So, something stopped you. That being your insurance being taken away.
+
+      Seven:
+      ...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 3606, y: -47}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 040ca9a6-2632-4d37-856d-b38d5a52766b
+    <Name>k__BackingField: No Longer Insured
+    <Text>k__BackingField: '#anim Idle
+
+      Anna: But you''re no longer insured,
+      are you? Not after you got fired.
+
+      Seven: ...That won''t really matter.
+      I can still cover it.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: No, you really can't.
+      <NodeID>k__BackingField: e227f156-14a5-46de-a08e-f08bc51d057d
+      <KeyIDs>k__BackingField:
+      - ca36f6a0-ac4d-43a9-9fba-cd59ac0a7ac1
+      - 90210b50-19e7-453a-9a83-42079f47b684
+      - 5bba2533-65aa-48c1-9162-4946a80de566
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 3117, y: -495}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: f69f5dbe-48d6-4b1a-9a3c-5464696426c2
+    <Name>k__BackingField: No Bank Activity
+    <Text>k__BackingField: 'Anna: But there was no activity in your bank account
+      that day.
+
+      #anim Shocked
+
+      Seven: Then... I...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You can't keep covering for yourself. Tell me the truth.
+      <NodeID>k__BackingField: b0e8d5a2-d529-482f-b5ce-30ca7e4c61ac
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 6101, y: 1103}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: b0e8d5a2-d529-482f-b5ce-30ca7e4c61ac
+    <Name>k__BackingField: Confession
+    <Text>k__BackingField: '#music stop
+
+      #anim Thoughtful
+
+      Seven: ...Okay,
+      you got me...
+
+      #game end'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 6624, y: 1103}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 0c834d83-c689-44c8-90a7-4cf1fa302b2d
+    <Name>k__BackingField: Start
+    <Text>k__BackingField: 'Anna: Good evening. You''re Seven I presume?
+
+      Seven:
+      Yup, that''s me.
+
+      Anna: Good. Let''s get started, shall we?
+
+      Seven:
+      Sure, why not...
+
+      #music Seven1
+
+      ...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What were doing on the 12th?
+      <NodeID>k__BackingField: 079a3ca8-9bd8-4b5e-81ae-70855e77eae3
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: Tell me about yourself.
+      <NodeID>k__BackingField: b164e3c6-8aab-4a53-9caa-e84b001fd24d
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 198, y: 265}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 961a9358-72fe-4fb4-8d1e-977fef93dfeb
+    <Name>k__BackingField: Why It Cant Be You
+    <Text>k__BackingField: '#anim Aggressive
+
+      If I was one the one to steal
+      the money, where did it go?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You gave it to your friend.
+      <NodeID>k__BackingField: 6f7249f3-6bfc-47bf-80d6-1f5b23416906
+      <KeyIDs>k__BackingField:
+      - 73bdd98d-9343-4813-98df-1cfbce304393
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 4545, y: 1103}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 6f7249f3-6bfc-47bf-80d6-1f5b23416906
+    <Name>k__BackingField: Gave To A Friend
+    <Text>k__BackingField: '#anim Shocked
+
+      Seven: ...What?
+
+      Anna: You
+      could''ve given it to your friends to keep safe for you.
+
+      #anim Aggressive
+
+      Seven:
+      How do you know that? Sounds like you''re just spitballing me.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: You had next to no money on you.
+      <NodeID>k__BackingField: 15f83976-601d-4508-ac20-ca6ad2b0bc6b
+      <KeyIDs>k__BackingField:
+      - 367ff0bf-ca1b-48bb-9253-55264557927b
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 5066, y: 1103}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 15f83976-601d-4508-ac20-ca6ad2b0bc6b
+    <Name>k__BackingField: No Money On You
+    <Text>k__BackingField: '#anim Aggressive
+
+      Anna: Then where did all the
+      money you got from your check go? I can''t imagine it went all to alcohol.
+
+      Seven:
+      I... put it my bank acount.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: There was no activity in your account.
+      <NodeID>k__BackingField: f69f5dbe-48d6-4b1a-9a3c-5464696426c2
+      <KeyIDs>k__BackingField:
+      - c41a2a65-eaa6-437d-9e84-46c28f84ff8a
+      <Type>k__BackingField: 1
+    <Position>k__BackingField: {x: 5561, y: 1103}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: cef57ec3-4fc6-4c38-84ce-f950c7e09c0c
+    <Name>k__BackingField: Anyone Else Getting Check
+    <Text>k__BackingField: '#anim Idle
+
+      A couple others, yeah. Also were pretty
+      pissed.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 5561, y: 1673}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: c41a2a65-eaa6-437d-9e84-46c28f84ff8a
+    <Name>k__BackingField: Crime And Timeline
+    <Text>k__BackingField: The theft was suspected to happen after 3:30 PM, as the
+      last worker had clocked out at that point. The theft was reported at 7:15 PM,
+      after the owner noticed the missing money. The suspect was apprehended around
+      9 PM at a bar after an anoymous call reporting he was talking about suspicious
+      behavior from the suspect. There is no sign of money being stored in the suspect's
+      bank account.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 2110, y: 493}
+    <Type>k__BackingField: 1
+  - <ID>k__BackingField: 079a3ca8-9bd8-4b5e-81ae-70855e77eae3
+    <Name>k__BackingField: Doing On the 12th
+    <Text>k__BackingField: '#anim Rubbing
+
+      Well... I woke up, stayed at home
+      until I left to go get my last pay around 2. Then spent my time at a local
+      bar.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: When did you arrive at the bar?
+      <NodeID>k__BackingField: f00c4573-1368-4e5f-83d9-37bd7992cdf2
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: What did you do at home?
+      <NodeID>k__BackingField: 1d1dce36-1701-4cff-bf87-fd2887ae0d81
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 698, y: -89}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: f00c4573-1368-4e5f-83d9-37bd7992cdf2
+    <Name>k__BackingField: When Arrived At Bar
+    <Text>k__BackingField: '#anim Rubbing
+
+      Have to have gotten there after
+      5. The Bulls game was already on when I got there.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Why did it take you so long to arrive?
+      <NodeID>k__BackingField: 867186ca-ebd3-4f84-87d4-d7629eefd9e2
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: What were you doing at the bar?
+      <NodeID>k__BackingField: 86e78b1d-8529-4cc1-b8c2-c69b7f06ef55
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 1167, y: -211}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: 1d1dce36-1701-4cff-bf87-fd2887ae0d81
+    <Name>k__BackingField: Did At Home
+    <Text>k__BackingField: '#anim Idle
+
+      Didn''t do much... sat around watching
+      TV.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 1167, y: 43}
+    <Type>k__BackingField: 0
+  <OldDialogueNames>k__BackingField:
+  - Kind Of Meds
+  - What You Did At Bar
+  - Realized Couldnt Pay
+  - All You Did
+  - Tell About Yourself
+  - Time Between Arriving
+  - Where You Worked
+  - Have Any Skills
+  - Looking For Job
+  - Why You Lied
+  - Not Looking Good
+  - Resentful
+  - Not Worried
+  - You Needed That Job
+  - Go Over It All
+  - Actually Did At Home
+  - When Got Paycheck
+  - After You Couldnt Pay
+  - Did At Bar Specifically
+  - Really Didnt Remember
+  - You Were Fired
+  - What About The Meds
+  - MoreThanThat
+  - Do You Remember
+  - Didnt Buy
+  - Why That Stopped You
+  - Cost of Meds
+  - Able To Buy Anyway
+  - You Really Cant
+  - Stopped By Insurance
+  - No Longer Insured
+  - No Bank Activity
+  - Confession
+  - Start
+  - Why It Cant Be You
+  - Gave To A Friend
+  - No Money On You
+  - Anyone Else Getting Check
+  - Doing On the 12th
+  - When Arrived At Bar
+  - Did At Home
+  <OldEvidenceNames>k__BackingField:
+  - Strom Construction
+  - Possesions
+  - Company Report
+  - Crime And Timeline

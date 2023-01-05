@@ -56,7 +56,7 @@ public class DialogueTextManager : MonoBehaviour
             animator.SetBool("talking", true);
 
             //If using punctuation, increase time delay and stop animation to simulate actual speech better
-            if (letter == '.' || letter == '?')
+            if (letter == '.' || letter == '?' || letter == '!')
             {
                 time *= 10;
                 animator.SetBool("talking", false);
@@ -72,6 +72,8 @@ public class DialogueTextManager : MonoBehaviour
 
             yield return new WaitForSeconds(time);
         }
+
+        animator.SetBool("talking", false);
 
         ctcObject.SetActive(true);
 

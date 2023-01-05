@@ -15,7 +15,7 @@ namespace Interrogation.Ingame
 
         private Vector2 startingPos;
 
-        //Creates the flowchart
+        //Called when interrogation manager intializes
         public void Initialize(DialogueSO startingDialogue, InterrogationDialogueManager interroManager)
         {
             interrogationManager = interroManager;
@@ -32,8 +32,11 @@ namespace Interrogation.Ingame
             if (root != null)
             {
                 GameObject node = Instantiate(nodeObject, this.transform);
+                //Sets as first child in order to keep connecting lines to be below the nodes themselves
                 node.transform.SetAsFirstSibling();
+                //Renames gameObject to be that of dialogue
                 node.name = root.Name;
+                //Starts flowchart node script
                 node.GetComponent<FlowchartNode>().Initialize(root, interrogationManager);
                 nodeList.Add(node);
 
@@ -42,17 +45,21 @@ namespace Interrogation.Ingame
                     node.GetComponent<FlowchartNode>().previousNode = previous;
                 }
 
+                //Places node and draws line for previous connection
                 node.GetComponent<FlowchartNode>().Draw(startingPos);
 
                 foreach (DialogueChoiceData dialogueChoice in root.Choices)
                 {
+                    //Continues on with new dialogues
                     AddNodesFromTree(dialogueChoice.NextDialogue, node);
                 }
             }
         }
 
+        //Called when advancing to new dialogue/going back in InterrogationDialogueManager
         public void UpdateFlowchart(DialogueSO dialogue, bool advancing)
         {
+            //If advancing to new dialogue, get the new dialogue's appropriate node and highlight it
             if(advancing)
             {
                 foreach (GameObject node in nodeList)
@@ -64,6 +71,7 @@ namespace Interrogation.Ingame
                     }
                 }
             }
+            //If going back, get the current dialogue and color its appropriate node the default
             else
             {
                 foreach (GameObject node in nodeList)
@@ -77,8 +85,10 @@ namespace Interrogation.Ingame
             
         }
 
+        //Called when jumping the flowchart by the InterrogationDialogeManager
         public void RehighlightedNodes(Stack<DialogueSO> dialogueList)
         {
+            //Checks each node if its dialogue is the new previous dialogue list, colors it appropriately
             foreach (GameObject node in nodeList)
             {
                 if(dialogueList.Contains(node.GetComponent<FlowchartNode>().dialogue))

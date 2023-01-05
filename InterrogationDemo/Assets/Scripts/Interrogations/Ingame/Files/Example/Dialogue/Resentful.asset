@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Resentful
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: Eh, not too much. Like I said, wasn't great work.
+  <Text>k__BackingField: '#anim Idle
+
+    Eh, not too much. Like I said, wasn''t
+    great work.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: You're not worried about what to do next?
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 8ebde5690c0fc2641863fc91c5ffe858, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 51eef4d2bcfc63947a00088685f490f1, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 3560918ea566b43478107b2591779517, type: 2}
   <Position>k__BackingField: {x: 2150, y: 1165}

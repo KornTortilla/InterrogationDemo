@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Kind Of Meds
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: Insulin. My ma' has diabetes. Type 1.
+  <Text>k__BackingField: '#anim Idle
+
+    Insulin. My ma'' has diabetes. Type 2.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: How much does it cost?
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 82aee950720872146acfbe969ec1bec1, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 35f532067cb4d34499712a7124443e6e, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: e7dfed6b57acb024d8a883eba79a85c8, type: 2}
   <Position>k__BackingField: {x: 2150, y: -495}

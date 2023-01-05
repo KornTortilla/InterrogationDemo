@@ -14,13 +14,17 @@ public class HorizontalDrawerTween : MonoBehaviour
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        //Get left side by anchored position assuming object is set to be anchored to the left of canvas
         leftX = rectTransform.anchoredPosition.x;
+        //Gets right side by adding to left side with width of evidence list
         rightX = leftX + transform.GetChild(0).GetComponent<RectTransform>().rect.width;
+        //Is closed by default
         open = false;
     }
 
     public void Move()
     {
+        //Moves based on opening or closing drawer
         if (!open)
         {
             LeanTween.moveX(rectTransform, rightX, time).setEase(openCurve);

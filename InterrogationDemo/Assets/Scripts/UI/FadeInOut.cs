@@ -12,6 +12,7 @@ public class FadeInOut : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
 
+        //If not set to begin opaque, set alpha to 0 instantly
         if (!beginOpaque) LeanTween.alpha(rectTransform, 0, 0);
     }
 

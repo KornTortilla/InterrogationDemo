@@ -12,16 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
   m_Name: DidntBuy
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: DidntBuy
+  <Name>k__BackingField: Didnt Buy
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: 'Anna: But you didn''t have the medication on you when you
-    were apprehended. Did you actually buy it?
+  <Text>k__BackingField: '#anim Idle
 
-    Seven: ...Okay, I didn''t. Realized
-    that we already had some at home.'
+    Anna: But you didn''t have the medication
+    on you when you were apprehended. Did you actually buy it?
+
+    Seven: ...Okay,
+    I didn''t. Realized that we already had some at home.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: Why didn't stock up on it then?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 1d0f00829a5a9f34da2aadc50d7a3140, type: 2}
+  - <Text>k__BackingField: Why did that stop you?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 72051cc6183f11945a996e783bfb2c7f, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 35f532067cb4d34499712a7124443e6e, type: 2}
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
+    <Keys>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: e7dfed6b57acb024d8a883eba79a85c8, type: 2}
   <Position>k__BackingField: {x: 2150, y: -47}

@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Did At Bar Specifically
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: Like I said, I got to the bar late. Tried to catch up on
-    the game as much as possible and while I was getting wasted. That's it.
+  <Text>k__BackingField: '#anim Idle
+
+    Like I said, I got to the bar late. Tried
+    to catch up on the game as much as possible and while I was getting wasted. That''s
+    it.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Do you not remember how it went?
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: e5ffa744189c9444585fcfc569f7669f, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: d873c6eeb2d683d49bbb69af18839daa, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 158ce4fec4a945b4ab365da6fcb91824, type: 2}
   <Position>k__BackingField: {x: 5066, y: 2179}

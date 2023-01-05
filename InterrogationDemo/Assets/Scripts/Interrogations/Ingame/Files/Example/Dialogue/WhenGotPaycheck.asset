@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: When Got Paycheck
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: I... didn't say much to my boss. Just gave him a couple
-    scowls as he gave me the check.
+  <Text>k__BackingField: '#anim Rubbing
+
+    I... didn''t say much to my boss. Just
+    gave him a couple scowls as he gave me the check.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: Was anything else getting their check on that day?
+  - <Text>k__BackingField: Was anyone else getting their check on that day?
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: f35b8a40cc31d6f4a8d4235b52d8ef7a, type: 2}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: d873c6eeb2d683d49bbb69af18839daa, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 158ce4fec4a945b4ab365da6fcb91824, type: 2}
   <Position>k__BackingField: {x: 5066, y: 1673}

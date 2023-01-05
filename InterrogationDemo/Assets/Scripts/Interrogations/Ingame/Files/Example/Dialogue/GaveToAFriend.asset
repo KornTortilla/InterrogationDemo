@@ -14,17 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Gave To A Friend
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: 'Seven: ...What?
+  <Text>k__BackingField: '#anim Shocked
 
-    Anna: You could''ve given it to your
-    friends to keep safe for you.
+    Seven: ...What?
 
-    Seven: How do you know that? Sounds like you''re
-    just spitballing me.'
+    Anna: You could''ve
+    given it to your friends to keep safe for you.
+
+    #anim Aggressive
+
+    Seven:
+    How do you know that? Sounds like you''re just spitballing me.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: You had next to no money on you.
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: a3a08313035f47d4d9ceab3e1445ce42, type: 2}
     <Keys>k__BackingField:
     - {fileID: 11400000, guid: a79dfc0d01dccd149b7bd4082634d1ee, type: 2}
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 293b5ad436b10dc4997c028ec7e41ece, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 313c384f9ad3fca4ea700be30c339d0a, type: 2}
   <Position>k__BackingField: {x: 5066, y: 1103}

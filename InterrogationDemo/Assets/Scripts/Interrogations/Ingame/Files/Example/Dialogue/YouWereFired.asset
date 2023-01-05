@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: YouWereFired
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: You Were Fired
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Idle
+
+    Anna: You didn''t leave on your own accord,
+    though. You were fired.
+
+    #anim Thoughtful
+
+    Seven: Yeah, that''s true.
+    I wasn''t putting in my all ''cause of the bad pay and work. Same difference
+    to me.'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Why did you lie?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: caac90b7faad04a4e8ec11867db612e5, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: Are you resentful?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 735d2ae9e159a8f46a6d35afdc945144, type: 2}
+    <Keys>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 650ab5c2a2a6b334ea3f8304e8ce01ee, type: 2}
+  <Position>k__BackingField: {x: 1669, y: 1008}

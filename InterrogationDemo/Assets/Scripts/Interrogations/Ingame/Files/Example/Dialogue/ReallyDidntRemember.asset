@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Really Didnt Remember
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: Not particularly, given how drunk I must've gotten. A buddy
-    of mine there probably helped get back home.
+  <Text>k__BackingField: '#anim Idle
+
+    Not particularly, given how drunk I must''ve
+    gotten. A buddy of mine there probably made sure I didn''t die.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}

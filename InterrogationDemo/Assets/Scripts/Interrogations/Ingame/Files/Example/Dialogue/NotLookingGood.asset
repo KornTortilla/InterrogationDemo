@@ -14,15 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Not Looking Good
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: 'Anna: It isn''t looking good though, by your own admission.
+  <Text>k__BackingField: '#anim Idle
 
-    Seven:
-    Well.. we can manage for awhile. Just until I get back on my feet that is. I
-    had everything covered and will have everything covered.'
+    Anna: It isn''t looking good though, by
+    your own admission.
+
+    Seven: Listen... we can manage for awhile. I got time
+    to get back on my feet. Got nothing else to worry about.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: Did you have your mother's medication covered?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: bc83b2462518eaf42923bb54a523fae2, type: 2}
+  - <Text>k__BackingField: Do you have your mother's medication covered?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ae4093002e384bb4284e6160552ce476, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: dab62e302c766e543b7a07bdc0cd802f, type: 2}
+    - {fileID: 11400000, guid: d038eec9c82e38f41b9f3bcfa66a35a3, type: 2}
+    - {fileID: 11400000, guid: 3f1319289b1202b41943654f5b59c4b4, type: 2}
   <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 8ebde5690c0fc2641863fc91c5ffe858, type: 2}
   <Position>k__BackingField: {x: 3099, y: 1165}

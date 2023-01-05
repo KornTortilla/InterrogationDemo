@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Anyone Else Getting Check
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: A couple others, yeah. Also were pretty pissed.
+  <Text>k__BackingField: '#anim Idle
+
+    A couple others, yeah. Also were pretty
+    pissed.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}

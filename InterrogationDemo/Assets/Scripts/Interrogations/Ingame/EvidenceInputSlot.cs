@@ -15,6 +15,7 @@ namespace Interrogation.Ingame
             //fader.FadeOut();
         }
 
+        //When evidence is dropped on object, check if it will accept to signal event through evidence
         public void OnDrop(PointerEventData eventData)
         {
             if (eventData.pointerDrag != null && canAcceptEvidence)
@@ -29,7 +30,7 @@ namespace Interrogation.Ingame
             InterrogationDialogueManager.OnTalkingStart += DisableAcceptEvidence;
             InterrogationDialogueManager.OnTalkingEnd += EnableAcceptEvidence;
 
-            //Listening to events so that image is able to show
+            //Listening to events so that image is able to show on evidence dragging
             EvidenceDragger.OnEvidenceDragBegin += EnableImage;
             EvidenceDragger.OnEvidenceDragEnd += DisableImage;
         }

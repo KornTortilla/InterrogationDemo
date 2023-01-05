@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Cost of Meds
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: Don't remember exactly, but not that much. We're insured,
-    so we can handle it.
+  <Text>k__BackingField: '#anim Rubbing
+
+    Don''t remember exactly, but not that
+    much. We''re insured, so it doesn''t matter much.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: You're no longer insured though.
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 6bff5d8ca5f49c047b008caa470b9f6d, type: 2}

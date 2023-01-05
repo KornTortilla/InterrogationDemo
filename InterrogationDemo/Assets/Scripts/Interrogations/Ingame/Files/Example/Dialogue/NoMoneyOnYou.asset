@@ -14,18 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: No Money On You
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: 'Anna: Then where did all the money you had on you go? I
-    can''t imagine it went all to alcohol.
+  <Text>k__BackingField: '#anim Aggressive
 
-    Seven: I... put it my bank acount.
+    Anna: Then where did all the money
+    you got from your check go? I can''t imagine it went all to alcohol.
 
-    Anna:
-    There was no activity in your bank account that day.
-
-    Seven: Then... I...'
+    Seven:
+    I... put it my bank acount.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: You can't keep covering for yourself. Tell me the truth.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 614fb5480cb713d45a81df7e81b6093b, type: 2}
-    <Keys>k__BackingField: []
+  - <Text>k__BackingField: There was no activity in your account.
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 13382723d9ebe6e40a4d8aaea8713acc, type: 2}
+    <Keys>k__BackingField:
+    - {fileID: 11400000, guid: e69701daa1441394980a1ebf225d2978, type: 2}
   <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 393f1167adb6e2644a13b171766e4ff4, type: 2}
   <Position>k__BackingField: {x: 5561, y: 1103}

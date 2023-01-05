@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Not Worried
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: I mean, I'll get by. Always have, always will. I'll find
-    another job.
+  <Text>k__BackingField: '#anim Idle
+
+    I mean, I''ll get by. Always have, always
+    will. I can always get another job.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: It's not looking good though.
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 2c7743c22f92b0949845c69ce741161d, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: 55bd6f1bc36796349811ae1ae97d5337, type: 2}
-    - {fileID: 11400000, guid: f3cae76daefde0f479cdf6a48d20dfa9, type: 2}
+    - {fileID: 11400000, guid: 5043410d64e83ea43bb813e822fa2e6c, type: 2}
+    - {fileID: 11400000, guid: 94661d10f0e15144b9bc7951d8d85723, type: 2}
   <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 735d2ae9e159a8f46a6d35afdc945144, type: 2}
   <Position>k__BackingField: {x: 2624, y: 1165}

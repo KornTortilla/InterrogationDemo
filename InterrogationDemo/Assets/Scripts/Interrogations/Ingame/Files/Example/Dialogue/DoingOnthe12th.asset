@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: DoingOnthe12th
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Doing On the 12th
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Rubbing
+
+    Well... I woke up, stayed at home until
+    I left to go get my last pay around 2. Then spent my time at a local bar.'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: When did you arrive at the bar?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: dd31b561e839b514ebc4b8d8ed3a8100, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: What did you do at home?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 6e5166016f12d014f85f39c2645ff751, type: 2}
+    <Keys>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: f8eea54b67808ba42ae34999f20b2484, type: 2}
+  <Position>k__BackingField: {x: 698, y: -89}

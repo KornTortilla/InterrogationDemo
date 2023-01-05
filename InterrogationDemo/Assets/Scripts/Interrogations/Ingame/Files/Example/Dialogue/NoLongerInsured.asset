@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: No Longer Insured
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: 'Anna: But you''re no longer insured, are you? Not after
-    you got fired.
+  <Text>k__BackingField: '#anim Idle
 
-    #anim Shocked
+    Anna: But you''re no longer insured, are
+    you? Not after you got fired.
 
-    Seven: ... I guess that''s true, huh?'
+    Seven: ...That won''t really matter. I can
+    still cover it.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: How long until you're no longer insured.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: d1937b020cf6afb49870ed4a8e8a966e, type: 2}
-    <Keys>k__BackingField: []
+  - <Text>k__BackingField: No, you really can't.
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 3f1319289b1202b41943654f5b59c4b4, type: 2}
+    <Keys>k__BackingField:
+    - {fileID: 11400000, guid: 987a43785c17ae54697b8b6675a821ee, type: 2}
+    - {fileID: 11400000, guid: 47b980580abfda54e9b9125a4f86b908, type: 2}
+    - {fileID: 11400000, guid: 46c734179e1a07448b2b7ef1c9df64a2, type: 2}
   <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 82aee950720872146acfbe969ec1bec1, type: 2}
   <Position>k__BackingField: {x: 3117, y: -495}
