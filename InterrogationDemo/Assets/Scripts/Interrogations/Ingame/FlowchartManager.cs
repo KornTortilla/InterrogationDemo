@@ -20,7 +20,7 @@ namespace Interrogation.Ingame
         {
             interrogationManager = interroManager;
             nodeList = new List<GameObject>();
-            nodeObject = Resources.Load("Prefabs/FlowchartNode") as GameObject;
+            nodeObject = Resources.Load("Prefabs/Interrogation/Creation/FlowchartNode") as GameObject;
 
             startingPos = startingDialogue.Position;
 

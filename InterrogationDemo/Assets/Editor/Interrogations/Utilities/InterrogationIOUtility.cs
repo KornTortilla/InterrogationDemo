@@ -74,7 +74,7 @@ namespace Interrogation.Utilities
                 SaveNodesToDialogue(node, dialogueManagerData);
 
                 if(node.NodeType == NodeType.Dialogue) dialogueNodeNames.Add(node.NodeName);
-                else evidenceNodeNames.Add(node.NodeName);
+                else if(node.NodeType == NodeType.Evidence) evidenceNodeNames.Add(node.NodeName);
             }
 
             UpdateDialogueConnections();
@@ -149,7 +149,7 @@ namespace Interrogation.Utilities
 
                 SaveAsset(dialogueData);
             }
-            else
+            else if(node.NodeType == NodeType.Evidence)
             {
                 EvidenceSO evidenceData;
 
@@ -165,6 +165,10 @@ namespace Interrogation.Utilities
                 createdSOs.Add(node.ID, evidenceData);
 
                 SaveAsset(evidenceData);
+            }
+            else
+            {
+                dialogueManagerData.BriefingText = node.Text;
             }
         }
 

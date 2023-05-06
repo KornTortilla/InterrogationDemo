@@ -89,6 +89,7 @@ namespace Interrogation.Windows
 
             this.AddManipulator(CreateNodeContextualMenu("Add Dialogue Node", NodeType.Dialogue, "Dialogue Name"));
             this.AddManipulator(CreateNodeContextualMenu("Add Evidence Node", NodeType.Evidence, "Evidence Name"));
+            this.AddManipulator(CreateNodeContextualMenu("Add Briefing Node", NodeType.Briefing, "Briefing"));
         }
         #endregion
 

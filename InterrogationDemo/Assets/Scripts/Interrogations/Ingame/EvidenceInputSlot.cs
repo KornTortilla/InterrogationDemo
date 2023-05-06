@@ -7,10 +7,14 @@ namespace Interrogation.Ingame
     public class EvidenceInputSlot : MonoBehaviour, IDropHandler
     {
         private bool canAcceptEvidence = false;
+        private Image image;
         private FadeInOut fader;
 
         private void Awake()
         {
+            image = GetComponent<Image>();
+            image.raycastTarget = false;
+
             fader = GetComponent<FadeInOut>();
             //fader.FadeOut();
         }
@@ -47,11 +51,13 @@ namespace Interrogation.Ingame
         private void DisableAcceptEvidence()
         {
             canAcceptEvidence = false;
+            image.raycastTarget = false;
         }
 
         private void EnableAcceptEvidence()
         {
             canAcceptEvidence = true;
+            image.raycastTarget = true;
         }
 
         private void EnableImage()

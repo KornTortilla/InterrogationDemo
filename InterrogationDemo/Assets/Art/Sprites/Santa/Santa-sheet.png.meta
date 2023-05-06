@@ -1,0 +1,1399 @@
+fileFormatVersion: 2
+guid: bbad9ea589b10da4b9fa30a1c1ab8274
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Santa-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1533
+        width: 140
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aed30d79403fdc47b4648779ba47bf8
+      internalID: -1980347931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1533
+        width: 140
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa125ac30efd204f8b5782ba9bf1abf
+      internalID: -804615433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1533
+        width: 140
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c43238de18c06349baec52630df9f88
+      internalID: -947144803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1533
+        width: 140
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5263611086ab07145b6e3f5bea8b0711
+      internalID: -644215826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1533
+        width: 140
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ded1f3fffa6de941ba05d41d6e4f731
+      internalID: -242382707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1341
+        width: 96
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a586beb92ba1be4589034d53e5d78dd
+      internalID: 431809556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1341
+        width: 96
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46790f0f7736b64e8bb1ef5efb4f261
+      internalID: 1493787349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1341
+        width: 96
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ead350627378e49b3173a6d862bd9e
+      internalID: 603249920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1341
+        width: 96
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79ffea82b21df44893ad707d7ad7482
+      internalID: -1815738880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1341
+        width: 96
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2eb8e1a13d59d44c9b671e0473b0288
+      internalID: -2068487002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1341
+        width: 77
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe68d867e0d478e46ab0c23c767ad5fc
+      internalID: -639221820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1341
+        width: 77
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c7e6772d8471e4581967e037a179ae
+      internalID: 741673616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1341
+        width: 77
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab99004f15b41843aef2ab2fa81a50e
+      internalID: 875971293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 1341
+        width: 77
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1c39fccfcd66c49b91515517d73d3e
+      internalID: 91278391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1341
+        width: 77
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2e318901d95ac45b79f44101d578c5
+      internalID: -237572090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1145
+        width: 95
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0419a624a01b30d43b74964809ed7001
+      internalID: 745744813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1145
+        width: 95
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e33579fa4da864dae3daf957b3477e
+      internalID: -1809555511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1145
+        width: 95
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71336a1d4211c7743b56e70c0f67a074
+      internalID: -443911104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_18
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1145
+        width: 95
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498ff0184b657624b9b17aee0299ac2f
+      internalID: -1610645681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_19
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1145
+        width: 95
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1c2f63af380a540a4e9bf7dbda1a06
+      internalID: -1742820690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_20
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1145
+        width: 81
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f4275755617ac41bdd926d454b5ae0
+      internalID: 886227035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_21
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1145
+        width: 81
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50486ef875bb2d74897f2c362788308d
+      internalID: 1056019516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_22
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1145
+        width: 81
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9031309e2fc765f48bc0d5c5ca711740
+      internalID: 1369995307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_23
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1145
+        width: 81
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5954e33d4a10941bc4fa05161dfaaa
+      internalID: 181430285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_24
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1145
+        width: 81
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61a2d217ff05574caf1b74f72afb681
+      internalID: 1486075365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_25
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab09c7daf73680459c58afd93b7a1c4
+      internalID: 1099100266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668a0e53b4124c24a9fa22e2c96d58c5
+      internalID: -962296349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_27
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35058bd94c0b8db49a3f8ca1be682b00
+      internalID: 670806029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_28
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8439c5eba57e4c4c8643ed823acf665
+      internalID: -1359446077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_29
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba166c78bf15e84cbd1b6e34b60a1c5
+      internalID: 1602751311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_30
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0745efb2dd016244a079e81476ce956
+      internalID: -828177199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_31
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774a9e28c23a5f440980c3709712cd0b
+      internalID: -781545578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_32
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 950
+        width: 129
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ab77792cdf8914bbdd825d6a04b749
+      internalID: 1970364391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_33
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 764
+        width: 143
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5a4e55142c10947976d369ea674897
+      internalID: 81720207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_34
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 764
+        width: 143
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f4afbf7226c8f44859a438d269ba58
+      internalID: 1452081507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_35
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 764
+        width: 143
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002576e61f757f6459059350a3b27a80
+      internalID: 1587081010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_36
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 764
+        width: 143
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9769838300fe37f4c86abf2f1e7c8746
+      internalID: 1347407848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_37
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 764
+        width: 143
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71683e71c752cd44eb6085af4bb189f4
+      internalID: -181342491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_38
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 573
+        width: 128
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40e56362a100c04b85854739ccef8c1
+      internalID: 1058567974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_39
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 573
+        width: 162
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fe39b5d32d1d7408840c5fbf5c72b4
+      internalID: 1132103372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_40
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 573
+        width: 172
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de3a9485961e784ba74630ca779f4c6
+      internalID: -807644904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_41
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 573
+        width: 174
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49165fab980fc9944af103ed17a87ed7
+      internalID: 1214709208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_42
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 573
+        width: 179
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907b6be95a1a5d34eb84870a4cf6a9f1
+      internalID: 1348046098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_43
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 573
+        width: 175
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca015f1bc895104a950ccbb97aa0623
+      internalID: -2134220540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_44
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 398
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcd534c01d7b9c4f8b0f0a14d13feb7
+      internalID: 503489989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_45
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 398
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112164bc680a5404f8c3bf9307c4ab97
+      internalID: -531678304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_46
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 398
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc0fb7ec7332a848952072936778bb4
+      internalID: 2123605367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_47
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 398
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df268fab314b35848977bcbe906dc339
+      internalID: -1986826085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_48
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 398
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7eeb1c698bf2244b25f8f0aca5a4dd
+      internalID: 1765036303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_49
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 198
+        width: 105
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7919e3a9877a9543a79833ca2b005b9
+      internalID: -1465631856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_50
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 198
+        width: 136
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6b09c9e047071408c0cb673662a774
+      internalID: 490924169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_51
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 198
+        width: 191
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5677fbbbea6bd4f9cf663878b374ef
+      internalID: 1821123777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_52
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 198
+        width: 219
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e89195c3657c046ab69a4ec6e24b46
+      internalID: -644186197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_53
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 198
+        width: 224
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9ce05c7abac624eb7ead511083bdc5
+      internalID: 1928692639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_54
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 6
+        width: 224
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9728dc00c5542114aaf76b344782b96e
+      internalID: -199717193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_55
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 6
+        width: 224
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78340abf17e775c46a8858cb5caa1b4a
+      internalID: -1628582543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_56
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 6
+        width: 224
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b497f186dcdfd1945adeb0f112a44082
+      internalID: 48765842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa-sheet_57
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 6
+        width: 224
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b91c1e8352b494384e310ee50625c8
+      internalID: -1914921900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Santa-sheet_13: 91278391
+      Santa-sheet_50: 490924169
+      Santa-sheet_1: -804615433
+      Santa-sheet_25: 1099100266
+      Santa-sheet_46: 2123605367
+      Santa-sheet_42: 1348046098
+      Santa-sheet_8: -1815738880
+      Santa-sheet_23: 181430285
+      Santa-sheet_0: -1980347931
+      Santa-sheet_35: 1587081010
+      Santa-sheet_40: -807644904
+      Santa-sheet_18: -1610645681
+      Santa-sheet_9: -2068487002
+      Santa-sheet_45: -531678304
+      Santa-sheet_51: 1821123777
+      Santa-sheet_38: 1058567974
+      Santa-sheet_3: -644215826
+      Santa-sheet_2: -947144803
+      Santa-sheet_27: 670806029
+      Santa-sheet_55: -1628582543
+      Santa-sheet_28: -1359446077
+      Santa-sheet_6: 1493787349
+      Santa-sheet_56: 48765842
+      Santa-sheet_7: 603249920
+      Santa-sheet_29: 1602751311
+      Santa-sheet_47: -1986826085
+      Santa-sheet_30: -828177199
+      Santa-sheet_37: -181342491
+      Santa-sheet_53: 1928692639
+      Santa-sheet_20: 886227035
+      Santa-sheet_12: 875971293
+      Santa-sheet_5: 431809556
+      Santa-sheet_49: -1465631856
+      Santa-sheet_32: 1970364391
+      Santa-sheet_31: -781545578
+      Santa-sheet_52: -644186197
+      Santa-sheet_11: 741673616
+      Santa-sheet_10: -639221820
+      Santa-sheet_16: -1809555511
+      Santa-sheet_21: 1056019516
+      Santa-sheet_54: -199717193
+      Santa-sheet_22: 1369995307
+      Santa-sheet_14: -237572090
+      Santa-sheet_24: 1486075365
+      Santa-sheet_39: 1132103372
+      Santa-sheet_41: 1214709208
+      Santa-sheet_33: 81720207
+      Santa-sheet_48: 1765036303
+      Santa-sheet_36: 1347407848
+      Santa-sheet_4: -242382707
+      Santa-sheet_15: 745744813
+      Santa-sheet_34: 1452081507
+      Santa-sheet_57: -1914921900
+      Santa-sheet_26: -962296349
+      Santa-sheet_17: -443911104
+      Santa-sheet_19: -1742820690
+      Santa-sheet_44: 503489989
+      Santa-sheet_43: -2134220540
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

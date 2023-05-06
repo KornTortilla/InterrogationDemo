@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Flowchart
   <Speakers>k__BackingField: []
-  <Text>k__BackingField: 'Now you''re getting the hang of it! I recommend not saving
-    every statement since you won''t have room for everything.
+  <Text>k__BackingField: 'Now you''re getting the hang of it! If you''ve saved a
+    lot of statements, you can scroll through them with the mousewheel.
 
-    Last thing to
-    mention is the Flowchart button at the top right. It will give you an overview
-    of your progress. You can also skip to questions you''ve already asked in the
-    past. With that, you''re ready to get started. Have fun!'
+    Last
+    thing to mention is the Flowchart button at the top right. It will give you an
+    overview of your progress. You can also skip to questions you''ve already asked
+    in the past. With that, you''re ready to get started. Have fun!'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Continue with the game.
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: acb0389e18eeb2944b8c912967c50ef3, type: 2}

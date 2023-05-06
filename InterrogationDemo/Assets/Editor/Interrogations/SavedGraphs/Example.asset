@@ -720,6 +720,28 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Position>k__BackingField: {x: 1167, y: 43}
     <Type>k__BackingField: 0
+  - <ID>k__BackingField: 3f40fd08-63df-4f5b-9a84-0761b6173c53
+    <Name>k__BackingField: Briefing
+    <Text>k__BackingField: 'Sergeant: Hey, we need you for an interrogation. We just
+      got a guy for a recent theft.
+
+      Anna: Okay, what are the details?
+
+      Sergeant:
+      His name''s Seven. Story is that he stole $5k from a construction company.
+      Apparently he used to work there.
+
+      Sergeant: We only got circumstantial
+      evidence, so need you to work your magic in there. Just do things how you usually
+      do and get it done.
+
+      Anna: I''ll be right on it then.
+
+      Anna: (Let''s
+      review the evidence before heading in though.)'
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: -269, y: 265}
+    <Type>k__BackingField: 2
   <OldDialogueNames>k__BackingField:
   - Kind Of Meds
   - What You Did At Bar

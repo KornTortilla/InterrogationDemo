@@ -60,3 +60,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a79dfc0d01dccd149b7bd4082634d1ee, type: 2}
   - {fileID: 11400000, guid: 46c734179e1a07448b2b7ef1c9df64a2, type: 2}
   - {fileID: 11400000, guid: e69701daa1441394980a1ebf225d2978, type: 2}
+  <BriefingText>k__BackingField: 'Sergeant: Hey, we need you for an interrogation.
+    We just got a guy for a recent theft.
+
+    Anna: Okay, what are the details?
+
+    Sergeant:
+    His name''s Seven. Story is that he stole $5k from a construction company. Apparently
+    he used to work there.
+
+    Sergeant: We only got circumstantial evidence, so
+    need you to work your magic in there. Just do things how you usually do and get
+    it done.
+
+    Anna: I''ll be right on it then.
+
+    Anna: (Let''s review the
+    evidence before heading in though.)'

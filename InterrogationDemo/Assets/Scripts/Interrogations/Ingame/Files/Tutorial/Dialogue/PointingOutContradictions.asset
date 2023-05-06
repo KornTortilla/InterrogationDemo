@@ -24,12 +24,15 @@ MonoBehaviour:
     start with once ingame to know what''s going on.
 
     As you go through different
-    questions and find falsehoods, you can drag the evidence that contradicts on
-    the area above the textbox. Try it with the example evidence!'
+    questions and find untrue statements, you can drag the evidence that contradicts
+    on the area above the textbox.
+
+    Try pointing out the following statement
+    as untrue with the correct evidence- "Steven was at the party at 5PM."'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Contradiction Found
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 87fe3e261b894d74a9c329b03c654390, type: 2}
     <Keys>k__BackingField:
-    - {fileID: 11400000, guid: 09ba0e60fa0d8644c95f24793ef79a50, type: 2}
+    - {fileID: 11400000, guid: 166181488791c00408dad904d7a2277e, type: 2}
   <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 052df18df866a9b409cd764aece8e2cc, type: 2}
-  <Position>k__BackingField: {x: 784, y: 146}
+  <Position>k__BackingField: {x: 784, y: 113}

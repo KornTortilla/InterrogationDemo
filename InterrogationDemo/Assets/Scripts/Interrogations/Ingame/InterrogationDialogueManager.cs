@@ -15,7 +15,6 @@ namespace Interrogation.Ingame
     {
         public static event Action OnTalkingStart;
         public static event Action OnTalkingEnd;
-        public static event Action OnInterrogationEnd;
 
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private GameObject evidenceLocker;
@@ -23,10 +22,14 @@ namespace Interrogation.Ingame
         [SerializeField] private GameObject saveDialogueButton;
         [SerializeField] private Animator characterAnimator;
         [SerializeField] private FlowchartManager flowchartManager;
+        [SerializeField] private GameObject sceneBackdrop;
 
         [SerializeField] private DialogueSOManager dialogueManager;
         private DialogueSO currentDialogue;
         private Stack<DialogueSO> pastDialogues;
+
+        private DialogueSO savedDialogue;
+        private GameObject savedDialogueObject;
 
         //Temporary initialization by screen fade in to start script after full
         private void OnEnable()
@@ -51,6 +54,63 @@ namespace Interrogation.Ingame
             pastDialogues.Push(currentDialogue);
 
             InstantiateEvidence();
+
+            StartCoroutine(ParseBriefing());
+        }
+
+        IEnumerator ParseBriefing()
+        {
+            if(!String.IsNullOrEmpty(dialogueManager.BriefingText))
+            {
+                string[] sentences = dialogueManager.BriefingText.Split(
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None
+                );
+
+                StartCoroutine(dialogueTextManager.TypeText(sentences, characterAnimator));
+
+                yield return new WaitUntil(() => dialogueTextManager.isDone);
+
+
+
+                yield return new WaitUntil(() => dialogueTextManager.isDone);
+
+                GameObject choiceButton = Resources.Load("Prefabs/Interrogation/Creation/ChoiceButton") as GameObject;
+
+                GameObject button = Instantiate(choiceButton, choicePanel.transform);
+                button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Head in.";
+                button.GetComponent<Button>().onClick.AddListener(() => StartInterrogation());
+
+                button.GetComponent<RectTransform>().sizeDelta = new Vector2(button.transform.parent.GetComponent<RectTransform>().rect.width, button.GetComponent<RectTransform>().sizeDelta.y);
+                float x = choicePanel.transform.GetComponent<RectTransform>().rect.width;
+                //Gets new y by splitting height into sections based on number of buttons and placing each button into new sections at a time, and offsetting by half the height
+                float y = choicePanel.GetComponent<RectTransform>().rect.height / 2;
+                //Sets starting position of button before motion
+                button.transform.localPosition = new Vector3(x, 0f, button.transform.localPosition.z);
+
+                //Instantiates movement script and sets button to move in direction of motion
+                button.GetComponent<ChoiceTween>().xScale = Mathf.Abs(x);
+                button.GetComponent<ChoiceTween>().Move(-1, true);
+            }
+            else
+            {
+                StartInterrogation();
+            }
+        }
+
+        private void StartInterrogation()
+        {
+            sceneBackdrop.SetActive(true);
+
+            //Removes current choice buttons
+            foreach (Transform child in choicePanel.transform)
+            {
+                child.GetComponent<ChoiceTween>().Move(-1, false);
+
+                child.GetComponent<Button>().enabled = false;
+
+                GameObject.Destroy(child.gameObject, 0.5f);
+            }
 
             StartCoroutine(ParseCurrentDialogue(-1));
 
@@ -82,7 +142,7 @@ namespace Interrogation.Ingame
 
         private void InstantiateEvidence()
         {
-            GameObject evidencePrefab = Resources.Load("Prefabs/EvidenceEntry") as GameObject;
+            GameObject evidencePrefab = Resources.Load("Prefabs/Interrogation/Creation/EvidenceEntry") as GameObject;
 
             foreach (EvidenceSO evidence in dialogueManager.EvidenceList)
             {
@@ -100,7 +160,17 @@ namespace Interrogation.Ingame
         #region creation Methods
         public void CreateDialogueEvidence()
         {
-            GameObject dialoguePrefab = Resources.Load("Prefabs/DialogueEntry") as GameObject;
+            //If there is already a saved dialogue, delete the existing one to make way for the new one
+            if(savedDialogueObject != null)
+            {
+                savedDialogue.Grabbed = false;
+
+                if (currentDialogue == savedDialogue) saveDialogueButton.SetActive(true);
+
+                Destroy(savedDialogueObject);
+            }
+
+            GameObject dialoguePrefab = Resources.Load("Prefabs/Interrogation/Creation/DialogueEntry") as GameObject;
 
             //Splits sentences and grabs last sentence
             string[] sentences = SplitCurrentSentences();
@@ -117,12 +187,11 @@ namespace Interrogation.Ingame
 
             InitializeEvidence(dialogueObject, currentDialogue.Name, sentence, currentDialogue);
 
-            //Distguinshes dialogue used by button function instead of passing the reference
-            DialogueSO entryDialogue = currentDialogue;
-            //Adds function to when button is clicked
-            dialogueObject.transform.GetChild(4).gameObject.GetComponent<Button>().onClick.AddListener(() => DestroyedDialogueEvidence(entryDialogue, dialogueObject));
+            savedDialogueObject = dialogueObject;
 
             currentDialogue.Grabbed = true;
+
+            savedDialogue = currentDialogue;
 
             saveDialogueButton.SetActive(false);
 
@@ -139,22 +208,12 @@ namespace Interrogation.Ingame
             eObject.GetComponent<EvidenceDragger>().onEvidenceAcccepted.AddListener(() => CheckContradiction(sObject));
         }
 
-        public void DestroyedDialogueEvidence(DialogueSO dialogue, GameObject dialogueEvidence)
-        {
-            dialogue.Grabbed = false;
-
-            //If the dialogue saved to the button is the current, activate save button
-            if (currentDialogue == dialogue) saveDialogueButton.SetActive(true);
-
-            Destroy(dialogueEvidence);
-        }
-
         private void CreateChoicesButtons(int dir)
         {
             //Creates list of buttons to populate
             List<GameObject> buttons = new List<GameObject>();
             //Gets choice button prefab to create new buttons out of
-            GameObject choiceButton = Resources.Load("Prefabs/ChoiceButton") as GameObject;
+            GameObject choiceButton = Resources.Load("Prefabs/Interrogation/Creation/ChoiceButton") as GameObject;
 
             //For every choice avaliable, create one with its text
             foreach (DialogueChoiceData choiceData in currentDialogue.Choices)
@@ -167,7 +226,7 @@ namespace Interrogation.Ingame
                     button.transform.GetChild(0).GetComponent<TMP_Text>().text = choiceData.Text;
 
                     //Tie function with bytton click
-                    button.GetComponent<Button>().onClick.AddListener(() => Decide(choiceData));
+                    button.GetComponent<Button>().onClick.AddListener(() => Decide(choiceData.NextDialogue));
 
                     //If its been seen, color it darker
                     if (choiceData.NextDialogue.Seen)
@@ -223,51 +282,9 @@ namespace Interrogation.Ingame
             //Split sentences of text into lines and stores each line
             string[] sentences = SplitCurrentSentences();
 
-            for (int i = 0; i < sentences.Length; i++)
-            {
-                string sentence = sentences[i];
+            StartCoroutine(dialogueTextManager.TypeText(sentences, characterAnimator));
 
-                /*
-                If sentence begins with #, it is a tag and will sepearate the 
-                 first and second words to invoke different events.
-                */
-                if (sentence.Substring(0, 1) == "#")
-                {
-                    string tag = sentence.Substring(1);
-
-                    string prefix = tag.Split(' ')[0].ToLower();
-                    string param = tag.Split(' ')[1];
-
-                    switch (prefix)
-                    {
-                        case "anim":
-                            characterAnimator.Play(param);
-                            break;
-
-                        case "music":
-                            if (param == "stop") AudioManager.Instance.StopMusic();
-                            else AudioManager.Instance.PlayNewTrack(param);
-                            break;
-
-                        case "scene":
-                            SceneLoader.Load(SceneLoader.Scene.Seven);
-                            break;
-
-                        case "game":
-                            OnInterrogationEnd?.Invoke();
-                            break;
-                    }
-
-                    //Skips to next sentence so that tag isn't displayed in text
-                    continue;
-                }
-
-                //If not tag, send sentence to dialogue to write out
-                StartCoroutine(dialogueTextManager.TypeText(sentence, characterAnimator));
-
-                //If the dialogue is done being typed out and the player left clicks, continue
-                yield return new WaitUntil(() => { return (((Input.GetMouseButtonDown(0)) || i == sentences.Length - 1) && dialogueTextManager.isDone); });
-            }
+            yield return new WaitUntil(() => dialogueTextManager.isDone);
 
             OnTalkingEnd?.Invoke();
 
@@ -280,9 +297,9 @@ namespace Interrogation.Ingame
 
         #region Choice Methods
         //Gets called by clicking choice buttons created in CreatedChoiceButtons()
-        private void Decide(DialogueChoiceData choiceData)
+        private void Decide(DialogueSO nextDialogue)
         {
-            AdvanceDialogue(choiceData.NextDialogue, -1);
+            AdvanceDialogue(nextDialogue, -1);
 
             pastDialogues.Push(currentDialogue);
 
@@ -374,7 +391,6 @@ namespace Interrogation.Ingame
                 {
                     int colon = sentence.IndexOf(":");
                     sentence = sentence.Substring(colon + 2);
-                    Debug.Log(sentence);
                 }
 
                 dialogueTextManager.ShowText(sentence);
@@ -416,7 +432,7 @@ namespace Interrogation.Ingame
 
                 openedPath.Opened = true;
 
-                Decide(openedPath);
+                Decide(openedPath.NextDialogue);
             }
 
             //Dialogue when contradiction is found found to be added

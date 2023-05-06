@@ -16,3 +16,4 @@ MonoBehaviour:
   <DialogueList>k__BackingField:
   - {fileID: 11400000, guid: 5801cb41de6cba448bf7d82d2e5d7de3, type: 2}
   <EvidenceList>k__BackingField: []
+  <BriefingText>k__BackingField: Description text.

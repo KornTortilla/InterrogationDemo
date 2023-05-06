@@ -24,6 +24,12 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Position>k__BackingField: {x: 197, y: 317}
     <Type>k__BackingField: 0
+  - <ID>k__BackingField: 65bab915-ea2f-4ea0-b90f-63da2d52708b
+    <Name>k__BackingField: Briefing
+    <Text>k__BackingField: Description text.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: -6, y: 120}
+    <Type>k__BackingField: 2
   <OldDialogueNames>k__BackingField:
   - Dialogue Name
   <OldEvidenceNames>k__BackingField: []

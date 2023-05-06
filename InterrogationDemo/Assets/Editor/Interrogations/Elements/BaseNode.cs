@@ -37,44 +37,6 @@ namespace Interrogation.Elements
 
         public virtual void Draw()
         {
-            #region Title Containter
-            TextField dialogueNameTextField = InterrogationElementUtility.CreateTextArea(NodeName, null, callback =>
-            {
-                TextField target = (TextField) callback.target;
-
-                target.value = callback.newValue.RemoveSpecialCharacters();
-
-                if(string.IsNullOrEmpty(target.value))
-                {
-                    if(!string.IsNullOrEmpty(NodeName))
-                    {
-                        graphView.NameErrorCount++;
-                    }
-                }
-                else
-                {
-                    if(string.IsNullOrEmpty(NodeName))
-                    {
-                        graphView.NameErrorCount--;
-                    }
-                }
-
-                graphView.RemoveNodeDictionary(this);
-
-                NodeName = callback.newValue;
-
-                graphView.AddNodeDictionary(this);
-            });
-
-            dialogueNameTextField.AddStyleClasses(
-                "interro-node__textfield",
-                "interro-node__filename-textfield",
-                "interro-node__textfield__hidden"
-            );
-
-            titleContainer.Insert(0, dialogueNameTextField);
-            #endregion
-
             #region Input Container
             Port inputPort = this.CreatePort("Previous Node", Orientation.Horizontal, Direction.Input, Port.Capacity.Multi);
 

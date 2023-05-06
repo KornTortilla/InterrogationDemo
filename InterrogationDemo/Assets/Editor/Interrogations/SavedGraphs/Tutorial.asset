@@ -14,37 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: a4d3649b-52af-4116-b0d8-b98709501f97
-    <Name>k__BackingField: Im Good
+  - <ID>k__BackingField: 20f00356-cdd9-4da9-87c8-c7c3c0291778
+    <Name>k__BackingField: Start Game
     <Text>k__BackingField: '#scene Seven'
     <Choices>k__BackingField:
     - <Text>k__BackingField: New Choice
       <NodeID>k__BackingField: 
       <KeyIDs>k__BackingField: []
       <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 784, y: 432}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: 64e16d14-a250-4f0d-8c21-2355d572eeca
-    <Name>k__BackingField: Example Evidence
-    <Text>k__BackingField: Just here for teaching purposes.
-    <Choices>k__BackingField: []
-    <Position>k__BackingField: {x: 1252, y: -40}
-    <Type>k__BackingField: 1
-  - <ID>k__BackingField: af4d63a8-472a-4e45-b081-48b3cc2bd52e
-    <Name>k__BackingField: Flowchart
-    <Text>k__BackingField: 'Now you''re getting the hang of it! I recommend not saving
-      every statement since you won''t have room for everything.
-
-      Last thing
-      to mention is the Flowchart button at the top right. It will give you an overview
-      of your progress. You can also skip to questions you''ve already asked in the
-      past. With that, you''re ready to get started. Have fun!'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Continue with the game.
-      <NodeID>k__BackingField: 20f00356-cdd9-4da9-87c8-c7c3c0291778
-      <KeyIDs>k__BackingField: []
-      <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 1722, y: 146}
+    <Position>k__BackingField: {x: 2201, y: 146}
     <Type>k__BackingField: 0
   - <ID>k__BackingField: e275eb1a-4785-47ed-942a-35d2f22a0407
     <Name>k__BackingField: Start
@@ -62,6 +40,34 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Position>k__BackingField: {x: 300, y: 258}
     <Type>k__BackingField: 0
+  - <ID>k__BackingField: a4d3649b-52af-4116-b0d8-b98709501f97
+    <Name>k__BackingField: Im Good
+    <Text>k__BackingField: '#scene Seven'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 784, y: 472}
+    <Type>k__BackingField: 0
+  - <ID>k__BackingField: b307ffc9-6d44-47a4-b3ce-4a83b693041a
+    <Name>k__BackingField: At The Park
+    <Text>k__BackingField: Angela was at the park at 5PM.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 1252, y: -113}
+    <Type>k__BackingField: 1
+  - <ID>k__BackingField: 8188eebc-ab1b-4f4b-ac13-4265365fccbf
+    <Name>k__BackingField: Dentist Appointment
+    <Text>k__BackingField: Steven was at the dentist's at 1PM.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 1252, y: -452}
+    <Type>k__BackingField: 1
+  - <ID>k__BackingField: 7d2a0f4b-8ed0-47f8-b809-870223bf82aa
+    <Name>k__BackingField: In Class
+    <Text>k__BackingField: Steven was seen in class at 5PM.
+    <Choices>k__BackingField: []
+    <Position>k__BackingField: {x: 1252, y: -281}
+    <Type>k__BackingField: 1
   - <ID>k__BackingField: b31e6636-40da-4590-972c-3e24fe47568c
     <Name>k__BackingField: Pointing Out Contradictions
     <Text>k__BackingField: 'That''s perfectly fine! We''ll start with what you''ll
@@ -74,34 +80,29 @@ MonoBehaviour:
       the evidence you start with once ingame to know what''s going on.
 
       As
-      you go through different questions and find falsehoods, you can drag the evidence
-      that contradicts on the area above the textbox. Try it with the example evidence!'
+      you go through different questions and find untrue statements, you can drag
+      the evidence that contradicts on the area above the textbox.
+
+      Try pointing
+      out the following statement as untrue with the correct evidence- "Steven was
+      at the party at 5PM."'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Contradiction Found
       <NodeID>k__BackingField: 735e0907-c0d2-461f-aea1-67ee2d48f8b8
       <KeyIDs>k__BackingField:
-      - 64e16d14-a250-4f0d-8c21-2355d572eeca
+      - 7d2a0f4b-8ed0-47f8-b809-870223bf82aa
       <Type>k__BackingField: 1
-    <Position>k__BackingField: {x: 784, y: 146}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: 20f00356-cdd9-4da9-87c8-c7c3c0291778
-    <Name>k__BackingField: Start Game
-    <Text>k__BackingField: '#scene Seven'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-      <KeyIDs>k__BackingField: []
-      <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 2201, y: 146}
+    <Position>k__BackingField: {x: 784, y: 113}
     <Type>k__BackingField: 0
   - <ID>k__BackingField: 735e0907-c0d2-461f-aea1-67ee2d48f8b8
     <Name>k__BackingField: Using Statements Against Them
     <Text>k__BackingField: 'Nicely done! You can do the same with a suspect''s statements.
-      You can click the Save As Evidence button below to store the statement as evidence
-      and use it to point out contradictions.
+      Once dialogue for a question is over, you can click the Save As Evidence button
+      at the bottom to store the statement in the Evidence Locker and use it to point
+      out contradictions.
 
-      Go back to the last statement
-      and save it to use here!'
+      Go back to the last statement and save it to use
+      here!'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Another Contradiction Found
       <NodeID>k__BackingField: af4d63a8-472a-4e45-b081-48b3cc2bd52e
@@ -110,12 +111,30 @@ MonoBehaviour:
       <Type>k__BackingField: 1
     <Position>k__BackingField: {x: 1252, y: 146}
     <Type>k__BackingField: 0
+  - <ID>k__BackingField: af4d63a8-472a-4e45-b081-48b3cc2bd52e
+    <Name>k__BackingField: Flowchart
+    <Text>k__BackingField: 'Now you''re getting the hang of it! If you''ve saved
+      a lot of statements, you can scroll through them with the mousewheel.
+
+      Last
+      thing to mention is the Flowchart button at the top right. It will give you
+      an overview of your progress. You can also skip to questions you''ve already
+      asked in the past. With that, you''re ready to get started. Have fun!'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Continue with the game.
+      <NodeID>k__BackingField: 20f00356-cdd9-4da9-87c8-c7c3c0291778
+      <KeyIDs>k__BackingField: []
+      <Type>k__BackingField: 0
+    <Position>k__BackingField: {x: 1722, y: 146}
+    <Type>k__BackingField: 0
   <OldDialogueNames>k__BackingField:
-  - Im Good
-  - Flowchart
-  - Start
-  - Pointing Out Contradictions
   - Start Game
+  - Start
+  - Im Good
+  - Pointing Out Contradictions
   - Using Statements Against Them
+  - Flowchart
   <OldEvidenceNames>k__BackingField:
-  - Example Evidence
+  - At The Park
+  - Dentist Appointment
+  - In Class

@@ -15,11 +15,11 @@ MonoBehaviour:
   <Name>k__BackingField: Using Statements Against Them
   <Speakers>k__BackingField: []
   <Text>k__BackingField: 'Nicely done! You can do the same with a suspect''s statements.
-    You can click the Save As Evidence button below to store the statement as evidence
-    and use it to point out contradictions.
+    Once dialogue for a question is over, you can click the Save As Evidence button
+    at the bottom to store the statement in the Evidence Locker and use it to point
+    out contradictions.
 
-    Go back to the last statement and
-    save it to use here!'
+    Go back to the last statement and save it to use here!'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Another Contradiction Found
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: b20be128c80dd4f4a906f87531d79244, type: 2}
