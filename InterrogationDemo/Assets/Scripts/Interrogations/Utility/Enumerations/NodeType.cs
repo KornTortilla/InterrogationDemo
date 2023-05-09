@@ -4,6 +4,6 @@ namespace Interrogation.Enumerations
     {
         Dialogue,
         Evidence,
-        Briefing
+        Profile
     }
 }

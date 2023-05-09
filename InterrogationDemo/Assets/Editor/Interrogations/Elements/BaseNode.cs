@@ -22,7 +22,6 @@ namespace Interrogation.Elements
 
         public virtual void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
-            ID = Guid.NewGuid().ToString();
             NodeName = nodeName;
 
             graphView = interroGraphView;
@@ -37,21 +36,7 @@ namespace Interrogation.Elements
 
         public virtual void Draw()
         {
-            #region Input Container
-            Port inputPort = this.CreatePort("Previous Node", Orientation.Horizontal, Direction.Input, Port.Capacity.Multi);
 
-            inputContainer.Add(inputPort);
-
-            inputContainer.AddToClassList("interro-node__input-container");
-            #endregion
-        }
-
-        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
-        {
-            evt.menu.AppendAction("Disconnect Input Ports", actionEvent => DisconnectPorts(inputContainer));
-            evt.menu.AppendAction("Disconnect Output Ports", actionEvent => DisconnectPorts(outputContainer));
-
-            base.BuildContextualMenu(evt);
         }
 
         #region Utility
@@ -61,7 +46,7 @@ namespace Interrogation.Elements
             DisconnectPorts(outputContainer);
         }
 
-        private void DisconnectPorts(VisualElement container)
+        public void DisconnectPorts(VisualElement container)
         {
             foreach (VisualElement element in container.Children())
             {

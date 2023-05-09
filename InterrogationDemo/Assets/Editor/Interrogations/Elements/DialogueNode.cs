@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace Interrogation.Elements
         public override void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
             base.Initialize(interroGraphView, pos, nodeName);
+
+            ID = Guid.NewGuid().ToString();
 
             Text = "Dialogue text.";
 
@@ -74,7 +77,13 @@ namespace Interrogation.Elements
             titleContainer.Insert(0, dialogueNameTextField);
             #endregion 
 
-            base.Draw();
+            #region Input Container
+            Port inputPort = this.CreatePort("Previous Node", Orientation.Horizontal, Direction.Input, Port.Capacity.Multi);
+
+            inputContainer.Add(inputPort);
+
+            inputContainer.AddToClassList("interro-node__input-container");
+            #endregion
 
             #region Main Container
             Button addChoiceButton = InterrogationElementUtility.CreateButton("Add Choice", () =>
@@ -245,6 +254,16 @@ namespace Interrogation.Elements
 
             outputContainer.Add(lockPathPort);
             outputContainer.Add(keyPort);
+        }
+        #endregion
+
+        #region Utility
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            evt.menu.AppendAction("Disconnect Input Ports", actionEvent => DisconnectPorts(inputContainer));
+            evt.menu.AppendAction("Disconnect Output Ports", actionEvent => DisconnectPorts(outputContainer));
+
+            base.BuildContextualMenu(evt);
         }
         #endregion
     }

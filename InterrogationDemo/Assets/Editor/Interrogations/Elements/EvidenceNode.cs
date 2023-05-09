@@ -1,14 +1,20 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEditor.Experimental.GraphView;
 
 namespace Interrogation.Elements
 {
     using Windows;
     using Enumerations;
     using Utilities;
+    using Data.Save;
 
     public class EvidenceNode : BaseNode
     {
+        public InterrogationEvidenceSaveData Evidence { get; set; }
+        public TextElement nameField;
+        public TextField descField;
+
         public override void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
             base.Initialize(interroGraphView, pos, nodeName);
@@ -18,47 +24,43 @@ namespace Interrogation.Elements
             NodeType = NodeType.Evidence;
         }
 
+        public virtual void InitializeEvidence(InterrogationEvidenceSaveData newEvidence)
+        {
+            Evidence = newEvidence;
+
+            ID = Evidence.ID;
+        }
+
+        public void ChangeText()
+        {
+
+        }
+
         public override void Draw()
         {
             #region Title Containter
-            TextField dialogueNameTextField = InterrogationElementUtility.CreateTextArea(NodeName, null, callback =>
+
+            nameField = new TextElement()
             {
-                TextField target = (TextField)callback.target;
+                text = NodeName
+            };
 
-                target.value = callback.newValue.RemoveSpecialCharacters();
-
-                if (string.IsNullOrEmpty(target.value))
-                {
-                    if (!string.IsNullOrEmpty(NodeName))
-                    {
-                        graphView.NameErrorCount++;
-                    }
-                }
-                else
-                {
-                    if (string.IsNullOrEmpty(NodeName))
-                    {
-                        graphView.NameErrorCount--;
-                    }
-                }
-
-                graphView.RemoveNodeDictionary(this);
-
-                NodeName = callback.newValue;
-
-                graphView.AddNodeDictionary(this);
-            });
-
-            dialogueNameTextField.AddStyleClasses(
+            nameField.AddStyleClasses(
                 "interro-node__textfield",
                 "interro-node__filename-textfield",
                 "interro-node__textfield__hidden"
             );
 
-            titleContainer.Insert(0, dialogueNameTextField);
+            titleContainer.Insert(0, nameField);
             #endregion 
 
-            base.Draw();
+            #region Input Container
+            Port inputPort = this.CreatePort("Previous Node", Orientation.Horizontal, Direction.Input, Port.Capacity.Multi);
+
+            inputContainer.Add(inputPort);
+
+            inputContainer.AddToClassList("interro-node__input-container");
+            #endregion
 
             #region Extensions Container
             VisualElement customDataContainer = new VisualElement();
@@ -67,18 +69,18 @@ namespace Interrogation.Elements
 
             Foldout textFoldout = InterrogationElementUtility.CreateFoldout("Description Text");
 
-            TextField textTextField = InterrogationElementUtility.CreateTextArea(Text, null, callback =>
+            descField = InterrogationElementUtility.CreateTextArea(Text, null, callback =>
             {
                 Text = callback.newValue;
             });
 
-            textTextField.AddStyleClasses(
+            descField.AddStyleClasses(
                 "interro-node__textfield",
                 "interro-node__quote-textfield"
             );
 
 
-            textFoldout.Add(textTextField);
+            textFoldout.Add(descField);
 
             customDataContainer.Add(textFoldout);
 

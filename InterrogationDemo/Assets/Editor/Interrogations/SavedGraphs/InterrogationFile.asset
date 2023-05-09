@@ -13,17 +13,6 @@ MonoBehaviour:
   m_Name: InterrogationFile
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: InterrogationFile
-  <Nodes>k__BackingField:
-  - <ID>k__BackingField: bdae488b-bda1-4bd8-8458-bd9bc7cf21c2
-    <Name>k__BackingField: Dialogue Name
-    <Text>k__BackingField: 
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-      <KeyIDs>k__BackingField: []
-      <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 380, y: 227}
-    <Type>k__BackingField: 0
-  <OldDialogueNames>k__BackingField:
-  - Dialogue Name
+  <Nodes>k__BackingField: []
+  <OldDialogueNames>k__BackingField: []
   <OldEvidenceNames>k__BackingField: []

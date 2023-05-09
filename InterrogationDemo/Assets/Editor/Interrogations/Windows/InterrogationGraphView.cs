@@ -22,6 +22,8 @@ namespace Interrogation.Windows
 
         private int nameErrorCount;
 
+        public List<InterrogationEvidenceSaveData> Evidence { get; set; }
+
         public int NameErrorCount
         {
             get { return nameErrorCount; }
@@ -46,7 +48,11 @@ namespace Interrogation.Windows
 
             nodeDictionary = new SerializableDictionary<string, InterrogationNodeErrorData>();
 
+            Evidence = new List<InterrogationEvidenceSaveData>();
+
             AddGridBackground();
+
+            AddBlackboard();
 
             AddManipulators();
 
@@ -66,6 +72,103 @@ namespace Interrogation.Windows
             grid.StretchToParentSize();
 
             Insert(0, grid);
+        }
+
+        private void AddBlackboard()
+        {
+            Blackboard board = new Blackboard(this);
+
+            board.title = "Profile";
+            board.subTitle = "";
+
+            ScrollView scroll = new ScrollView();
+            board.Add(scroll);
+
+            board.addItemRequested = actionEvent => { AddEvidence(scroll); };
+
+            this.Add(board);
+        }
+
+        private void AddEvidence(VisualElement board)
+        {
+            List<EvidenceNode> evidenceNodes = new List<EvidenceNode>();
+
+            VisualElement evidenceContainer = new VisualElement();
+            evidenceContainer.AddManipulator(new Dragger());
+
+            InterrogationEvidenceSaveData newEvidence = new InterrogationEvidenceSaveData()
+            {
+                Name = "New Evidence",
+                ID = Guid.NewGuid().ToString(),
+                Text = "Evidence description."
+            };
+
+            TextField evidenceNameField = InterrogationElementUtility.CreateTextArea(newEvidence.Name, null, callback =>
+            {
+                newEvidence.Name = callback.newValue;
+
+                foreach(EvidenceNode eNode in evidenceNodes)
+                {
+                    eNode.nameField.text = callback.newValue;
+                }
+            });
+
+            evidenceNameField.AddStyleClasses(
+                "interro-node__textfield",
+                "interro-node__filename-textfield",
+                "interro-node__textfield__hidden"
+            );
+
+            Foldout evidenceFoldout = InterrogationElementUtility.CreateFoldout("Evidence Description");
+
+            TextField evidenceTextField = InterrogationElementUtility.CreateTextArea(newEvidence.Text, null, callback =>
+            {
+                newEvidence.Text = callback.newValue;
+
+                foreach (EvidenceNode eNode in evidenceNodes)
+                {
+                    eNode.descField.value = callback.newValue;
+                }
+            });
+
+            evidenceTextField.AddStyleClasses(
+                "interro-node__textfield",
+                "interro-node__quote-textfield"
+            );
+
+            Button addEvidenceNodeButton = InterrogationElementUtility.CreateButton("+", () =>
+            {
+                EvidenceNode eNode = (EvidenceNode)CreateNode(contentViewContainer.WorldToLocal(Vector2.zero), NodeType.Evidence, newEvidence.Name);
+                eNode.InitializeEvidence(newEvidence);
+
+                evidenceNodes.Add(eNode);
+
+                AddElement(eNode);
+            });
+
+            Button deleteEvidenceButton = InterrogationElementUtility.CreateButton("X", () =>
+            {
+                Evidence.Remove(newEvidence);
+
+                board.Remove(evidenceContainer);
+            });
+
+            addEvidenceNodeButton.AddToClassList("interro-node__button");
+            deleteEvidenceButton.AddToClassList("interro-node__button");
+
+            Evidence.Add(newEvidence);
+
+            evidenceContainer.Add(evidenceNameField);
+
+            evidenceFoldout.Add(evidenceTextField);
+
+            evidenceContainer.Add(evidenceFoldout);
+
+            evidenceContainer.Add(addEvidenceNodeButton);
+
+            evidenceContainer.Add(deleteEvidenceButton);
+
+            board.Add(evidenceContainer);
         }
 
         #region Styles
@@ -88,8 +191,7 @@ namespace Interrogation.Windows
             this.AddManipulator(new RectangleSelector());
 
             this.AddManipulator(CreateNodeContextualMenu("Add Dialogue Node", NodeType.Dialogue, "Dialogue Name"));
-            this.AddManipulator(CreateNodeContextualMenu("Add Evidence Node", NodeType.Evidence, "Evidence Name"));
-            this.AddManipulator(CreateNodeContextualMenu("Add Briefing Node", NodeType.Briefing, "Briefing"));
+            //this.AddManipulator(CreateNodeContextualMenu("Add Evidence Node", NodeType.Evidence, "Evidence Name"));
         }
         #endregion
 
@@ -138,11 +240,6 @@ namespace Interrogation.Windows
             }
 
             return node;
-        }
-
-        internal void RemoveElement(TextField tagTextField)
-        {
-            throw new NotImplementedException();
         }
         #endregion
 
