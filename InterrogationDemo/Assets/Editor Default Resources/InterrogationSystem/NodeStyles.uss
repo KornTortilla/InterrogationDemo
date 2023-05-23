@@ -141,6 +141,28 @@ TextField
 	margin-top: 8px;
 }
 
+.interro-node__evidence-button
+{
+	align: flex-end;
+}
+
+.interro-node__evidence-text
+{
+	font-size: 11px;
+	min-height: 40px;
+	max-height: 200px;
+	width: 210px;
+	white-space: normal;
+	justify-content: flex-end;
+}
+
+.interro-node__evidence-container
+{
+	background-color: rgba(50, 50, 50, 1);
+	flex-direction: row;
+	max-width: 300px;
+}
+
 .unity-toggle__text
 {
 	margin-left: 2px;

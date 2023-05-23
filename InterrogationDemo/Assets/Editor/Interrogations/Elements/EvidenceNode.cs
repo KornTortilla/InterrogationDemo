@@ -46,9 +46,7 @@ namespace Interrogation.Elements
             };
 
             nameField.AddStyleClasses(
-                "interro-node__textfield",
-                "interro-node__filename-textfield",
-                "interro-node__textfield__hidden"
+                "interro-node__evidence-text"
             );
 
             titleContainer.Insert(0, nameField);
