@@ -18,6 +18,8 @@ namespace Interrogation.Windows
 
         private MiniMap miniMap;
 
+        public ProfileBlackboard profile;
+
         private readonly SerializableDictionary<string, InterrogationNodeErrorData> nodeDictionary;
 
         private int nameErrorCount;
@@ -76,26 +78,7 @@ namespace Interrogation.Windows
 
         private void AddBlackboard()
         {
-            Blackboard board = new Blackboard(this);
-
-            board.title = "Profile";
-            board.subTitle = "";
-
-            board.scrollable = true;
-
-            board.addItemRequested = actionEvent => { AddEvidence(board.contentContainer); };
-
-            Foldout evidenceFoldout = InterrogationElementUtility.CreateFoldout("Evidence Description");
-
-            board.Add(evidenceFoldout);
-
-            this.Add(board);
-        }
-
-        private void AddEvidence(VisualElement board)
-        {
-            EvidenceContainer evidenceContainer = new EvidenceContainer();
-            evidenceContainer.Initialize(this, board);
+            profile = new ProfileBlackboard(this);
         }
 
         #region Styles
@@ -159,7 +142,11 @@ namespace Interrogation.Windows
             BaseNode node = (BaseNode)Activator.CreateInstance(nodeType);
 
             node.Initialize(this, pos, nodeName);
-            AddNodeDictionary(node);
+            
+            if(type == NodeType.Dialogue)
+            {
+                AddNodeDictionary(node);
+            }
 
             if (shouldDraw)
             {
@@ -282,7 +269,11 @@ namespace Interrogation.Windows
                 {
                     nodes[i].DisconnectAllPorts();
 
-                    RemoveNodeDictionary(nodes[i]);
+                    if(nodes[i].NodeType == NodeType.Dialogue)
+                    {
+                        RemoveNodeDictionary(nodes[i]);
+                    }
+
                     RemoveElement(nodes[i]);
                 }
             };
@@ -304,6 +295,12 @@ namespace Interrogation.Windows
                             InterrogationChoiceSaveData choiceData = (InterrogationChoiceSaveData) edge.output.userData;
 
                             choiceData.KeyIDs.Add(nextNode.ID);
+                        }
+                        else if (edge.output.name == "Error")
+                        {
+                            InterrogationErrorSaveData errorData = (InterrogationErrorSaveData)edge.output.userData;
+
+                            errorData.EvidenceIDs.Add(nextNode.ID);
                         }
                         else
                         {
@@ -329,19 +326,25 @@ namespace Interrogation.Windows
 
                         Edge edge = (Edge) element;
 
-                        InterrogationChoiceSaveData choiceData = (InterrogationChoiceSaveData)edge.output.userData;
+                        BaseNode node = (BaseNode)edge.input.node;
 
                         if (edge.output.name == "Key")
                         {
-
-                            BaseNode node = (BaseNode)edge.input.node;
+                            InterrogationChoiceSaveData choiceData = (InterrogationChoiceSaveData)edge.output.userData;
 
                             choiceData.KeyIDs.Remove(node.ID);
                         }
-                        else 
+                        else if (edge.output.name == "Error")
                         {
-                            
-                            choiceData.NodeID = "";
+                            InterrogationErrorSaveData errorData = (InterrogationErrorSaveData)edge.output.userData;
+
+                            errorData.EvidenceIDs.Remove(node.ID);
+                        }
+                        else
+                        {
+                            InterrogationChoiceSaveData choiceData = (InterrogationChoiceSaveData)edge.output.userData;
+
+                            choiceData.NodeID = null;
                         }
                     }
                 }
@@ -358,6 +361,8 @@ namespace Interrogation.Windows
             nodeDictionary.Clear();
 
             NameErrorCount = 0;
+
+            profile.Clear();
         }
     }
 }

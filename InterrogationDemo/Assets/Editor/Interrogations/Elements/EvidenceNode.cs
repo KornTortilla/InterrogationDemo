@@ -13,7 +13,6 @@ namespace Interrogation.Elements
     {
         public InterrogationEvidenceSaveData Evidence { get; set; }
         public TextElement nameField;
-        public TextField descField;
 
         public override void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
@@ -22,18 +21,6 @@ namespace Interrogation.Elements
             Text = "Description text.";
 
             NodeType = NodeType.Evidence;
-        }
-
-        public virtual void InitializeEvidence(InterrogationEvidenceSaveData newEvidence)
-        {
-            Evidence = newEvidence;
-
-            ID = Evidence.ID;
-        }
-
-        public void ChangeText()
-        {
-
         }
 
         public override void Draw()
@@ -55,11 +42,14 @@ namespace Interrogation.Elements
             #region Input Container
             Port inputPort = this.CreatePort("Previous Node", Orientation.Horizontal, Direction.Input, Port.Capacity.Multi);
 
+            inputPort.userData = Evidence;
+
             inputContainer.Add(inputPort);
 
             inputContainer.AddToClassList("interro-node__input-container");
             #endregion
 
+            /*
             #region Extensions Container
             VisualElement customDataContainer = new VisualElement();
 
@@ -84,6 +74,7 @@ namespace Interrogation.Elements
 
             extensionContainer.Add(customDataContainer);
             #endregion
+            */
 
             RefreshExpandedState();
         }

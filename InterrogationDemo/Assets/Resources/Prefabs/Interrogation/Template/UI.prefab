@@ -737,6 +737,7 @@ GameObject:
   - component: {fileID: 2243762556219869145}
   - component: {fileID: 2243762556219869156}
   - component: {fileID: 2243762556219869159}
+  - component: {fileID: 3304213482280735035}
   m_Layer: 5
   m_Name: ChoicePanel
   m_TagString: Untagged
@@ -752,7 +753,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2243762556219869144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -786,6 +787,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2243762556219869144}
   m_CullTransparentMesh: 1
+--- !u!114 &3304213482280735035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243762556219869144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91260552b43e14a4793b77119fb37f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginOpaque: 1
+  alpha: 1
+  time: 0.2
 --- !u!1 &2243762556256264978
 GameObject:
   m_ObjectHideFlags: 0

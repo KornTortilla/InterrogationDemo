@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
 
 namespace Interrogation.Utilities
@@ -14,6 +15,7 @@ namespace Interrogation.Utilities
     using Data;
     using Data.Save;
     using ScriptableObjects;
+    
 
     public class InterrogationIOUtility
     {
@@ -25,6 +27,7 @@ namespace Interrogation.Utilities
 
         private static Dictionary<string, ScriptableObject> createdSOs;
 
+        private static Dictionary<string, BaseNode> savedNodes;
         private static Dictionary<string, BaseNode> loadedNodes;
 
         public static void Intialize(InterrogationGraphView interroGraphView, string graphName)
@@ -37,6 +40,7 @@ namespace Interrogation.Utilities
 
             createdSOs = new Dictionary<string, ScriptableObject>();
 
+            savedNodes = new Dictionary<string, BaseNode>();
             loadedNodes = new Dictionary<string, BaseNode>();
         }
 
@@ -52,45 +56,103 @@ namespace Interrogation.Utilities
 
             graphData.Intialize(graphFileName);
 
-            DialogueSOManager dialogueManagerData = CreateAsset<DialogueSOManager>(containerFolderPath, graphFileName);
+            DialogueSOManager dialogueSOManager = CreateAsset<DialogueSOManager>(containerFolderPath, graphFileName);
 
-            dialogueManagerData.Initialize(graphFileName);
+            dialogueSOManager.Initialize(graphFileName);
 
-            SaveNodes(graphData, dialogueManagerData);
+            List<string> evidenceNames = new List<string>();
+            List<string> dialogueNames = new List<string>();
+
+            SaveProfile(graphData, dialogueSOManager, evidenceNames);
+            SaveNodes(graphData, dialogueSOManager, dialogueNames);
+            UpdateOldNames(evidenceNames, dialogueNames, graphData);
 
             SaveAsset(graphData);
-            SaveAsset(dialogueManagerData);
+            SaveAsset(dialogueSOManager);
         }
 
-        private static void SaveNodes(InterrogationGraphSaveDataSO graphData, DialogueSOManager dialogueManagerData)
+        private static void SaveProfile(InterrogationGraphSaveDataSO graphData, DialogueSOManager dialogueSOManager, List<string> evidenceNames)
         {
-            List<string> dialogueNodeNames = new List<string>();
-            List<string> evidenceNodeNames = new List<string>();
+            ProfileBlackboard profile = graphView.profile;
 
+            graphData.DefaultErrorResponse = profile.defaultErrorResponse;
+
+            foreach (EvidenceContainer evidenceContainer in profile.EvidenceContainers)
+            {
+                SaveNodesToEvidenceData(evidenceContainer, graphData);
+                graphData.Evidence.Add(evidenceContainer.EvidenceData);
+                SaveProfileEvidenceToDialogue(evidenceContainer.EvidenceData, dialogueSOManager);
+
+                evidenceNames.Add(evidenceContainer.EvidenceData.Name);
+            }
+
+            dialogueSOManager.DefaultErrorResponse = profile.defaultErrorResponse;
+
+            SaveAsset(dialogueSOManager);
+        }
+
+        private static void SaveNodesToEvidenceData(EvidenceContainer evidenceContainer, InterrogationGraphSaveDataSO graphData)
+        {
+            foreach(EvidenceNode eNode in evidenceContainer.EvidenceNodes)
+            {
+                graphView.profile.subTitle = "Got";
+
+                evidenceContainer.EvidenceData.NodeIDs.Add(eNode.ID);
+            }
+        }
+
+        private static void SaveProfileEvidenceToDialogue(InterrogationEvidenceSaveData evidenceData, DialogueSOManager dialogueSoManager)
+        {
+            EvidenceSO evidenceSO;
+
+            evidenceSO = CreateAsset<EvidenceSO>($"{containerFolderPath}/Evidence", evidenceData.Name.RemoveWhitespaces());
+
+            dialogueSoManager.EvidenceList.Add(evidenceSO);
+
+            evidenceSO.Initialize(
+                evidenceData.Name,
+                evidenceData.Text
+            );
+
+            createdSOs.Add(evidenceData.ID, evidenceSO);
+
+            SaveAsset(evidenceSO);
+        }
+
+        private static void SaveNodes(InterrogationGraphSaveDataSO graphData, DialogueSOManager dialogueSOManager, List<string> dialogueNames)
+        {
             foreach (BaseNode node in nodes)
             {
                 graphData.Nodes.Add(SaveNodesToGraph(node));
 
-                SaveNodesToDialogue(node, dialogueManagerData);
+                SaveNodesToDialogue(node, dialogueSOManager);
 
-                if(node.NodeType == NodeType.Dialogue) dialogueNodeNames.Add(node.NodeName);
-                else if(node.NodeType == NodeType.Evidence) evidenceNodeNames.Add(node.NodeName);
+                if(node.NodeType == NodeType.Dialogue) dialogueNames.Add(node.NodeName);
+
+                savedNodes.Add(node.ID, node);
             }
 
             UpdateDialogueConnections();
-
-            UpdateOldNodes(dialogueNodeNames, evidenceNodeNames, graphData);
         }
 
         private static InterrogationNodeSaveData SaveNodesToGraph(BaseNode node)
         {
             List<InterrogationChoiceSaveData> choices = null;
+            List<InterrogationErrorSaveData> errors = null;
+            InterrogationEvidenceSaveData evidence = null;
 
             if (node.NodeType == NodeType.Dialogue)
             {
                 DialogueNode dialogueNode = (DialogueNode) node;
 
                 choices = CloneNodeChoices(dialogueNode.Choices);
+                errors = CloneNodeErrors(dialogueNode.Errors);
+            }
+            else if (node.NodeType == NodeType.Evidence)
+            {
+                EvidenceNode eNode = (EvidenceNode)node;
+
+                evidence = CloneNodeEvidence(eNode.Evidence);
             }
 
             InterrogationNodeSaveData nodeData = new InterrogationNodeSaveData()
@@ -98,6 +160,8 @@ namespace Interrogation.Utilities
                 ID = node.ID,
                 Name = node.NodeName,
                 Choices = choices,
+                Errors = errors,
+                Evidence = evidence,
                 Text = node.Text,
                 Position = node.GetPosition().position,
                 Type = node.NodeType
@@ -126,57 +190,68 @@ namespace Interrogation.Utilities
             return choices;
         }
 
-        private static void SaveNodesToDialogue(BaseNode node, DialogueSOManager dialogueManagerData)
+        private static List<InterrogationErrorSaveData> CloneNodeErrors(List<InterrogationErrorSaveData> nodeErrors)
+        {
+            List<InterrogationErrorSaveData> errors = new List<InterrogationErrorSaveData>();
+
+            foreach (InterrogationErrorSaveData error in nodeErrors)
+            {
+                InterrogationErrorSaveData errorData = new InterrogationErrorSaveData()
+                {
+                    Text = error.Text,
+                    EvidenceIDs = error.EvidenceIDs
+                };
+
+                errors.Add(errorData);
+            }
+
+            return errors;
+        }
+
+        private static InterrogationEvidenceSaveData CloneNodeEvidence(InterrogationEvidenceSaveData evidence)
+        {
+            InterrogationEvidenceSaveData evidenceData = new InterrogationEvidenceSaveData()
+            {
+                Name = evidence.Text,
+                ID = evidence.ID,
+                Text = evidence.Text,
+                NodeIDs = evidence.NodeIDs
+            };
+
+            return evidenceData;
+        }
+
+        private static void SaveNodesToDialogue(BaseNode node, DialogueSOManager dialogueSoManager)
         {
             if(node.NodeType == NodeType.Dialogue)
             {
-                DialogueSO dialogueData;
+                DialogueSO dialogueSO;
 
                 DialogueNode dialogueNode = (DialogueNode)node;
 
-                dialogueData = CreateAsset<DialogueSO>($"{containerFolderPath}/Dialogue", node.NodeName.RemoveWhitespaces());
+                dialogueSO = CreateAsset<DialogueSO>($"{containerFolderPath}/Dialogue", node.NodeName.RemoveWhitespaces());
 
-                dialogueManagerData.DialogueList.Add(dialogueData);
+                dialogueSoManager.DialogueList.Add(dialogueSO);
 
-                dialogueData.Initialize(
+                dialogueSO.Initialize(
                     node.NodeName,
                     node.Text,
                     ConvertNodeChoices(dialogueNode.Choices),
+                    ConvertNodeErrors(dialogueNode.Errors),
                     node.GetPosition().position
                 );
 
-                createdSOs.Add(node.ID, dialogueData);
+                createdSOs.Add(node.ID, dialogueSO);
 
-                SaveAsset(dialogueData);
-            }
-            else if(node.NodeType == NodeType.Evidence)
-            {
-                EvidenceSO evidenceData;
-
-                evidenceData = CreateAsset<EvidenceSO>($"{containerFolderPath}/Evidence", node.NodeName.RemoveWhitespaces());
-
-                dialogueManagerData.EvidenceList.Add(evidenceData);
-
-                evidenceData.Initialize(
-                    node.NodeName,
-                    node.Text
-                );
-
-                createdSOs.Add(node.ID, evidenceData);
-
-                SaveAsset(evidenceData);
-            }
-            else
-            {
-                dialogueManagerData.BriefingText = node.Text;
+                SaveAsset(dialogueSO);
             }
         }
 
-        private static List<DialogueChoiceData> ConvertNodeChoices(List<InterrogationChoiceSaveData> nodeChoices) 
+        private static List<DialogueChoiceData> ConvertNodeChoices(List<InterrogationChoiceSaveData> nodeChoices)
         {
             List<DialogueChoiceData> dialogueChoices = new List<DialogueChoiceData>();
 
-            foreach(InterrogationChoiceSaveData nodeChoice in nodeChoices)
+            foreach (InterrogationChoiceSaveData nodeChoice in nodeChoices)
             {
                 DialogueChoiceData choiceData = new DialogueChoiceData()
                 {
@@ -194,6 +269,24 @@ namespace Interrogation.Utilities
             return dialogueChoices;
         }
 
+        private static List<DialogueErrorData> ConvertNodeErrors(List<InterrogationErrorSaveData> nodeErrors)
+        {
+            List<DialogueErrorData> dialogueErrors = new List<DialogueErrorData>();
+
+            foreach (InterrogationErrorSaveData nodeError in nodeErrors)
+            {
+                DialogueErrorData errorData = new DialogueErrorData()
+                {
+                    Text = nodeError.Text,
+                    Evidence = new List<ScriptableObject>()
+                };
+
+                dialogueErrors.Add(errorData);
+            }
+
+            return dialogueErrors;
+        }
+
         private static void UpdateDialogueConnections()
         {
             foreach(BaseNode node in nodes)
@@ -202,7 +295,7 @@ namespace Interrogation.Utilities
                {
                     DialogueNode dialogueNode = (DialogueNode)node;
 
-                    DialogueSO dialogueData = (DialogueSO)createdSOs[dialogueNode.ID];
+                    DialogueSO dialogueSO = (DialogueSO)createdSOs[dialogueNode.ID];
 
                     for (int i = 0; i < dialogueNode.Choices.Count; i++)
                     {
@@ -212,7 +305,7 @@ namespace Interrogation.Utilities
                         {
                             if(createdSOs[nodeChoice.NodeID] is DialogueSO nextDialogueData)
                             {
-                                dialogueData.Choices[i].NextDialogue = nextDialogueData;
+                                dialogueSO.Choices[i].NextDialogue = nextDialogueData;
                             }
                         }
 
@@ -220,11 +313,44 @@ namespace Interrogation.Utilities
                         {
                             foreach (string ID in nodeChoice.KeyIDs)
                             {
-                                dialogueData.Choices[i].Keys.Add(createdSOs[ID]);
+                                if(savedNodes[ID].NodeType ==  NodeType.Evidence)
+                                {
+                                    EvidenceNode eNode = (EvidenceNode)savedNodes[ID];
+
+                                    dialogueSO.Choices[i].Keys.Add(createdSOs[eNode.Evidence.ID]);
+                                }
+                                else
+                                {
+                                    dialogueSO.Choices[i].Keys.Add(createdSOs[ID]);
+                                }
                             }
                         }
 
-                        SaveAsset(dialogueData);
+                        SaveAsset(dialogueSO);
+                    }
+
+                    for (int i = 0; i < dialogueNode.Errors.Count; i++)
+                    {
+                        InterrogationErrorSaveData errorData = dialogueNode.Errors[i];
+
+                        if (errorData.EvidenceIDs != null)
+                        {
+                            foreach (string ID in errorData.EvidenceIDs)
+                            {
+                                if (savedNodes[ID].NodeType == NodeType.Evidence)
+                                {
+                                    EvidenceNode eNode = (EvidenceNode)savedNodes[ID];
+
+                                    dialogueSO.Errors[i].Evidence.Add(createdSOs[eNode.Evidence.ID]);
+                                }
+                                else
+                                {
+                                    dialogueSO.Errors[i].Evidence.Add(createdSOs[ID]);
+                                }
+                            }
+                        }
+
+                        SaveAsset(dialogueSO);
                     }
 
                     Port port = (Port)node.inputContainer.Children().First();
@@ -237,9 +363,9 @@ namespace Interrogation.Utilities
                             {
                                 BaseNode previoudNode = (BaseNode)edge.output.node;
 
-                                dialogueData.PreviousDialogue = (DialogueSO) createdSOs[previoudNode.ID];
+                                dialogueSO.PreviousDialogue = (DialogueSO) createdSOs[previoudNode.ID];
 
-                                SaveAsset(dialogueData);
+                                SaveAsset(dialogueSO);
                             }
                         }
                     }
@@ -247,9 +373,21 @@ namespace Interrogation.Utilities
             }
         }
 
-        private static void UpdateOldNodes(List<string> currentDialogueNames, List<string> currentEvidenceNames, InterrogationGraphSaveDataSO graphData)
+        private static void UpdateOldNames(List<string> currentEvidenceNames, List<string> currentDialogueNames, InterrogationGraphSaveDataSO graphData)
         {
-            if(graphData.OldDialogueNames != null && graphData.OldDialogueNames.Count != 0) {
+            if (graphData.OldEvidenceNames != null && graphData.OldEvidenceNames.Count != 0)
+            {
+                List<string> objectsToRemove = graphData.OldEvidenceNames.Except(currentEvidenceNames).ToList();
+
+                foreach (string objectToRemove in objectsToRemove)
+                {
+                    RemoveAsset($"{containerFolderPath}/Evidence", objectToRemove.RemoveWhitespaces());
+                }
+            }
+
+            graphData.OldEvidenceNames = new List<string>(currentEvidenceNames);
+
+            if (graphData.OldDialogueNames != null && graphData.OldDialogueNames.Count != 0) {
                 List<string> nodesToRemove = graphData.OldDialogueNames.Except(currentDialogueNames).ToList();
 
                 foreach (string nodeToRemove in nodesToRemove)
@@ -259,18 +397,6 @@ namespace Interrogation.Utilities
             }
 
             graphData.OldDialogueNames = new List<string>(currentDialogueNames);
-
-            if (graphData.OldEvidenceNames != null && graphData.OldEvidenceNames.Count != 0)
-            {
-                List<string> nodesToRemove = graphData.OldEvidenceNames.Except(currentEvidenceNames).ToList();
-
-                foreach (string nodeToRemove in nodesToRemove)
-                {
-                    RemoveAsset($"{containerFolderPath}/Evidence", nodeToRemove.RemoveWhitespaces());
-                }
-            }
-
-            graphData.OldEvidenceNames = new List<string>(currentEvidenceNames);
         }
 
         private static void SaveAsset(UnityEngine.Object asset)
@@ -306,6 +432,7 @@ namespace Interrogation.Utilities
 
             LoadNodes(graphData.Nodes);
             LoadNodeConnections();
+            graphView.profile.Load(graphData.DefaultErrorResponse, graphData.Evidence);
         }
 
         private static void LoadNodes(List<InterrogationNodeSaveData> nodes)
@@ -313,13 +440,22 @@ namespace Interrogation.Utilities
             foreach(InterrogationNodeSaveData nodeData in nodes)
             {
                 List<InterrogationChoiceSaveData> choices;
+                List<InterrogationErrorSaveData> errors;
+                InterrogationEvidenceSaveData evidence;
+
                 if (nodeData.Type == NodeType.Dialogue)
                 {
                     choices = CloneNodeChoices(nodeData.Choices);
+                    errors = CloneNodeErrors(nodeData.Errors);
+
+                    evidence = null;
                 }
                 else
                 {
                     choices = null;
+                    errors = null;
+
+                    evidence = CloneNodeEvidence(nodeData.Evidence);
                 }
 
                 BaseNode node = graphView.CreateNode(nodeData.Position, nodeData.Type, nodeData.Name, false);
@@ -331,8 +467,16 @@ namespace Interrogation.Utilities
                 {
                     DialogueNode dialogueNode = (DialogueNode)node;
                     dialogueNode.Choices = choices;
+                    dialogueNode.Errors = errors;
 
                     node = (BaseNode)dialogueNode;
+                }
+                else if(nodeData.Type == NodeType.Evidence)
+                {
+                    EvidenceNode eNode = (EvidenceNode)node;
+                    eNode.Evidence = evidence;
+
+                    node = (BaseNode)eNode;
                 }
 
                 node.Draw();
@@ -379,6 +523,33 @@ namespace Interrogation.Utilities
                                 Edge edge = choicePort.ConnectTo(nextNodeInputPort);
 
                                 graphView.AddElement(edge);
+                            }
+                        }
+                    }
+                }
+
+                foreach (VisualElement parent in loadedNode.Value.extensionContainer.Children())
+                {
+                    foreach(VisualElement element in parent.Children())
+                    {
+                        if (element is Port)
+                        {
+                            Port errorPort = (Port)element;
+
+                            InterrogationErrorSaveData errorData = (InterrogationErrorSaveData)errorPort.userData;
+
+                            if (errorData.EvidenceIDs != null)
+                            {
+                                for (int i = 0; i < errorData.EvidenceIDs.Count; i++)
+                                {
+                                    BaseNode nextNode = loadedNodes[errorData.EvidenceIDs[i]];
+
+                                    Port nextNodeInputPort = (Port)nextNode.inputContainer.Children().First();
+
+                                    Edge edge = errorPort.ConnectTo(nextNodeInputPort);
+
+                                    graphView.AddElement(edge);
+                                }
                             }
                         }
                     }

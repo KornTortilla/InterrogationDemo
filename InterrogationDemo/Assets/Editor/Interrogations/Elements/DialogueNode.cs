@@ -14,12 +14,11 @@ namespace Interrogation.Elements
     public class DialogueNode : BaseNode
     {
         public List<InterrogationChoiceSaveData> Choices { get; set; }
+        public List<InterrogationErrorSaveData> Errors { get; set; }
 
         public override void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
             base.Initialize(interroGraphView, pos, nodeName);
-
-            ID = Guid.NewGuid().ToString();
 
             Text = "Dialogue text.";
 
@@ -33,6 +32,8 @@ namespace Interrogation.Elements
             };
 
             Choices.Add(defaultChoice);
+
+            Errors = new List<InterrogationErrorSaveData>();
 
             NodeType = NodeType.Dialogue;
         }
@@ -123,6 +124,27 @@ namespace Interrogation.Elements
             addLockButton.AddToClassList("interro-node__button");
 
             mainContainer.Insert(2, addLockButton);
+
+            VisualElement errorContainer = new VisualElement();
+
+            Button addErrorButton = InterrogationElementUtility.CreateButton("Add Error Response", () =>
+            {
+                InterrogationErrorSaveData errorData = new InterrogationErrorSaveData()
+                {
+                    Text = "You were wrong.",
+                    EvidenceIDs = new List<string>()
+                };
+
+                CreateError(errorData);
+
+                Errors.Add(errorData);
+            });
+
+            addErrorButton.AddToClassList("interro-node__button");
+
+            mainContainer.Insert(3, addErrorButton);
+
+            mainContainer.Insert(5, errorContainer);
             #endregion
 
             #region Output Container
@@ -165,6 +187,11 @@ namespace Interrogation.Elements
             customDataContainer.Add(textFoldout);
 
             extensionContainer.Add(customDataContainer);
+
+            foreach (InterrogationErrorSaveData error in Errors)
+            {
+                CreateError(error);
+            }
             #endregion
 
             RefreshExpandedState();
@@ -255,9 +282,61 @@ namespace Interrogation.Elements
             outputContainer.Add(lockPathPort);
             outputContainer.Add(keyPort);
         }
+
+        private void CreateError(object userData)
+        {
+            VisualElement newError = new VisualElement();
+
+            Port errorPort = this.CreatePort();
+            errorPort.name = "Error";
+            errorPort.userData = userData;
+
+            InterrogationErrorSaveData errorData = (InterrogationErrorSaveData)userData;
+
+            Foldout errorFoldout = InterrogationElementUtility.CreateFoldout("Error Response Text");
+
+            TextField errorTextField = InterrogationElementUtility.CreateTextArea(errorData.Text, null, callback =>
+            {
+                errorData.Text = callback.newValue;
+            });
+
+            errorTextField.AddStyleClasses(
+                "interro-node__textfield",
+                "interro-node__quote-textfield"
+            );
+
+            
+
+            Button deleteErrorButton = InterrogationElementUtility.CreateButton("X", () =>
+            {
+                if (errorPort.connected) graphView.DeleteElements(errorPort.connections);
+
+                Errors.Remove(errorData);
+
+                extensionContainer.Remove(newError);
+            });
+
+            errorFoldout.Add(errorTextField);
+            errorPort.Add(deleteErrorButton);
+
+            newError.Add(errorFoldout);
+            newError.Add(errorPort);
+
+            extensionContainer.Add(newError);
+        }
         #endregion
 
         #region Utility
+        public override void DisconnectAllPorts()
+        {
+            base.DisconnectAllPorts();
+
+            foreach(VisualElement child in extensionContainer.Children())
+            {
+                DisconnectPorts(child);
+            }
+        }
+
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
         {
             evt.menu.AppendAction("Disconnect Input Ports", actionEvent => DisconnectPorts(inputContainer));

@@ -22,6 +22,8 @@ namespace Interrogation.Elements
 
         public virtual void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
+            ID = Guid.NewGuid().ToString();
+
             NodeName = nodeName;
 
             graphView = interroGraphView;
@@ -40,13 +42,13 @@ namespace Interrogation.Elements
         }
 
         #region Utility
-        public void DisconnectAllPorts()
+        public virtual void DisconnectAllPorts()
         {
             DisconnectPorts(inputContainer);
             DisconnectPorts(outputContainer);
         }
 
-        public void DisconnectPorts(VisualElement container)
+        public virtual void DisconnectPorts(VisualElement container)
         {
             foreach (VisualElement element in container.Children())
             {
@@ -62,6 +64,7 @@ namespace Interrogation.Elements
                     continue;
                 }
 
+                /*
                 foreach(Port ports in element.Children())
                 {
                     if (!ports.connected)
@@ -71,6 +74,7 @@ namespace Interrogation.Elements
 
                     graphView.DeleteElements(ports.connections);
                 }
+                */
             }
         }
 

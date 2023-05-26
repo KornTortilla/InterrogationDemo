@@ -563,7 +563,7 @@ PrefabInstance:
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 11400000, guid: 732eae7bdad851140b71ff33b04ea318, type: 2}
+      objectReference: {fileID: 11400000, guid: 7981d23f6744bad4f9c3129f915c0937, type: 2}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: flowchartManager
       value: 

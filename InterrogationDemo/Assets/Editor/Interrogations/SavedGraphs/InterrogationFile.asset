@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: InterrogationFile
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: InterrogationFile
+  <DefaultErrorResponse>k__BackingField: lmao
+  <Evidence>k__BackingField:
+  - <Name>k__BackingField: A
+    <ID>k__BackingField: 2b56e859-d99a-41d9-9a72-1dac9eed4a26
+    <Text>k__BackingField: Evidence description.
+  - <Name>k__BackingField: B
+    <ID>k__BackingField: 726aecc4-749d-411c-9536-514a434fc0f4
+    <Text>k__BackingField: Evidence description.
   <Nodes>k__BackingField: []
   <OldDialogueNames>k__BackingField: []
   <OldEvidenceNames>k__BackingField: []

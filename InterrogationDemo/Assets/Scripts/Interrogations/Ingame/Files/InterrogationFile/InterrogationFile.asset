@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: InterrogationFile
   <DialogueList>k__BackingField: []
-  <EvidenceList>k__BackingField: []
-  <BriefingText>k__BackingField: 
+  <EvidenceList>k__BackingField:
+  - {fileID: 11400000, guid: cb804c89639c8d64595867c8750de7d5, type: 2}
+  - {fileID: 11400000, guid: c4e4dfa852051684cb702e848c01da7d, type: 2}
+  <DefaultErrorResponse>k__BackingField: lmao

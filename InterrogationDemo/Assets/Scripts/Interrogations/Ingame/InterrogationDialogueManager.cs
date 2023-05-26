@@ -55,9 +55,10 @@ namespace Interrogation.Ingame
 
             InstantiateEvidence();
 
-            StartCoroutine(ParseBriefing());
+            StartInterrogation();
         }
 
+        /*
         IEnumerator ParseBriefing()
         {
             if(!String.IsNullOrEmpty(dialogueManager.BriefingText))
@@ -97,6 +98,7 @@ namespace Interrogation.Ingame
                 StartInterrogation();
             }
         }
+        */
 
         private void StartInterrogation()
         {
@@ -112,7 +114,7 @@ namespace Interrogation.Ingame
                 GameObject.Destroy(child.gameObject, 0.5f);
             }
 
-            StartCoroutine(ParseCurrentDialogue(-1));
+            StartCoroutine(ParseCurrentDialogue(-1, currentDialogue.Text));
 
             flowchartManager.Initialize(currentDialogue, this);
 
@@ -173,7 +175,7 @@ namespace Interrogation.Ingame
             GameObject dialoguePrefab = Resources.Load("Prefabs/Interrogation/Creation/DialogueEntry") as GameObject;
 
             //Splits sentences and grabs last sentence
-            string[] sentences = SplitCurrentSentences();
+            string[] sentences = SplitCurrentSentences(currentDialogue.Text);
             string sentence = sentences[sentences.Length - 1];
 
             //If speaker mentioned, exclude speaker's name to assume suspect ends all conversations
@@ -271,16 +273,21 @@ namespace Interrogation.Ingame
         #endregion
 
         #region Text Method
-        IEnumerator ParseCurrentDialogue(int dir)
+        IEnumerator ParseCurrentDialogue(int dir, string text, bool willStay = false)
         {
             //Calls event when characters speak
             OnTalkingStart?.Invoke();
+
+            foreach(Button button in choicePanel.GetComponentsInChildren<Button>())
+            {
+                button.interactable = false;
+            }
 
             //Disables save button so players cannot save unless seeing the full dialogue
             saveDialogueButton.SetActive(false);
 
             //Split sentences of text into lines and stores each line
-            string[] sentences = SplitCurrentSentences();
+            string[] sentences = SplitCurrentSentences(text);
 
             StartCoroutine(dialogueTextManager.TypeText(sentences, characterAnimator));
 
@@ -288,10 +295,18 @@ namespace Interrogation.Ingame
 
             OnTalkingEnd?.Invoke();
 
+            foreach (Button button in choicePanel.GetComponentsInChildren<Button>())
+            {
+                button.interactable = true;
+            }
+
             saveDialogueButton.SetActive(true);
 
-            //Goes onto create choice buttons once dialogue is finished
-            CreateChoicesButtons(dir);
+            if (!willStay)
+            {
+                //Goes onto create choice buttons once dialogue is finished
+                CreateChoicesButtons(dir);
+            }
         }
         #endregion
 
@@ -378,12 +393,12 @@ namespace Interrogation.Ingame
             //Start typing coroutine if a new dialogue yet to be seen
             if (!currentDialogue.Seen)
             {
-                StartCoroutine(ParseCurrentDialogue(dir));
+                StartCoroutine(ParseCurrentDialogue(dir, currentDialogue.Text));
             }
             //Or get the last sentence minus the possible speaker name and directly puts into text
             else
             {
-                string[] sentences = SplitCurrentSentences();
+                string[] sentences = SplitCurrentSentences(currentDialogue.Text);
 
                 string sentence = sentences[sentences.Length - 1];
 
@@ -436,14 +451,39 @@ namespace Interrogation.Ingame
             }
 
             //Dialogue when contradiction is found found to be added
-            else Debug.Log("Stupid.");
+            else
+            {
+                string distinctError = "";
+
+                foreach(DialogueErrorData errorData in currentDialogue.Errors)
+                {
+                    foreach (ScriptableObject e in errorData.Evidence)
+                    {
+                        //If evidence or dialogue is a key to any choice in the current dialogue,
+                        // we got a contradiction and save the choice it was a key to
+                        if (sObject == e)
+                        {
+                            distinctError = errorData.Text;
+                        }
+                    }
+                }
+
+                if(distinctError != "")
+                {
+                    StartCoroutine(ParseCurrentDialogue(-1, distinctError, true));
+                }
+                else
+                {
+                    StartCoroutine(ParseCurrentDialogue(-1, dialogueManager.DefaultErrorResponse, true));
+                }
+            }
         }
         #endregion
 
         #region Utility Method
-        private string[] SplitCurrentSentences()
+        private string[] SplitCurrentSentences(string text)
         {
-            string[] sentences = currentDialogue.Text.Split(
+            string[] sentences = text.Split(
                 new string[] { "\r\n", "\r", "\n" },
                 StringSplitOptions.None
             );

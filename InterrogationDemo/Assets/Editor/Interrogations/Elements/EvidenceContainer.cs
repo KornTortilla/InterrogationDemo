@@ -10,27 +10,42 @@ namespace Interrogation.Elements
     using Enumerations;
     using Utilities;
     using Data.Save;
+    using System.Linq;
 
-    public class EvidenceContainer : GraphElement
+    public class EvidenceContainer : VisualElement
     {
-        List<EvidenceNode> EvidenceNodes { get; set; }
+        public InterrogationEvidenceSaveData EvidenceData { get; set; }
+        public List<EvidenceNode> EvidenceNodes { get; set; }
 
-        public void Initialize(InterrogationGraphView interroGraphView, VisualElement board)
+        public EvidenceContainer(InterrogationGraphView interroGraphView, ProfileBlackboard board, InterrogationEvidenceSaveData evidenceData)
         {
+            EvidenceData = evidenceData;
+
+            EvidenceNodes = new List<EvidenceNode>();
+
             this.style.width = board.style.width;
 
             VisualElement textContainer = new VisualElement();
             VisualElement creationContianer = new VisualElement();
             VisualElement movementContainer = new VisualElement();
 
-            EvidenceNodes = new List<EvidenceNode>();
-
-            InterrogationEvidenceSaveData evidenceData = new InterrogationEvidenceSaveData()
+            foreach (string ID in EvidenceData.NodeIDs)
             {
-                Name = "New Evidence",
-                ID = Guid.NewGuid().ToString(),
-                Text = "Evidence description."
-            };
+                foreach (BaseNode node in interroGraphView.nodes)
+                {
+                    board.subTitle = "Yes";
+
+                    if (node.NodeType == NodeType.Evidence)
+                    {
+                        EvidenceNode eNode = (EvidenceNode)node;
+
+                        if (eNode.ID == ID)
+                        {
+                            EvidenceNodes.Add(eNode);
+                        }
+                    }
+                }
+            }
 
             TextField evidenceNameField = InterrogationElementUtility.CreateTextArea(evidenceData.Name, null, callback =>
             {
@@ -53,11 +68,6 @@ namespace Interrogation.Elements
             TextField evidenceTextField = InterrogationElementUtility.CreateTextArea(evidenceData.Text, null, callback =>
             {
                 evidenceData.Text = callback.newValue;
-
-                foreach (EvidenceNode eNode in EvidenceNodes)
-                {
-                    eNode.descField.value = callback.newValue;
-                }
             });
 
             evidenceTextField.AddStyleClasses(
@@ -68,7 +78,7 @@ namespace Interrogation.Elements
             Button addEvidenceNodeButton = InterrogationElementUtility.CreateButton("+", () =>
             {
                 EvidenceNode eNode = (EvidenceNode)interroGraphView.CreateNode(interroGraphView.contentViewContainer.WorldToLocal(Vector2.zero), NodeType.Evidence, evidenceData.Name);
-                eNode.InitializeEvidence(evidenceData);
+                eNode.Evidence = evidenceData;
 
                 EvidenceNodes.Add(eNode);
 
@@ -77,18 +87,27 @@ namespace Interrogation.Elements
 
             Button deleteEvidenceButton = InterrogationElementUtility.CreateButton("X", () =>
             {
-                interroGraphView.Evidence.Remove(evidenceData);
+                board.EvidenceContainers.Remove(this);
 
                 board.Remove(this);
+
+                foreach(EvidenceNode eNode in EvidenceNodes)
+                {
+                    eNode.DisconnectAllPorts();
+                    interroGraphView.RemoveElement(eNode);
+                }
             });
 
             Button moveUpButton = InterrogationElementUtility.CreateButton("Up", () =>
             {
                 int position = board.IndexOf(this);
 
-                if(position > 0)
+                if(position > 1)
                 {
                     board.Insert(position - 1, this);
+
+                    board.EvidenceContainers.Remove(this);
+                    board.EvidenceContainers.Insert(position -2, this);
                 }
             });
 
@@ -97,6 +116,9 @@ namespace Interrogation.Elements
                 int position = board.IndexOf(this);
 
                 board.Insert(position + 1, this);
+
+                board.EvidenceContainers.Remove(this);
+                board.EvidenceContainers.Insert(position, this);
             });
 
             addEvidenceNodeButton.AddToClassList("interro-node__button");
@@ -124,7 +146,7 @@ namespace Interrogation.Elements
             this.Add(creationContianer);
             this.Add(movementContainer);
 
-            board.Add(this);
+            board.contentContainer.Add(this);
         }
     }
 }
