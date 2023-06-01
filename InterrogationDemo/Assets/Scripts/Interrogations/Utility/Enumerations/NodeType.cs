@@ -3,7 +3,7 @@ namespace Interrogation.Enumerations
     public enum NodeType
     {
         Dialogue,
-        Evidence,
-        Profile
+        DialogueRep,
+        EvidenceRep
     }
 }

@@ -9,7 +9,8 @@ namespace Interrogation.Data.Save
         [field: SerializeField] public string FileName { get; set; }
         [field: SerializeField] public string DefaultErrorResponse { get; set; }
         [field: SerializeField] public List<InterrogationEvidenceSaveData> Evidence { get; set; }
-        [field: SerializeField] public List<InterrogationNodeSaveData> Nodes { get; set; }
+        [field: SerializeField] public List<InterrogationDialogueNodeSaveData> DialogueNodes { get; set; }
+        [field: SerializeField] public List<InterrogationRepNodeSaveData> RepNodes { get; set; }
         [field: SerializeField] public List<string> OldDialogueNames { get; set; }
         [field: SerializeField] public List<string> OldEvidenceNames { get; set; }
 
@@ -17,7 +18,7 @@ namespace Interrogation.Data.Save
         {
             FileName = fileName;
             Evidence = new List<InterrogationEvidenceSaveData>();
-            Nodes = new List<InterrogationNodeSaveData>();
+            DialogueNodes = new List<InterrogationDialogueNodeSaveData>();
         }
     }
 }

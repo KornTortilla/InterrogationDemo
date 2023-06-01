@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: TimeBetweenArriving
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Time Between Arriving
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Thoughtful
+
+    Oh right. I went to the pharmacy
+    to get my ma''s medicine on the way.'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: What kind of medicine is it?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0f3fa74aa049aa1418e3a2cdeff30304, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: Is that all you did?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9069ece14e8ed2b4cb15d16319b37a2b, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: You didn't actually buy any medication.
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c7905f17c8ae36b48a9ad7364b0ffbac, type: 2}
+    <Keys>k__BackingField:
+    - {fileID: 11400000, guid: 384aba3bd399c1441a0b5100850ac411, type: 2}
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 328bf7c1247f37e4b81446d1097aeb22, type: 2}
+  <Position>k__BackingField: {x: 1669, y: -413}

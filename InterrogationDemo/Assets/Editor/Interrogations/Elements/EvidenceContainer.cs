@@ -14,14 +14,18 @@ namespace Interrogation.Elements
 
     public class EvidenceContainer : VisualElement
     {
-        public InterrogationEvidenceSaveData EvidenceData { get; set; }
-        public List<EvidenceNode> EvidenceNodes { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Text { get; set; }
+        public List<EvidenceRepNode> EvidenceRepNodes { get; set; }
 
-        public EvidenceContainer(InterrogationGraphView interroGraphView, ProfileBlackboard board, InterrogationEvidenceSaveData evidenceData)
+        public EvidenceContainer(InterrogationGraphView interroGraphView, ProfileBlackboard board, string newName, string newText)
         {
-            EvidenceData = evidenceData;
 
-            EvidenceNodes = new List<EvidenceNode>();
+            ID = Guid.NewGuid().ToString();
+            Name = newName;
+            Text = newText;
+            EvidenceRepNodes = new List<EvidenceRepNode>();
 
             this.style.width = board.style.width;
 
@@ -29,30 +33,13 @@ namespace Interrogation.Elements
             VisualElement creationContianer = new VisualElement();
             VisualElement movementContainer = new VisualElement();
 
-            foreach (string ID in EvidenceData.NodeIDs)
+            TextField evidenceNameField = InterrogationElementUtility.CreateTextArea(Name, null, callback =>
             {
-                foreach (BaseNode node in interroGraphView.nodes)
+                Name = callback.newValue;
+
+                foreach (EvidenceRepNode eNode in EvidenceRepNodes)
                 {
-                    board.subTitle = "Yes";
-
-                    if (node.NodeType == NodeType.Evidence)
-                    {
-                        EvidenceNode eNode = (EvidenceNode)node;
-
-                        if (eNode.ID == ID)
-                        {
-                            EvidenceNodes.Add(eNode);
-                        }
-                    }
-                }
-            }
-
-            TextField evidenceNameField = InterrogationElementUtility.CreateTextArea(evidenceData.Name, null, callback =>
-            {
-                evidenceData.Name = callback.newValue;
-
-                foreach (EvidenceNode eNode in EvidenceNodes)
-                {
+                    eNode.NodeName = callback.newValue;
                     eNode.nameField.text = callback.newValue;
                 }
             });
@@ -65,9 +52,9 @@ namespace Interrogation.Elements
 
             Foldout evidenceFoldout = InterrogationElementUtility.CreateFoldout("Evidence Description");
 
-            TextField evidenceTextField = InterrogationElementUtility.CreateTextArea(evidenceData.Text, null, callback =>
+            TextField evidenceTextField = InterrogationElementUtility.CreateTextArea(Text, null, callback =>
             {
-                evidenceData.Text = callback.newValue;
+                Text = callback.newValue;
             });
 
             evidenceTextField.AddStyleClasses(
@@ -77,10 +64,10 @@ namespace Interrogation.Elements
 
             Button addEvidenceNodeButton = InterrogationElementUtility.CreateButton("+", () =>
             {
-                EvidenceNode eNode = (EvidenceNode)interroGraphView.CreateNode(interroGraphView.contentViewContainer.WorldToLocal(Vector2.zero), NodeType.Evidence, evidenceData.Name);
-                eNode.Evidence = evidenceData;
+                Vector2 pos = new Vector2(interroGraphView.contentViewContainer.contentRect.width / 2, interroGraphView.contentViewContainer.contentRect.width / 4);
 
-                EvidenceNodes.Add(eNode);
+                EvidenceRepNode eNode = (EvidenceRepNode)interroGraphView.CreateNode(interroGraphView.contentViewContainer.WorldToLocal(pos), NodeType.EvidenceRep, Name);
+                eNode.InitializeParent(this);
 
                 interroGraphView.AddElement(eNode);
             });
@@ -91,7 +78,7 @@ namespace Interrogation.Elements
 
                 board.Remove(this);
 
-                foreach(EvidenceNode eNode in EvidenceNodes)
+                foreach(EvidenceRepNode eNode in EvidenceRepNodes)
                 {
                     eNode.DisconnectAllPorts();
                     interroGraphView.RemoveElement(eNode);
@@ -128,8 +115,6 @@ namespace Interrogation.Elements
             creationContianer.AddToClassList("interro-node__evidence-button");
             movementContainer.AddToClassList("interro-node__evidence-button");
             this.AddToClassList("interro-node__evidence-container");
-
-            interroGraphView.Evidence.Add(evidenceData);
 
             evidenceFoldout.Add(evidenceTextField);
 

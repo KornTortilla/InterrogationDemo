@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bee0453b4033884e91db29f7eac066a, type: 3}
+  m_Name: NewExample
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: NewExample
+  <DialogueList>k__BackingField:
+  - {fileID: 11400000, guid: 0f3fa74aa049aa1418e3a2cdeff30304, type: 2}
+  - {fileID: 11400000, guid: 40cce05ef8b69d241aefad2c3054f789, type: 2}
+  - {fileID: 11400000, guid: 5abe1cbd8dac2cc44ade2db5c979962b, type: 2}
+  - {fileID: 11400000, guid: 9069ece14e8ed2b4cb15d16319b37a2b, type: 2}
+  - {fileID: 11400000, guid: 07eeded9970b6c34183472b4b553b1aa, type: 2}
+  - {fileID: 11400000, guid: 27331bfa123f0cf4f980464cc01baa4e, type: 2}
+  - {fileID: 11400000, guid: e84103bd480bc044fa49a93e81c1bbb2, type: 2}
+  - {fileID: 11400000, guid: 8482c9eee4012df4ab18f5ffd4f12f20, type: 2}
+  - {fileID: 11400000, guid: 0b5ee559527afb941bac9ea65588bd91, type: 2}
+  - {fileID: 11400000, guid: a57e2343ca4275c46b56d37afb29cae4, type: 2}
+  - {fileID: 11400000, guid: 55e609c5bfc288149b67fe6133faaf16, type: 2}
+  - {fileID: 11400000, guid: 0c63111481559c44cb1193a206e001ee, type: 2}
+  - {fileID: 11400000, guid: 7099168d6b7653d4f983bb5adaa9545a, type: 2}
+  - {fileID: 11400000, guid: 1437b26a4d03a0445be34bf85b94081b, type: 2}
+  - {fileID: 11400000, guid: e62da2e2785850d49aacfa41c6c31557, type: 2}
+  - {fileID: 11400000, guid: cee530f531c71a2419faa30e0edf832e, type: 2}
+  - {fileID: 11400000, guid: 4e4e58e5692dd0c45bb5f8aead484ab6, type: 2}
+  - {fileID: 11400000, guid: fb28720397b3a584b8a9397156305977, type: 2}
+  - {fileID: 11400000, guid: e81b533a699cd5740a5cff7605b8ec43, type: 2}
+  - {fileID: 11400000, guid: 6c82421df6bed6c45a9cd0d517e9414a, type: 2}
+  - {fileID: 11400000, guid: c1ae1f29eee210941bfb499b23b5c939, type: 2}
+  - {fileID: 11400000, guid: ae7110b82ff1da142945618a9d8a82e4, type: 2}
+  - {fileID: 11400000, guid: de60da0fd331d444ba890c44aa56a75f, type: 2}
+  - {fileID: 11400000, guid: a1afcc41c908c4a4686d4e298deca519, type: 2}
+  - {fileID: 11400000, guid: c7905f17c8ae36b48a9ad7364b0ffbac, type: 2}
+  - {fileID: 11400000, guid: 0314227096ac29b429cd5595184d7136, type: 2}
+  - {fileID: 11400000, guid: e3d9e10a8a74f2148a5bf68d2c5fcf8a, type: 2}
+  - {fileID: 11400000, guid: 5ca9598c40222c24e8bb3dc7c1f322a9, type: 2}
+  - {fileID: 11400000, guid: cc3a016658262834ea043147a86f0789, type: 2}
+  - {fileID: 11400000, guid: b7b5a9fd865068d4cb60c75f295fe356, type: 2}
+  - {fileID: 11400000, guid: b240a348aa7165f41b5c3612686cc71d, type: 2}
+  - {fileID: 11400000, guid: 50c15ec9d9c02c741bf2215aaee5a936, type: 2}
+  - {fileID: 11400000, guid: e0b8ff5c7269bc94c993e0886ba25e38, type: 2}
+  - {fileID: 11400000, guid: 688ebfd4a5fad914ead1d990c5c522d3, type: 2}
+  - {fileID: 11400000, guid: 9a63574f3180dea4289e20bbe1713df3, type: 2}
+  - {fileID: 11400000, guid: 9bb982b5790eb074083a148796f60448, type: 2}
+  - {fileID: 11400000, guid: f50f9f645b06d2341b71e1421a3365fb, type: 2}
+  - {fileID: 11400000, guid: 328bf7c1247f37e4b81446d1097aeb22, type: 2}
+  - {fileID: 11400000, guid: 48c0084009894ec4684a461ac0f4782d, type: 2}
+  - {fileID: 11400000, guid: bc3521eb1a6cf3244a2bd77d5cd33ff7, type: 2}
+  - {fileID: 11400000, guid: 51d3bf493b12ac0479718c60bacfb83d, type: 2}
+  <EvidenceList>k__BackingField:
+  - {fileID: 11400000, guid: a1da5ad541a3d414bb355b3cec740f2d, type: 2}
+  - {fileID: 11400000, guid: 37a0ce4cc5b9bfb4ebd62c1a3812cbbd, type: 2}
+  - {fileID: 11400000, guid: 6be52716eb4d38444b4666691fd02b11, type: 2}
+  - {fileID: 11400000, guid: 384aba3bd399c1441a0b5100850ac411, type: 2}
+  <DefaultErrorResponse>k__BackingField: '#anim Idle
+
+    Seven: What does that have
+    to do with anything?
+
+    Anna: Well you see...
+
+    Seven: Don''t bother, I
+    don''t care.'

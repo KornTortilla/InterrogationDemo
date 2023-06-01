@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: GoOverItAll
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Go Over It All
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Idle
+
+    Okay, what do you want to know?'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: What were you really doing at home?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: cee530f531c71a2419faa30e0edf832e, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: Was there anything that happened when you got your paycheck?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 4e4e58e5692dd0c45bb5f8aead484ab6, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: At what point did you realize you couldn't pay for the
+      medication?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 5abe1cbd8dac2cc44ade2db5c979962b, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: What did you do at the bar, specifically?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: e81b533a699cd5740a5cff7605b8ec43, type: 2}
+    <Keys>k__BackingField: []
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 1437b26a4d03a0445be34bf85b94081b, type: 2}
+  <Position>k__BackingField: {x: 4542, y: 1758}

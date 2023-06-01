@@ -24,8 +24,6 @@ namespace Interrogation.Windows
 
         private int nameErrorCount;
 
-        public List<InterrogationEvidenceSaveData> Evidence { get; set; }
-
         public int NameErrorCount
         {
             get { return nameErrorCount; }
@@ -49,8 +47,6 @@ namespace Interrogation.Windows
             editorWindow = interroEditorWindow;
 
             nodeDictionary = new SerializableDictionary<string, InterrogationNodeErrorData>();
-
-            Evidence = new List<InterrogationEvidenceSaveData>();
 
             AddGridBackground();
 
@@ -285,6 +281,8 @@ namespace Interrogation.Windows
             {
                 if (changes.edgesToCreate != null)
                 {
+                    List<Edge> edgesToRemove = new List<Edge>();
+
                     foreach (Edge edge in changes.edgesToCreate)
                     {
                         BaseNode nextNode = (BaseNode) edge.input.node;
@@ -304,14 +302,29 @@ namespace Interrogation.Windows
                         }
                         else
                         {
-                            BaseNode node = (BaseNode)edge.input.node;
+                            if(nextNode.NodeType ==  NodeType.Dialogue)
+                            {
+                                BaseNode node = (BaseNode)edge.input.node;
 
-                            InterrogationChoiceSaveData choiceData = (InterrogationChoiceSaveData)edge.output.userData;
+                                InterrogationChoiceSaveData choiceData = (InterrogationChoiceSaveData)edge.output.userData;
 
-                            choiceData.NodeID = nextNode.ID;
+                                choiceData.NodeID = nextNode.ID;
+                            }
+                            else
+                            {
+                                edgesToRemove.Add(edge);
+                            }
                         }
                     }
+
+                    foreach(Edge edgeToRemove in edgesToRemove)
+                    {
+                        Debug.LogError("Choice cannot point to evidence node.");
+
+                        changes.edgesToCreate.Remove(edgeToRemove);
+                    }
                 }
+
 
                 if(changes.elementsToRemove != null)
                 {

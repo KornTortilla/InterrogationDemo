@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: NotLookingGood
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Not Looking Good
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Idle
+
+    Anna: It isn''t looking good though, by
+    your own admission.
+
+    Seven: Listen... we can manage for awhile. I got time
+    to get back on my feet. Got nothing else to worry about.'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Do you have your mother's medication covered?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ae7110b82ff1da142945618a9d8a82e4, type: 2}
+    <Keys>k__BackingField:
+    - {fileID: 11400000, guid: cc3a016658262834ea043147a86f0789, type: 2}
+    - {fileID: 11400000, guid: 5ca9598c40222c24e8bb3dc7c1f322a9, type: 2}
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 7099168d6b7653d4f983bb5adaa9545a, type: 2}
+  <Position>k__BackingField: {x: 3099, y: 1165}

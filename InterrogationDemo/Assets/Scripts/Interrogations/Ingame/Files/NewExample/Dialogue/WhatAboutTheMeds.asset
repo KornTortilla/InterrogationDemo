@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: WhatAboutTheMeds
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: What About The Meds
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Idle
+
+    Anna: What about your mother''s medication?
+    You weren''t able to pay for it then. How were you going to pay for it now?
+
+    #music
+    stop
+
+    #anim Aggressive
+
+    Seven: ... What about it, huh? Think I can''t
+    get another job? Tryna say I''m worthless?'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: You needed that job, didn't you? Is that why you did it?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 1437b26a4d03a0445be34bf85b94081b, type: 2}
+    <Keys>k__BackingField: []
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 55e609c5bfc288149b67fe6133faaf16, type: 2}
+  <Position>k__BackingField: {x: 3574, y: 1165}

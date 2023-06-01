@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: DidntBuy
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Didnt Buy
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Idle
+
+    Anna: But you didn''t have the medication
+    on you when you were apprehended. Did you actually buy it?
+
+    Seven: ...Okay,
+    I didn''t. Realized that we already had some at home.'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Why did that stop you?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0314227096ac29b429cd5595184d7136, type: 2}
+    <Keys>k__BackingField: []
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
+    <Keys>k__BackingField: []
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 27331bfa123f0cf4f980464cc01baa4e, type: 2}
+  <Position>k__BackingField: {x: 2150, y: -47}

@@ -46,31 +46,18 @@ namespace Interrogation.Elements
 
             this.Add(errorFoldout);
 
-            this.addItemRequested = actionEvent => { AddEvidence(); };
+            this.addItemRequested = actionEvent => { CreateContainer("New Evidence", "Evidence Description."); };
 
             interroGraphView.Add(this);
         }
 
-        private void AddEvidence()
+        public void CreateContainer(string newName, string newText)
         {
-            InterrogationEvidenceSaveData evidenceData = new InterrogationEvidenceSaveData()
-            {
-                Name = "New Evidence",
-                ID = Guid.NewGuid().ToString(),
-                Text = "Evidence description.",
-                NodeIDs = new List<string>()
-            };
-
-            CreateContainer(evidenceData);
-        }
-
-        private void CreateContainer(InterrogationEvidenceSaveData evidenceData)
-        {
-            EvidenceContainer evidenceConainter = new EvidenceContainer(interroGraphView, this, evidenceData);
+            EvidenceContainer evidenceConainter = new EvidenceContainer(interroGraphView, this, newName, newText);
             EvidenceContainers.Add(evidenceConainter);
         }
 
-        public void Clear()
+        public new void Clear()
         {
             List<VisualElement> elementsToRemove = new List<VisualElement>();
 
@@ -95,15 +82,10 @@ namespace Interrogation.Elements
             errorTextField.value = defaultErrorResponse;
         }
 
-        public void Load(string defaultError, List<InterrogationEvidenceSaveData> evidence)
+        public void Load(string defaultError)
         {
             defaultErrorResponse = defaultError;
             errorTextField.value = defaultErrorResponse;
-
-            foreach (InterrogationEvidenceSaveData evidenceData in evidence)
-            {
-                CreateContainer(evidenceData);
-            }
         }
     }
 }

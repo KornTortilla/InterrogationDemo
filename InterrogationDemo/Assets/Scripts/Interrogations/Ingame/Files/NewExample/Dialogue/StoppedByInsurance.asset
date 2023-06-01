@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: StoppedByInsurance
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Stopped By Insurance
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: '#anim Idle
+
+    Anna: Are you sure? It seems to me that
+    maybe you weren''t able to. It would make a lot more sense, after all you love
+    your mom and want to care of her mom, right?
+
+    Seven: ...
+
+    Anna: So, something
+    stopped you. That being your insurance being taken away.
+
+    Seven: ...'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
+    <Keys>k__BackingField: []
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: e3d9e10a8a74f2148a5bf68d2c5fcf8a, type: 2}
+  <Position>k__BackingField: {x: 3606, y: -47}
