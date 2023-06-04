@@ -19,6 +19,7 @@ namespace Interrogation.Data.Save
             FileName = fileName;
             Evidence = new List<InterrogationEvidenceSaveData>();
             DialogueNodes = new List<InterrogationDialogueNodeSaveData>();
+            RepNodes = new List<InterrogationRepNodeSaveData>();
         }
     }
 }
