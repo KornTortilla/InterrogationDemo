@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2fe427bada94f4788b6dc75ed92a57, type: 3}
+  m_Name: Therapy
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Therapy
+  <NoHintResponse>k__BackingField: Nothing...
+  <DefaultErrorResponse>k__BackingField: Sorry, but what does that have to do with
+    aything?
+  <Evidence>k__BackingField:
+  - <Name>k__BackingField: Feelings
+    <ID>k__BackingField: dcb5ec29-63af-4ad4-a939-8838e3ec5bde
+    <Text>k__BackingField: Lel
+    <NodeIDs>k__BackingField: []
+  - <Name>k__BackingField: What To Do
+    <ID>k__BackingField: c48599e5-c05d-47d5-a929-522d8f6e4fb9
+    <Text>k__BackingField: Evidence Description.
+    <NodeIDs>k__BackingField: []
+  <DialogueNodes>k__BackingField:
+  - <ID>k__BackingField: b9089f21-8dee-4402-890f-83e8c38e4f76
+    <Name>k__BackingField: Are You Sure
+    <Text>k__BackingField: 'Anna: Of course, why wouldn''t I be?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What about Guillermo?
+      <NodeID>k__BackingField: 66c813d8-e4f5-481f-8fdd-229a242e5419
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    - <Text>k__BackingField: What about the case?
+      <NodeID>k__BackingField: f0780b8a-9c55-4325-bd3d-786d3137217a
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 1359, y: 198}
+  - <ID>k__BackingField: 20a5e918-a114-48ac-9358-0a6339348b4e
+    <Name>k__BackingField: How Are You
+    <Text>k__BackingField: 'Anna: I''m feeling perfectly fine.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Are you sure?
+      <NodeID>k__BackingField: b9089f21-8dee-4402-890f-83e8c38e4f76
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 850, y: 198}
+  - <ID>k__BackingField: 447a1eae-20ee-459a-a57c-adc36bed9b93
+    <Name>k__BackingField: Start
+    <Text>k__BackingField: ...
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: How are you feeling?
+      <NodeID>k__BackingField: 20a5e918-a114-48ac-9358-0a6339348b4e
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 310, y: 198}
+  - <ID>k__BackingField: f0780b8a-9c55-4325-bd3d-786d3137217a
+    <Name>k__BackingField: What About the Case
+    <Text>k__BackingField: 'Anna: I don''t know... What do I even do at this point?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Lock
+      <NodeID>k__BackingField: ea9a54e8-72e0-4db1-97da-73a8efff115e
+      <KeyIDs>k__BackingField:
+      - 7844a482-3eb6-48f4-85de-0195d546ca2f
+      <Hint>k__BackingField: She knows..
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 1922, y: 221}
+  - <ID>k__BackingField: ea9a54e8-72e0-4db1-97da-73a8efff115e
+    <Name>k__BackingField: Dialogue Name
+    <Text>k__BackingField: Dialogue text.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2421, y: 222}
+  - <ID>k__BackingField: 7925a05e-e276-4a4c-b5e0-9527781e9544
+    <Name>k__BackingField: You Care
+    <Text>k__BackingField: Dialogue text.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2421, y: -132}
+  - <ID>k__BackingField: 66c813d8-e4f5-481f-8fdd-229a242e5419
+    <Name>k__BackingField: About Guillermo
+    <Text>k__BackingField: 'Anna: What about him, huh? I never really cared about
+      him.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Lock
+      <NodeID>k__BackingField: 7925a05e-e276-4a4c-b5e0-9527781e9544
+      <KeyIDs>k__BackingField:
+      - 8998e48d-38d9-4094-861b-42f8daa8cf62
+      <Hint>k__BackingField: She cares...
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 1922, y: -132}
+  <RepNodes>k__BackingField:
+  - <ID>k__BackingField: 8998e48d-38d9-4094-861b-42f8daa8cf62
+    <Name>k__BackingField: Feelings
+    <ParentID>k__BackingField: dcb5ec29-63af-4ad4-a939-8838e3ec5bde
+    <Position>k__BackingField: {x: 2421, y: 76}
+    <NodeType>k__BackingField: 2
+  - <ID>k__BackingField: 7844a482-3eb6-48f4-85de-0195d546ca2f
+    <Name>k__BackingField: What To Do
+    <ParentID>k__BackingField: c48599e5-c05d-47d5-a929-522d8f6e4fb9
+    <Position>k__BackingField: {x: 2421, y: 429}
+    <NodeType>k__BackingField: 2
+  <OldDialogueNames>k__BackingField:
+  - Are You Sure
+  - How Are You
+  - Start
+  - What About the Case
+  - Dialogue Name
+  - You Care
+  - About Guillermo
+  <OldEvidenceNames>k__BackingField:
+  - Feelings
+  - What To Do

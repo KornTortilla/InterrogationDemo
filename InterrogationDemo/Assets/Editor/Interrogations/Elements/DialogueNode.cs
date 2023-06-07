@@ -268,6 +268,19 @@ namespace Interrogation.Elements
                 graphView.RemoveElement(keyPort);
             });
 
+            Foldout hintFoldout = InterrogationElementUtility.CreateFoldout("Hint Text");
+
+            TextField hintTextField = InterrogationElementUtility.CreateTextArea(choiceData.Hint, null, callback =>
+            {
+                choiceData.Hint = callback.newValue;
+            });
+
+            hintTextField.AddStyleClasses(
+                "interro-node__textfield",
+                "interro-node__quote-textfield"
+            );
+
+
             lockPathTextField.AddStyleClasses(
                 "interro-node__textfield",
                 "interro-node__choice-textfield",
@@ -277,7 +290,10 @@ namespace Interrogation.Elements
             lockPathPort.Add(lockPathTextField);
             lockPathPort.Add(deleteChoiceButton);
 
-            outputContainer.AddToClassList("interro-node__output-port");
+            hintFoldout.Add(hintTextField);
+            keyPort.Add(hintFoldout);
+
+            keyPort.AddToClassList("interro-node__hint-port");
 
             outputContainer.Add(lockPathPort);
             outputContainer.Add(keyPort);
@@ -304,8 +320,6 @@ namespace Interrogation.Elements
                 "interro-node__textfield",
                 "interro-node__quote-textfield"
             );
-
-            
 
             Button deleteErrorButton = InterrogationElementUtility.CreateButton("X", () =>
             {

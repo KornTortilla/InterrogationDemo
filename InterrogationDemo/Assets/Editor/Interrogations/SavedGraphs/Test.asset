@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2fe427bada94f4788b6dc75ed92a57, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Test
+  <DefaultErrorResponse>k__BackingField: You were wrong.
+  <Evidence>k__BackingField:
+  - <Name>k__BackingField: Something to Hide
+    <ID>k__BackingField: 67b6976d-e3e0-4d74-aa1b-c35db0df80ff
+    <Text>k__BackingField: They got something...
+    <NodeIDs>k__BackingField: []
+  <DialogueNodes>k__BackingField:
+  - <ID>k__BackingField: 0870cef2-e447-49eb-b147-d0eade8d72bb
+    <Name>k__BackingField: B
+    <Text>k__BackingField: Dialogue text.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 884, y: 112}
+  - <ID>k__BackingField: a3fed4d4-9d00-4512-8049-e3a1b2833402
+    <Name>k__BackingField: A
+    <Text>k__BackingField: 'Stan: I''ve got nothing to hide!'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Lock
+      <NodeID>k__BackingField: 0870cef2-e447-49eb-b147-d0eade8d72bb
+      <KeyIDs>k__BackingField:
+      - cd684950-4cc6-4c4a-ad77-31ec7f8318cd
+      <Hint>k__BackingField: 'Carol: Oh, they''ve got something to hide alright...'
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 333, y: 112}
+  <RepNodes>k__BackingField:
+  - <ID>k__BackingField: cd684950-4cc6-4c4a-ad77-31ec7f8318cd
+    <Name>k__BackingField: Something to Hide
+    <ParentID>k__BackingField: 67b6976d-e3e0-4d74-aa1b-c35db0df80ff
+    <Position>k__BackingField: {x: 884, y: 371}
+    <NodeType>k__BackingField: 2
+  <OldDialogueNames>k__BackingField:
+  - B
+  - A
+  <OldEvidenceNames>k__BackingField:
+  - Something to Hide

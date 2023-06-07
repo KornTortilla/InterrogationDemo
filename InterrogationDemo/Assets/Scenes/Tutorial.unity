@@ -471,6 +471,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 641868035}
+    - target: {fileID: 4312614757147804523, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 875401361}
+    - target: {fileID: 4312614757147804523, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetHint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312614757147804523, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Interrogation.Ingame.InterrogationDialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
 --- !u!1001 &3070762521098850658
@@ -563,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 11400000, guid: 7981d23f6744bad4f9c3129f915c0937, type: 2}
+      objectReference: {fileID: 11400000, guid: faede0cc4c20de747a3ca856d614fa8d, type: 2}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: flowchartManager
       value: 

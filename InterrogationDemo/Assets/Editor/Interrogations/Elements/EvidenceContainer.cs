@@ -89,7 +89,7 @@ namespace Interrogation.Elements
             {
                 int position = board.IndexOf(this);
 
-                if(position > 1)
+                if(position > 2)
                 {
                     board.Insert(position - 1, this);
 

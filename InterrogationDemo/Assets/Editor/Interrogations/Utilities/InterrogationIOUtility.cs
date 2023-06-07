@@ -79,6 +79,7 @@ namespace Interrogation.Utilities
         {
             ProfileBlackboard profile = graphView.profile;
 
+            graphData.NoHintResponse = profile.noHintResponse;
             graphData.DefaultErrorResponse = profile.defaultErrorResponse;
 
             foreach (EvidenceContainer evidenceContainer in profile.EvidenceContainers)
@@ -89,6 +90,7 @@ namespace Interrogation.Utilities
                 evidenceNames.Add(evidenceContainer.Name);
             }
 
+            dialogueSOManager.NoHintResponse = profile.noHintResponse;
             dialogueSOManager.DefaultErrorResponse = profile.defaultErrorResponse;
 
             SaveAsset(dialogueSOManager);
@@ -114,13 +116,13 @@ namespace Interrogation.Utilities
             return evidenceData;
         }
 
-        private static void SaveProfileEvidenceToDialogue(EvidenceContainer evidenceContainer, DialogueSOManager dialogueSoManager)
+        private static void SaveProfileEvidenceToDialogue(EvidenceContainer evidenceContainer, DialogueSOManager dialogueSOManager)
         {
             EvidenceSO evidenceSO;
 
             evidenceSO = CreateAsset<EvidenceSO>($"{containerFolderPath}/Evidence", evidenceContainer.Name.RemoveWhitespaces());
 
-            dialogueSoManager.EvidenceList.Add(evidenceSO);
+            dialogueSOManager.EvidenceList.Add(evidenceSO);
 
             evidenceSO.Initialize(
                 evidenceContainer.Name,
@@ -215,6 +217,7 @@ namespace Interrogation.Utilities
                     Text = choice.Text,
                     NodeID = choice.NodeID,
                     KeyIDs = choice.KeyIDs,
+                    Hint = choice.Hint,
                     Type = choice.Type
                 };
 
@@ -277,7 +280,8 @@ namespace Interrogation.Utilities
                 DialogueChoiceData choiceData = new DialogueChoiceData()
                 {
                     Text = nodeChoice.Text,
-                    Keys = new List<ScriptableObject>()
+                    Keys = new List<ScriptableObject>(),
+                    Hint = nodeChoice.Hint
                 };
 
                 if (choiceData.Keys.Count == 0) choiceData.Opened = true;
@@ -463,7 +467,7 @@ namespace Interrogation.Utilities
 
             InterrogationEditorWindow.UpdateFileName(graphData.FileName);
 
-            graphView.profile.Load(graphData.DefaultErrorResponse);
+            graphView.profile.Load(graphData.NoHintResponse, graphData.DefaultErrorResponse);
             LoadProfileEvidence(graphData.Evidence);
             LoadDialogueNodes(graphData.DialogueNodes);
             LoadRepNodes(graphData.RepNodes);

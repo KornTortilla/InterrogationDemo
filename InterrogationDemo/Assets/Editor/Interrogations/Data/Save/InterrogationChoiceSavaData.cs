@@ -12,6 +12,7 @@ namespace Interrogation.Data.Save
         [field: SerializeField] public string Text { get; set; }
         [field: SerializeField] public string NodeID { get; set; }
         [field: SerializeField] public List<string> KeyIDs { get; set; }
+        [field: SerializeField] public string Hint { get; set; }
         [field: SerializeField] public OutputType Type { get; set; }
     }
 }

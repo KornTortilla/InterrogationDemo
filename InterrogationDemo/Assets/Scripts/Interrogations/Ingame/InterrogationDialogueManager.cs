@@ -28,6 +28,8 @@ namespace Interrogation.Ingame
         private DialogueSO currentDialogue;
         private Stack<DialogueSO> pastDialogues;
 
+        private List<string> hints;
+
         private DialogueSO savedDialogue;
         private GameObject savedDialogueObject;
 
@@ -47,6 +49,8 @@ namespace Interrogation.Ingame
         {
             //Instantiates dynamic stack
             pastDialogues = new Stack<DialogueSO>();
+
+            hints = new List<string>();
 
             OpenPathsAndGetStartPoint();
 
@@ -273,7 +277,7 @@ namespace Interrogation.Ingame
         #endregion
 
         #region Text Method
-        IEnumerator ParseCurrentDialogue(int dir, string text, bool willStay = false)
+        IEnumerator ParseCurrentDialogue(int dir, string text, bool isProgressing = true)
         {
             //Calls event when characters speak
             OnTalkingStart?.Invoke();
@@ -289,7 +293,9 @@ namespace Interrogation.Ingame
             //Split sentences of text into lines and stores each line
             string[] sentences = SplitCurrentSentences(text);
 
-            StartCoroutine(dialogueTextManager.TypeText(sentences, characterAnimator));
+            bool needToClickLastText = !isProgressing;
+
+            StartCoroutine(dialogueTextManager.TypeText(sentences, characterAnimator, needToClickLastText));
 
             yield return new WaitUntil(() => dialogueTextManager.isDone);
 
@@ -302,11 +308,33 @@ namespace Interrogation.Ingame
 
             saveDialogueButton.SetActive(true);
 
-            if (!willStay)
+            if (isProgressing)
             {
                 //Goes onto create choice buttons once dialogue is finished
                 CreateChoicesButtons(dir);
             }
+            else
+            {
+                StampLastText(currentDialogue.Text);
+            }
+        }
+
+        private void StampLastText(string text)
+        {
+            string[] sentences = SplitCurrentSentences(text);
+
+            string sentence = sentences[sentences.Length - 1];
+
+            if (sentence.IndexOf(":") != -1)
+            {
+                int colon = sentence.IndexOf(":");
+                string name = sentence.Substring(0, colon);
+                sentence = sentence.Substring(colon + 2);
+
+                dialogueTextManager.ShowName(name);
+            }
+
+            dialogueTextManager.ShowText(sentence);
         }
         #endregion
 
@@ -393,22 +421,20 @@ namespace Interrogation.Ingame
             //Start typing coroutine if a new dialogue yet to be seen
             if (!currentDialogue.Seen)
             {
+                foreach(DialogueChoiceData choice in currentDialogue.Choices)
+                {
+                    if(!string.IsNullOrEmpty(choice.Hint))
+                    {
+                        hints.Add(choice.Hint);
+                    }
+                }
+
                 StartCoroutine(ParseCurrentDialogue(dir, currentDialogue.Text));
             }
             //Or get the last sentence minus the possible speaker name and directly puts into text
             else
             {
-                string[] sentences = SplitCurrentSentences(currentDialogue.Text);
-
-                string sentence = sentences[sentences.Length - 1];
-
-                if (sentence.IndexOf(":") != -1)
-                {
-                    int colon = sentence.IndexOf(":");
-                    sentence = sentence.Substring(colon + 2);
-                }
-
-                dialogueTextManager.ShowText(sentence);
+                StampLastText(currentDialogue.Text);
 
                 CreateChoicesButtons(dir);
             }
@@ -468,17 +494,36 @@ namespace Interrogation.Ingame
                     }
                 }
 
-                if(distinctError != "")
+                if(!string.IsNullOrEmpty(distinctError))
                 {
-                    StartCoroutine(ParseCurrentDialogue(-1, distinctError, true));
+                    StartCoroutine(ParseCurrentDialogue(-1, distinctError, false));
                 }
                 else
                 {
-                    StartCoroutine(ParseCurrentDialogue(-1, dialogueManager.DefaultErrorResponse, true));
+                    StartCoroutine(ParseCurrentDialogue(-1, dialogueManager.DefaultErrorResponse, false));
                 }
             }
         }
         #endregion
+
+        public void GetHint()
+        {
+            string hint;
+
+            if(hints.Count > 0)
+            {
+                int rand = UnityEngine.Random.Range(0, hints.Count);
+
+                hint = hints[rand];
+                hints.RemoveAt(rand);
+            }
+            else
+            {
+                hint = dialogueManager.NoHintResponse;
+            }
+
+            StartCoroutine(ParseCurrentDialogue(-1, hint, false));
+        }
 
         #region Utility Method
         private string[] SplitCurrentSentences(string text)

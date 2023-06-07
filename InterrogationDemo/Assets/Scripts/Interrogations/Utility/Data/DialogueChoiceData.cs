@@ -12,6 +12,7 @@ namespace Interrogation.Data
         [field: SerializeField] public string Text { get; set; }
         [field: SerializeField] public DialogueSO NextDialogue { get; set; }
         [field: SerializeField] public List<ScriptableObject> Keys { get; set; }
+        [field: SerializeField] public string Hint { get; set; }
         [field: NonSerialized] public bool Opened { get; set; }
     }
 }

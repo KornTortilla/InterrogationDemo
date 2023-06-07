@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Name: AreYouSure
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Are You Sure
+  <Speakers>k__BackingField: []
+  <Text>k__BackingField: 'Anna: Of course, why wouldn''t I be?'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: What about Guillermo?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 2aee16312d0ef0a4baebd11e56ff9776, type: 2}
+    <Keys>k__BackingField: []
+    <Hint>k__BackingField: 
+  - <Text>k__BackingField: What about the case?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 957433ec2f50a1445831379954582c62, type: 2}
+    <Keys>k__BackingField: []
+    <Hint>k__BackingField: 
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 121acf94d76067f44a586216672bd7fa, type: 2}
+  <Position>k__BackingField: {x: 1359, y: 198}

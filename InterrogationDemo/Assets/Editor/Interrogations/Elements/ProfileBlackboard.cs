@@ -15,7 +15,9 @@ namespace Interrogation.Elements
     {
         private InterrogationGraphView interroGraphView;
 
+        public string noHintResponse = "Sorry, I got nothing.";
         public string defaultErrorResponse = "You were wrong.";
+        private TextField noHintTextField;
         private TextField errorTextField;
 
         public List<EvidenceContainer> EvidenceContainers { get; set; }
@@ -30,6 +32,13 @@ namespace Interrogation.Elements
 
             EvidenceContainers = new List<EvidenceContainer>();
 
+            Foldout noHintFoldout = InterrogationElementUtility.CreateFoldout("No Hint Response");
+
+            noHintTextField = InterrogationElementUtility.CreateTextArea(noHintResponse, null, callback =>
+            {
+                noHintResponse = callback.newValue;
+            });
+
             Foldout errorFoldout = InterrogationElementUtility.CreateFoldout("Default Mistake Response");
 
             errorTextField = InterrogationElementUtility.CreateTextArea(defaultErrorResponse, null, callback =>
@@ -37,13 +46,20 @@ namespace Interrogation.Elements
                 defaultErrorResponse = callback.newValue;
             });
 
+            noHintTextField.AddStyleClasses(
+                "interro-node__textfield",
+                "interro-node__quote-textfield"
+            );
+
             errorTextField.AddStyleClasses(
                 "interro-node__textfield",
                 "interro-node__quote-textfield"
             );
 
+            noHintFoldout.Add(noHintTextField);
             errorFoldout.Add(errorTextField);
 
+            this.Add(noHintFoldout);
             this.Add(errorFoldout);
 
             this.addItemRequested = actionEvent => { CreateContainer("New Evidence", "Evidence Description."); };
@@ -78,12 +94,18 @@ namespace Interrogation.Elements
 
             EvidenceContainers.Clear();
 
+            noHintResponse = "Sorry, I got nothing.";
+            noHintTextField.value = noHintResponse;
+
             defaultErrorResponse = "You were wrong.";
             errorTextField.value = defaultErrorResponse;
         }
 
-        public void Load(string defaultError)
+        public void Load(string noHint, string defaultError)
         {
+            noHintResponse = noHint;
+            noHintTextField.value = noHintResponse;
+
             defaultErrorResponse = defaultError;
             errorTextField.value = defaultErrorResponse;
         }

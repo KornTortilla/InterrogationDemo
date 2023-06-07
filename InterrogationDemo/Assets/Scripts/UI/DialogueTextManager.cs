@@ -28,7 +28,7 @@ public class DialogueTextManager : MonoBehaviour
         blip = Resources.Load("Audio/BlipMale") as AudioClip;
     }
 
-    public IEnumerator TypeText(string[] sentences, Animator animator)
+    public IEnumerator TypeText(string[] sentences, Animator animator, bool needToClickLastText = false)
     {
         isDone = false;
 
@@ -158,7 +158,7 @@ public class DialogueTextManager : MonoBehaviour
             clickProcessed = false;
 
             //If the dialogue is done being typed out and the player clicks on button, continue
-            yield return new WaitUntil(() => { return ((clickProcessed || i == sentences.Length - 1)); });
+            yield return new WaitUntil(() => { return ((clickProcessed || (i == sentences.Length - 1 && !needToClickLastText))); });
         }
 
         ctcObject.SetActive(false);
@@ -178,6 +178,12 @@ public class DialogueTextManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    
+    public void ShowName(string name)
+    {
+        nameBox.GetComponentInChildren<TMP_Text>().text = name;
     }
 
     //Show all text at once

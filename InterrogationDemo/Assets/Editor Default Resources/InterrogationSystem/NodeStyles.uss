@@ -16,6 +16,15 @@
 	min-width: 60px;
 }
 
+.interro-node__hint-port
+{
+	max-height: 100px;
+	min-height: 100px;
+	max-width: 280px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
 .interro-node__custom-data-container
 {
 	background-color: #212325;
