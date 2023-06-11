@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 namespace Interrogation.Ingame
 {
@@ -18,11 +17,11 @@ namespace Interrogation.Ingame
 
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private GameObject evidenceLocker;
+        [SerializeField] private GameObject hintButton;
+        [SerializeField] private HintList hintList;
         [SerializeField] private DialogueTextManager dialogueTextManager;
         [SerializeField] private GameObject saveDialogueButton;
-        [SerializeField] private Animator characterAnimator;
         [SerializeField] private FlowchartManager flowchartManager;
-        [SerializeField] private GameObject sceneBackdrop;
 
         [SerializeField] private DialogueSOManager dialogueManager;
         private DialogueSO currentDialogue;
@@ -32,6 +31,11 @@ namespace Interrogation.Ingame
 
         private DialogueSO savedDialogue;
         private GameObject savedDialogueObject;
+
+        private void Awake()
+        {
+            dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueSOManager;
+        }
 
         //Temporary initialization by screen fade in to start script after full
         private void OnEnable()
@@ -104,27 +108,6 @@ namespace Interrogation.Ingame
         }
         */
 
-        private void StartInterrogation()
-        {
-            sceneBackdrop.SetActive(true);
-
-            //Removes current choice buttons
-            foreach (Transform child in choicePanel.transform)
-            {
-                child.GetComponent<ChoiceTween>().Move(-1, false);
-
-                child.GetComponent<Button>().enabled = false;
-
-                GameObject.Destroy(child.gameObject, 0.5f);
-            }
-
-            StartCoroutine(ParseCurrentDialogue(-1, currentDialogue.Text));
-
-            flowchartManager.Initialize(currentDialogue, this);
-
-            flowchartManager.UpdateFlowchart(currentDialogue, true);
-        }
-        
         private void OpenPathsAndGetStartPoint()
         {
             //Combs through dialogue in scene and opens paths that don't have keys/are not locked
@@ -144,6 +127,27 @@ namespace Interrogation.Ingame
                     currentDialogue = dialogue;
                 }
             }
+        }
+
+        private void StartInterrogation()
+        {
+            //Removes current choice buttons
+            foreach (Transform child in choicePanel.transform)
+            {
+                child.GetComponent<ChoiceTween>().Move(-1, false);
+
+                child.GetComponent<Button>().enabled = false;
+
+                GameObject.Destroy(child.gameObject, 0.5f);
+            }
+
+            Debug.Log(currentDialogue.Text);
+
+            StartCoroutine(ParseCurrentDialogue(-1, currentDialogue.Text));
+
+            flowchartManager.Initialize(currentDialogue, this);
+
+            flowchartManager.UpdateFlowchart(currentDialogue, true);
         }
 
         private void InstantiateEvidence()
@@ -289,13 +293,14 @@ namespace Interrogation.Ingame
 
             //Disables save button so players cannot save unless seeing the full dialogue
             saveDialogueButton.SetActive(false);
+            hintButton.GetComponent<Button>().interactable = false;
 
             //Split sentences of text into lines and stores each line
             string[] sentences = SplitCurrentSentences(text);
 
             bool needToClickLastText = !isProgressing;
 
-            StartCoroutine(dialogueTextManager.TypeText(sentences, characterAnimator, needToClickLastText));
+            StartCoroutine(dialogueTextManager.TypeText(sentences, needToClickLastText));
 
             yield return new WaitUntil(() => dialogueTextManager.isDone);
 
@@ -307,6 +312,7 @@ namespace Interrogation.Ingame
             }
 
             saveDialogueButton.SetActive(true);
+            hintButton.GetComponent<Button>().interactable = true;
 
             if (isProgressing)
             {
@@ -516,6 +522,8 @@ namespace Interrogation.Ingame
 
                 hint = hints[rand];
                 hints.RemoveAt(rand);
+
+                hintList.CreateHint(hint);
             }
             else
             {

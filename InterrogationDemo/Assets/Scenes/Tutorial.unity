@@ -483,8 +483,32 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Interrogation.Ingame.InterrogationDialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4734937203767366321, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348177860170579801, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 178.77563
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+--- !u!114 &2243762556445182535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6258698033484226052, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+  m_PrefabInstance: {fileID: 2243762556445182534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc181ec238b73ad4f971efec705fcaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2243762556445182536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5792711763565574682, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+  m_PrefabInstance: {fileID: 2243762556445182534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3070762521098850658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,6 +581,14 @@ PrefabInstance:
       value: InterrogationManager
       objectReference: {fileID: 0}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
+      propertyPath: hintList
+      value: 
+      objectReference: {fileID: 2243762556445182535}
+    - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
+      propertyPath: hintButton
+      value: 
+      objectReference: {fileID: 2243762556445182536}
+    - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: choicePanel
       value: 
       objectReference: {fileID: 317853086}
@@ -575,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 11400000, guid: faede0cc4c20de747a3ca856d614fa8d, type: 2}
+      objectReference: {fileID: 11400000, guid: f3cb99db0a92a644aaa96332cd37f12e, type: 2}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: flowchartManager
       value: 
@@ -592,6 +624,10 @@ PrefabInstance:
       propertyPath: dialogueTextManager
       value: 
       objectReference: {fileID: 775811322}
+    - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
+      propertyPath: buttonsToDeactivate.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
 --- !u!1001 &4980114128552780355

@@ -38,7 +38,7 @@ namespace Interrogation.Utilities
             nodes = new List<BaseNode>();
 
             graphFileName = graphName;
-            containerFolderPath = $"Assets/Scripts/Interrogations/Ingame/Files/{graphFileName}";
+            containerFolderPath = $"Assets/Resources/InterrogationFiles/{graphFileName}";
 
             createdSOs = new Dictionary<string, ScriptableObject>();
 

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Interrogation.Ingame;
 
 public class UISceneFading : MonoBehaviour
 {

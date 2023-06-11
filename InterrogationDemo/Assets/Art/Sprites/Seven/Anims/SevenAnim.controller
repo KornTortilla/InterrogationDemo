@@ -11,9 +11,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: talking
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isSpeaking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 572459408904366393}
   m_Solo: 0
@@ -226,9 +223,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: talking
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isSpeaking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6667657825702279187}
   m_Solo: 0
@@ -331,13 +325,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: isSpeaking
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Seven
@@ -545,9 +533,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: talking
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isSpeaking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8366295817924780408}
   m_Solo: 0
@@ -573,9 +558,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: talking
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isSpeaking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6261902322348357231}
   m_Solo: 0
@@ -600,9 +582,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: talking
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isSpeaking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5348217832567820715}

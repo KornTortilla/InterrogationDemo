@@ -21,14 +21,14 @@ public class DialogueTextManager : MonoBehaviour
     private bool interruptTyping;
     private bool odd = false;
 
-    [HideInInspector]public bool isDone = true;
+    [HideInInspector] public bool isDone = true;
 
     private void Awake()
     {
         blip = Resources.Load("Audio/BlipMale") as AudioClip;
     }
 
-    public IEnumerator TypeText(string[] sentences, Animator animator, bool needToClickLastText = false)
+    public IEnumerator TypeText(string[] sentences, bool needToClickLastText = false)
     {
         isDone = false;
 
@@ -44,25 +44,35 @@ public class DialogueTextManager : MonoBehaviour
             */
             if (sentence.Substring(0, 1) == "#")
             {
-
+                //Removes first character
                 string tag = sentence.Substring(1);
-
-                string prefix = tag.Split(' ')[0].ToLower();
-                string param = tag.Split(' ')[1];
-
-                switch (prefix)
+                //Splits each word of a tag into an array
+                string[] terms = tag.Split(' ');
+                //Checks the first 
+                switch (terms[0])
                 {
+                    case "add":
+                        //Adds character to stage based on only parameter
+                        StageController.Instance.AddCharacter(terms[1]);
+                        break;
+
+                    case "move":
+                        //Sets character to new position with two params, first name and then position
+                        StageController.Instance.SetCharacterPosition(terms[1], terms[2]);
+                        break;
+
                     case "anim":
-                        animator.Play(param);
+                        //If the anim prefix is used, two params are expected, first name and then animation
+                        StageController.Instance.PlayAnim(terms[1], terms[2]);
                         break;
 
                     case "music":
-                        if (param == "stop") AudioManager.Instance.StopMusic();
-                        else AudioManager.Instance.PlayNewTrack(param);
+                        if (terms[1] == "stop") AudioManager.Instance.StopMusic();
+                        else AudioManager.Instance.PlayNewTrack(terms[1]);
                         break;
 
                     case "scene":
-                        SceneLoader.Load(SceneLoader.Scene.Seven);
+                        GameManager.Instance.TransitionScenes(terms[1], terms[2]);
                         break;
 
                     case "game":
@@ -95,19 +105,7 @@ public class DialogueTextManager : MonoBehaviour
                 nameBox.SetActive(true);
                 nameBox.GetComponentInChildren<TMP_Text>().text = name;
 
-                //If name given matches the suspect, they can talk but can't otherwise
-                if (name != animator.GetLayerName(0))
-                {
-                    animator.SetBool("isSpeaking", false);
-                }
-                else
-                {
-                    animator.SetBool("isSpeaking", true);
-                }
-            }
-            else
-            {
-                animator.SetBool("isSpeaking", true);
+                StageController.Instance.ChooseSpeaker(name);
             }
 
             foreach (char letter in sentence.ToCharArray())
@@ -123,7 +121,7 @@ public class DialogueTextManager : MonoBehaviour
 
                 float time = textSpeed;
 
-                animator.SetBool("talking", true);
+                StageController.Instance.SetCurrentSpeakerTalking(true);
 
                 odd = !odd;
 
@@ -131,13 +129,12 @@ public class DialogueTextManager : MonoBehaviour
                 if (letter == '.' || letter == '?' || letter == '!')
                 {
                     time *= 10;
-                    animator.SetBool("talking", false);
-
+                    StageController.Instance.SetCurrentSpeakerTalking(false);
                 }
                 else if (letter == ',')
                 {
                     time *= 5f;
-                    animator.SetBool("talking", false);
+                    StageController.Instance.SetCurrentSpeakerTalking(false);
                 }
                 /*
                 else if(letter != ' ')
@@ -151,7 +148,7 @@ public class DialogueTextManager : MonoBehaviour
                 yield return StartCoroutine(Countdown(time));
             }
 
-            animator.SetBool("talking", false);
+            StageController.Instance.SetCurrentSpeakerTalking(false);
 
             ctcObject.SetActive(true);
 
@@ -179,7 +176,6 @@ public class DialogueTextManager : MonoBehaviour
             yield return null;
         }
     }
-
     
     public void ShowName(string name)
     {

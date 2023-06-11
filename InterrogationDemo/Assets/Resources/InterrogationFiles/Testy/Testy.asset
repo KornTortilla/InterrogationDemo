@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bee0453b4033884e91db29f7eac066a, type: 3}
+  m_Name: Testy
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Testy
+  <DialogueList>k__BackingField:
+  - {fileID: 11400000, guid: 757abe5554c3c4b40a50f00b15425da9, type: 2}
+  - {fileID: 11400000, guid: f744df23c1f0ef440baa273ff664fa62, type: 2}
+  - {fileID: 11400000, guid: 8235945186aa5e34cb86291eaeaf275c, type: 2}
+  - {fileID: 11400000, guid: 64471a334658a6749893b30e36520035, type: 2}
+  <EvidenceList>k__BackingField:
+  - {fileID: 11400000, guid: 8e58127412b6df94e8f00d411f3e9909, type: 2}
+  <NoHintResponse>k__BackingField: Sorry, I got nothing.
+  <DefaultErrorResponse>k__BackingField: You were wrong.

@@ -8,7 +8,7 @@ public static class SceneLoader
     //Emum of all scenes, needs to updated as scenes get added
     public enum Scene
     {
-        Tutorial, Seven
+        Interrogation, Cutscene, Background
     }
 
     public static void Load(Scene scene)

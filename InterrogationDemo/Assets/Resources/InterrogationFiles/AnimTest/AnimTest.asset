@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bee0453b4033884e91db29f7eac066a, type: 3}
+  m_Name: AnimTest
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: AnimTest
+  <DialogueList>k__BackingField:
+  - {fileID: 11400000, guid: b7700bf09fb60f5469478536e3fdf926, type: 2}
+  - {fileID: 11400000, guid: a466a0454c7bc564a85e27c5ea005b5a, type: 2}
+  <EvidenceList>k__BackingField: []
+  <NoHintResponse>k__BackingField: Sorry, I got nothing.
+  <DefaultErrorResponse>k__BackingField: You were wrong.
