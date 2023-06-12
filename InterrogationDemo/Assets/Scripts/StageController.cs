@@ -111,6 +111,18 @@ public class StageController : MonoBehaviour
         Debug.Log("Set Character to New Position");
     }
 
+    public void RemoveCharacter(string characterName)
+    {
+        if (!characters.ContainsKey(characterName))
+        {
+            return;
+        }
+
+        Destroy(characters[characterName]);
+
+        characters.Remove(characterName);
+    }
+
     public void ClearStage()
     {
         foreach(GameObject character in characters.Values)
@@ -122,4 +134,5 @@ public class StageController : MonoBehaviour
 
         background.sprite = null;
     }
+
 }

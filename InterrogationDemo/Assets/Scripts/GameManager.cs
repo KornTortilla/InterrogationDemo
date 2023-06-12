@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private RectTransform blackScreenRect;
     [SerializeField] private float fadeTime = 1f;
+
+    public static event Action OnSceneTransitionBegin;
+    public static event Action OnSceneTransitionAdd;
 
     public string TransitionData { get; set; }
 
@@ -43,17 +47,21 @@ public class GameManager : MonoBehaviour
 
         TransitionData = arg;
 
+        OnSceneTransitionBegin?.Invoke();
+
+        Debug.Log("Fading");
+
         Crossfade(scene);
     }
 
     private void Crossfade(string scene)
     {
-        LeanTween.alpha(blackScreenRect, 1f, fadeTime).setOnComplete(Transition);
+        LeanTween.alpha(blackScreenRect, 0f, fadeTime).setOnComplete(Transition);
     }
 
     private void Transition()
     {
-        StageController.Instance.ClearStage();
+        //StageController.Instance.ClearStage();
 
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
@@ -65,6 +73,8 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+
+        OnSceneTransitionAdd?.Invoke();
 
         LeanTween.alpha(blackScreenRect, 0f, fadeTime);
     }

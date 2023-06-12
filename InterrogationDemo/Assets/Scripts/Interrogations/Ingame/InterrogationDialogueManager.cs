@@ -34,7 +34,7 @@ namespace Interrogation.Ingame
 
         private void Awake()
         {
-            dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueSOManager;
+            //dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueSOManager;
         }
 
         //Temporary initialization by screen fade in to start script after full

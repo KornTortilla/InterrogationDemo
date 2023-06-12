@@ -980,6 +980,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2243762556997384111}
+  - component: {fileID: 1318132831059007367}
+  - component: {fileID: 1078920801907837793}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1005,6 +1007,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1318132831059007367
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243762556997384110}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1078920801907837793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243762556997384110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74fda7ecfb7824cb87eebe3ecbbc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2243762557040665525
 GameObject:
   m_ObjectHideFlags: 0

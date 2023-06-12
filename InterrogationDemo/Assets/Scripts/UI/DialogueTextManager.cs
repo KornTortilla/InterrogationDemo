@@ -66,6 +66,10 @@ public class DialogueTextManager : MonoBehaviour
                         StageController.Instance.PlayAnim(terms[1], terms[2]);
                         break;
 
+                    case "remove":
+                        StageController.Instance.RemoveCharacter(terms[1]);
+                        break;
+
                     case "music":
                         if (terms[1] == "stop") AudioManager.Instance.StopMusic();
                         else AudioManager.Instance.PlayNewTrack(terms[1]);
@@ -77,10 +81,6 @@ public class DialogueTextManager : MonoBehaviour
 
                     case "game":
                         OnGameEnd?.Invoke();
-                        break;
-
-                    case "fadein":
-
                         break;
                 }
 
