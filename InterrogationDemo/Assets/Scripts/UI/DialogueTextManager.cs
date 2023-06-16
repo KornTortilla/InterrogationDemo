@@ -6,8 +6,6 @@ using TMPro;
 
 public class DialogueTextManager : MonoBehaviour
 {
-    public static event Action OnGameEnd;
-
     public GameObject nameBox;
     public TextMeshProUGUI dialogueText;
     public GameObject ctcObject;
@@ -19,13 +17,35 @@ public class DialogueTextManager : MonoBehaviour
 
     private bool clickProcessed;
     private bool interruptTyping;
-    private bool odd = false;
+    private bool stageReady = true;
 
     [HideInInspector] public bool isDone = true;
 
     private void Awake()
     {
         blip = Resources.Load("Audio/BlipMale") as AudioClip;
+    }
+
+    private void OnEnable()
+    {
+        StageController.OnActionStart += StageUnready;
+        StageController.OnActionComplete += StageReady;
+    }
+
+    private void OnDisable()
+    {
+        StageController.OnActionStart -= StageUnready;
+        StageController.OnActionComplete -= StageReady;
+    }
+
+    private void StageUnready()
+    {
+        stageReady = false;
+    }
+
+    private void StageReady()
+    {
+        stageReady = true;
     }
 
     public IEnumerator TypeText(string[] sentences, bool needToClickLastText = false)
@@ -44,49 +64,13 @@ public class DialogueTextManager : MonoBehaviour
             */
             if (sentence.Substring(0, 1) == "#")
             {
-                //Removes first character
-                string tag = sentence.Substring(1);
-                //Splits each word of a tag into an array
-                string[] terms = tag.Split(' ');
-                //Checks the first 
-                switch (terms[0])
-                {
-                    case "add":
-                        //Adds character to stage based on only parameter
-                        StageController.Instance.AddCharacter(terms[1]);
-                        break;
-
-                    case "move":
-                        //Sets character to new position with two params, first name and then position
-                        StageController.Instance.SetCharacterPosition(terms[1], terms[2]);
-                        break;
-
-                    case "anim":
-                        //If the anim prefix is used, two params are expected, first name and then animation
-                        StageController.Instance.PlayAnim(terms[1], terms[2]);
-                        break;
-
-                    case "remove":
-                        StageController.Instance.RemoveCharacter(terms[1]);
-                        break;
-
-                    case "music":
-                        if (terms[1] == "stop") AudioManager.Instance.StopMusic();
-                        else AudioManager.Instance.PlayNewTrack(terms[1]);
-                        break;
-
-                    case "scene":
-                        GameManager.Instance.TransitionScenes(terms[1], terms[2]);
-                        break;
-
-                    case "game":
-                        OnGameEnd?.Invoke();
-                        break;
-                }
+                ExecuteTag(sentence);
 
                 //Skips to next sentence so that tag isn't displayed in text
                 continue;
             }
+
+            yield return new WaitUntil(() => stageReady);
 
             //Initializing beginning to simulate talking
             dialogueText.text = "";
@@ -123,7 +107,7 @@ public class DialogueTextManager : MonoBehaviour
 
                 StageController.Instance.SetCurrentSpeakerTalking(true);
 
-                odd = !odd;
+                //odd = !odd;
 
                 //If using punctuation, increase time delay and stop animation to simulate actual speech better
                 if (letter == '.' || letter == '?' || letter == '!')
@@ -160,6 +144,57 @@ public class DialogueTextManager : MonoBehaviour
 
         ctcObject.SetActive(false);
         isDone = true;
+    }
+
+    private void ExecuteTag(string sentence)
+    {
+        //Removes first character
+        string tag = sentence.Substring(1);
+        //Splits each word of a tag into an array
+        string[] terms = tag.Split(' ');
+        //Checks the first 
+        switch (terms[0])
+        {
+            case "background":
+                StageController.Instance.ChangeBackground(terms[1]);
+                break;
+
+            case "add":
+                //Adds character to stage based on only parameter
+                StageController.Instance.AddCharacter(terms[1]);
+                break;
+
+            case "move":
+                //Sets character to new position with two params, first name and then position
+                StageController.Instance.SetCharacterPosition(terms[1], terms[2]);
+                break;
+
+            case "show":
+                StageController.Instance.ShowCharacter(terms[1]);
+                break;
+
+            case "hide":
+                StageController.Instance.HideCharacter(terms[1]);
+                break;
+
+            case "anim":
+                //If the anim prefix is used, two params are expected, first name and then animation
+                StageController.Instance.PlayAnim(terms[1], terms[2]);
+                break;
+
+            case "remove":
+                StageController.Instance.RemoveCharacter(terms[1]);
+                break;
+
+            case "music":
+                if (terms[1] == "stop") AudioManager.Instance.StopMusic();
+                else AudioManager.Instance.PlayNewTrack(terms[1]);
+                break;
+
+            case "scene":
+                GameManager.Instance.TransitionScenes(terms[1], bool.Parse(terms[2]), terms[3]);
+                break;
+        }
     }
 
     private IEnumerator Countdown(float time)

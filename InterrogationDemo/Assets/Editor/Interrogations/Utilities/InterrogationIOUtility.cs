@@ -60,7 +60,7 @@ namespace Interrogation.Utilities
 
             graphData.Intialize(graphFileName);
 
-            DialogueSOManager dialogueSOManager = CreateAsset<DialogueSOManager>(containerFolderPath, graphFileName);
+            DialogueManagerInterrogationSO dialogueSOManager = CreateAsset<DialogueManagerInterrogationSO>(containerFolderPath, graphFileName);
 
             dialogueSOManager.Initialize(graphFileName);
 
@@ -75,7 +75,7 @@ namespace Interrogation.Utilities
             SaveAsset(dialogueSOManager);
         }
 
-        private static void SaveProfile(InterrogationGraphSaveDataSO graphData, DialogueSOManager dialogueSOManager, List<string> evidenceNames)
+        private static void SaveProfile(InterrogationGraphSaveDataSO graphData, DialogueManagerInterrogationSO dialogueSOManager, List<string> evidenceNames)
         {
             ProfileBlackboard profile = graphView.profile;
 
@@ -116,11 +116,11 @@ namespace Interrogation.Utilities
             return evidenceData;
         }
 
-        private static void SaveProfileEvidenceToDialogue(EvidenceContainer evidenceContainer, DialogueSOManager dialogueSOManager)
+        private static void SaveProfileEvidenceToDialogue(EvidenceContainer evidenceContainer, DialogueManagerInterrogationSO dialogueSOManager)
         {
-            EvidenceSO evidenceSO;
+            EvidenceInterrogationSO evidenceSO;
 
-            evidenceSO = CreateAsset<EvidenceSO>($"{containerFolderPath}/Evidence", evidenceContainer.Name.RemoveWhitespaces());
+            evidenceSO = CreateAsset<EvidenceInterrogationSO>($"{containerFolderPath}/Evidence", evidenceContainer.Name.RemoveWhitespaces());
 
             dialogueSOManager.EvidenceList.Add(evidenceSO);
 
@@ -134,7 +134,7 @@ namespace Interrogation.Utilities
             SaveAsset(evidenceSO);
         }
 
-        private static void SaveNodes(InterrogationGraphSaveDataSO graphData, DialogueSOManager dialogueSOManager, List<string> dialogueNames)
+        private static void SaveNodes(InterrogationGraphSaveDataSO graphData, DialogueManagerInterrogationSO dialogueSOManager, List<string> dialogueNames)
         {
             foreach (BaseNode node in nodes)
             {
@@ -245,15 +245,15 @@ namespace Interrogation.Utilities
             return errors;
         }
 
-        private static void SaveNodesToDialogue(BaseNode node, DialogueSOManager dialogueSoManager)
+        private static void SaveNodesToDialogue(BaseNode node, DialogueManagerInterrogationSO dialogueSoManager)
         {
             if(node.NodeType == NodeType.Dialogue)
             {
-                DialogueSO dialogueSO;
+                DialogueInterrogationSO dialogueSO;
 
                 DialogueNode dialogueNode = (DialogueNode)node;
 
-                dialogueSO = CreateAsset<DialogueSO>($"{containerFolderPath}/Dialogue", node.NodeName.RemoveWhitespaces());
+                dialogueSO = CreateAsset<DialogueInterrogationSO>($"{containerFolderPath}/Dialogue", node.NodeName.RemoveWhitespaces());
 
                 dialogueSoManager.DialogueList.Add(dialogueSO);
 
@@ -320,7 +320,7 @@ namespace Interrogation.Utilities
                {
                     DialogueNode dialogueNode = (DialogueNode)node;
 
-                    DialogueSO dialogueSO = (DialogueSO)createdSOs[dialogueNode.ID];
+                    DialogueInterrogationSO dialogueSO = (DialogueInterrogationSO)createdSOs[dialogueNode.ID];
 
                     for (int i = 0; i < dialogueNode.Choices.Count; i++)
                     {
@@ -328,7 +328,7 @@ namespace Interrogation.Utilities
 
                         if (!string.IsNullOrEmpty(nodeChoice.NodeID))
                         {
-                            if(createdSOs[nodeChoice.NodeID] is DialogueSO nextDialogueData)
+                            if(createdSOs[nodeChoice.NodeID] is DialogueInterrogationSO nextDialogueData)
                             {
                                 dialogueSO.Choices[i].NextDialogue = nextDialogueData;
                             }
@@ -400,7 +400,7 @@ namespace Interrogation.Utilities
                             {
                                 BaseNode previoudNode = (BaseNode)edge.output.node;
 
-                                dialogueSO.PreviousDialogue = (DialogueSO) createdSOs[previoudNode.ID];
+                                dialogueSO.PreviousDialogue = (DialogueInterrogationSO) createdSOs[previoudNode.ID];
 
                                 SaveAsset(dialogueSO);
                             }

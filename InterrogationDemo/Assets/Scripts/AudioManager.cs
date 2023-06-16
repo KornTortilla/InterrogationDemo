@@ -29,6 +29,23 @@ public class AudioManager : MonoBehaviour
         musicSources = new List<AudioSource>();
     }
 
+    #region Volume Methods
+    public void SetMasterVolume(float volume)
+    {
+        mixer.SetFloat("Master Volume", volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        mixer.SetFloat("Music Volume", volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        mixer.SetFloat("SFX Volume", volume);
+    }
+    #endregion
+
     public void PlayEffect(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
@@ -57,8 +74,11 @@ public class AudioManager : MonoBehaviour
         {
             AudioSource musicSource = musicObject.AddComponent<AudioSource>();
             musicSource.clip = track;
+            musicSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Music")[0];
             musicSource.loop = true;
             musicSource.volume = 0f;
+
+            Debug.Log("Music");
 
             musicSource.Play();
             musicSources.Add(musicSource);
@@ -85,8 +105,10 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic()
     {
+        StopAllCoroutines();
+
         //For each music source, transitioning to no volume
-        foreach(AudioSource musicSource in musicSources)
+        foreach (AudioSource musicSource in musicSources)
         {
             StartCoroutine(TransitionMusic(musicSource, 0f));
         }

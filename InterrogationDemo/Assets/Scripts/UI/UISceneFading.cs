@@ -21,12 +21,12 @@ public class UISceneFading : MonoBehaviour
 
     private void OnEnable()
     {
-        DialogueTextManager.OnGameEnd += FadeOut;
+        //DialogueTextManager.OnGameEnd += FadeOut;
     }
 
     private void OnDisable()
     {
-        DialogueTextManager.OnGameEnd -= FadeOut;
+        //DialogueTextManager.OnGameEnd -= FadeOut;
     }
 
     //Fades in black screen once interrogation manager signals the end

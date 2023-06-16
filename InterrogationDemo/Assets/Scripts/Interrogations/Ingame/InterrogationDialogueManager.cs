@@ -23,36 +23,23 @@ namespace Interrogation.Ingame
         [SerializeField] private GameObject saveDialogueButton;
         [SerializeField] private FlowchartManager flowchartManager;
 
-        [SerializeField] private DialogueSOManager dialogueManager;
-        private DialogueSO currentDialogue;
-        private Stack<DialogueSO> pastDialogues;
+        private DialogueManagerInterrogationSO dialogueManager;
+        private DialogueInterrogationSO currentDialogue;
+        private Stack<DialogueInterrogationSO> pastDialogues;
 
         private List<string> hints;
 
-        private DialogueSO savedDialogue;
+        private DialogueInterrogationSO savedDialogue;
         private GameObject savedDialogueObject;
 
         private void Awake()
         {
-            //dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueSOManager;
-        }
+            Debug.Log(GameManager.Instance.TransitionData);
 
-        //Temporary initialization by screen fade in to start script after full
-        private void OnEnable()
-        {
-            UISceneFading.OnScreenAwake += Initialize;
-        }
+            dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueManagerInterrogationSO;
 
-        private void OnDisable()
-        {
-            UISceneFading.OnScreenAwake -= Initialize;
-        }
-
-        #region Initializing Methods
-        public void Initialize()
-        {
             //Instantiates dynamic stack
-            pastDialogues = new Stack<DialogueSO>();
+            pastDialogues = new Stack<DialogueInterrogationSO>();
 
             hints = new List<string>();
 
@@ -63,8 +50,23 @@ namespace Interrogation.Ingame
 
             InstantiateEvidence();
 
-            StartInterrogation();
+            string[] initialLine = new string[] { SplitCurrentSentences(currentDialogue.Text)[0] };
+
+            StartCoroutine(dialogueTextManager.TypeText(initialLine));
         }
+
+        //Temporary initialization by screen fade in to start script after full
+        private void OnEnable()
+        {
+            GameManager.OnSceneTransitionEnd += StartInterrogation;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.OnSceneTransitionEnd -= StartInterrogation;
+        }
+
+        #region Initializing Methods
 
         /*
         IEnumerator ParseBriefing()
@@ -111,7 +113,7 @@ namespace Interrogation.Ingame
         private void OpenPathsAndGetStartPoint()
         {
             //Combs through dialogue in scene and opens paths that don't have keys/are not locked
-            foreach (DialogueSO dialogue in dialogueManager.DialogueList)
+            foreach (DialogueInterrogationSO dialogue in dialogueManager.DialogueList)
             {
                 foreach (DialogueChoiceData choiceData in dialogue.Choices)
                 {
@@ -154,7 +156,7 @@ namespace Interrogation.Ingame
         {
             GameObject evidencePrefab = Resources.Load("Prefabs/Interrogation/Creation/EvidenceEntry") as GameObject;
 
-            foreach (EvidenceSO evidence in dialogueManager.EvidenceList)
+            foreach (EvidenceInterrogationSO evidence in dialogueManager.EvidenceList)
             {
                 //Instantiate object under the locker's first child, being the list
                 GameObject evidenceObject = Instantiate(evidencePrefab, evidenceLocker.transform.GetChild(0));
@@ -346,7 +348,7 @@ namespace Interrogation.Ingame
 
         #region Choice Methods
         //Gets called by clicking choice buttons created in CreatedChoiceButtons()
-        private void Decide(DialogueSO nextDialogue)
+        private void Decide(DialogueInterrogationSO nextDialogue)
         {
             AdvanceDialogue(nextDialogue, -1);
 
@@ -368,7 +370,7 @@ namespace Interrogation.Ingame
         }
 
         //Gets called by clicking flowchart buttons, reference FlowchartNode script
-        public void Jump(DialogueSO dialogue)
+        public void Jump(DialogueInterrogationSO dialogue)
         {
             //Automatically toggles view to get out of flowchart
             GetComponent<CameraController>().AlternateCameras();
@@ -384,7 +386,7 @@ namespace Interrogation.Ingame
             flowchartManager.RehighlightedNodes(pastDialogues);
         }
 
-        private void WalkBackDialogueList(DialogueSO dialogue)
+        private void WalkBackDialogueList(DialogueInterrogationSO dialogue)
         {
             //Starts at a specific dialogue and walks backwards through previous dialogues to add until none are left
             pastDialogues.Push(dialogue);
@@ -395,7 +397,7 @@ namespace Interrogation.Ingame
             }
         }
 
-        private void AdvanceDialogue(DialogueSO nextDialogue, int dir)
+        private void AdvanceDialogue(DialogueInterrogationSO nextDialogue, int dir)
         {
             if (nextDialogue == null)
             {

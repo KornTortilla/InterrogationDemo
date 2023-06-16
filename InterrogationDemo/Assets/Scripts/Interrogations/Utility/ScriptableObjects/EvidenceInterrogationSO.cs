@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Interrogation.ScriptableObjects
 {
     [Serializable]
-    public class EvidenceSO : ScriptableObject
+    public class EvidenceInterrogationSO : ScriptableObject
     {
         [field: SerializeField] public string Name { get; set; }
         [field: SerializeField] public string Text { get; set; }

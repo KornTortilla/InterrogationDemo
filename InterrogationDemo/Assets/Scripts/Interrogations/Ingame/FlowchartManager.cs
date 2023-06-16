@@ -16,7 +16,7 @@ namespace Interrogation.Ingame
         private Vector2 startingPos;
 
         //Called when interrogation manager intializes
-        public void Initialize(DialogueSO startingDialogue, InterrogationDialogueManager interroManager)
+        public void Initialize(DialogueInterrogationSO startingDialogue, InterrogationDialogueManager interroManager)
         {
             interrogationManager = interroManager;
             nodeList = new List<GameObject>();
@@ -27,7 +27,7 @@ namespace Interrogation.Ingame
             AddNodesFromTree(startingDialogue);
         }
 
-        private void AddNodesFromTree(DialogueSO root, GameObject previous = null)
+        private void AddNodesFromTree(DialogueInterrogationSO root, GameObject previous = null)
         {
             if (root != null)
             {
@@ -57,7 +57,7 @@ namespace Interrogation.Ingame
         }
 
         //Called when advancing to new dialogue/going back in InterrogationDialogueManager
-        public void UpdateFlowchart(DialogueSO dialogue, bool advancing)
+        public void UpdateFlowchart(DialogueInterrogationSO dialogue, bool advancing)
         {
             //If advancing to new dialogue, get the new dialogue's appropriate node and highlight it
             if(advancing)
@@ -86,7 +86,7 @@ namespace Interrogation.Ingame
         }
 
         //Called when jumping the flowchart by the InterrogationDialogeManager
-        public void RehighlightedNodes(Stack<DialogueSO> dialogueList)
+        public void RehighlightedNodes(Stack<DialogueInterrogationSO> dialogueList)
         {
             //Checks each node if its dialogue is the new previous dialogue list, colors it appropriately
             foreach (GameObject node in nodeList)

@@ -17,14 +17,24 @@ MonoBehaviour:
   <DefaultErrorResponse>k__BackingField: You were wrong.
   <Evidence>k__BackingField: []
   <DialogueNodes>k__BackingField:
+  - <ID>k__BackingField: ba80c191-b7a6-4798-9bc2-6014a43122cc
+    <Name>k__BackingField: 2
+    <Text>k__BackingField: '#move Seven left
+
+      Seven: No kidding, huh?'
+    <Choices>k__BackingField: []
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 819, y: 210}
   - <ID>k__BackingField: 1ab95d28-52e5-4be0-9e4e-94824753912d
     <Name>k__BackingField: 1
-    <Text>k__BackingField: '#add Seven
+    <Text>k__BackingField: '#background InterrogationRoom
 
-      #move Seven right
+      #add Seven
 
-      #anim Seven
-      Idle
+      #move
+      Seven right
+
+      #anim Seven Idle
 
       Seven: Hey, how''s it going.'
     <Choices>k__BackingField:
@@ -35,16 +45,8 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
     <Position>k__BackingField: {x: 344, y: 210}
-  - <ID>k__BackingField: ba80c191-b7a6-4798-9bc2-6014a43122cc
-    <Name>k__BackingField: 2
-    <Text>k__BackingField: '#move Seven left
-
-      Seven: No kidding, huh?'
-    <Choices>k__BackingField: []
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 819, y: 210}
   <RepNodes>k__BackingField: []
   <OldDialogueNames>k__BackingField:
-  - 1
   - 2
+  - 1
   <OldEvidenceNames>k__BackingField: []

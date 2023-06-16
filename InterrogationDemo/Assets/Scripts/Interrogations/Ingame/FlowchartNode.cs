@@ -8,7 +8,7 @@ namespace Interrogation.Ingame
 
     public class FlowchartNode : MonoBehaviour
     {
-        [HideInInspector] public DialogueSO dialogue;
+        [HideInInspector] public DialogueInterrogationSO dialogue;
         [HideInInspector] public GameObject previousNode;
 
         private UILineRenderer uiLiner;
@@ -20,7 +20,7 @@ namespace Interrogation.Ingame
         [SerializeField] private Color defaultColor;
         [SerializeField] private Color highlightColor;
 
-        public void Initialize(DialogueSO dialogueSO, InterrogationDialogueManager interroManager)
+        public void Initialize(DialogueInterrogationSO dialogueSO, InterrogationDialogueManager interroManager)
         {
             dialogue = dialogueSO;
 

@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 2243762556209341531}
   - component: {fileID: 2243762556209341530}
   - component: {fileID: 2243762556209341533}
-  - component: {fileID: 2243762556209341528}
   m_Layer: 5
   m_Name: SharedCanvas
   m_TagString: Untagged
@@ -313,20 +312,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2243762556209341528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2243762556209341535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca55806250d734e85f4d876e3bb094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackScreenRect: {fileID: 2243762556960134678}
-  fadeTime: 2
 --- !u!1 &2243762556219869144
 GameObject:
   m_ObjectHideFlags: 0

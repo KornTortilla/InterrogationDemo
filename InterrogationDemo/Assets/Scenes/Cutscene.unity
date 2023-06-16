@@ -262,7 +262,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243361457}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 2015559093}
   - component: {fileID: 2015559094}
   m_Layer: 0
-  m_Name: CutsceneContainer
+  m_Name: DialogueInjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,27 +532,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0057de2df4a37b40afed866e4e4b3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: '#add Santa
-
-    #move Santa right
-
-    Santa: lmao xd
-
-    #add Seven
-
-    #anim
-    Seven Aggressive
-
-    #move Seven left
-
-    Seven: You think that''s funny punk?
-
-    Santa:
-    Uhh, yeah?
-
-    #remove Seven
-
-    #remove Santa
-
-    #scene Interrogation AnimTest'
   dialogueTextManager: {fileID: 755430555}
+  dialogueSO: {fileID: 11400000, guid: 313aacf8d07f66f4e825ae7c02483eaa, type: 2}

@@ -6,6 +6,8 @@ using UnityEngine;
 public class StageController : MonoBehaviour
 {
     public static StageController Instance;
+    public static event Action OnActionStart;
+    public static event Action OnActionComplete;
 
     [SerializeField] private SpriteRenderer background;
     [SerializeField] private Transform characterListTransform;
@@ -33,6 +35,14 @@ public class StageController : MonoBehaviour
         characters = new Dictionary<string, GameObject>();
     }
 
+    public void ChangeBackground(string backgroundName)
+    {
+        Debug.Log("Changing Background: " + backgroundName);
+
+        Sprite newBackground = Resources.Load<Sprite>("Backgrounds/" + backgroundName);
+        background.sprite = newBackground;
+    }
+
     public void AddCharacter(string characterName)
     {
         //Loads character prefab from name to see if it exists before continuing
@@ -45,7 +55,42 @@ public class StageController : MonoBehaviour
             characters.Add(characterName, newCharacter);
 
             Debug.Log("Added: " + characterName);
+
+            StartCoroutine(FadeCharacter(newCharacter, 1f, 0.2f));
         }
+    }
+
+    private IEnumerator FadeCharacter(GameObject character, float toValue, float time)
+    {
+        OnActionStart?.Invoke();
+
+        yield return StartCoroutine(character.GetComponent<Actor>().Fade(toValue, time));
+
+        OnActionComplete?.Invoke();
+    }
+
+    public void ShowCharacter(string characterName)
+    {
+        if (!characters.ContainsKey(characterName))
+        {
+            return;
+        }
+
+        GameObject character = characters[characterName];
+
+        StartCoroutine(FadeCharacter(character, 1f, 0.2f));
+    }
+
+    public void HideCharacter(string characterName)
+    {
+        if (!characters.ContainsKey(characterName))
+        {
+            return;
+        }
+
+        GameObject character = characters[characterName];
+
+        StartCoroutine(FadeCharacter(character, 0f, 0.2f));
     }
 
     public void PlayAnim(string characterName, string animation)
@@ -118,6 +163,17 @@ public class StageController : MonoBehaviour
             return;
         }
 
+        StartCoroutine(characters[characterName].GetComponent<Actor>().Fade(0f, 0.2f));
+
+        StartCoroutine(WaitRemoval(characterName));
+    }
+
+    private IEnumerator WaitRemoval(string characterName)
+    {
+        Actor actorScript = characters[characterName].GetComponent<Actor>();
+
+        yield return new WaitUntil(() => !actorScript.isActing);
+
         Destroy(characters[characterName]);
 
         characters.Remove(characterName);
@@ -134,5 +190,4 @@ public class StageController : MonoBehaviour
 
         background.sprite = null;
     }
-
 }

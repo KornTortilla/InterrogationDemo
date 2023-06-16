@@ -1,0 +1,1245 @@
+fileFormatVersion: 2
+guid: 6cbeeb57ed03faa49a9017bfe702d544
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AceSad0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1090
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdfb5f6f0f15c74cac09f55f4e4f264
+      internalID: -1395233977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSad1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1090
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07547d19d7231a642a0fac9b651c7b2e
+      internalID: -691849191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSad2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1090
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8f6558d8a76874cbb7cee6e77a4550
+      internalID: 1753210689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSadTalking0
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1090
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2ae4c45cb740c4cb1812664bde10d9
+      internalID: 1456132300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSadTalking1
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1090
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4157c62e4fc41944f920ec854180a4a4
+      internalID: 1528709495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_40
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 223
+        width: 136
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adacf93688b4f474c88a937cca5ec155
+      internalID: 1401979754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_41
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 223
+        width: 177
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e9235956768b14d8c2e2a1c5d31975
+      internalID: 1041696592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_42
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 223
+        width: 161
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f16fbb58c3559c4a966e8bbe4f78337
+      internalID: -596763625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_43
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 223
+        width: 189
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3c06e477df25e41be86c3b40ed15c9
+      internalID: -584139469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_44
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 223
+        width: 202
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80b181c1933b4f42ad4b697d6c56a42
+      internalID: 176826207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_45
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 223
+        width: 210
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c238f10d2342d443a890b260112c859
+      internalID: -1297334990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_46
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 223
+        width: 210
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874cb58f9c9407146aeb69d9d5970154
+      internalID: 1146623906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_47
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 223
+        width: 210
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc7926bbc2408d4caf5015dc942e7a2
+      internalID: 1220556378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 164
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc60801195a7254f8b265a55861a95c
+      internalID: -1540198075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_49
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 5
+        width: 164
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a2e2fa8ab9bd5458bc9297dc175d20
+      internalID: -251956592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceTransparent_50
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 5
+        width: 164
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3e6ca7ee214044e9766f01efaf0fa5
+      internalID: -181141272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceAngry0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1744
+        width: 185
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9844e91f91e0d36488b2d87bd156309d
+      internalID: 2009981331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceAngryTalking0
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1744
+        width: 185
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f939655b4d75d6d40a7d49c0f55e38f8
+      internalID: 352487840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceAngryTalking1
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1744
+        width: 185
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a204d7b1cb36a47b4da46debf6a5e0
+      internalID: -2066951736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSmile0
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1744
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8593133adbd92945b01d2e03368ead6
+      internalID: -337308947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSmileTalking0
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1744
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b4ace5720f3c84594c227332f601e7
+      internalID: -1380467802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSmileTalking1
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1744
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da58783fbf61370468d9a1badb69e418
+      internalID: 952973729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceIdle0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1526
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaddb0d4bf97a424f8f6e2f683a9540c
+      internalID: 1266122277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceIdle1
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1526
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cc010e654e024479d9de489b3b5b14
+      internalID: -2089763891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceIdle2
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1526
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bb07a960da335418723623547a02e2
+      internalID: 1368857031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceIdleTalking0
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1526
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd335b55153986409968175d438a549
+      internalID: 194748187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceIdleTalking1
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1526
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08421b11e6a761541857bffbf63d7188
+      internalID: 1793125700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSurprised0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1308
+        width: 193
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4747b5b2f646940479464f81851c478a
+      internalID: -697506515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSurprised1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1308
+        width: 193
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b930c409185df8408dc701ebe64e87a
+      internalID: 1594210820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSurprised2
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1308
+        width: 193
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc85ce6b10fbbd4e9822771e600685f
+      internalID: -861038017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSurprisedTalking0
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1308
+        width: 193
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d087de94dc46e494c8d80059de070161
+      internalID: -785738455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceSurprisedTalking1
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 1307
+        width: 193
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5460a902a6d12e24f831eed6fb7b1716
+      internalID: 453282849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshake0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 872
+        width: 163
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532bcd7df38a6f743b64afa0e37d2201
+      internalID: 1468591992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshake1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 872
+        width: 169
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5580cc46d33a834c8f620680090f6aa
+      internalID: -452452312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshake2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 872
+        width: 166
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10f37060975e5b4eb54c6aff3c603b6
+      internalID: 1022119391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshake3
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 872
+        width: 181
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdaeaf7854dac24c8e0754a88585a86
+      internalID: -1068592073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshake5
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 872
+        width: 185
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ee16935700c554f8069fd243c1f93e
+      internalID: -531029771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshakeIdle0
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 872
+        width: 186
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b90c298f22084c4b85bf8e611eb927f
+      internalID: -891626065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshakeTalking0
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 872
+        width: 186
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af24b9a67bbb4824fa567fbe390505fc
+      internalID: -628327558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHeadshakeTalking1
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 872
+        width: 186
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b326390a3e10c42a5339d0bc159cd1
+      internalID: -614246947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHand0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 654
+        width: 158
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f23be0866e3344790c7f560c65af8d
+      internalID: -1170440985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHand1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 654
+        width: 164
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0dff05f3f673f498ccef720b290234
+      internalID: -824781413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHand2
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 654
+        width: 163
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68c48ff5fa3ffa47a769cfb2310a334
+      internalID: -1199394490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHand3
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 654
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e0c753f3b1b0544b15d1cd72fcdbc8
+      internalID: -1263613442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHand4
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 654
+        width: 153
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb6277b2ec901343b903f8df56b2c08
+      internalID: -1529025637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHand5
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 654
+        width: 148
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99969228a62e42642b01f2fff8f87031
+      internalID: -568429182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHandIdle0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 441
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8509db9487eff0e4ba7d43170ca41e06
+      internalID: 1701520493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHandIdle1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 441
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b8007335a7ec648813061fb430149d
+      internalID: 1839405174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHandIdle2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 441
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5710b4f681a04ed4db14ebb9c69f145f
+      internalID: 2107177601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHandTalking0
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 441
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ada170652264494f84077a73480ebc6
+      internalID: -1258209495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AceHandTalking1
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 441
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac47691f9ff4b0942a59f404c0c68012
+      internalID: -739539731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AceHandTalking0: -1258209495
+      AceHeadshake5: -531029771
+      AceHeadshake0: 1468591992
+      AceIdle1: -2089763891
+      AceHand2: -1199394490
+      AceHeadshakeTalking1: -614246947
+      AceHeadshake2: 1022119391
+      AceHandTalking1: -739539731
+      AceIdle2: 1368857031
+      AceHand1: -824781413
+      AceAngryTalking0: 352487840
+      AceSurprisedTalking0: -785738455
+      AceIdleTalking1: 1793125700
+      AceHandIdle2: 2107177601
+      AceAngryTalking1: -2066951736
+      AceTransparent_43: -584139469
+      AceSurprised0: -697506515
+      AceSad0: -1395233977
+      AceHeadshake1: -452452312
+      AceHeadshakeIdle0: -891626065
+      AceTransparent_47: 1220556378
+      AceTransparent_48: -1540198075
+      AceSmile0: -337308947
+      AceSurprised2: -861038017
+      AceTransparent_44: 176826207
+      AceSadTalking1: 1528709495
+      AceHeadshake3: -1068592073
+      AceHand3: -1263613442
+      AceHandIdle1: 1839405174
+      AceSmileTalking1: 952973729
+      AceIdle0: 1266122277
+      AceTransparent_42: -596763625
+      AceSurprised1: 1594210820
+      AceIdleTalking0: 194748187
+      AceTransparent_46: 1146623906
+      AceTransparent_45: -1297334990
+      AceTransparent_40: 1401979754
+      AceTransparent_50: -181141272
+      AceHandIdle0: 1701520493
+      AceSmileTalking0: -1380467802
+      AceHand0: -1170440985
+      AceAngry0: 2009981331
+      AceHeadshakeTalking0: -628327558
+      AceTransparent_49: -251956592
+      AceSurprisedTalking1: 453282849
+      AceHand5: -568429182
+      AceSadTalking0: 1456132300
+      AceHand4: -1529025637
+      AceTransparent_41: 1041696592
+      AceSad2: 1753210689
+      AceSad1: -691849191
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

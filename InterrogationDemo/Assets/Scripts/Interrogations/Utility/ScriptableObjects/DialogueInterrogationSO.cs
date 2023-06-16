@@ -6,14 +6,13 @@ namespace Interrogation.ScriptableObjects
 {
     using Data;
 
-    public class DialogueSO : ScriptableObject
+    public class DialogueInterrogationSO : ScriptableObject
     {
         [field: SerializeField] public string Name { get; set; }
-        [field: SerializeField] public List<string> Speakers { get; set; }
         [field: SerializeField] [field: TextArea] public string Text { get; set; }
         [field: SerializeField] public List<DialogueChoiceData> Choices { get; set; }
         [field: SerializeField] public List<DialogueErrorData> Errors { get; set; }
-        [field: SerializeField] public DialogueSO PreviousDialogue { get; set; }
+        [field: SerializeField] public DialogueInterrogationSO PreviousDialogue { get; set; }
         [field: SerializeField] public Vector2 Position { get; set; }
         [field: NonSerialized] public bool Grabbed { get; set; }
         [field: NonSerialized] public bool Seen { get; set; }

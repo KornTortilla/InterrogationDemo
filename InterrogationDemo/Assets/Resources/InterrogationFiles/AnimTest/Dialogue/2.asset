@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
   <Name>k__BackingField: 2
-  <Speakers>k__BackingField: []
   <Text>k__BackingField: '#move Seven left
 
     Seven: No kidding, huh?'

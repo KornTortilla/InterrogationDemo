@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TitleScreen : MonoBehaviour
 {
@@ -8,5 +7,6 @@ public class TitleScreen : MonoBehaviour
     public void StartGame()
     {
         GameManager.Instance.StartGame("Cutscene");
+        GetComponent<Button>().interactable = false;
     }
 }

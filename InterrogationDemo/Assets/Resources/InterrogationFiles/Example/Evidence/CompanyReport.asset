@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fb977ef6580c9409896fec22a9c980, type: 3}
+  m_Script: {fileID: 0}
   m_Name: CompanyReport
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Company Report
-  <Text>k__BackingField: There was a mass layoff in the company a week before the
-    theft, including the suspect.

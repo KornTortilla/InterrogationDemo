@@ -7,12 +7,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private RectTransform blackScreenRect;
-    [SerializeField] private float fadeTime = 1f;
+    [SerializeField] private float fadeTime = 0.5f;
 
     public static event Action OnSceneTransitionBegin;
     public static event Action OnSceneTransitionAdd;
+    public static event Action OnSceneTransitionEnd;
 
-    public string TransitionData { get; set; }
+    [SerializeField] public string TransitionData { get; private set; }
 
     public bool starting;
 
@@ -33,30 +34,38 @@ public class GameManager : MonoBehaviour
         if(starting)
         {
             SceneManager.LoadSceneAsync("Title", LoadSceneMode.Additive);
+
+            AudioManager.Instance.PlayNewTrack("Title");
         }
     }
 
     public void StartGame(string scene)
     {
-        TransitionScenes(scene);
+        TransitionScenes(scene, true);
+
+        AudioManager.Instance.StopMusic();
     }
 
-    public void TransitionScenes(string scene, string arg = null)
+    public void TransitionScenes(string scene, bool blackScreenTransition, string arg = null)
     {
+        blackScreenRect.gameObject.SetActive(true);
+
         nextScene = scene;
 
         TransitionData = arg;
 
         OnSceneTransitionBegin?.Invoke();
 
-        Debug.Log("Fading");
-
-        Crossfade(scene);
+        Crossfade(scene, blackScreenTransition);
     }
 
-    private void Crossfade(string scene)
+    private void Crossfade(string scene, bool blackScreenTransition)
     {
-        LeanTween.alpha(blackScreenRect, 0f, fadeTime).setOnComplete(Transition);
+        float a;
+        if (blackScreenTransition) a = 1f;
+        else a = 0f;
+
+        LeanTween.alpha(blackScreenRect, a, fadeTime).setOnComplete(Transition);
     }
 
     private void Transition()
@@ -76,6 +85,13 @@ public class GameManager : MonoBehaviour
 
         OnSceneTransitionAdd?.Invoke();
 
-        LeanTween.alpha(blackScreenRect, 0f, fadeTime);
+        LeanTween.alpha(blackScreenRect, 0f, fadeTime).setOnComplete(SignalTransitionEnd);
+    }
+
+    private void SignalTransitionEnd()
+    {
+        OnSceneTransitionEnd?.Invoke();
+
+        blackScreenRect.gameObject.SetActive(false);
     }
 }

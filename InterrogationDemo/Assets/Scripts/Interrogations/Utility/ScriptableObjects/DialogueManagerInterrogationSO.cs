@@ -6,19 +6,19 @@ namespace Interrogation.ScriptableObjects
 {
     using Data;
 
-    public class DialogueSOManager : ScriptableObject
+    public class DialogueManagerInterrogationSO : ScriptableObject
     {
         [field: SerializeField] public string FileName { get; set; }
-        [field: SerializeField] public List<DialogueSO> DialogueList { get; set; }
-        [field: SerializeField] public List<EvidenceSO> EvidenceList { get; set; }
+        [field: SerializeField] public List<DialogueInterrogationSO> DialogueList { get; set; }
+        [field: SerializeField] public List<EvidenceInterrogationSO> EvidenceList { get; set; }
         [field: SerializeField] [field: TextArea] public string NoHintResponse { get; set; }
         [field: SerializeField] [field: TextArea] public string DefaultErrorResponse { get; set; }
 
         public void Initialize(string fileName)
         {
             FileName = fileName;
-            DialogueList = new List<DialogueSO>();
-            EvidenceList = new List<EvidenceSO>();
+            DialogueList = new List<DialogueInterrogationSO>();
+            EvidenceList = new List<EvidenceInterrogationSO>();
         }
     }
 }

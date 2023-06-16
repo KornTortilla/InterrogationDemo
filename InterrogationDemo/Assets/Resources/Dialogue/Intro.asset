@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa53886abf707b499589a8e79505a00, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  <Text>k__BackingField: '#add Ace
+
+    #music Seven1
+
+    Ace: Hello, Anna. Are
+    you doing well?
+
+    Anna: Do we need to go over the pleasantries?
+
+    #anim
+    Ace Smile
+
+    Ace: Come now, must you be so callous everytime we speak?
+
+    Anna:
+    ...
+
+    #anim Ace Headshake
+
+    Ace: Fine. We need you for an investigation.
+    A man named Seven. He illegally took funds from his work and was caught in the
+    act.
+
+    Ace: Got it, Captain.
+
+    #remove Ace
+
+    #scene Interrogation true
+    AnimTest'
