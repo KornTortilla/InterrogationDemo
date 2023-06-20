@@ -79,6 +79,8 @@ namespace Interrogation.Utilities
         {
             ProfileBlackboard profile = graphView.profile;
 
+            graphData.PartnerName = profile.partnerName;
+            graphData.IntroText = profile.introText;
             graphData.NoHintResponse = profile.noHintResponse;
             graphData.DefaultErrorResponse = profile.defaultErrorResponse;
 
@@ -90,6 +92,8 @@ namespace Interrogation.Utilities
                 evidenceNames.Add(evidenceContainer.Name);
             }
 
+            dialogueSOManager.PartnerName = profile.partnerName;
+            dialogueSOManager.IntroText = profile.introText;
             dialogueSOManager.NoHintResponse = profile.noHintResponse;
             dialogueSOManager.DefaultErrorResponse = profile.defaultErrorResponse;
 
@@ -467,7 +471,7 @@ namespace Interrogation.Utilities
 
             InterrogationEditorWindow.UpdateFileName(graphData.FileName);
 
-            graphView.profile.Load(graphData.NoHintResponse, graphData.DefaultErrorResponse);
+            graphView.profile.Load(graphData.PartnerName, graphData.IntroText, graphData.NoHintResponse, graphData.DefaultErrorResponse);
             LoadProfileEvidence(graphData.Evidence);
             LoadDialogueNodes(graphData.DialogueNodes);
             LoadRepNodes(graphData.RepNodes);

@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogueTextManager : MonoBehaviour
 {
+    public static Action<string> TutorialActivation;
+
     public GameObject nameBox;
     public TextMeshProUGUI dialogueText;
     public GameObject ctcObject;
@@ -48,9 +50,21 @@ public class DialogueTextManager : MonoBehaviour
         stageReady = true;
     }
 
-    public IEnumerator TypeText(string[] sentences, bool needToClickLastText = false)
+    public void CheckForPriorityCommand(string text)
+    {
+        string[] sentences = SplitIntoSentences(text);
+
+        if (sentences[0].Substring(0, 1) == "!")
+        {
+            SeperateAndExecute(sentences[0]);
+        }
+    }
+
+    public IEnumerator TypeText(string text, bool needToClickLastText = false)
     {
         isDone = false;
+
+        string[] sentences = SplitIntoSentences(text);
 
         for (int i = 0; i < sentences.Length; i++)
         {
@@ -58,13 +72,18 @@ public class DialogueTextManager : MonoBehaviour
 
             string sentence = sentences[i];
 
+            if(sentence.Substring(0, 1) == "!")
+            {
+                continue;
+            }
+
             /*
             If sentence begins with #, it is a tag and will sepearate the 
              first and second words to invoke different events.
             */
             if (sentence.Substring(0, 1) == "#")
             {
-                ExecuteTag(sentence);
+                SeperateAndExecute(sentence);
 
                 //Skips to next sentence so that tag isn't displayed in text
                 continue;
@@ -82,12 +101,9 @@ public class DialogueTextManager : MonoBehaviour
             if (sentence.Contains(":"))
             {
                 //Separates name and dialogue
-                int colon = sentence.IndexOf(":");
-                string name = sentence.Substring(0, colon);
-                sentence = sentence.Substring(colon + 2);
-
-                nameBox.SetActive(true);
-                nameBox.GetComponentInChildren<TMP_Text>().text = name;
+                string[] sentenceArray = SeparateSentenceAndShowName(sentence);
+                string name = sentenceArray[0];
+                sentence = sentenceArray[1];
 
                 StageController.Instance.ChooseSpeaker(name);
             }
@@ -98,7 +114,7 @@ public class DialogueTextManager : MonoBehaviour
                 {
                     interruptTyping = false;
 
-                    ShowText(sentence);
+                    dialogueText.text = sentence;
 
                     break;
                 }
@@ -146,12 +162,30 @@ public class DialogueTextManager : MonoBehaviour
         isDone = true;
     }
 
-    private void ExecuteTag(string sentence)
+    private void SeperateAndExecute(string sentence)
     {
         //Removes first character
-        string tag = sentence.Substring(1);
+        string line = sentence.Substring(1);
         //Splits each word of a tag into an array
-        string[] terms = tag.Split(' ');
+        string[] commands = line.Split(',');
+
+        for(int i = 0; i < commands.Length; i++)
+        {
+            string command = commands[i];
+            //Due to space being after commas, gets rid of space as first char
+            if(command.Substring(0, 1) == " ")
+            {
+                command = command.Substring(1);
+            }
+
+            ExecuteTag(command);
+        }
+    }
+
+    private void ExecuteTag(string command)
+    {
+        //Splits each word of a tag into an array
+        string[] terms = command.Split(' ');
         //Checks the first 
         switch (terms[0])
         {
@@ -192,7 +226,11 @@ public class DialogueTextManager : MonoBehaviour
                 break;
 
             case "scene":
-                GameManager.Instance.TransitionScenes(terms[1], bool.Parse(terms[2]), terms[3]);
+                GameManager.Instance.TransitionScenes(terms[1], bool.Parse(terms[2]), float.Parse(terms[3]), terms[4]);
+                break;
+
+            case "tutorial":
+                TutorialActivation?.Invoke(terms[1]);
                 break;
         }
     }
@@ -211,21 +249,46 @@ public class DialogueTextManager : MonoBehaviour
             yield return null;
         }
     }
-    
-    public void ShowName(string name)
+
+    public void StampLastSentence(string text)
     {
-        nameBox.GetComponentInChildren<TMP_Text>().text = name;
+        string[] sentences = SplitIntoSentences(text);
+
+        string sentence = sentences[sentences.Length - 1];
+
+        if (sentence.Contains(':'))
+        {
+            sentence = SeparateSentenceAndShowName(sentence)[1];
+        }
+
+        dialogueText.text = sentence;
     }
 
-    //Show all text at once
-    public void ShowText(string sentence)
+    private string[] SeparateSentenceAndShowName(string sentence)
     {
-        dialogueText.text = sentence;
+        int colon = sentence.IndexOf(":");
+        string name = sentence.Substring(0, colon);
+        sentence = sentence.Substring(colon + 2);
+
+        nameBox.SetActive(true);
+        nameBox.GetComponentInChildren<TMP_Text>().text = name;
+
+        return new string[] { name, sentence };
     }
 
     //Called when ctcButton is clicked
     public void ProcessClick()
     {
         clickProcessed = true;
+    }
+
+    public string[] SplitIntoSentences(string text)
+    {
+        string[] sentences = text.Split(
+                new string[] { "\r\n", "\r", "\n" },
+                StringSplitOptions.None
+            );
+
+        return sentences;
     }
 }

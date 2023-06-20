@@ -10,24 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
-  m_Name: 1
+  m_Name: DialogueName
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 1
-  <Text>k__BackingField: '#background InterrogationRoom
-
-    #add Seven
-
-    #move
-    Seven right
-
-    #anim Seven Idle
-
-    Seven: Hey, how''s it going.'
+  <Name>k__BackingField: Dialogue Name
+  <Text>k__BackingField: 'Seven: Shit.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: Good
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a466a0454c7bc564a85e27c5ea005b5a, type: 2}
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
     <Hint>k__BackingField: 
   <Errors>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 0}
-  <Position>k__BackingField: {x: 344, y: 210}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 35f0757a225b7594dad35024006545e6, type: 2}
+  <Position>k__BackingField: {x: 1394, y: 210}

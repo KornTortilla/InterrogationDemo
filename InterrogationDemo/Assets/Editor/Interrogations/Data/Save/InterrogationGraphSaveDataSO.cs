@@ -7,6 +7,8 @@ namespace Interrogation.Data.Save
     public class InterrogationGraphSaveDataSO : ScriptableObject
     {
         [field: SerializeField] public string FileName { get; set; }
+        [field: SerializeField] public string PartnerName { get; set; }
+        [field: SerializeField] public string IntroText { get; set; }
         [field: SerializeField] public string NoHintResponse { get; set; }
         [field: SerializeField] public string DefaultErrorResponse { get; set; }
         [field: SerializeField] public List<InterrogationEvidenceSaveData> Evidence { get; set; }

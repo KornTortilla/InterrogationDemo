@@ -352,6 +352,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 641868035}
+    - target: {fileID: 3594403074200380257, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -452.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594403074200380257, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65.573
+      objectReference: {fileID: 0}
     - target: {fileID: 4312614757147804523, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -367,6 +375,14 @@ PrefabInstance:
     - target: {fileID: 5708338416636057765, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -441
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187595151190172105, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -804.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187595151190172105, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65.573
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2243762556209341528, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}

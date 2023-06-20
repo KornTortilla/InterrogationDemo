@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
+  m_Name: HeWasStabbed
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: He Was Stabbed
+  <Text>k__BackingField: '#anim Ace Smile
+
+    Ace: Excellent!
+
+    #anim Ace Idle
+
+    Ace:
+    Sometimes the suspect will speak against them, giving a prime opportunity to
+    use their words against them.
+
+    #tutorial save
+
+    Ace: It''s important to
+    record their words for this purpose, which you can do below here.
+
+    #anim
+    Ace Smile
+
+    Ace: I''ll give you another opportunity to try it out here. I''ll
+    incorrectly say what my favorite color is. Ask me what it actually is. Then come
+    back here and present that.
+
+    #anim Ace Idle
+
+    Ace: Here goes then: My
+    favorite color is blue.'
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: It's actually red.
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0f2c75770db321d4a83cd867ae4e26e8, type: 2}
+    <Keys>k__BackingField:
+    - {fileID: 11400000, guid: 7f88523e1d9fbb24f8fa16ed31203e31, type: 2}
+    <Hint>k__BackingField: 
+  - <Text>k__BackingField: What's your favorite color?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 7f88523e1d9fbb24f8fa16ed31203e31, type: 2}
+    <Keys>k__BackingField: []
+    <Hint>k__BackingField: 
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: f8b58257ec0d9ba43bc18ac9b4e605a1, type: 2}
+  <Position>k__BackingField: {x: 1501, y: 282}

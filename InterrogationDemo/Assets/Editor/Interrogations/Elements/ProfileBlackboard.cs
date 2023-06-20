@@ -15,8 +15,13 @@ namespace Interrogation.Elements
     {
         private InterrogationGraphView interroGraphView;
 
+        public string partnerName = "";
+        public string introText = "We're intro-ing.";
         public string noHintResponse = "Sorry, I got nothing.";
         public string defaultErrorResponse = "You were wrong.";
+
+        private TextField partnerNameField;
+        private TextField introTextField;
         private TextField noHintTextField;
         private TextField errorTextField;
 
@@ -32,6 +37,18 @@ namespace Interrogation.Elements
 
             EvidenceContainers = new List<EvidenceContainer>();
 
+            partnerNameField = InterrogationElementUtility.CreateTextField(partnerName, "Partner Name:", callback =>
+            {
+                partnerName = callback.newValue.RemoveWhitespaces().RemoveSpecialCharacters();
+            });
+
+            Foldout introFoldout = InterrogationElementUtility.CreateFoldout("Intro Text");
+
+            introTextField = InterrogationElementUtility.CreateTextArea(introText, null, callback =>
+            {
+                introText = callback.newValue;
+            });
+
             Foldout noHintFoldout = InterrogationElementUtility.CreateFoldout("No Hint Response");
 
             noHintTextField = InterrogationElementUtility.CreateTextArea(noHintResponse, null, callback =>
@@ -46,6 +63,11 @@ namespace Interrogation.Elements
                 defaultErrorResponse = callback.newValue;
             });
 
+            introTextField.AddStyleClasses(
+                "interro-node__textfield",
+                "interro-node__quote-textfield"
+            );
+
             noHintTextField.AddStyleClasses(
                 "interro-node__textfield",
                 "interro-node__quote-textfield"
@@ -56,9 +78,12 @@ namespace Interrogation.Elements
                 "interro-node__quote-textfield"
             );
 
+            introFoldout.Add(introTextField);
             noHintFoldout.Add(noHintTextField);
             errorFoldout.Add(errorTextField);
 
+            this.Add(partnerNameField);
+            this.Add(introFoldout);
             this.Add(noHintFoldout);
             this.Add(errorFoldout);
 
@@ -94,6 +119,12 @@ namespace Interrogation.Elements
 
             EvidenceContainers.Clear();
 
+            partnerName = "";
+            partnerNameField.value = partnerName;
+
+            introText = "We're intro-ing.";
+            introTextField.value = introText;
+
             noHintResponse = "Sorry, I got nothing.";
             noHintTextField.value = noHintResponse;
 
@@ -101,8 +132,14 @@ namespace Interrogation.Elements
             errorTextField.value = defaultErrorResponse;
         }
 
-        public void Load(string noHint, string defaultError)
+        public void Load(string pName, string intro, string noHint, string defaultError)
         {
+            partnerName = pName;
+            partnerNameField.value = partnerName;
+
+            introText = intro;
+            introTextField.value = introText;
+
             noHintResponse = noHint;
             noHintTextField.value = noHintResponse;
 

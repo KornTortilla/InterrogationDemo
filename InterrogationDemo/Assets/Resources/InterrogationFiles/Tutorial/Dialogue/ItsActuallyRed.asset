@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
-  m_Name: StartGame
+  m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
+  m_Name: ItsActuallyRed
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Start Game
-  <Speakers>k__BackingField: []
-  <Text>k__BackingField: '#scene Seven'
+  <Name>k__BackingField: Its Actually Red
+  <Text>k__BackingField: Dialogue text.
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}
     <Keys>k__BackingField: []
-  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: b20be128c80dd4f4a906f87531d79244, type: 2}
-  <Position>k__BackingField: {x: 2201, y: 146}
+    <Hint>k__BackingField: 
+  <Errors>k__BackingField: []
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: e427ba7e936b39e43ae999e6ad514008, type: 2}
+  <Position>k__BackingField: {x: 2036, y: 282}

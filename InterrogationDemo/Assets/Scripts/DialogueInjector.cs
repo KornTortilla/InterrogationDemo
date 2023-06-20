@@ -16,13 +16,13 @@ public class DialogueInjector : MonoBehaviour
         GameManager.OnSceneTransitionEnd -= Inject;
     }
 
+    private void Awake()
+    {
+        dialogueTextManager.CheckForPriorityCommand(dialogueSO.Text);
+    }
+
     public void Inject()
     {
-        string[] sentences = dialogueSO.Text.Split(
-                new string[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None
-            );
-
-        StartCoroutine(dialogueTextManager.TypeText(sentences));
+        StartCoroutine(dialogueTextManager.TypeText(dialogueSO.Text));
     }
 }

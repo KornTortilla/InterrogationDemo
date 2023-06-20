@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
+  m_Name: DialogueName
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Dialogue Name
+  <Text>k__BackingField: '#anim Ace Smile
+
+    Ace: Something like that works.
+
+    #anim
+    Ace Idle
+
+    Ace: In actual interrogations, the questions will come to you on
+    their own.
+
+    Ace: If any of the information they say seems to be false, perhaps
+    due to the evidence pointing to contrary, that is the moment to present your
+    findings.
+
+    Ace: Here, I''ll give you opportunity to do so.
+
+    Ace: Pull
+    the right piece of evidence out of the locker and show it to me for what I''m
+    about to say: ''The victim was bludgeoned to death.'''
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: He was stabbed.
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: e427ba7e936b39e43ae999e6ad514008, type: 2}
+    <Keys>k__BackingField:
+    - {fileID: 11400000, guid: 9e37a29bd43e91c4ba2bac47dd562080, type: 2}
+    <Hint>k__BackingField: 
+  <Errors>k__BackingField:
+  - <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Not quite, unfortunately...'
+    <Evidence>k__BackingField:
+    - {fileID: 11400000, guid: 1ca5cc0dd92adcd469000d8ca2363e60, type: 2}
+  <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 052df18df866a9b409cd764aece8e2cc, type: 2}
+  <Position>k__BackingField: {x: 939, y: 282}

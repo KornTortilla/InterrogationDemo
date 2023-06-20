@@ -27,6 +27,7 @@ namespace Interrogation.Ingame
         private DialogueInterrogationSO currentDialogue;
         private Stack<DialogueInterrogationSO> pastDialogues;
 
+        private string partnerName;
         private List<string> hints;
 
         private DialogueInterrogationSO savedDialogue;
@@ -41,6 +42,13 @@ namespace Interrogation.Ingame
             //Instantiates dynamic stack
             pastDialogues = new Stack<DialogueInterrogationSO>();
 
+            partnerName = dialogueManager.PartnerName;
+
+            if(!string.IsNullOrEmpty(partnerName))
+            {
+                StageController.Instance.AddCharacter(partnerName, -1f);
+            }
+
             hints = new List<string>();
 
             OpenPathsAndGetStartPoint();
@@ -50,20 +58,20 @@ namespace Interrogation.Ingame
 
             InstantiateEvidence();
 
-            string[] initialLine = new string[] { SplitCurrentSentences(currentDialogue.Text)[0] };
-
-            StartCoroutine(dialogueTextManager.TypeText(initialLine));
+            dialogueTextManager.CheckForPriorityCommand(dialogueManager.IntroText);
         }
 
         //Temporary initialization by screen fade in to start script after full
         private void OnEnable()
         {
-            GameManager.OnSceneTransitionEnd += StartInterrogation;
+            GameManager.OnSceneTransitionEnd += Intro;
+            DialogueTextManager.TutorialActivation += ActivateObject;
         }
 
         private void OnDisable()
         {
-            GameManager.OnSceneTransitionEnd -= StartInterrogation;
+            GameManager.OnSceneTransitionEnd -= Intro;
+            DialogueTextManager.TutorialActivation -= ActivateObject;
         }
 
         #region Initializing Methods
@@ -131,6 +139,18 @@ namespace Interrogation.Ingame
             }
         }
 
+        private void Intro()
+        {
+            StartCoroutine(WaitForIntroText());
+        }
+
+        private IEnumerator WaitForIntroText()
+        {
+            yield return StartCoroutine(dialogueTextManager.TypeText(dialogueManager.IntroText));
+
+            StartInterrogation();
+        }
+
         private void StartInterrogation()
         {
             //Removes current choice buttons
@@ -143,7 +163,7 @@ namespace Interrogation.Ingame
                 GameObject.Destroy(child.gameObject, 0.5f);
             }
 
-            Debug.Log(currentDialogue.Text);
+            hintButton.GetComponent<Button>().interactable = true;
 
             StartCoroutine(ParseCurrentDialogue(-1, currentDialogue.Text));
 
@@ -185,7 +205,7 @@ namespace Interrogation.Ingame
             GameObject dialoguePrefab = Resources.Load("Prefabs/Interrogation/Creation/DialogueEntry") as GameObject;
 
             //Splits sentences and grabs last sentence
-            string[] sentences = SplitCurrentSentences(currentDialogue.Text);
+            string[] sentences = dialogueTextManager.SplitIntoSentences(currentDialogue.Text);
             string sentence = sentences[sentences.Length - 1];
 
             //If speaker mentioned, exclude speaker's name to assume suspect ends all conversations
@@ -297,12 +317,9 @@ namespace Interrogation.Ingame
             saveDialogueButton.SetActive(false);
             hintButton.GetComponent<Button>().interactable = false;
 
-            //Split sentences of text into lines and stores each line
-            string[] sentences = SplitCurrentSentences(text);
-
             bool needToClickLastText = !isProgressing;
 
-            StartCoroutine(dialogueTextManager.TypeText(sentences, needToClickLastText));
+            StartCoroutine(dialogueTextManager.TypeText(text, needToClickLastText));
 
             yield return new WaitUntil(() => dialogueTextManager.isDone);
 
@@ -323,26 +340,13 @@ namespace Interrogation.Ingame
             }
             else
             {
-                StampLastText(currentDialogue.Text);
+                dialogueTextManager.StampLastSentence(currentDialogue.Text);
+                
+                if(!string.IsNullOrEmpty(partnerName))
+                {
+                    StageController.Instance.HintSlide(partnerName, false);
+                }
             }
-        }
-
-        private void StampLastText(string text)
-        {
-            string[] sentences = SplitCurrentSentences(text);
-
-            string sentence = sentences[sentences.Length - 1];
-
-            if (sentence.IndexOf(":") != -1)
-            {
-                int colon = sentence.IndexOf(":");
-                string name = sentence.Substring(0, colon);
-                sentence = sentence.Substring(colon + 2);
-
-                dialogueTextManager.ShowName(name);
-            }
-
-            dialogueTextManager.ShowText(sentence);
         }
         #endregion
 
@@ -442,7 +446,7 @@ namespace Interrogation.Ingame
             //Or get the last sentence minus the possible speaker name and directly puts into text
             else
             {
-                StampLastText(currentDialogue.Text);
+                dialogueTextManager.StampLastSentence(currentDialogue.Text);
 
                 CreateChoicesButtons(dir);
             }
@@ -532,19 +536,22 @@ namespace Interrogation.Ingame
                 hint = dialogueManager.NoHintResponse;
             }
 
+            if (!string.IsNullOrEmpty(partnerName))
+            {
+                StageController.Instance.HintSlide(partnerName, true);
+            }
+
             StartCoroutine(ParseCurrentDialogue(-1, hint, false));
         }
 
-        #region Utility Method
-        private string[] SplitCurrentSentences(string text)
+        private void ActivateObject(string stringObject)
         {
-            string[] sentences = text.Split(
-                new string[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None
-            );
-
-            return sentences;
+            switch(stringObject)
+            {
+                case "locker":
+                    evidenceLocker.GetComponent<CanvasGroupFadeInOut>().FadeIn();
+                    break;
+            }
         }
-        #endregion
     }
 }

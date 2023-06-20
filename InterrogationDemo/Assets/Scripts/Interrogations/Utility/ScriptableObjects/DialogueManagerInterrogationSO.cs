@@ -11,6 +11,8 @@ namespace Interrogation.ScriptableObjects
         [field: SerializeField] public string FileName { get; set; }
         [field: SerializeField] public List<DialogueInterrogationSO> DialogueList { get; set; }
         [field: SerializeField] public List<EvidenceInterrogationSO> EvidenceList { get; set; }
+        [field: SerializeField] public string PartnerName { get; set; }
+        [field: SerializeField] public string IntroText { get; set; }
         [field: SerializeField] [field: TextArea] public string NoHintResponse { get; set; }
         [field: SerializeField] [field: TextArea] public string DefaultErrorResponse { get; set; }
 

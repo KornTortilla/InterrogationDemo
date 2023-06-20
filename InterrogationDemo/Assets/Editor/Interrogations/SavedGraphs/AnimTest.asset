@@ -13,40 +13,78 @@ MonoBehaviour:
   m_Name: AnimTest
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: AnimTest
-  <NoHintResponse>k__BackingField: Sorry, I got nothing.
-  <DefaultErrorResponse>k__BackingField: You were wrong.
-  <Evidence>k__BackingField: []
+  <PartnerName>k__BackingField: Ace
+  <IntroText>k__BackingField: '!background InterrogationRoom, move Ace offscreenright'
+  <NoHintResponse>k__BackingField: '#anim Ace Headshake
+
+    Ace: Sorry, I got nothing.'
+  <DefaultErrorResponse>k__BackingField: 'Seven: Uhh, what?'
+  <Evidence>k__BackingField:
+  - <Name>k__BackingField: He Was Doing Smth
+    <ID>k__BackingField: d405ec1b-2968-4998-a119-eaca4d940885
+    <Text>k__BackingField: Uh oh...
+    <NodeIDs>k__BackingField: []
   <DialogueNodes>k__BackingField:
-  - <ID>k__BackingField: ba80c191-b7a6-4798-9bc2-6014a43122cc
-    <Name>k__BackingField: 2
-    <Text>k__BackingField: '#move Seven left
-
-      Seven: No kidding, huh?'
-    <Choices>k__BackingField: []
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 819, y: 210}
-  - <ID>k__BackingField: 1ab95d28-52e5-4be0-9e4e-94824753912d
-    <Name>k__BackingField: 1
-    <Text>k__BackingField: '#background InterrogationRoom
-
-      #add Seven
-
-      #move
-      Seven right
-
-      #anim Seven Idle
-
-      Seven: Hey, how''s it going.'
+  - <ID>k__BackingField: dc8feeb8-b586-4f2a-b8e3-c9a208e4ea9e
+    <Name>k__BackingField: Dialogue Name
+    <Text>k__BackingField: 'Seven: Shit.'
     <Choices>k__BackingField:
-    - <Text>k__BackingField: Good
-      <NodeID>k__BackingField: ba80c191-b7a6-4798-9bc2-6014a43122cc
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
       <KeyIDs>k__BackingField: []
       <Hint>k__BackingField: 
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 344, y: 210}
-  <RepNodes>k__BackingField: []
+    <Position>k__BackingField: {x: 1394, y: 210}
+  - <ID>k__BackingField: 8e8bbcc9-ee36-4201-9da1-0c48b7ab1916
+    <Name>k__BackingField: What Were You Doing
+    <Text>k__BackingField: 'Seven: Nothing...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Lock
+      <NodeID>k__BackingField: dc8feeb8-b586-4f2a-b8e3-c9a208e4ea9e
+      <KeyIDs>k__BackingField:
+      - 227b9766-1129-4f1e-a887-8b7df81a0aea
+      <Hint>k__BackingField: '#anim Ace Hand
+
+        Ace: Look in your evidence,
+        Anna. It says it all.
+
+        Anna: I got it, I got it...'
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 827, y: 210}
+  - <ID>k__BackingField: 1ab95d28-52e5-4be0-9e4e-94824753912d
+    <Name>k__BackingField: Start
+    <Text>k__BackingField: '#add Seven
+
+      #move Seven right
+
+      #anim Seven
+      Idle
+
+      Anna: Are you doing well?
+
+      Seven: No.
+
+      Anna: Good,
+      let''s get started.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What were you doing?
+      <NodeID>k__BackingField: 8e8bbcc9-ee36-4201-9da1-0c48b7ab1916
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 335, y: 210}
+  <RepNodes>k__BackingField:
+  - <ID>k__BackingField: 227b9766-1129-4f1e-a887-8b7df81a0aea
+    <Name>k__BackingField: He Was Doing Smth
+    <ParentID>k__BackingField: d405ec1b-2968-4998-a119-eaca4d940885
+    <Position>k__BackingField: {x: 1394, y: 441}
+    <NodeType>k__BackingField: 2
   <OldDialogueNames>k__BackingField:
-  - 2
-  - 1
-  <OldEvidenceNames>k__BackingField: []
+  - Dialogue Name
+  - What Were You Doing
+  - Start
+  <OldEvidenceNames>k__BackingField:
+  - He Was Doing Smth

@@ -7,13 +7,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private RectTransform blackScreenRect;
-    [SerializeField] private float fadeTime = 0.5f;
+    private float fadeTime = 1f;
 
-    public static event Action OnSceneTransitionBegin;
-    public static event Action OnSceneTransitionAdd;
+    public static event Action<float> OnSceneTransitionBegin;
+    public static event Action<float> OnSceneTransitionAdd;
     public static event Action OnSceneTransitionEnd;
 
-    [SerializeField] public string TransitionData { get; private set; }
+    public string TransitionData { get; private set; }
 
     public bool starting;
 
@@ -41,20 +41,22 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(string scene)
     {
-        TransitionScenes(scene, true);
+        TransitionScenes(scene, true, 2f);
 
         AudioManager.Instance.StopMusic();
     }
 
-    public void TransitionScenes(string scene, bool blackScreenTransition, string arg = null)
+    public void TransitionScenes(string scene, bool blackScreenTransition, float time = 1f, string arg = null)
     {
+        fadeTime = time;
+
         blackScreenRect.gameObject.SetActive(true);
 
         nextScene = scene;
 
         TransitionData = arg;
 
-        OnSceneTransitionBegin?.Invoke();
+        OnSceneTransitionBegin?.Invoke(time);
 
         Crossfade(scene, blackScreenTransition);
     }
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
 
-        OnSceneTransitionAdd?.Invoke();
+        OnSceneTransitionAdd?.Invoke(fadeTime);
 
         LeanTween.alpha(blackScreenRect, 0f, fadeTime).setOnComplete(SignalTransitionEnd);
     }

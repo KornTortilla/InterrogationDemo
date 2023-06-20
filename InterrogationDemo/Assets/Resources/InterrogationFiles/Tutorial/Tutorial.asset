@@ -9,18 +9,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bee0453b4033884e91db29f7eac066a, type: 3}
+  m_Script: {fileID: 11500000, guid: d4f8eed0b8c596b47a4a847e469a2e62, type: 3}
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
   <DialogueList>k__BackingField:
-  - {fileID: 11400000, guid: acb0389e18eeb2944b8c912967c50ef3, type: 2}
+  - {fileID: 11400000, guid: f8b58257ec0d9ba43bc18ac9b4e605a1, type: 2}
   - {fileID: 11400000, guid: 052df18df866a9b409cd764aece8e2cc, type: 2}
-  - {fileID: 11400000, guid: 8da7d258542bd6849baffc706084104c, type: 2}
-  - {fileID: 11400000, guid: c7745f0faf0f15a40bb2cc0cd86c69db, type: 2}
-  - {fileID: 11400000, guid: 87fe3e261b894d74a9c329b03c654390, type: 2}
-  - {fileID: 11400000, guid: b20be128c80dd4f4a906f87531d79244, type: 2}
+  - {fileID: 11400000, guid: e427ba7e936b39e43ae999e6ad514008, type: 2}
+  - {fileID: 11400000, guid: 0f2c75770db321d4a83cd867ae4e26e8, type: 2}
+  - {fileID: 11400000, guid: 7f88523e1d9fbb24f8fa16ed31203e31, type: 2}
   <EvidenceList>k__BackingField:
-  - {fileID: 11400000, guid: a45a14ff199534447bae27c705890153, type: 2}
-  - {fileID: 11400000, guid: 82b80e0e965fe6641b1fc35d15234028, type: 2}
-  - {fileID: 11400000, guid: 166181488791c00408dad904d7a2277e, type: 2}
+  - {fileID: 11400000, guid: 9e37a29bd43e91c4ba2bac47dd562080, type: 2}
+  - {fileID: 11400000, guid: 1ca5cc0dd92adcd469000d8ca2363e60, type: 2}
+  <PartnerName>k__BackingField: 
+  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right
+
+'
+  <NoHintResponse>k__BackingField: Sorry, I got nothing.
+  <DefaultErrorResponse>k__BackingField: '#anim Ace Headshake
+
+    Ace: What are
+    you doing, Anna?
+
+    Anna: I was just thought this was interesting and wasnted
+    to discuss...
+
+    #anim Ace Hand
+
+    Ace: Please, keep focused on what''s at
+    hand.
+
+    #anim Ace Idle
+
+    Ace: Now...'

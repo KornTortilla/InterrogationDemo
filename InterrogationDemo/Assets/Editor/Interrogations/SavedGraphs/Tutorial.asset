@@ -13,128 +13,195 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
-  <Nodes>k__BackingField:
-  - <ID>k__BackingField: 20f00356-cdd9-4da9-87c8-c7c3c0291778
-    <Name>k__BackingField: Start Game
-    <Text>k__BackingField: '#scene Seven'
+  <PartnerName>k__BackingField: 
+  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right
+
+'
+  <NoHintResponse>k__BackingField: Sorry, I got nothing.
+  <DefaultErrorResponse>k__BackingField: '#anim Ace Headshake
+
+    Ace: What are
+    you doing, Anna?
+
+    Anna: I was just thought this was interesting and wasnted
+    to discuss...
+
+    #anim Ace Hand
+
+    Ace: Please, keep focused on what''s at
+    hand.
+
+    #anim Ace Idle
+
+    Ace: Now...'
+  <Evidence>k__BackingField:
+  - <Name>k__BackingField: Autopsy Report
+    <ID>k__BackingField: 9f2acddd-71b0-40f7-b8da-fe5463848a40
+    <Text>k__BackingField: The victim stabbed to death.
+    <NodeIDs>k__BackingField: []
+  - <Name>k__BackingField: Financial Records
+    <ID>k__BackingField: 7aa9d9b9-e8ce-46de-b0d4-43b5dd8cf969
+    <Text>k__BackingField: The company reported a net worth of 20 million.
+    <NodeIDs>k__BackingField: []
+  <DialogueNodes>k__BackingField:
+  - <ID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
+    <Name>k__BackingField: Dialogue Name
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Something like that works.
+
+      #anim
+      Ace Idle
+
+      Ace: In actual interrogations, the questions will come to you
+      on their own.
+
+      Ace: If any of the information they say seems to be false,
+      perhaps due to the evidence pointing to contrary, that is the moment to present
+      your findings.
+
+      Ace: Here, I''ll give you opportunity to do so.
+
+      Ace:
+      Pull the right piece of evidence out of the locker and show it to me for what
+      I''m about to say: ''The victim was bludgeoned to death.'''
     <Choices>k__BackingField:
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-      <KeyIDs>k__BackingField: []
-      <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 2201, y: 146}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: e275eb1a-4785-47ed-942a-35d2f22a0407
+    - <Text>k__BackingField: He was stabbed.
+      <NodeID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
+      <KeyIDs>k__BackingField:
+      - fa78992a-508c-46b2-9b67-9e4ba471f9bb
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField:
+    - <Text>k__BackingField: '#anim Ace Smile
+
+        Ace: Not quite, unfortunately...'
+      <EvidenceIDs>k__BackingField:
+      - 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
+      Type: 2
+    <Position>k__BackingField: {x: 939, y: 282}
+  - <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
     <Name>k__BackingField: Start
-    <Text>k__BackingField: Welcome to the InterrogationDemo! I'm here to help you
-      get anitquated with the system before you get started. If you don't need it
-      you can just tell me though!
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: This is the interrogation
+      room. I imagine you''ll find yourself in here a number of times.
+
+      Anna:
+      Lovely...
+
+      #anim Ace Idle
+
+      Ace: We''ll run over the basic ideas
+      you''ll need to be familiar with in order to succeed.
+
+      Ace: Before any
+      interrogation, you''ll be given evidence having to due with the case.
+
+      #tutorial
+      locker
+
+      Ace: It can be found in the locker to the left.
+
+      Ace: Moving
+      forward, a core part of interrogations here are asking question in order to
+      gain more information.
+
+      #anim Ace Smile
+
+      Ace: Go ahead and ask
+      me a question.'
     <Choices>k__BackingField:
-    - <Text>k__BackingField: I have no idea what I'm doing.
-      <NodeID>k__BackingField: b31e6636-40da-4590-972c-3e24fe47568c
+    - <Text>k__BackingField: What am I supposed to ask?
+      <NodeID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
       <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
       <Type>k__BackingField: 0
-    - <Text>k__BackingField: I'm good on the tutorial.
-      <NodeID>k__BackingField: a4d3649b-52af-4116-b0d8-b98709501f97
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 415, y: 282}
+  - <ID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
+    <Name>k__BackingField: He Was Stabbed
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Excellent!
+
+      #anim Ace
+      Idle
+
+      Ace: Sometimes the suspect will speak against them, giving a prime
+      opportunity to use their words against them.
+
+      #tutorial save
+
+      Ace:
+      It''s important to record their words for this purpose, which you can do below
+      here.
+
+      #anim Ace Smile
+
+      Ace: I''ll give you another opportunity
+      to try it out here. I''ll incorrectly say what my favorite color is. Ask me
+      what it actually is. Then come back here and present that.
+
+      #anim Ace
+      Idle
+
+      Ace: Here goes then: My favorite color is blue.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: It's actually red.
+      <NodeID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
+      <KeyIDs>k__BackingField:
+      - 17e300c5-e37f-44fe-85e5-de3c9829935c
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 1
+    - <Text>k__BackingField: What's your favorite color?
+      <NodeID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
       <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
       <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 300, y: 258}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: a4d3649b-52af-4116-b0d8-b98709501f97
-    <Name>k__BackingField: Im Good
-    <Text>k__BackingField: '#scene Seven'
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 1501, y: 282}
+  - <ID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
+    <Name>k__BackingField: Its Actually Red
+    <Text>k__BackingField: Dialogue text.
     <Choices>k__BackingField:
     - <Text>k__BackingField: New Choice
       <NodeID>k__BackingField: 
       <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
       <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 784, y: 472}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: b307ffc9-6d44-47a4-b3ce-4a83b693041a
-    <Name>k__BackingField: At The Park
-    <Text>k__BackingField: Angela was at the park at 5PM.
-    <Choices>k__BackingField: []
-    <Position>k__BackingField: {x: 1252, y: -113}
-    <Type>k__BackingField: 1
-  - <ID>k__BackingField: 8188eebc-ab1b-4f4b-ac13-4265365fccbf
-    <Name>k__BackingField: Dentist Appointment
-    <Text>k__BackingField: Steven was at the dentist's at 1PM.
-    <Choices>k__BackingField: []
-    <Position>k__BackingField: {x: 1252, y: -452}
-    <Type>k__BackingField: 1
-  - <ID>k__BackingField: 7d2a0f4b-8ed0-47f8-b809-870223bf82aa
-    <Name>k__BackingField: In Class
-    <Text>k__BackingField: Steven was seen in class at 5PM.
-    <Choices>k__BackingField: []
-    <Position>k__BackingField: {x: 1252, y: -281}
-    <Type>k__BackingField: 1
-  - <ID>k__BackingField: b31e6636-40da-4590-972c-3e24fe47568c
-    <Name>k__BackingField: Pointing Out Contradictions
-    <Text>k__BackingField: 'That''s perfectly fine! We''ll start with what you''ll
-      be doing. The game is centered around pointing out contradictions, strictly
-      false statements. You''ll reference your evidence or gather the suspect''s
-      statements to point out falsehoods.
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2036, y: 282}
+  - <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
+    <Name>k__BackingField: Whats Your Favorite Color
+    <Text>k__BackingField: '#anim Ace Smile
 
-      You can look at your evidence in
-      the Evidence Locker with the button to the far left. I recommend reading through
-      the evidence you start with once ingame to know what''s going on.
-
-      As
-      you go through different questions and find untrue statements, you can drag
-      the evidence that contradicts on the area above the textbox.
-
-      Try pointing
-      out the following statement as untrue with the correct evidence- "Steven was
-      at the party at 5PM."'
+      Ace: It''s red.'
     <Choices>k__BackingField:
-    - <Text>k__BackingField: Contradiction Found
-      <NodeID>k__BackingField: 735e0907-c0d2-461f-aea1-67ee2d48f8b8
-      <KeyIDs>k__BackingField:
-      - 7d2a0f4b-8ed0-47f8-b809-870223bf82aa
-      <Type>k__BackingField: 1
-    <Position>k__BackingField: {x: 784, y: 113}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: 735e0907-c0d2-461f-aea1-67ee2d48f8b8
-    <Name>k__BackingField: Using Statements Against Them
-    <Text>k__BackingField: 'Nicely done! You can do the same with a suspect''s statements.
-      Once dialogue for a question is over, you can click the Save As Evidence button
-      at the bottom to store the statement in the Evidence Locker and use it to point
-      out contradictions.
-
-      Go back to the last statement and save it to use
-      here!'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Another Contradiction Found
-      <NodeID>k__BackingField: af4d63a8-472a-4e45-b081-48b3cc2bd52e
-      <KeyIDs>k__BackingField:
-      - b31e6636-40da-4590-972c-3e24fe47568c
-      <Type>k__BackingField: 1
-    <Position>k__BackingField: {x: 1252, y: 146}
-    <Type>k__BackingField: 0
-  - <ID>k__BackingField: af4d63a8-472a-4e45-b081-48b3cc2bd52e
-    <Name>k__BackingField: Flowchart
-    <Text>k__BackingField: 'Now you''re getting the hang of it! If you''ve saved
-      a lot of statements, you can scroll through them with the mousewheel.
-
-      Last
-      thing to mention is the Flowchart button at the top right. It will give you
-      an overview of your progress. You can also skip to questions you''ve already
-      asked in the past. With that, you''re ready to get started. Have fun!'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Continue with the game.
-      <NodeID>k__BackingField: 20f00356-cdd9-4da9-87c8-c7c3c0291778
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
       <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
       <Type>k__BackingField: 0
-    <Position>k__BackingField: {x: 1722, y: 146}
-    <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2036, y: 523}
+  <RepNodes>k__BackingField:
+  - <ID>k__BackingField: 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
+    <Name>k__BackingField: Financial Records
+    <ParentID>k__BackingField: 7aa9d9b9-e8ce-46de-b0d4-43b5dd8cf969
+    <Position>k__BackingField: {x: 1501, y: 708}
+    <NodeType>k__BackingField: 2
+  - <ID>k__BackingField: fa78992a-508c-46b2-9b67-9e4ba471f9bb
+    <Name>k__BackingField: Autopsy Report
+    <ParentID>k__BackingField: 9f2acddd-71b0-40f7-b8da-fe5463848a40
+    <Position>k__BackingField: {x: 1501, y: 610}
+    <NodeType>k__BackingField: 2
   <OldDialogueNames>k__BackingField:
-  - Start Game
+  - Dialogue Name
   - Start
-  - Im Good
-  - Pointing Out Contradictions
-  - Using Statements Against Them
-  - Flowchart
+  - He Was Stabbed
+  - Its Actually Red
+  - Whats Your Favorite Color
   <OldEvidenceNames>k__BackingField:
-  - At The Park
-  - Dentist Appointment
-  - In Class
+  - Autopsy Report
+  - Financial Records

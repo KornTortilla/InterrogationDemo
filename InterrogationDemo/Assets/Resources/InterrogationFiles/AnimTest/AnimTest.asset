@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: AnimTest
   <DialogueList>k__BackingField:
-  - {fileID: 11400000, guid: a466a0454c7bc564a85e27c5ea005b5a, type: 2}
-  - {fileID: 11400000, guid: b7700bf09fb60f5469478536e3fdf926, type: 2}
-  <EvidenceList>k__BackingField: []
-  <NoHintResponse>k__BackingField: Sorry, I got nothing.
-  <DefaultErrorResponse>k__BackingField: You were wrong.
+  - {fileID: 11400000, guid: 0adeb9a0983923e469693f90dbd6b982, type: 2}
+  - {fileID: 11400000, guid: 35f0757a225b7594dad35024006545e6, type: 2}
+  - {fileID: 11400000, guid: 23807e3a3d4749e43b814fada7f95f85, type: 2}
+  <EvidenceList>k__BackingField:
+  - {fileID: 11400000, guid: aa07681e6e1e09e479e19ee563d2aebf, type: 2}
+  <PartnerName>k__BackingField: Ace
+  <IntroText>k__BackingField: '!background InterrogationRoom, move Ace offscreenright'
+  <NoHintResponse>k__BackingField: '#anim Ace Headshake
+
+    Ace: Sorry, I got nothing.'
+  <DefaultErrorResponse>k__BackingField: 'Seven: Uhh, what?'

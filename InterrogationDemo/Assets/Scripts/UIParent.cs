@@ -25,15 +25,15 @@ public class UIParent : MonoBehaviour
         GameManager.OnSceneTransitionAdd -= FadeIn;
     }
 
-    private void FadeOut()
+    private void FadeOut(float time)
     {
-        LeanTween.alphaCanvas(canvasGroup, 0f, 1f);
+        LeanTween.alphaCanvas(canvasGroup, 0f, time);
     }
 
-    private void FadeIn()
+    private void FadeIn(float time)
     {
         Debug.Log("Fadin'");
 
-        LeanTween.alphaCanvas(canvasGroup, 1f, 1f);
+        LeanTween.alphaCanvas(canvasGroup, 1f, time);
     }
 }

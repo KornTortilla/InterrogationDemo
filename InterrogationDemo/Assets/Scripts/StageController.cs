@@ -17,7 +17,7 @@ public class StageController : MonoBehaviour
 
     public enum Position
     {
-        right, middle, left
+        right, middle, left, offscreenright
     }
 
     private void Awake()
@@ -43,7 +43,7 @@ public class StageController : MonoBehaviour
         background.sprite = newBackground;
     }
 
-    public void AddCharacter(string characterName)
+    public void AddCharacter(string characterName, float zPosition = 0f)
     {
         //Loads character prefab from name to see if it exists before continuing
         GameObject characterPrefab = Resources.Load("Prefabs/Characters/" + characterName) as GameObject;
@@ -51,6 +51,10 @@ public class StageController : MonoBehaviour
         if(characterPrefab)
         {
             GameObject newCharacter = Instantiate(characterPrefab, characterListTransform);
+
+            newCharacter.GetComponent<Actor>().screenName = characterName;
+
+            newCharacter.transform.position = new Vector3(0f, 0f, zPosition);
 
             characters.Add(characterName, newCharacter);
 
@@ -138,22 +142,79 @@ public class StageController : MonoBehaviour
         GameObject character = characters[characterName];
 
         Position positionFromString = Enum.Parse<Position>(positionString);
+        float newXValue = character.transform.position.x;
         switch (positionFromString)
         {
             case Position.left:
-                character.transform.position = Vector3.left * 5f;
+                newXValue = -5f;
                 break;
 
             case Position.middle:
-                character.transform.position = Vector3.zero;
+                newXValue = 0f;
                 break;
 
             case Position.right:
-                character.transform.position = Vector3.right * 5f;
+                newXValue = 5f;
+                break;
+
+            case Position.offscreenright:
+                newXValue = 13f;
+                break;
+
+            default:
+                Debug.LogWarning("Position Enum not found.");
                 break;
         }
 
+        SetCharacterXValue(character, newXValue);
+
         Debug.Log("Set Character to New Position");
+    }
+
+    private void SetCharacterXValue(GameObject character, float xValue)
+    {
+        Vector3 position = character.transform.position;
+
+        character.transform.position = new Vector3(xValue, position.y, position.z);
+    }
+
+    public void HintSlide(string characterName,bool goingIn)
+    {
+        if (!characters.ContainsKey(characterName))
+        {
+            return;
+        }
+
+        Actor partnerScript = characters[characterName].GetComponent<Actor>();
+
+        float placement;
+        if (goingIn)
+        {
+            placement = 5f;
+
+            foreach (GameObject character in characters.Values)
+            {
+                Actor actorScript = character.GetComponent<Actor>();
+                if (actorScript.screenName == characterName)
+                {
+                    continue;
+                }
+
+                actorScript.StepBack();
+            }
+        }
+        else
+        {
+            
+            foreach (GameObject character in characters.Values)
+            {
+                character.GetComponent<Actor>().StepIn();
+            }
+
+            placement = 13f;
+        }
+
+        StartCoroutine(partnerScript.Slide(placement, 0.25f));
     }
 
     public void RemoveCharacter(string characterName)

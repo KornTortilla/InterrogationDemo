@@ -14,30 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Text>k__BackingField: '#add Ace
 
-    #music Seven1
-
-    Ace: Hello, Anna. Are
-    you doing well?
-
-    Anna: Do we need to go over the pleasantries?
-
-    #anim
-    Ace Smile
-
-    Ace: Come now, must you be so callous everytime we speak?
+    Ace: Hello, Anna. Are you doing well?
 
     Anna:
-    ...
+    Do we need to go over the pleasantries?
+
+    #anim Ace Smile
+
+    Ace: Come now,
+    must you be so callous everytime we speak?
+
+    Anna: ...
 
     #anim Ace Headshake
 
-    Ace: Fine. We need you for an investigation.
-    A man named Seven. He illegally took funds from his work and was caught in the
-    act.
+    Ace:
+    Fine. We need you for an investigation. A man named Seven. He illegally took
+    funds from his work and was caught in the act.
 
-    Ace: Got it, Captain.
+    Anna: Got it, Captain.
 
-    #remove Ace
+    #remove
+    Ace
 
-    #scene Interrogation true
-    AnimTest'
+    #scene Tutorial true 1 Tutorial'

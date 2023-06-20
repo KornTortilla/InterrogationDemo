@@ -9,20 +9,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424c5fc5bf77fcf48a81dc85e525c3e5, type: 3}
+  m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Start
-  <Speakers>k__BackingField: []
-  <Text>k__BackingField: Welcome to the InterrogationDemo! I'm here to help you get
-    anitquated with the system before you get started. If you don't need it you can
-    just tell me though!
+  <Text>k__BackingField: '#anim Ace Smile
+
+    Ace: This is the interrogation room.
+    I imagine you''ll find yourself in here a number of times.
+
+    Anna: Lovely...
+
+    #anim
+    Ace Idle
+
+    Ace: We''ll run over the basic ideas you''ll need to be familiar
+    with in order to succeed.
+
+    Ace: Before any interrogation, you''ll be given
+    evidence having to due with the case.
+
+    #tutorial locker
+
+    Ace: It can
+    be found in the locker to the left.
+
+    Ace: Moving forward, a core part of
+    interrogations here are asking question in order to gain more information.
+
+    #anim
+    Ace Smile
+
+    Ace: Go ahead and ask me a question.'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: I have no idea what I'm doing.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c7745f0faf0f15a40bb2cc0cd86c69db, type: 2}
+  - <Text>k__BackingField: What am I supposed to ask?
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: f8b58257ec0d9ba43bc18ac9b4e605a1, type: 2}
     <Keys>k__BackingField: []
-  - <Text>k__BackingField: I'm good on the tutorial.
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 8da7d258542bd6849baffc706084104c, type: 2}
-    <Keys>k__BackingField: []
+    <Hint>k__BackingField: 
+  <Errors>k__BackingField: []
   <PreviousDialogue>k__BackingField: {fileID: 0}
-  <Position>k__BackingField: {x: 300, y: 258}
+  <Position>k__BackingField: {x: 415, y: 282}
