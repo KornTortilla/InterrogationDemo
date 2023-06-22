@@ -20,7 +20,7 @@ namespace Interrogation.Ingame
         [SerializeField] private GameObject hintButton;
         [SerializeField] private HintList hintList;
         [SerializeField] private DialogueTextManager dialogueTextManager;
-        [SerializeField] private GameObject saveDialogueButton;
+        [SerializeField] private Button saveDialogueButton;
         [SerializeField] private FlowchartManager flowchartManager;
 
         private DialogueManagerInterrogationSO dialogueManager;
@@ -139,19 +139,23 @@ namespace Interrogation.Ingame
             }
         }
 
-        private void Intro()
+        public virtual void Intro()
         {
-            StartCoroutine(WaitForIntroText());
+            StartInterrogation();
         }
 
         private IEnumerator WaitForIntroText()
         {
-            yield return StartCoroutine(dialogueTextManager.TypeText(dialogueManager.IntroText));
+
+            if(!string.IsNullOrEmpty(dialogueManager.IntroText))
+            {
+                yield return StartCoroutine(dialogueTextManager.TypeText(dialogueManager.IntroText));
+            }
 
             StartInterrogation();
         }
 
-        private void StartInterrogation()
+        public void StartInterrogation()
         {
             //Removes current choice buttons
             foreach (Transform child in choicePanel.transform)
@@ -197,7 +201,7 @@ namespace Interrogation.Ingame
             {
                 savedDialogue.Grabbed = false;
 
-                if (currentDialogue == savedDialogue) saveDialogueButton.SetActive(true);
+                if (currentDialogue == savedDialogue) saveDialogueButton.interactable = true;
 
                 Destroy(savedDialogueObject);
             }
@@ -225,7 +229,7 @@ namespace Interrogation.Ingame
 
             savedDialogue = currentDialogue;
 
-            saveDialogueButton.SetActive(false);
+            saveDialogueButton.interactable = false;
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(evidenceLocker.transform.GetChild(0).GetComponent<RectTransform>());
         }
@@ -314,8 +318,8 @@ namespace Interrogation.Ingame
             }
 
             //Disables save button so players cannot save unless seeing the full dialogue
-            saveDialogueButton.SetActive(false);
             hintButton.GetComponent<Button>().interactable = false;
+            saveDialogueButton.interactable = false;
 
             bool needToClickLastText = !isProgressing;
 
@@ -330,8 +334,8 @@ namespace Interrogation.Ingame
                 button.interactable = true;
             }
 
-            saveDialogueButton.SetActive(true);
             hintButton.GetComponent<Button>().interactable = true;
+            saveDialogueButton.interactable = true;
 
             if (isProgressing)
             {
@@ -424,8 +428,8 @@ namespace Interrogation.Ingame
             currentDialogue = nextDialogue;
 
             //If the new dialogue is already in evidence, dont show save button
-            if (currentDialogue.Grabbed) saveDialogueButton.SetActive(false);
-            else saveDialogueButton.SetActive(true);
+            if (currentDialogue.Grabbed) saveDialogueButton.interactable = false;
+            else saveDialogueButton.interactable = true;
 
             //Makes sure all text coroutines are done before starting new ones
             StopAllCoroutines();
@@ -550,6 +554,10 @@ namespace Interrogation.Ingame
             {
                 case "locker":
                     evidenceLocker.GetComponent<CanvasGroupFadeInOut>().FadeIn();
+                    break;
+
+                case "save":
+                    saveDialogueButton.gameObject.SetActive(true);
                     break;
             }
         }

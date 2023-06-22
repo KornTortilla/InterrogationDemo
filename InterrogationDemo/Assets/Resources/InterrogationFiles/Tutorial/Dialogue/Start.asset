@@ -29,21 +29,22 @@ MonoBehaviour:
     Ace: Before any interrogation, you''ll be given
     evidence having to due with the case.
 
-    #tutorial locker
+    Ace: It can be found in the locker
+    to the (tutorial locker)left. (anim Ace Smile)Feel free to look through it. I''ve
+    filled it with some sample evidence.
 
-    Ace: It can
-    be found in the locker to the left.
+    #anim Ace Idle
 
-    Ace: Moving forward, a core part of
-    interrogations here are asking question in order to gain more information.
+    Ace: Moving forward,
+    a core part of interrogations here are asking question in order to gain more
+    information.
 
-    #anim
-    Ace Smile
+    #anim Ace Smile
 
     Ace: Go ahead and ask me a question.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: What am I supposed to ask?
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: f8b58257ec0d9ba43bc18ac9b4e605a1, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 5545833bb421f6241bd2ee3c8c659ccf, type: 2}
     <Keys>k__BackingField: []
     <Hint>k__BackingField: 
   <Errors>k__BackingField: []

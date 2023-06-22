@@ -133,11 +133,6 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 2243762555907662795, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
   m_PrefabInstance: {fileID: 2243762556445182534}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &617127377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2243762555987449751, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
-  m_PrefabInstance: {fileID: 2243762556445182534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &641868032 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9148203517036429328, guid: b42b81217ce1252489ab398f0da29e22, type: 3}
@@ -403,6 +398,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5792711763565574682, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
   m_PrefabInstance: {fileID: 2243762556445182534}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2243762556445182537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+  m_PrefabInstance: {fileID: 2243762556445182534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3070762521098850658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: saveDialogueButton
       value: 
-      objectReference: {fileID: 617127377}
+      objectReference: {fileID: 2243762556445182537}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: dialogueTextManager
       value: 

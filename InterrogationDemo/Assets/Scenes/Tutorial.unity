@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148203517036429332, guid: b42b81217ce1252489ab398f0da29e22, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148203517036429332, guid: b42b81217ce1252489ab398f0da29e22, type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,6 +202,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 806208820}
     - target: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.4528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.4528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.4528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1173097881}
@@ -227,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243762556997384111, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2243762556997384111, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -351,11 +367,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2243762556219869144, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
   m_PrefabInstance: {fileID: 640793989}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &640793995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2243762555987449751, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
-  m_PrefabInstance: {fileID: 640793989}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &640793996 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2243762555870853820, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
@@ -459,7 +470,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3070762521968476656, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3070762521968476656, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: m_LocalPosition.x
@@ -556,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: saveDialogueButton
       value: 
-      objectReference: {fileID: 640793995}
+      objectReference: {fileID: 1417760065}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: dialogueTextManager
       value: 
@@ -612,3 +623,14 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1417760065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+  m_PrefabInstance: {fileID: 640793989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: ItsActuallyRed
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Its Actually Red
-  <Text>k__BackingField: Dialogue text.
+  <Text>k__BackingField: '#anim Ace Smile
+
+    Ace: Wonderful, Anna. You''re doing
+    great!
+
+    #anim Ace Idle
+
+    Ace: One thing to note, though, you can only
+    save one of the suspect''s statements as a time.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}

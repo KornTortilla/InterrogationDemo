@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e77e79dbc2eec2e498c35aa29f18b99c, type: 3}
-  m_Name: DialogueName
+  m_Name: WhatDoIAsk
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Dialogue Name
+  <Name>k__BackingField: What Do I Ask
   <Text>k__BackingField: '#anim Ace Smile
 
     Ace: Something like that works.

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -108,13 +109,16 @@ public class DialogueTextManager : MonoBehaviour
                 StageController.Instance.ChooseSpeaker(name);
             }
 
-            foreach (char letter in sentence.ToCharArray())
+            char[] letterArray = sentence.ToCharArray();
+            for (int letterPos = 0; letterPos < letterArray.Length; letterPos++)
             {
-                if(interruptTyping)
+                char letter = letterArray[letterPos];
+
+                if (interruptTyping)
                 {
                     interruptTyping = false;
 
-                    dialogueText.text = sentence;
+                    dialogueText.text = SearchForRemainingTagsAndRemove(sentence, letterPos);
 
                     break;
                 }
@@ -135,6 +139,12 @@ public class DialogueTextManager : MonoBehaviour
                 {
                     time *= 5f;
                     StageController.Instance.SetCurrentSpeakerTalking(false);
+                }
+                else if (letter == '(')
+                {
+                    letterPos += FinishTagInSentence(sentence, letterPos);
+
+                    continue;
                 }
                 /*
                 else if(letter != ' ')
@@ -180,6 +190,47 @@ public class DialogueTextManager : MonoBehaviour
 
             ExecuteTag(command);
         }
+    }
+
+    private string SearchForRemainingTagsAndRemove(string sentence, int startingPosition)
+    {
+        if(!sentence.Contains('('))
+        {
+            return sentence;
+        }
+
+        List<string> stringsToRemove = new List<string>();
+
+        string remainingSentence = sentence.Substring(startingPosition);
+
+        while(remainingSentence.Contains('('))
+        {
+            int startOfParenth = remainingSentence.IndexOf('(');
+            int endOfParenth = FinishTagInSentence(remainingSentence, startOfParenth);
+
+            stringsToRemove.Add(remainingSentence.Substring(startOfParenth, endOfParenth + 1));
+
+            remainingSentence = remainingSentence.Substring(startOfParenth + endOfParenth + 1);
+        } 
+
+        string replacingSentence = sentence;
+        foreach(string stringToRemove in stringsToRemove)
+        {
+            replacingSentence = replacingSentence.Replace(stringToRemove, "");
+        }
+
+        return replacingSentence;
+    }
+
+    private int FinishTagInSentence(string sentence, int startingPosition)
+    {
+        string cutoffSentence = sentence.Substring(startingPosition);
+        int endPosition = cutoffSentence.IndexOf(')');
+        string command = cutoffSentence.Substring(1, endPosition - 1);
+
+        ExecuteTag(command);
+
+        return endPosition;
     }
 
     private void ExecuteTag(string command)
