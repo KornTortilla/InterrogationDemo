@@ -16,32 +16,33 @@ MonoBehaviour:
   <Text>k__BackingField: '#anim Ace Smile
 
     Ace: This is the interrogation room.
-    I imagine you''ll find yourself in here a number of times.
+    I imagine you''ll find yourself in here countless times in the future.
 
-    Anna: Lovely...
+    Anna:
+    Lovely...
+
+    #anim Ace Idle
+
+    Ace: We''ll run over the basic ideas you''ll
+    need to be familiar in this position.
+
+    Ace: Before any interrogation, you''ll
+    be given evidence having to due with the case.
+
+    Ace: It can be found in the
+    locker to the (tutorial locker)left. (anim Ace Smile)Feel free to look through
+    it. I''ve filled it with some sample evidence for further demonstration.
 
     #anim
     Ace Idle
 
-    Ace: We''ll run over the basic ideas you''ll need to be familiar
-    with in order to succeed.
-
-    Ace: Before any interrogation, you''ll be given
-    evidence having to due with the case.
-
-    Ace: It can be found in the locker
-    to the (tutorial locker)left. (anim Ace Smile)Feel free to look through it. I''ve
-    filled it with some sample evidence.
-
-    #anim Ace Idle
-
-    Ace: Moving forward,
-    a core part of interrogations here are asking question in order to gain more
-    information.
+    Ace: Moving forward, a core part of interrogations here are asking
+    question in order to gain more information.
 
     #anim Ace Smile
 
-    Ace: Go ahead and ask me a question.'
+    Ace: Go
+    ahead and ask me a question.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: What am I supposed to ask?
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 5545833bb421f6241bd2ee3c8c659ccf, type: 2}

@@ -20,8 +20,18 @@ MonoBehaviour:
 
     #anim Ace Idle
 
-    Ace: One thing to note, though, you can only
-    save one of the suspect''s statements as a time.'
+    Ace: One thing to note, however, you can only
+    save one of the suspect''s statements as a time.
+
+    Ace: Moving on, there''s
+    one last piece of information to share. We can keep track of all the statements
+    from suspects and store them, allowing you to easily go back to them.
+
+    #anim
+    Ace Smile
+
+    Ace: We call it the (tutorial flowchart)flowchart. Feel free to
+    look at it now. Each node is named after the question that led to it.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 0}

@@ -2,15 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.Experimental.GraphView;
 
 namespace Interrogation.Elements
 {
     using Windows;
     using Enumerations;
     using Utilities;
-    using Data.Save;
-    using System.Linq;
 
     public class EvidenceContainer : VisualElement
     {
@@ -89,12 +86,16 @@ namespace Interrogation.Elements
             {
                 int position = board.IndexOf(this);
 
-                if(position > 2)
+                if(position > 4)
                 {
                     board.Insert(position - 1, this);
 
+                    int containerPosition = board.EvidenceContainers.IndexOf(this);
                     board.EvidenceContainers.Remove(this);
-                    board.EvidenceContainers.Insert(position -2, this);
+                    board.EvidenceContainers.Insert(containerPosition - 1, this);
+
+                    int newPosition = board.EvidenceContainers.IndexOf(this);
+                    board.subTitle = newPosition.ToString();
                 }
             });
 
@@ -104,8 +105,9 @@ namespace Interrogation.Elements
 
                 board.Insert(position + 1, this);
 
+                int containerPosition = board.EvidenceContainers.IndexOf(this);
                 board.EvidenceContainers.Remove(this);
-                board.EvidenceContainers.Insert(position, this);
+                board.EvidenceContainers.Insert(containerPosition + 1, this);
             });
 
             addEvidenceNodeButton.AddToClassList("interro-node__button");

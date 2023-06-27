@@ -31,10 +31,11 @@ MonoBehaviour:
     Ace Idle
 
     Ace: I''ll give you another opportunity to try it out here. I''ll
-    incorrectly say what my favorite color is. Ask me what it actually is. Then come
-    back here and present that.
+    first incorrectly say what my favorite color is. Then, ask me what it actually
+    is and record it. Finally, come back here and present that.
 
-    Ace: Here goes then: My favorite color is blue.'
+    Ace: Here goes
+    then: My favorite color is blue.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: It's actually red.
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0f2c75770db321d4a83cd867ae4e26e8, type: 2}

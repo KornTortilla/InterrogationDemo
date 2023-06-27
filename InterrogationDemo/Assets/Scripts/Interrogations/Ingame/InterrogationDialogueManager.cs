@@ -15,13 +15,16 @@ namespace Interrogation.Ingame
         public static event Action OnTalkingStart;
         public static event Action OnTalkingEnd;
 
+
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private GameObject evidenceLocker;
-        [SerializeField] private GameObject hintButton;
+        [SerializeField] private Button hintButton;
         [SerializeField] private HintList hintList;
+        [SerializeField] private GameObject hintListButtonObject;
         [SerializeField] private DialogueTextManager dialogueTextManager;
         [SerializeField] private Button saveDialogueButton;
         [SerializeField] private FlowchartManager flowchartManager;
+        [SerializeField] private GameObject flowchartButtonObject;
 
         private DialogueManagerInterrogationSO dialogueManager;
         private DialogueInterrogationSO currentDialogue;
@@ -167,7 +170,7 @@ namespace Interrogation.Ingame
                 GameObject.Destroy(child.gameObject, 0.5f);
             }
 
-            hintButton.GetComponent<Button>().interactable = true;
+            hintButton.interactable = true;
 
             StartCoroutine(ParseCurrentDialogue(-1, currentDialogue.Text));
 
@@ -318,7 +321,7 @@ namespace Interrogation.Ingame
             }
 
             //Disables save button so players cannot save unless seeing the full dialogue
-            hintButton.GetComponent<Button>().interactable = false;
+            hintButton.interactable = false;
             saveDialogueButton.interactable = false;
 
             bool needToClickLastText = !isProgressing;
@@ -334,7 +337,7 @@ namespace Interrogation.Ingame
                 button.interactable = true;
             }
 
-            hintButton.GetComponent<Button>().interactable = true;
+            hintButton.interactable = true;
             saveDialogueButton.interactable = true;
 
             if (isProgressing)
@@ -558,6 +561,15 @@ namespace Interrogation.Ingame
 
                 case "save":
                     saveDialogueButton.gameObject.SetActive(true);
+                    break;
+
+                case "flowchart":
+                    flowchartButtonObject.SetActive(true);
+                    break;
+
+                case "hint":
+                    hintButton.gameObject.SetActive(true);
+                    hintListButtonObject.SetActive(true);
                     break;
             }
         }

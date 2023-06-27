@@ -13,17 +13,29 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
-  <PartnerName>k__BackingField: 
+  <PartnerName>k__BackingField: Santa
   <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right
 
 '
-  <NoHintResponse>k__BackingField: Sorry, I got nothing.
+  <NoHintResponse>k__BackingField: 'Santa: Uhh... did you need anything?
+
+    Anna:
+    Just wanted to say hi?
+
+    Santa: Hello, I guess?
+
+    Anna: Hey...
+
+    Santa:
+    ...
+
+    Anna: ...'
   <DefaultErrorResponse>k__BackingField: '#anim Ace Headshake
 
     Ace: What are
     you doing, Anna?
 
-    Anna: I was just thought this was interesting and wasnted
+    Anna: I was just thought this was interesting and wanted
     to discuss...
 
     #anim Ace Hand
@@ -44,25 +56,12 @@ MonoBehaviour:
     <Text>k__BackingField: The company reported a net worth of 20 million.
     <NodeIDs>k__BackingField: []
   <DialogueNodes>k__BackingField:
-  - <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
-    <Name>k__BackingField: Whats Your Favorite Color
-    <Text>k__BackingField: '#anim Ace Smile
-
-      Ace: It''s red.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-      <KeyIDs>k__BackingField: []
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 0
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 2036, y: 523}
   - <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
     <Name>k__BackingField: Start
     <Text>k__BackingField: '#anim Ace Smile
 
       Ace: This is the interrogation
-      room. I imagine you''ll find yourself in here a number of times.
+      room. I imagine you''ll find yourself in here countless times in the future.
 
       Anna:
       Lovely...
@@ -70,14 +69,14 @@ MonoBehaviour:
       #anim Ace Idle
 
       Ace: We''ll run over the basic ideas
-      you''ll need to be familiar with in order to succeed.
+      you''ll need to be familiar in this position.
 
-      Ace: Before any
-      interrogation, you''ll be given evidence having to due with the case.
+      Ace: Before any interrogation,
+      you''ll be given evidence having to due with the case.
 
-      Ace:
-      It can be found in the locker to the (tutorial locker)left. (anim Ace Smile)Feel
-      free to look through it. I''ve filled it with some sample evidence.
+      Ace: It can be
+      found in the locker to the (tutorial locker)left. (anim Ace Smile)Feel free
+      to look through it. I''ve filled it with some sample evidence for further demonstration.
 
       #anim
       Ace Idle
@@ -153,11 +152,12 @@ MonoBehaviour:
       #anim Ace Idle
 
       Ace: I''ll
-      give you another opportunity to try it out here. I''ll incorrectly say what
-      my favorite color is. Ask me what it actually is. Then come back here and present
-      that.
+      give you another opportunity to try it out here. I''ll first incorrectly say
+      what my favorite color is. Then, ask me what it actually is and record it.
+      Finally, come back here and present that.
 
-      Ace: Here goes then: My favorite color is blue.'
+      Ace: Here goes then: My favorite
+      color is blue.'
     <Choices>k__BackingField:
     - <Text>k__BackingField: It's actually red.
       <NodeID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
@@ -172,6 +172,19 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
     <Position>k__BackingField: {x: 1501, y: 282}
+  - <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
+    <Name>k__BackingField: Whats Your Favorite Color
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: It''s red.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2036, y: 523}
   - <ID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
     <Name>k__BackingField: Its Actually Red
     <Text>k__BackingField: '#anim Ace Smile
@@ -181,8 +194,19 @@ MonoBehaviour:
 
       #anim Ace Idle
 
-      Ace: One thing to note, though, you
-      can only save one of the suspect''s statements as a time.'
+      Ace: One thing to note, however,
+      you can only save one of the suspect''s statements as a time.
+
+      Ace: Moving
+      on, there''s one last piece of information to share. We can keep track of all
+      the statements from suspects and store them, allowing you to easily go back
+      to them.
+
+      #anim Ace Smile
+
+      Ace: We call it the (tutorial flowchart)flowchart.
+      Feel free to look at it now. Each node is named after the question that led
+      to it.'
     <Choices>k__BackingField:
     - <Text>k__BackingField: New Choice
       <NodeID>k__BackingField: 
@@ -203,10 +227,10 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 1501, y: 610}
     <NodeType>k__BackingField: 2
   <OldDialogueNames>k__BackingField:
-  - Whats Your Favorite Color
   - Start
   - What Do I Ask
   - He Was Stabbed
+  - Whats Your Favorite Color
   - Its Actually Red
   <OldEvidenceNames>k__BackingField:
   - Autopsy Report
