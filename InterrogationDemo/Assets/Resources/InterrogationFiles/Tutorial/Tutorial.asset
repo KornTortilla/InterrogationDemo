@@ -23,7 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e37a29bd43e91c4ba2bac47dd562080, type: 2}
   - {fileID: 11400000, guid: 1ca5cc0dd92adcd469000d8ca2363e60, type: 2}
   <PartnerName>k__BackingField: Santa
-  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right
+  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right,
+    move Santa offscreenright
 
 '
   <NoHintResponse>k__BackingField: 'Santa: Uhh... did you need anything?

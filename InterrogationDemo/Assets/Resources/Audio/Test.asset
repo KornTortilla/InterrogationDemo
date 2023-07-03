@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930aa68926d28db4fb5f62c2bde4e1c8, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  <MusicList>k__BackingField:
+  - {fileID: 8300000, guid: e6dcb5f537622464ca82c34b59cf0664, type: 3}
+  - {fileID: 8300000, guid: 0754430497baf9b4bb9093d8fe2030d0, type: 3}
+  - {fileID: 8300000, guid: f67b45e4080241b44a356463809cfd7c, type: 3}
+  - {fileID: 8300000, guid: 98c69be339049ee4dbd52d1b2fdbc0ca, type: 3}

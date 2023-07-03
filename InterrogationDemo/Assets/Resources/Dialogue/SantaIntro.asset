@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa53886abf707b499589a8e79505a00, type: 3}
+  m_Name: SantaIntro
+  m_EditorClassIdentifier: 
+  <Text>k__BackingField: '#add Ace, anim Ace Smile
+
+    Ace: Hello, Anna. I hope
+    you''ve been studying up on everything we went over.
+
+    Anna: I most certaintly
+    did, chief.
+
+    #anim Ace Idle
+
+    Ace: That''s good to hear. I''ve got your
+    first assignment then.
+
+    Ace: A teenager, male. His name is Santa. He stole.
+
+    Anna:
+    Got it, Captain.
+
+    #remove Ace
+
+    #scene Interrogation true 1 Santa'

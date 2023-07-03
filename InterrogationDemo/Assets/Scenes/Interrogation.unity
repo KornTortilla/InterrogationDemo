@@ -393,11 +393,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc181ec238b73ad4f971efec705fcaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2243762556445182536 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5792711763565574682, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+--- !u!114 &2243762556445182536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4312614757147804523, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
   m_PrefabInstance: {fileID: 2243762556445182534}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2243762556445182537 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2243762555987449749, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
@@ -409,6 +415,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2243762556445182538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9036778164134158805, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+  m_PrefabInstance: {fileID: 2243762556445182534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2243762556445182539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2243762556906755774, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+  m_PrefabInstance: {fileID: 2243762556445182534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3070762521098850658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,6 +536,14 @@ PrefabInstance:
       propertyPath: dialogueTextManager
       value: 
       objectReference: {fileID: 775811322}
+    - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
+      propertyPath: hintListButtonObject
+      value: 
+      objectReference: {fileID: 2243762556445182538}
+    - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
+      propertyPath: flowchartButtonObject
+      value: 
+      objectReference: {fileID: 2243762556445182539}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
 --- !u!1001 &9148203516461687056

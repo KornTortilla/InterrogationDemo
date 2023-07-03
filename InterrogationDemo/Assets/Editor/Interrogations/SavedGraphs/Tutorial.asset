@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
   <PartnerName>k__BackingField: Santa
-  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right
+  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right,
+    move Santa offscreenright
 
 '
   <NoHintResponse>k__BackingField: 'Santa: Uhh... did you need anything?

@@ -634,8 +634,7 @@ namespace Interrogation.Utilities
             CreateFolder("Assets/Editor/Interrogations", "SavedGraphs");
 
             //Ingame Data
-            CreateFolder("Assets/Scripts/Interrogations/Ingame", "Files");
-            CreateFolder("Assets/Scripts/Interrogations/Ingame/Files", graphFileName);
+            CreateFolder("Assets/Resources/InterrogationFiles", graphFileName);
 
             CreateFolder(containerFolderPath, "Dialogue");
             CreateFolder(containerFolderPath, "Evidence");

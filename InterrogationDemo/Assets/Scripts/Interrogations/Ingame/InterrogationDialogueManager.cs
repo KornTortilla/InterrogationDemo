@@ -50,6 +50,7 @@ namespace Interrogation.Ingame
             if(!string.IsNullOrEmpty(partnerName))
             {
                 StageController.Instance.AddCharacter(partnerName, -1f);
+                StageController.Instance.SetCharacterPosition(partnerName, "offscreenright");
             }
 
             hints = new List<string>();
