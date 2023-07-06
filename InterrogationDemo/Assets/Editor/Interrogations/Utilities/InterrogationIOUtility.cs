@@ -106,16 +106,8 @@ namespace Interrogation.Utilities
             {
                 ID = evidenceContainer.ID,
                 Name = evidenceContainer.Name,
-                Text = evidenceContainer.Text,
-                NodeIDs = new List<string>()
+                Text = evidenceContainer.Text
             };
-
-            /*
-            foreach (RepNode eNode in evidenceContainer.RepNodes)
-            {
-                evidenceData.NodeIDs.Add(eNode.ID);
-            }
-            */
 
             return evidenceData;
         }

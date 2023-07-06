@@ -15,18 +15,18 @@ namespace Interrogation.Ingame
         public static event Action OnTalkingStart;
         public static event Action OnTalkingEnd;
 
+        [SerializeField] private bool testing;
 
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private GameObject evidenceLocker;
         [SerializeField] private Button hintButton;
-        [SerializeField] private HintList hintList;
         [SerializeField] private GameObject hintListButtonObject;
         [SerializeField] private DialogueTextManager dialogueTextManager;
         [SerializeField] private Button saveDialogueButton;
         [SerializeField] private FlowchartManager flowchartManager;
         [SerializeField] private GameObject flowchartButtonObject;
 
-        private DialogueManagerInterrogationSO dialogueManager;
+        [SerializeField] private DialogueManagerInterrogationSO dialogueManager;
         private DialogueInterrogationSO currentDialogue;
         private Stack<DialogueInterrogationSO> pastDialogues;
 
@@ -40,7 +40,10 @@ namespace Interrogation.Ingame
         {
             Debug.Log(GameManager.Instance.TransitionData);
 
-            dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueManagerInterrogationSO;
+            if(!testing)
+            {
+                dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueManagerInterrogationSO;
+            }
 
             //Instantiates dynamic stack
             pastDialogues = new Stack<DialogueInterrogationSO>();
@@ -63,6 +66,8 @@ namespace Interrogation.Ingame
             InstantiateEvidence();
 
             dialogueTextManager.CheckForPriorityCommand(dialogueManager.IntroText);
+
+            if(testing) StartInterrogation();
         }
 
         //Temporary initialization by screen fade in to start script after full
@@ -536,8 +541,6 @@ namespace Interrogation.Ingame
 
                 hint = hints[rand];
                 hints.RemoveAt(rand);
-
-                hintList.CreateHint(hint);
             }
             else
             {

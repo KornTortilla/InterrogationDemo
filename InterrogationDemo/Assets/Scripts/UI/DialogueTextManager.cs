@@ -7,6 +7,7 @@ using TMPro;
 
 public class DialogueTextManager : MonoBehaviour
 {
+    public static Action<string, string> SentenceFinished;
     public static Action<string> TutorialActivation;
 
     public GameObject nameBox;
@@ -99,11 +100,12 @@ public class DialogueTextManager : MonoBehaviour
             ctcObject.SetActive(false);
 
             //If colon detected, name is given
+            string name = "";
             if (sentence.Contains(":"))
             {
                 //Separates name and dialogue
                 string[] sentenceArray = SeparateSentenceAndShowName(sentence);
-                string name = sentenceArray[0];
+                name = sentenceArray[0];
                 sentence = sentenceArray[1];
 
                 StageController.Instance.ChooseSpeaker(name);
@@ -118,7 +120,7 @@ public class DialogueTextManager : MonoBehaviour
                 {
                     interruptTyping = false;
 
-                    dialogueText.text = SearchForRemainingTagsAndRemove(sentence, letterPos);
+                    dialogueText.text = SearchForRemainingTagsAndRemove(sentence, letterPos, true);
 
                     break;
                 }
@@ -142,7 +144,11 @@ public class DialogueTextManager : MonoBehaviour
                 }
                 else if (letter == '(')
                 {
-                    letterPos += FinishTagInSentence(sentence, letterPos);
+                    string parenthesisString = FindParenthesisString(sentence.Substring(letterPos));
+
+                    StripParenthesisAndExecute(parenthesisString);
+
+                    letterPos += parenthesisString.Length - 1;
 
                     continue;
                 }
@@ -166,6 +172,8 @@ public class DialogueTextManager : MonoBehaviour
 
             //If the dialogue is done being typed out and the player clicks on button, continue
             yield return new WaitUntil(() => { return ((clickProcessed || (i == sentences.Length - 1 && !needToClickLastText))); });
+
+            SentenceFinished?.Invoke(name, TagsRemoved(sentence));
         }
 
         ctcObject.SetActive(false);
@@ -192,7 +200,7 @@ public class DialogueTextManager : MonoBehaviour
         }
     }
 
-    private string SearchForRemainingTagsAndRemove(string sentence, int startingPosition)
+    private string SearchForRemainingTagsAndRemove(string sentence, int startingPosition, bool execute)
     {
         if(!sentence.Contains('('))
         {
@@ -205,12 +213,16 @@ public class DialogueTextManager : MonoBehaviour
 
         while(remainingSentence.Contains('('))
         {
-            int startOfParenth = remainingSentence.IndexOf('(');
-            int endOfParenth = FinishTagInSentence(remainingSentence, startOfParenth);
+            string parenthesisString = FindParenthesisString(remainingSentence);
 
-            stringsToRemove.Add(remainingSentence.Substring(startOfParenth, endOfParenth + 1));
+            if(execute)
+            {
+                StripParenthesisAndExecute(parenthesisString);
+            }
 
-            remainingSentence = remainingSentence.Substring(startOfParenth + endOfParenth + 1);
+            stringsToRemove.Add(parenthesisString);
+
+            remainingSentence = remainingSentence.Substring(remainingSentence.IndexOf(')') + 1);
         } 
 
         string replacingSentence = sentence;
@@ -222,15 +234,21 @@ public class DialogueTextManager : MonoBehaviour
         return replacingSentence;
     }
 
-    private int FinishTagInSentence(string sentence, int startingPosition)
+    private string FindParenthesisString(string text)
     {
-        string cutoffSentence = sentence.Substring(startingPosition);
-        int endPosition = cutoffSentence.IndexOf(')');
-        string command = cutoffSentence.Substring(1, endPosition - 1);
+        int startOfParenth = text.IndexOf('(');
+        int endOfParenth = text.IndexOf(')');
+
+        string parenthesisString = text.Substring(startOfParenth, endOfParenth - startOfParenth + 1);
+
+        return parenthesisString;
+    }
+    
+    private void StripParenthesisAndExecute(string text)
+    {
+        string command = text.Substring(1, text.Length - 2);
 
         ExecuteTag(command);
-
-        return endPosition;
     }
 
     private void ExecuteTag(string command)
@@ -312,7 +330,7 @@ public class DialogueTextManager : MonoBehaviour
             sentence = SeparateSentenceAndShowName(sentence)[1];
         }
 
-        dialogueText.text = sentence;
+        dialogueText.text = SearchForRemainingTagsAndRemove(sentence, 0, false);
     }
 
     private string[] SeparateSentenceAndShowName(string sentence)
@@ -332,6 +350,34 @@ public class DialogueTextManager : MonoBehaviour
     {
         clickProcessed = true;
     }
+
+    private string TagsRemoved(string text)
+    {
+        string[] sentences = SplitIntoSentences(text);
+
+        List<string> newSentences = new List<string>();
+
+        foreach(string sentence in sentences)
+        {
+            if(sentence.Substring(0, 1) == "#")
+            {
+                continue;
+            }
+
+            string newSentence = SearchForRemainingTagsAndRemove(sentence, 0, false);
+            newSentences.Add(newSentence);
+        }
+
+        string newText = "";
+        foreach(string newSentence in newSentences)
+        {
+            newText += newSentence + "\n";
+        }
+
+        return newText;
+    }
+
+
 
     public string[] SplitIntoSentences(string text)
     {

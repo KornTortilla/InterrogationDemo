@@ -51,14 +51,12 @@ MonoBehaviour:
   - <Name>k__BackingField: Autopsy Report
     <ID>k__BackingField: 9f2acddd-71b0-40f7-b8da-fe5463848a40
     <Text>k__BackingField: The victim stabbed to death.
-    <NodeIDs>k__BackingField: []
   - <Name>k__BackingField: Financial Records
     <ID>k__BackingField: 7aa9d9b9-e8ce-46de-b0d4-43b5dd8cf969
     <Text>k__BackingField: The company reported a net worth of 20 million.
-    <NodeIDs>k__BackingField: []
   <DialogueNodes>k__BackingField:
-  - <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
-    <Name>k__BackingField: Start
+  - <Name>k__BackingField: Start
+    <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
     <Text>k__BackingField: '#anim Ace Smile
 
       Ace: This is the interrogation
@@ -97,84 +95,8 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
     <Position>k__BackingField: {x: 415, y: 282}
-  - <ID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
-    <Name>k__BackingField: What Do I Ask
-    <Text>k__BackingField: '#anim Ace Smile
-
-      Ace: Something like that works.
-
-      #anim
-      Ace Idle
-
-      Ace: In actual interrogations, the questions will come to you
-      on their own.
-
-      Ace: If any of the information they say seems to be false,
-      perhaps due to the evidence pointing to contrary, that is the moment to present
-      your findings.
-
-      Ace: Here, I''ll give you opportunity to do so.
-
-      Ace:
-      Pull the right piece of evidence out of the locker and show it to me for what
-      I''m about to say: ''The victim was bludgeoned to death.'''
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: He was stabbed.
-      <NodeID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
-      <KeyIDs>k__BackingField:
-      - fa78992a-508c-46b2-9b67-9e4ba471f9bb
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 1
-    <Errors>k__BackingField:
-    - <Text>k__BackingField: '#anim Ace Smile
-
-        Ace: Not quite, unfortunately...'
-      <EvidenceIDs>k__BackingField:
-      - 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
-      Type: 2
-    <Position>k__BackingField: {x: 939, y: 282}
-  - <ID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
-    <Name>k__BackingField: He Was Stabbed
-    <Text>k__BackingField: '#anim Ace Smile
-
-      Ace: Excellent!
-
-      #anim Ace
-      Idle
-
-      Ace: At times, the suspect will speak against themselves, giving
-      you a prime opportunity to use their words against them.
-
-      Ace: It''s
-      important to record their words as evidence for this purpose, which you can
-      do below here(tutorial save). (anim Ace Smile)You''ll want to do that when
-      the suspect is done speaking, however.
-
-      #anim Ace Idle
-
-      Ace: I''ll
-      give you another opportunity to try it out here. I''ll first incorrectly say
-      what my favorite color is. Then, ask me what it actually is and record it.
-      Finally, come back here and present that.
-
-      Ace: Here goes then: My favorite
-      color is blue.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: It's actually red.
-      <NodeID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
-      <KeyIDs>k__BackingField:
-      - 17e300c5-e37f-44fe-85e5-de3c9829935c
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 1
-    - <Text>k__BackingField: What's your favorite color?
-      <NodeID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
-      <KeyIDs>k__BackingField: []
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 0
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 1501, y: 282}
-  - <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
-    <Name>k__BackingField: Whats Your Favorite Color
+  - <Name>k__BackingField: Whats Your Favorite Color
+    <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
     <Text>k__BackingField: '#anim Ace Smile
 
       Ace: It''s red.'
@@ -186,8 +108,8 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
     <Position>k__BackingField: {x: 2036, y: 523}
-  - <ID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
-    <Name>k__BackingField: Its Actually Red
+  - <Name>k__BackingField: Its Actually Red
+    <ID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
     <Text>k__BackingField: '#anim Ace Smile
 
       Ace: Wonderful, Anna. You''re
@@ -216,23 +138,113 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
     <Position>k__BackingField: {x: 2036, y: 282}
+  - <Name>k__BackingField: He Was Stabbed
+    <ID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Excellent!
+
+      #anim Ace
+      Idle
+
+      Ace: At times, the suspect will speak against themselves, giving
+      you a prime opportunity to use their own words against them instead.
+
+      Ace:
+      It''s important to record their words as evidence for this purpose, which you
+      can do below here(tutorial save). (anim Ace Smile)You''ll want to do that when
+      the suspect is done speaking, however.
+
+      #anim Ace Idle
+
+      Ace: I''ll
+      give you another opportunity to try it out here. I''ll first incorrectly say
+      what my favorite color is. Then, ask me what it actually is and record it.
+      Finally, come back here and present that.
+
+      Ace: Here goes then: My favorite
+      color is blue.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: It's actually red.
+      <NodeID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
+      <KeyIDs>k__BackingField:
+      - 17e300c5-e37f-44fe-85e5-de3c9829935c
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 1
+    - <Text>k__BackingField: What's your favorite color?
+      <NodeID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField:
+    - <Text>k__BackingField: '#anim Ace Smile
+
+        Ace: You''re not meant to
+        use what I just said, ask the question and use that instead.'
+      <EvidenceIDs>k__BackingField:
+      - 5c7eed41-56eb-477c-afa8-0c8aefd9000d
+      Type: 2
+    <Position>k__BackingField: {x: 1501, y: 282}
+  - <Name>k__BackingField: What Do I Ask
+    <ID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Something like that works.
+
+      #anim
+      Ace Idle
+
+      Ace: In actual interrogations, the questions will come to you
+      on their own.
+
+      Ace: If any of the information they say seems to be false,
+      perhaps due to the evidence pointing to contrary, that is the moment to present
+      your findings.
+
+      Ace: Here, I''ll give you opportunity to do so.
+
+      Ace:
+      Pull the right piece of evidence out of the locker and show it to me for what
+      I''m about to say: ''The victim was bludgeoned to death.'''
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: He was stabbed.
+      <NodeID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
+      <KeyIDs>k__BackingField:
+      - fa78992a-508c-46b2-9b67-9e4ba471f9bb
+      <Hint>k__BackingField: '#anim Santa Idle
+
+        Santa: Idk man...'
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField:
+    - <Text>k__BackingField: '#anim Ace Smile
+
+        Ace: Not quite, unfortunately...'
+      <EvidenceIDs>k__BackingField:
+      - 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
+      Type: 2
+    <Position>k__BackingField: {x: 939, y: 282}
   <RepNodes>k__BackingField:
-  - <ID>k__BackingField: 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
-    <Name>k__BackingField: Financial Records
-    <ParentID>k__BackingField: 7aa9d9b9-e8ce-46de-b0d4-43b5dd8cf969
-    <Position>k__BackingField: {x: 1501, y: 708}
-    <NodeType>k__BackingField: 2
-  - <ID>k__BackingField: fa78992a-508c-46b2-9b67-9e4ba471f9bb
-    <Name>k__BackingField: Autopsy Report
+  - <Name>k__BackingField: Autopsy Report
+    <ID>k__BackingField: fa78992a-508c-46b2-9b67-9e4ba471f9bb
     <ParentID>k__BackingField: 9f2acddd-71b0-40f7-b8da-fe5463848a40
-    <Position>k__BackingField: {x: 1501, y: 610}
+    <Position>k__BackingField: {x: 1501, y: 651}
     <NodeType>k__BackingField: 2
+  - <Name>k__BackingField: Financial Records
+    <ID>k__BackingField: 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
+    <ParentID>k__BackingField: 7aa9d9b9-e8ce-46de-b0d4-43b5dd8cf969
+    <Position>k__BackingField: {x: 1501, y: 759}
+    <NodeType>k__BackingField: 2
+  - <Name>k__BackingField: He Was Stabbed
+    <ID>k__BackingField: 5c7eed41-56eb-477c-afa8-0c8aefd9000d
+    <ParentID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
+    <Position>k__BackingField: {x: 2036, y: 741}
+    <NodeType>k__BackingField: 1
   <OldDialogueNames>k__BackingField:
   - Start
-  - What Do I Ask
-  - He Was Stabbed
   - Whats Your Favorite Color
   - Its Actually Red
+  - He Was Stabbed
+  - What Do I Ask
   <OldEvidenceNames>k__BackingField:
   - Autopsy Report
   - Financial Records

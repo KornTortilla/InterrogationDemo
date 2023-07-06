@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreenRect: {fileID: 280660720}
-  starting: 1
+  starting: 0
 --- !u!1 &1941792201
 GameObject:
   m_ObjectHideFlags: 0

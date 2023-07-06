@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2fe427bada94f4788b6dc75ed92a57, type: 3}
+  m_Name: DRepTest
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: DRepTest
+  <PartnerName>k__BackingField: 
+  <IntroText>k__BackingField: We're intro-ing.
+  <NoHintResponse>k__BackingField: Sorry, I got nothing.
+  <DefaultErrorResponse>k__BackingField: You were wrong.
+  <Evidence>k__BackingField: []
+  <DialogueNodes>k__BackingField:
+  - <Name>k__BackingField: 2
+    <ID>k__BackingField: 45860e28-b83c-4ccf-9f16-e07812cd9f8d
+    <Text>k__BackingField: Dialogue text.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 902, y: 227}
+  - <Name>k__BackingField: 1
+    <ID>k__BackingField: 855330ad-84bb-4009-8df5-4e4917ab00d9
+    <Text>k__BackingField: Dialogue text.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Hehe
+      <NodeID>k__BackingField: 45860e28-b83c-4ccf-9f16-e07812cd9f8d
+      <KeyIDs>k__BackingField:
+      - 0c92abc0-9970-42b1-b053-c4776a231ce3
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 1
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 373, y: 227}
+  <RepNodes>k__BackingField:
+  - <Name>k__BackingField: Dialogue Name
+    <ID>k__BackingField: 0c92abc0-9970-42b1-b053-c4776a231ce3
+    <ParentID>k__BackingField: 855330ad-84bb-4009-8df5-4e4917ab00d9
+    <Position>k__BackingField: {x: 902, y: 458}
+    <NodeType>k__BackingField: 1
+  <OldDialogueNames>k__BackingField:
+  - 2
+  - 1
+  <OldEvidenceNames>k__BackingField: []

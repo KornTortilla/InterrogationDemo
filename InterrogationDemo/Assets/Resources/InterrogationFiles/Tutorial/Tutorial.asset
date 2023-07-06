@@ -15,10 +15,10 @@ MonoBehaviour:
   <FileName>k__BackingField: Tutorial
   <DialogueList>k__BackingField:
   - {fileID: 11400000, guid: 052df18df866a9b409cd764aece8e2cc, type: 2}
-  - {fileID: 11400000, guid: 5545833bb421f6241bd2ee3c8c659ccf, type: 2}
-  - {fileID: 11400000, guid: e427ba7e936b39e43ae999e6ad514008, type: 2}
   - {fileID: 11400000, guid: 7f88523e1d9fbb24f8fa16ed31203e31, type: 2}
   - {fileID: 11400000, guid: 0f2c75770db321d4a83cd867ae4e26e8, type: 2}
+  - {fileID: 11400000, guid: e427ba7e936b39e43ae999e6ad514008, type: 2}
+  - {fileID: 11400000, guid: 5545833bb421f6241bd2ee3c8c659ccf, type: 2}
   <EvidenceList>k__BackingField:
   - {fileID: 11400000, guid: 9e37a29bd43e91c4ba2bac47dd562080, type: 2}
   - {fileID: 11400000, guid: 1ca5cc0dd92adcd469000d8ca2363e60, type: 2}

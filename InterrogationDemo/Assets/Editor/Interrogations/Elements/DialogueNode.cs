@@ -15,6 +15,7 @@ namespace Interrogation.Elements
     {
         public List<InterrogationChoiceSaveData> Choices { get; set; }
         public List<InterrogationErrorSaveData> Errors { get; set; }
+        public List<DialogueRepNode> DialogueRepNodes { get; set; }
 
         public override void Initialize(InterrogationGraphView interroGraphView, Vector2 pos, string nodeName)
         {
@@ -34,6 +35,8 @@ namespace Interrogation.Elements
             Choices.Add(defaultChoice);
 
             Errors = new List<InterrogationErrorSaveData>();
+
+            DialogueRepNodes = new List<DialogueRepNode>();
 
             NodeType = NodeType.Dialogue;
         }
@@ -75,7 +78,19 @@ namespace Interrogation.Elements
                 "interro-node__textfield__hidden"
             );
 
+            Button addDialogueRepButton = InterrogationElementUtility.CreateButton("+", () =>
+            {
+                Vector2 pos = new Vector2(graphView.contentViewContainer.contentRect.width / 2, graphView.contentViewContainer.contentRect.width / 4);
+
+                DialogueRepNode dNode = (DialogueRepNode)graphView.CreateNode(graphView.contentViewContainer.WorldToLocal(pos), NodeType.DialogueRep, NodeName);
+                dNode.InitializeParent(this);
+
+                graphView.AddElement(dNode);
+            });
+
             titleContainer.Insert(0, dialogueNameTextField);
+
+            titleButtonContainer.Add(addDialogueRepButton);
             #endregion 
 
             #region Input Container

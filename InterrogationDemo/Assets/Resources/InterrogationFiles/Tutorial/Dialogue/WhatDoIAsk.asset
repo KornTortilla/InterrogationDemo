@@ -37,7 +37,9 @@ MonoBehaviour:
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: e427ba7e936b39e43ae999e6ad514008, type: 2}
     <Keys>k__BackingField:
     - {fileID: 11400000, guid: 9e37a29bd43e91c4ba2bac47dd562080, type: 2}
-    <Hint>k__BackingField: 
+    <Hint>k__BackingField: '#anim Santa Idle
+
+      Santa: Idk man...'
   <Errors>k__BackingField:
   - <Text>k__BackingField: '#anim Ace Smile
 

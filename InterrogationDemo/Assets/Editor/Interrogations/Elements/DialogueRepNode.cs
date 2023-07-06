@@ -19,6 +19,8 @@ namespace Interrogation.Elements
         public void InitializeParent(DialogueNode dialogueNode)
         {
             DialogueNode = dialogueNode;
+
+            dialogueNode.DialogueRepNodes.Add(this);
         }
     }
 }

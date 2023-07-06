@@ -21,21 +21,21 @@ MonoBehaviour:
 
     Ace:
     At times, the suspect will speak against themselves, giving you a prime opportunity
-    to use their words against them.
+    to use their own words against them instead.
 
-    Ace: It''s important to record their words
-    as evidence for this purpose, which you can do below here(tutorial save). (anim
-    Ace Smile)You''ll want to do that when the suspect is done speaking, however.
+    Ace: It''s important to record
+    their words as evidence for this purpose, which you can do below here(tutorial
+    save). (anim Ace Smile)You''ll want to do that when the suspect is done speaking,
+    however.
 
-    #anim
-    Ace Idle
+    #anim Ace Idle
 
-    Ace: I''ll give you another opportunity to try it out here. I''ll
-    first incorrectly say what my favorite color is. Then, ask me what it actually
-    is and record it. Finally, come back here and present that.
+    Ace: I''ll give you another opportunity to
+    try it out here. I''ll first incorrectly say what my favorite color is. Then,
+    ask me what it actually is and record it. Finally, come back here and present
+    that.
 
-    Ace: Here goes
-    then: My favorite color is blue.'
+    Ace: Here goes then: My favorite color is blue.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: It's actually red.
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0f2c75770db321d4a83cd867ae4e26e8, type: 2}
@@ -46,6 +46,12 @@ MonoBehaviour:
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 7f88523e1d9fbb24f8fa16ed31203e31, type: 2}
     <Keys>k__BackingField: []
     <Hint>k__BackingField: 
-  <Errors>k__BackingField: []
+  <Errors>k__BackingField:
+  - <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: You''re not meant to use
+      what I just said, ask the question and use that instead.'
+    <Evidence>k__BackingField:
+    - {fileID: 11400000}
   <PreviousDialogue>k__BackingField: {fileID: 11400000, guid: 5545833bb421f6241bd2ee3c8c659ccf, type: 2}
   <Position>k__BackingField: {x: 1501, y: 282}

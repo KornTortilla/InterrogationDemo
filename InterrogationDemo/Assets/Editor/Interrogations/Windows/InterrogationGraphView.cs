@@ -319,7 +319,7 @@ namespace Interrogation.Windows
 
                     foreach(Edge edgeToRemove in edgesToRemove)
                     {
-                        Debug.LogError("Choice cannot point to evidence node.");
+                        Debug.LogError("Choice cannot point to representative node.");
 
                         changes.edgesToCreate.Remove(edgeToRemove);
                     }

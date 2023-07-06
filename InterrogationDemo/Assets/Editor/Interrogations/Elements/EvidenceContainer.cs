@@ -18,7 +18,6 @@ namespace Interrogation.Elements
 
         public EvidenceContainer(InterrogationGraphView interroGraphView, ProfileBlackboard board, string newName, string newText)
         {
-
             ID = Guid.NewGuid().ToString();
             Name = newName;
             Text = newText;
@@ -59,7 +58,7 @@ namespace Interrogation.Elements
                 "interro-node__quote-textfield"
             );
 
-            Button addEvidenceNodeButton = InterrogationElementUtility.CreateButton("+", () =>
+            Button addEvidenceRepButton = InterrogationElementUtility.CreateButton("+", () =>
             {
                 Vector2 pos = new Vector2(interroGraphView.contentViewContainer.contentRect.width / 2, interroGraphView.contentViewContainer.contentRect.width / 4);
 
@@ -110,7 +109,7 @@ namespace Interrogation.Elements
                 board.EvidenceContainers.Insert(containerPosition + 1, this);
             });
 
-            addEvidenceNodeButton.AddToClassList("interro-node__button");
+            addEvidenceRepButton.AddToClassList("interro-node__button");
             deleteEvidenceButton.AddToClassList("interro-node__button");
             moveUpButton.AddToClassList("interro-node__button");
             moveDownButton.AddToClassList("interro-node__button");
@@ -123,7 +122,7 @@ namespace Interrogation.Elements
             textContainer.Add(evidenceNameField);
             textContainer.Add(evidenceFoldout);
 
-            creationContianer.Add(addEvidenceNodeButton);
+            creationContianer.Add(addEvidenceRepButton);
             creationContianer.Add(deleteEvidenceButton);
 
             movementContainer.Add(moveUpButton);

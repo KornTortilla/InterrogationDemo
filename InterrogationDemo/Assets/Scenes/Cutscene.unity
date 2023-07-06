@@ -533,4 +533,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTextManager: {fileID: 755430555}
-  dialogueSO: {fileID: 11400000, guid: 6b9cdb56530fe2a4fb75baf0e7f2cd78, type: 2}
+  dialogueSO: {fileID: 11400000, guid: 313aacf8d07f66f4e825ae7c02483eaa, type: 2}
