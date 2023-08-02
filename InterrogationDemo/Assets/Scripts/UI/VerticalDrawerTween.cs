@@ -17,7 +17,7 @@ public class VerticalDrawerTween : MonoBehaviour
         //Get left side by anchored position assuming object is set to be anchored to the left of canvas
         topY = rectTransform.anchoredPosition.y;
         //Gets right side by adding to left side with width of evidence list
-        bottomY = topY - rectTransform.rect.height * 1.7f;
+        bottomY = 0;
         //Is closed by default
         open = false;
     }

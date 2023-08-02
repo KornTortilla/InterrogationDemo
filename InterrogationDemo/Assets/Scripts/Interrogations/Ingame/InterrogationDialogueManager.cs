@@ -38,7 +38,7 @@ namespace Interrogation.Ingame
 
         private void Awake()
         {
-            Debug.Log(GameManager.Instance.TransitionData);
+            //Debug.Log(GameManager.Instance.TransitionData);
 
             if(!testing)
             {
@@ -49,6 +49,8 @@ namespace Interrogation.Ingame
             pastDialogues = new Stack<DialogueInterrogationSO>();
 
             partnerName = dialogueManager.PartnerName;
+
+            Debug.Log(partnerName);
 
             if(!string.IsNullOrEmpty(partnerName))
             {

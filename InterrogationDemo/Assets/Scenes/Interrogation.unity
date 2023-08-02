@@ -368,8 +368,20 @@ PrefabInstance:
       value: Interrogation.Ingame.InterrogationDialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5708338416636057765, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708338416636057765, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708338416636057765, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -441
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739172377875113833, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.7557983
       objectReference: {fileID: 0}
     - target: {fileID: 7187595151190172105, guid: 9aca688ebbc0e9a4689d969242a249ef, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -495,6 +507,10 @@ PrefabInstance:
     - target: {fileID: 3070762521968476658, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: m_Name
       value: InterrogationManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
+      propertyPath: testing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3070762521968476659, guid: 10f4b0dd87a20154e8a6de23be0bd259, type: 3}
       propertyPath: hintList
