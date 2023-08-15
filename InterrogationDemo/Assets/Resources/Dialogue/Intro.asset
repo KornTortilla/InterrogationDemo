@@ -12,29 +12,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa53886abf707b499589a8e79505a00, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  <Text>k__BackingField: '#add Ace
-
-    Ace: Hello, Anna. Are you doing well?
+  <Text>k__BackingField: 'Anna: (Okay, Anna. You got this. Whole new start for you.)
 
     Anna:
-    Do we need to go over the pleasantries?
+    (Hm. The chief isn''t here...)
+
+    ???: Oh? Aren''t you early, Anna.
+
+    #add
+    Ace, anim Ace Smile
+
+    Anna: Oh! Sorry chief, I uhh... [p 1]didn''t mean to
+    intrude.
+
+    Ace: You are perfectly fine, Anna. Musn''t be so worried.
+
+    #anim
+    Ace Idle
+
+    Ace: Are you ready for your training?
+
+    Anna: Of course, I won''t
+    let you down!
 
     #anim Ace Smile
 
-    Ace: Come now,
-    must you be so callous everytime we speak?
+    Ace: Wonderful, follow me.
 
-    Anna: ...
+    #hide
+    text
 
-    #anim Ace Headshake
+    #curtain fall 1
+
+    #background InterrogationRoom 0, hide Ace
+
+    #curtain
+    rise 1
+
+    #show Ace
+
+    Ace: This is the interrogation room. I imagine you''ll
+    find yourself in here countless times in the future.
+
+    #anim Ace Smile
 
     Ace:
-    Fine. We need you for an investigation. A man named Seven. He illegally took
-    funds from his work and was caught in the act.
+    First though, I have someone you must meet.
 
-    Anna: Got it, Captain.
+    #add Snake, place Snake left,
+    move Ace right 0.25 false, anim Ace Idle
 
-    #remove
-    Ace
+    Ace: This is Snake, he''s in charge
+    of monitoring interrogations and will be assisting you for the foreseeable future.
 
-    #scene Tutorial true 1 Tutorial'
+    Snake:
+    Pleasure, miss Anna.
+
+    Anna: Of course, great to meet you.
+
+    #anim Ace
+    Smile
+
+    Ace: We have an activity to assist you. Before we do that, though,
+    let''s go through the basics.
+
+    #hide Snake
+
+    #scene Tutorial false 1 Tutorial'

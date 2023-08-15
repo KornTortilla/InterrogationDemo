@@ -96,30 +96,22 @@ namespace Interrogation.Windows
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
 
+            this.AddManipulator(CreateGroupContextualMenu());
             this.AddManipulator(CreateNodeContextualMenu("Add Dialogue Node", NodeType.Dialogue, "Dialogue Name"));
             //this.AddManipulator(CreateNodeContextualMenu("Add Evidence Node", NodeType.Evidence, "Evidence Name"));
         }
         #endregion
 
-        #region Compatible Ports
-        public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+        #region Adding Menu Options
+        private IManipulator CreateGroupContextualMenu()
         {
-            List<Port> compatiblePorts = new List<Port>();
+            ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
+                menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => AddElement(CreateGroup("Suspect Group", contentViewContainer.WorldToLocal(actionEvent.eventInfo.localMousePosition))))
+            );
 
-            ports.ForEach(port =>
-            {
-                if (startPort.node == port.node) return;
-
-                if (startPort.direction == port.direction) return;
-
-                compatiblePorts.Add(port);
-            });
-
-            return compatiblePorts;
+            return contextualMenuManipulator;
         }
-        #endregion
 
-        #region Adding Node Menu
         private IManipulator CreateNodeContextualMenu(string title, NodeType type, string name)
         {
             ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
@@ -130,7 +122,19 @@ namespace Interrogation.Windows
         }
         #endregion
 
-        #region Get Node
+        #region Get Elements
+        private SuspectGroup CreateGroup(string title, Vector2 localMousePosition)
+        {
+            SuspectGroup group = new SuspectGroup(this)
+            {
+                title = "Lmao"
+            };
+
+            group.SetPosition(new Rect(localMousePosition, Vector2.zero));
+
+            return group;
+        }
+
         public BaseNode CreateNode(Vector2 pos, NodeType type, string nodeName, bool shouldDraw = true)
         {
             Type nodeType = Type.GetType($"Interrogation.Elements.{type}Node");
@@ -150,6 +154,24 @@ namespace Interrogation.Windows
             }
 
             return node;
+        }
+        #endregion
+
+        #region Compatible Ports
+        public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+        {
+            List<Port> compatiblePorts = new List<Port>();
+
+            ports.ForEach(port =>
+            {
+                if (startPort.node == port.node) return;
+
+                if (startPort.direction == port.direction) return;
+
+                compatiblePorts.Add(port);
+            });
+
+            return compatiblePorts;
         }
         #endregion
 

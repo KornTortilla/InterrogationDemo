@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 280660722}
   - component: {fileID: 280660721}
   m_Layer: 5
-  m_Name: CrossfadeImage
+  m_Name: CurtainImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -0.000030517578}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &280660721
 CanvasGroup:
@@ -536,6 +536,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2959946196250342178, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959946196250342178, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959946196250342178, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959946196250342178, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3700400377051639232, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -596,6 +612,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6143428531718192323, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405952522833955404, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+      propertyPath: curtain
+      value: 
+      objectReference: {fileID: 2096772712}
     - target: {fileID: 6847170458581192999, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1915,7 +1939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreenRect: {fileID: 280660720}
-  starting: 0
+  testing: 1
+  fadeTime: 0
 --- !u!1 &1941792201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2369,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071622573}
   m_CullTransparentMesh: 1
+--- !u!114 &2096772712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2959946196250342178, guid: 3c57dc1828abdaa40989b93df286f9aa, type: 3}
+  m_PrefabInstance: {fileID: 541943098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4980114129759506753
 GameObject:
   m_ObjectHideFlags: 0

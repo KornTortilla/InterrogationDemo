@@ -15,8 +15,6 @@ namespace Interrogation.Ingame
         public static event Action OnTalkingStart;
         public static event Action OnTalkingEnd;
 
-        [SerializeField] private bool testing;
-
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private GameObject evidenceLocker;
         [SerializeField] private Button hintButton;
@@ -40,7 +38,7 @@ namespace Interrogation.Ingame
         {
             //Debug.Log(GameManager.Instance.TransitionData);
 
-            if(!testing)
+            if(!GameManager.Instance.testing)
             {
                 dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueManagerInterrogationSO;
             }
@@ -69,7 +67,7 @@ namespace Interrogation.Ingame
 
             dialogueTextManager.CheckForPriorityCommand(dialogueManager.IntroText);
 
-            if(testing) StartInterrogation();
+            if(GameManager.Instance.testing) StartInterrogation();
         }
 
         //Temporary initialization by screen fade in to start script after full
@@ -334,9 +332,7 @@ namespace Interrogation.Ingame
 
             bool needToClickLastText = !isProgressing;
 
-            StartCoroutine(dialogueTextManager.TypeText(text, needToClickLastText));
-
-            yield return new WaitUntil(() => dialogueTextManager.isDone);
+            yield return StartCoroutine(dialogueTextManager.TypeText(text, needToClickLastText));
 
             OnTalkingEnd?.Invoke();
 

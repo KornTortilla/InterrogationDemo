@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
@@ -9,7 +7,6 @@ namespace Interrogation.Elements
     using Windows;
     using Utilities;
     using Data.Save;
-    
 
     public class ProfileBlackboard : Blackboard
     {

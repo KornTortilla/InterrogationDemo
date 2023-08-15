@@ -41,7 +41,7 @@ public class Actor : MonoBehaviour
             yield return null;
         }
 
-        spriteRenderer.color = new Color(1, 1, 1, 1);
+        spriteRenderer.color = new Color(1, 1, 1, toValue);
 
         isActing = false;
     }

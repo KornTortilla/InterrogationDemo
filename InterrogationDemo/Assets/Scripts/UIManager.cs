@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIParent : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     private CanvasGroup canvasGroup;
 
@@ -10,30 +10,28 @@ public class UIParent : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        LeanTween.alphaCanvas(canvasGroup, 1f, 1f);
+        FadeIn(GameManager.Instance.fadeTime);
     }
 
     private void OnEnable()
     {
         GameManager.OnSceneTransitionBegin += FadeOut;
-        GameManager.OnSceneTransitionAdd += FadeIn;
     }
 
     private void OnDisable()
     {
         GameManager.OnSceneTransitionBegin -= FadeOut;
-        GameManager.OnSceneTransitionAdd -= FadeIn;
+    }
+
+    private void FadeIn(float time)
+    {
+        Debug.Log("Time: " + time);
+
+        LeanTween.alphaCanvas(canvasGroup, 1f, time);
     }
 
     private void FadeOut(float time)
     {
         LeanTween.alphaCanvas(canvasGroup, 0f, time);
-    }
-
-    private void FadeIn(float time)
-    {
-        Debug.Log("Fadin'");
-
-        LeanTween.alphaCanvas(canvasGroup, 1f, time);
     }
 }

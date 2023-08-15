@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VerticalDrawerTween : MonoBehaviour
 {
@@ -11,13 +12,19 @@ public class VerticalDrawerTween : MonoBehaviour
     private float bottomY;
     private bool open;
 
-    private void Awake()
+    private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+
+        Canvas parentCanvas = transform.parent.GetComponent<Canvas>();
+        float parentHeight = parentCanvas.pixelRect.height / parentCanvas.scaleFactor;
+        Debug.Log("Parent Height: " + parentHeight);
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, parentHeight);
+        
         //Get left side by anchored position assuming object is set to be anchored to the left of canvas
         topY = rectTransform.anchoredPosition.y;
         //Gets right side by adding to left side with width of evidence list
-        bottomY = 0;
+        bottomY = rectTransform.anchoredPosition.y - rectTransform.rect.height;
         //Is closed by default
         open = false;
     }

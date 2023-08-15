@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 2807940020086153694}
   - component: {fileID: 2807940020086153695}
   - component: {fileID: 2807940020086153693}
+  - component: {fileID: 8625889864167040302}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -508,6 +509,18 @@ MonoBehaviour:
   ctcButton: {fileID: 2807940019602298464}
   textSpeed: 0.035
   isDone: 1
+--- !u!225 &8625889864167040302
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2807940020086153681}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2807940020175097078
 GameObject:
   m_ObjectHideFlags: 0

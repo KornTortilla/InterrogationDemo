@@ -15,15 +15,16 @@ public class DialogueTextManager : MonoBehaviour
     public GameObject ctcObject;
     public Button ctcButton;
 
+    private string currentLine;
+
     public float textSpeed;
+    private float pauseTime;
 
     private AudioClip blip;
 
     private bool clickProcessed;
     private bool interruptTyping;
     private bool stageReady = true;
-
-    [HideInInspector] public bool isDone = true;
 
     private void Awake()
     {
@@ -54,27 +55,29 @@ public class DialogueTextManager : MonoBehaviour
 
     public void CheckForPriorityCommand(string text)
     {
-        string[] sentences = SplitIntoSentences(text);
+        string[] lines = SplitIntoSentences(text);
 
-        if (sentences[0].Substring(0, 1) == "!")
+        if (lines[0].Substring(0, 1) == "!")
         {
-            SeperateAndExecute(sentences[0]);
+            SeperateAndExecute(lines[0]);
         }
     }
 
     public IEnumerator TypeText(string text, bool needToClickLastText = false)
     {
-        isDone = false;
-
         string[] sentences = SplitIntoSentences(text);
 
         for (int i = 0; i < sentences.Length; i++)
         {
+            pauseTime = 0;
+
             clickProcessed = false;
 
-            string sentence = sentences[i];
+            yield return new WaitUntil(() => stageReady);
 
-            if(sentence.Substring(0, 1) == "!")
+            currentLine = sentences[i];
+
+            if(currentLine.Substring(0, 1) == "!")
             {
                 continue;
             }
@@ -83,15 +86,13 @@ public class DialogueTextManager : MonoBehaviour
             If sentence begins with #, it is a tag and will sepearate the 
              first and second words to invoke different events.
             */
-            if (sentence.Substring(0, 1) == "#")
+            if (currentLine.Substring(0, 1) == "#")
             {
-                SeperateAndExecute(sentence);
+                SeperateAndExecute(currentLine);
 
                 //Skips to next sentence so that tag isn't displayed in text
                 continue;
             }
-
-            yield return new WaitUntil(() => stageReady);
 
             //Initializing beginning to simulate talking
             dialogueText.text = "";
@@ -101,26 +102,35 @@ public class DialogueTextManager : MonoBehaviour
 
             //If colon detected, name is given
             string name = "";
-            if (sentence.Contains(":"))
+            if (currentLine.Contains(":"))
             {
                 //Separates name and dialogue
-                string[] sentenceArray = SeparateSentenceAndShowName(sentence);
+                string[] sentenceArray = SeparateSentenceAndShowName(currentLine);
                 name = sentenceArray[0];
-                sentence = sentenceArray[1];
+                currentLine = sentenceArray[1];
 
                 StageController.Instance.ChooseSpeaker(name);
             }
 
-            char[] letterArray = sentence.ToCharArray();
+            char[] letterArray = currentLine.ToCharArray();
             for (int letterPos = 0; letterPos < letterArray.Length; letterPos++)
             {
+                ShowTextbox();
+
+                if (pauseTime > 0)
+                {
+                    yield return new WaitForSeconds(pauseTime);
+
+                    pauseTime = 0;
+                }
+
                 char letter = letterArray[letterPos];
 
                 if (interruptTyping)
                 {
                     interruptTyping = false;
 
-                    dialogueText.text = SearchForRemainingTagsAndRemove(sentence, letterPos, true);
+                    dialogueText.text = SearchForRemainingTagsAndRemove(currentLine, letterPos, true);
 
                     break;
                 }
@@ -142,9 +152,9 @@ public class DialogueTextManager : MonoBehaviour
                     time *= 5f;
                     StageController.Instance.SetCurrentSpeakerTalking(false);
                 }
-                else if (letter == '(')
+                else if (letter == '[')
                 {
-                    string parenthesisString = FindParenthesisString(sentence.Substring(letterPos));
+                    string parenthesisString = FindParenthesisString(currentLine.Substring(letterPos));
 
                     StripParenthesisAndExecute(parenthesisString);
 
@@ -173,19 +183,16 @@ public class DialogueTextManager : MonoBehaviour
             //If the dialogue is done being typed out and the player clicks on button, continue
             yield return new WaitUntil(() => { return ((clickProcessed || (i == sentences.Length - 1 && !needToClickLastText))); });
 
-            SentenceFinished?.Invoke(name, TagsRemoved(sentence));
+            SentenceFinished?.Invoke(name, TagsRemoved(currentLine));
         }
 
         ctcObject.SetActive(false);
-        isDone = true;
     }
 
-    private void SeperateAndExecute(string sentence)
+    private void SeperateAndExecute(string line)
     {
-        //Removes first character
-        string line = sentence.Substring(1);
         //Splits each word of a tag into an array
-        string[] commands = line.Split(',');
+        string[] commands = line.Substring(1).Split(',');
 
         for(int i = 0; i < commands.Length; i++)
         {
@@ -202,27 +209,27 @@ public class DialogueTextManager : MonoBehaviour
 
     private string SearchForRemainingTagsAndRemove(string sentence, int startingPosition, bool execute)
     {
-        if(!sentence.Contains('('))
+        if(!sentence.Contains('['))
         {
             return sentence;
         }
 
         List<string> stringsToRemove = new List<string>();
 
-        string remainingSentence = sentence.Substring(startingPosition);
+        string remainingSentence = sentence;
 
-        while(remainingSentence.Contains('('))
+        while(remainingSentence.Contains('['))
         {
             string parenthesisString = FindParenthesisString(remainingSentence);
 
-            if(execute)
+            if(execute && remainingSentence.IndexOf('[') > startingPosition)
             {
                 StripParenthesisAndExecute(parenthesisString);
             }
 
             stringsToRemove.Add(parenthesisString);
 
-            remainingSentence = remainingSentence.Substring(remainingSentence.IndexOf(')') + 1);
+            remainingSentence = remainingSentence.Substring(remainingSentence.IndexOf(']') + 1);
         } 
 
         string replacingSentence = sentence;
@@ -236,8 +243,8 @@ public class DialogueTextManager : MonoBehaviour
 
     private string FindParenthesisString(string text)
     {
-        int startOfParenth = text.IndexOf('(');
-        int endOfParenth = text.IndexOf(')');
+        int startOfParenth = text.IndexOf('[');
+        int endOfParenth = text.IndexOf(']');
 
         string parenthesisString = text.Substring(startOfParenth, endOfParenth - startOfParenth + 1);
 
@@ -258,8 +265,17 @@ public class DialogueTextManager : MonoBehaviour
         //Checks the first 
         switch (terms[0])
         {
+            case "p" or "pause":
+                pauseTime = float.Parse(terms[1]);
+                break;
+
             case "background":
-                StageController.Instance.ChangeBackground(terms[1]);
+                StageController.Instance.SwitchBackground(terms[1], float.Parse(terms[2]));
+                break;
+
+            case "curtain":
+                if (terms[1] == "fall") StageController.Instance.DropCurtain(float.Parse(terms[2]));
+                else if (terms[1] == "rise") StageController.Instance.PullCurtain(float.Parse(terms[2]));
                 break;
 
             case "add":
@@ -267,17 +283,24 @@ public class DialogueTextManager : MonoBehaviour
                 StageController.Instance.AddCharacter(terms[1]);
                 break;
 
-            case "move":
-                //Sets character to new position with two params, first name and then position
+            case "place":
+                //Sets character to new position with two params, first being name and then position
                 StageController.Instance.SetCharacterPosition(terms[1], terms[2]);
                 break;
 
+            case "move":
+                //Slides character to new position with two params, first being name and then position
+                StageController.Instance.MoveCharacter(terms[1], terms[2], float.Parse(terms[3]), bool.Parse(terms[4]));
+                break;
+
             case "show":
-                StageController.Instance.ShowCharacter(terms[1]);
+                if (terms[1] == "text") ShowTextbox();
+                else StageController.Instance.ShowCharacter(terms[1]);
                 break;
 
             case "hide":
-                StageController.Instance.HideCharacter(terms[1]);
+                if (terms[1] == "text") HideTextbox();
+                else StageController.Instance.HideCharacter(terms[1]);
                 break;
 
             case "anim":
@@ -302,6 +325,16 @@ public class DialogueTextManager : MonoBehaviour
                 TutorialActivation?.Invoke(terms[1]);
                 break;
         }
+    }
+
+    private void HideTextbox()
+    {
+        GetComponent<CanvasGroup>().alpha = 0f;
+    }
+
+    private void ShowTextbox()
+    {
+        GetComponent<CanvasGroup>().alpha = 1f;
     }
 
     private IEnumerator Countdown(float time)
@@ -376,8 +409,6 @@ public class DialogueTextManager : MonoBehaviour
 
         return newText;
     }
-
-
 
     public string[] SplitIntoSentences(string text)
     {

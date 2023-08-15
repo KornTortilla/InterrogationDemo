@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,15 +8,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private RectTransform blackScreenRect;
-    private float fadeTime = 1f;
 
     public static event Action<float> OnSceneTransitionBegin;
-    public static event Action<float> OnSceneTransitionAdd;
     public static event Action OnSceneTransitionEnd;
 
     public string TransitionData { get; private set; }
-
-    public bool starting;
+    public bool testing;
+    public float fadeTime = 0f;
 
     private string nextScene;
 
@@ -31,7 +30,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(starting)
+        if(!testing)
         {
             SceneManager.LoadSceneAsync("Title", LoadSceneMode.Additive);
 
@@ -46,7 +45,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.StopMusic();
     }
 
-    public void TransitionScenes(string scene, bool blackScreenTransition, float time = 1f, string arg = null)
+    public void TransitionScenes(string scene, bool isBlackScreenTransition, float time = 1f, string arg = null)
     {
         fadeTime = time;
 
@@ -58,13 +57,13 @@ public class GameManager : MonoBehaviour
 
         OnSceneTransitionBegin?.Invoke(time);
 
-        Crossfade(scene, blackScreenTransition);
+        Crossfade(isBlackScreenTransition);
     }
 
-    private void Crossfade(string scene, bool blackScreenTransition)
+    private void Crossfade(bool isBlackScreenTransition)
     {
         float a;
-        if (blackScreenTransition) a = 1f;
+        if (isBlackScreenTransition) a = 1f;
         else a = 0f;
 
         LeanTween.alpha(blackScreenRect, a, fadeTime).setOnComplete(Transition);
@@ -84,8 +83,6 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
-
-        OnSceneTransitionAdd?.Invoke(fadeTime);
 
         LeanTween.alpha(blackScreenRect, 0f, fadeTime).setOnComplete(SignalTransitionEnd);
     }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageController : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class StageController : MonoBehaviour
     public static event Action OnActionComplete;
 
     [SerializeField] private SpriteRenderer background;
+    [SerializeField] private Image curtain;
     [SerializeField] private Transform characterListTransform;
     private Dictionary<string, GameObject> characters;
 
     private Animator currentSpeaker;
+
+    private int stageActions;
 
     public enum Position
     {
@@ -35,6 +39,30 @@ public class StageController : MonoBehaviour
         characters = new Dictionary<string, GameObject>();
     }
 
+    public void DropCurtain(float time)
+    {
+        StartCoroutine(StageAction(FadeCurtain, 1f, time));
+    }
+
+    public void PullCurtain(float time)
+    {
+        StartCoroutine(StageAction(FadeCurtain, 0f, time));
+    }
+
+    private IEnumerator FadeCurtain(float toValue, float time)
+    {
+        float fromValue = curtain.color.a;
+
+        for (float t = 0f; t < 1f; t += Time.deltaTime / time)
+        {
+            Color newColor = new Color(0, 0, 0, Mathf.Lerp(fromValue, toValue, t));
+            curtain.color = newColor;
+            yield return null;
+        }
+
+        curtain.color = new Color(0, 0, 0, toValue);
+    }
+
     public void ChangeBackground(string backgroundName)
     {
         Debug.Log("Changing Background: " + backgroundName);
@@ -43,8 +71,46 @@ public class StageController : MonoBehaviour
         background.sprite = newBackground;
     }
 
+    public void SwitchBackground(string backgroundName, float time)
+    {
+        StartCoroutine(SwitchingBackground(backgroundName, time));
+    }
+
+    private IEnumerator SwitchingBackground(string backgroundName, float time)
+    {
+        AddStageAction();
+        
+        yield return StartCoroutine(FadeBackground(0, time));
+
+        ChangeBackground(backgroundName);
+
+        yield return StartCoroutine(FadeBackground(1, time));
+
+        RemoveStageAction();
+    }
+
+    public IEnumerator FadeBackground(float toValue, float time)
+    {
+        float fromValue = background.color.a;
+
+        for (float t = 0f; t < 1f; t += Time.deltaTime / time)
+        {
+            Color newColor = new Color(1, 1, 1, Mathf.Lerp(fromValue, toValue, t));
+            background.color = newColor;
+            yield return null;
+        }
+
+        background.color = new Color(1, 1, 1, toValue);
+    }
+
     public void AddCharacter(string characterName, float zPosition = 0f)
     {
+        if(characters.ContainsKey(characterName)) {
+            Debug.LogWarning(characterName + " already exists.");
+
+            return;
+        }
+
         //Loads character prefab from name to see if it exists before continuing
         GameObject characterPrefab = Resources.Load("Prefabs/Characters/" + characterName) as GameObject;
 
@@ -58,54 +124,73 @@ public class StageController : MonoBehaviour
 
             characters.Add(characterName, newCharacter);
 
-            Debug.Log("Added: " + characterName);
+            Actor actorScript = newCharacter.GetComponent<Actor>();
 
-            StartCoroutine(FadeCharacter(newCharacter, 1f, 0.2f));
+            StartCoroutine(StageAction(actorScript.Fade, 1f, 0.2f));
         }
     }
 
-    private IEnumerator FadeCharacter(GameObject character, float toValue, float time)
-    {
-        OnActionStart?.Invoke();
-
-        yield return StartCoroutine(character.GetComponent<Actor>().Fade(toValue, time));
-
-        OnActionComplete?.Invoke();
-    }
-
-    public void ShowCharacter(string characterName)
+    private GameObject GetCharacterFromString(string characterName)
     {
         if (!characters.ContainsKey(characterName))
         {
-            return;
+            Debug.LogError(characterName + " doesn't exist yet.");
+
+            return null;
         }
 
-        GameObject character = characters[characterName];
+        return characters[characterName];
+    }
 
-        StartCoroutine(FadeCharacter(character, 1f, 0.2f));
+    private IEnumerator StageAction(Func<float, float, IEnumerator> actorFunction, float toValue, float time)
+    {
+        AddStageAction();
+
+        yield return StartCoroutine(actorFunction(toValue, time));
+
+        RemoveStageAction();
+    }
+
+    /*
+    private IEnumerator SwitchBackground()
+    {
+        OnActionStart?.Invoke();
+
+        Actor
+
+        OnActionComplete?.Invoke();
+    }
+    */
+
+    public void ShowCharacter(string characterName)
+    {
+        GameObject character = GetCharacterFromString(characterName);
+
+        if (character == null) return;
+
+        Actor actorScript = character.GetComponent<Actor>();
+
+        StartCoroutine(StageAction(actorScript.Fade, 1f, 0.2f));
     }
 
     public void HideCharacter(string characterName)
     {
-        if (!characters.ContainsKey(characterName))
-        {
-            return;
-        }
+        GameObject character = GetCharacterFromString(characterName);
 
-        GameObject character = characters[characterName];
+        if (character == null) return;
 
-        StartCoroutine(FadeCharacter(character, 0f, 0.2f));
+        Actor actorScript = character.GetComponent<Actor>();
+
+        StartCoroutine(StageAction(actorScript.Fade, 0f, 0.2f));
     }
 
     public void PlayAnim(string characterName, string animation)
     {
-        //Finds the character with the name and animates it if it exists
-        GameObject characterObject = characters[characterName];
+        GameObject character = GetCharacterFromString(characterName);
 
-        if (characterObject)
-        {
-            characterObject.GetComponent<Animator>().Play(animation);
-        }
+        if (character == null) return;
+
+        character.GetComponent<Animator>().Play(animation);
     }
 
     public void ChooseSpeaker(string characterName)
@@ -132,17 +217,41 @@ public class StageController : MonoBehaviour
 
     public void SetCharacterPosition(string characterName, string positionString)
     {
-        //Returns if character doesnt exist
-        if(!characters.ContainsKey(characterName))
+        GameObject character = GetCharacterFromString(characterName);
+
+        if (character == null) return;
+
+        float newXValue = GetPositionValue(character.transform.position.x, positionString);
+
+        SetCharacterXValue(character, newXValue);
+
+        Debug.Log("Set Character to New Position");
+    }
+
+    public void MoveCharacter(string characterName, string positionString, float time, bool stageWaits)
+    {
+        GameObject character = GetCharacterFromString(characterName);
+
+        if (character == null) return;
+
+        float newXValue = GetPositionValue(character.transform.position.x, positionString);
+
+        Actor actorScript = character.GetComponent<Actor>();
+
+        if (stageWaits)
         {
-            return;
+            StartCoroutine(StageAction(actorScript.Slide, newXValue, time));
         }
+        else
+        {
+            StartCoroutine(character.GetComponent<Actor>().Slide(newXValue, time));
+        }
+    }
 
-        //Gets character and based on position given, parsed into the right enum, places them
-        GameObject character = characters[characterName];
-
+    private float GetPositionValue(float characterPosition, string positionString)
+    {
         Position positionFromString = Enum.Parse<Position>(positionString);
-        float newXValue = character.transform.position.x;
+        float newXValue = characterPosition;
         switch (positionFromString)
         {
             case Position.left:
@@ -166,9 +275,7 @@ public class StageController : MonoBehaviour
                 break;
         }
 
-        SetCharacterXValue(character, newXValue);
-
-        Debug.Log("Set Character to New Position");
+        return newXValue;
     }
 
     private void SetCharacterXValue(GameObject character, float xValue)
@@ -178,7 +285,7 @@ public class StageController : MonoBehaviour
         character.transform.position = new Vector3(xValue, position.y, position.z);
     }
 
-    public void HintSlide(string characterName,bool goingIn)
+    public void HintSlide(string characterName, bool goingIn)
     {
         if (!characters.ContainsKey(characterName))
         {
@@ -250,5 +357,25 @@ public class StageController : MonoBehaviour
         characters.Clear();
 
         background.sprite = null;
+    }
+
+    private void AddStageAction()
+    {
+        if(stageActions == 0)
+        {
+            OnActionStart?.Invoke();
+        }
+
+        stageActions++;
+    }
+
+    private void RemoveStageAction()
+    {
+        stageActions--;
+
+        if (stageActions == 0)
+        {
+            OnActionComplete?.Invoke();
+        }
     }
 }

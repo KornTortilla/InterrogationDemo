@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
   <PartnerName>k__BackingField: Santa
-  <IntroText>k__BackingField: '!background InterrogationRoom, add Ace, move Ace right,
-    move Santa offscreenright
+  <IntroText>k__BackingField: '!add Ace, place Ace right
 
 '
   <NoHintResponse>k__BackingField: 'Santa: Uhh... did you need anything?
@@ -57,25 +56,15 @@ MonoBehaviour:
   <DialogueNodes>k__BackingField:
   - <Name>k__BackingField: Start
     <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
-    <Text>k__BackingField: '#anim Ace Smile
+    <Text>k__BackingField: 'Ace: We''ll run over the basic ideas you''ll need to
+      be familiar in this position.
 
-      Ace: This is the interrogation
-      room. I imagine you''ll find yourself in here countless times in the future.
+      Ace: Before any interrogation, you''ll
+      be given evidence having to due with the case.
 
-      Anna:
-      Lovely...
-
-      #anim Ace Idle
-
-      Ace: We''ll run over the basic ideas
-      you''ll need to be familiar in this position.
-
-      Ace: Before any interrogation,
-      you''ll be given evidence having to due with the case.
-
-      Ace: It can be
-      found in the locker to the (tutorial locker)left. (anim Ace Smile)Feel free
-      to look through it. I''ve filled it with some sample evidence for further demonstration.
+      Ace: It can be found
+      in the locker to the [tutorial locker]left. [anim Ace Smile]Feel free to look
+      through it. I''ve filled it with some sample evidence for further demonstration.
 
       #anim
       Ace Idle
@@ -95,96 +84,6 @@ MonoBehaviour:
       <Type>k__BackingField: 0
     <Errors>k__BackingField: []
     <Position>k__BackingField: {x: 415, y: 282}
-  - <Name>k__BackingField: Whats Your Favorite Color
-    <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
-    <Text>k__BackingField: '#anim Ace Smile
-
-      Ace: It''s red.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-      <KeyIDs>k__BackingField: []
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 0
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 2036, y: 523}
-  - <Name>k__BackingField: Its Actually Red
-    <ID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
-    <Text>k__BackingField: '#anim Ace Smile
-
-      Ace: Wonderful, Anna. You''re
-      doing great!
-
-      #anim Ace Idle
-
-      Ace: One thing to note, however,
-      you can only save one of the suspect''s statements as a time.
-
-      Ace: Moving
-      on, there''s one last piece of information to share. We can keep track of all
-      the statements from suspects and store them, allowing you to easily go back
-      to them.
-
-      #anim Ace Smile
-
-      Ace: We call it the (tutorial flowchart)flowchart.
-      Feel free to look at it now. Each node is named after the question that led
-      to it.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-      <KeyIDs>k__BackingField: []
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 0
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 2036, y: 282}
-  - <Name>k__BackingField: He Was Stabbed
-    <ID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
-    <Text>k__BackingField: '#anim Ace Smile
-
-      Ace: Excellent!
-
-      #anim Ace
-      Idle
-
-      Ace: At times, the suspect will speak against themselves, giving
-      you a prime opportunity to use their own words against them instead.
-
-      Ace:
-      It''s important to record their words as evidence for this purpose, which you
-      can do below here(tutorial save). (anim Ace Smile)You''ll want to do that when
-      the suspect is done speaking, however.
-
-      #anim Ace Idle
-
-      Ace: I''ll
-      give you another opportunity to try it out here. I''ll first incorrectly say
-      what my favorite color is. Then, ask me what it actually is and record it.
-      Finally, come back here and present that.
-
-      Ace: Here goes then: My favorite
-      color is blue.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: It's actually red.
-      <NodeID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
-      <KeyIDs>k__BackingField:
-      - 17e300c5-e37f-44fe-85e5-de3c9829935c
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 1
-    - <Text>k__BackingField: What's your favorite color?
-      <NodeID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
-      <KeyIDs>k__BackingField: []
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 0
-    <Errors>k__BackingField:
-    - <Text>k__BackingField: '#anim Ace Smile
-
-        Ace: You''re not meant to
-        use what I just said, ask the question and use that instead.'
-      <EvidenceIDs>k__BackingField:
-      - 5c7eed41-56eb-477c-afa8-0c8aefd9000d
-      Type: 2
-    <Position>k__BackingField: {x: 1501, y: 282}
   - <Name>k__BackingField: What Do I Ask
     <ID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
     <Text>k__BackingField: '#anim Ace Smile
@@ -223,6 +122,96 @@ MonoBehaviour:
       - 03d44928-a7b1-4cf5-ae0d-e8e5a2aeef14
       Type: 2
     <Position>k__BackingField: {x: 939, y: 282}
+  - <Name>k__BackingField: Whats Your Favorite Color
+    <ID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: It''s red.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2036, y: 523}
+  - <Name>k__BackingField: Its Actually Red
+    <ID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Wonderful, Anna. You''re
+      doing great!
+
+      #anim Ace Idle
+
+      Ace: One thing to note, however,
+      you can only save one of the suspect''s statements as a time.
+
+      Ace: Moving
+      on, there''s one last piece of information to share. We can keep track of all
+      the statements from suspects and store them, allowing you to easily go back
+      to them.
+
+      #anim Ace Smile
+
+      Ace: We call it the [tutorial flowchart]flowchart.
+      Feel free to look at it now. Each node is named after the question that led
+      to it.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 2036, y: 282}
+  - <Name>k__BackingField: He Was Stabbed
+    <ID>k__BackingField: 7e6ea349-c62a-4c1b-9693-19f7fd8f0727
+    <Text>k__BackingField: '#anim Ace Smile
+
+      Ace: Excellent!
+
+      #anim Ace
+      Idle
+
+      Ace: At times, the suspect will speak against themselves, giving
+      you a prime opportunity to use their own words against them instead.
+
+      Ace:
+      It''s important to record their words as evidence for this purpose, which you
+      can do below here[tutorial save]. [anim Ace Smile]You''ll want to do that when
+      the suspect is done speaking, however.
+
+      #anim Ace Idle
+
+      Ace: I''ll
+      give you another opportunity to try it out here. I''ll first incorrectly say
+      what my favorite color is. Then, ask me what it actually is and record it.
+      Finally, come back here and present that.
+
+      Ace: Here goes then: My favorite
+      color is blue.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: It's actually red.
+      <NodeID>k__BackingField: 470b4a7f-0f8d-45d3-a7aa-de5d90794bf5
+      <KeyIDs>k__BackingField:
+      - 17e300c5-e37f-44fe-85e5-de3c9829935c
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 1
+    - <Text>k__BackingField: What's your favorite color?
+      <NodeID>k__BackingField: 17e300c5-e37f-44fe-85e5-de3c9829935c
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField:
+    - <Text>k__BackingField: '#anim Ace Smile
+
+        Ace: You''re not meant to
+        use what I just said, ask the question and use that instead.'
+      <EvidenceIDs>k__BackingField:
+      - 5c7eed41-56eb-477c-afa8-0c8aefd9000d
+      Type: 2
+    <Position>k__BackingField: {x: 1501, y: 282}
   <RepNodes>k__BackingField:
   - <Name>k__BackingField: Autopsy Report
     <ID>k__BackingField: fa78992a-508c-46b2-9b67-9e4ba471f9bb
@@ -241,10 +230,10 @@ MonoBehaviour:
     <NodeType>k__BackingField: 1
   <OldDialogueNames>k__BackingField:
   - Start
+  - What Do I Ask
   - Whats Your Favorite Color
   - Its Actually Red
   - He Was Stabbed
-  - What Do I Ask
   <OldEvidenceNames>k__BackingField:
   - Autopsy Report
   - Financial Records
