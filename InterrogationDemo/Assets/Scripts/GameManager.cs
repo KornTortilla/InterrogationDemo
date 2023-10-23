@@ -7,13 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private RectTransform blackScreenRect;
-
     public static event Action<float> OnSceneTransitionBegin;
     public static event Action OnSceneTransitionEnd;
 
     public string TransitionData { get; private set; }
     public bool testing;
+
+    [HideInInspector]
     public float fadeTime = 0f;
 
     private string nextScene;
@@ -38,40 +38,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartGame(string scene)
+    public void StartGame()
     {
-        TransitionScenes(scene, true, 2f);
+        StartCoroutine(SceneTransition("Dialogue", true, 2f));
 
         AudioManager.Instance.StopMusic();
     }
 
-    public void TransitionScenes(string scene, bool isBlackScreenTransition, float time = 1f, string arg = null)
+    public IEnumerator SceneTransition(string newScene, bool isBlackScreenTransition, float time = 1f, string arg = null)
     {
+        OnSceneTransitionBegin?.Invoke(time);
+
         fadeTime = time;
 
-        blackScreenRect.gameObject.SetActive(true);
-
-        nextScene = scene;
+        nextScene = newScene;
 
         TransitionData = arg;
 
-        OnSceneTransitionBegin?.Invoke(time);
+        StageController.Instance.DropCurtain(time);
 
-        Crossfade(isBlackScreenTransition);
-    }
-
-    private void Crossfade(bool isBlackScreenTransition)
-    {
-        float a;
-        if (isBlackScreenTransition) a = 1f;
-        else a = 0f;
-
-        LeanTween.alpha(blackScreenRect, a, fadeTime).setOnComplete(Transition);
-    }
-
-    private void Transition()
-    {
-        //StageController.Instance.ClearStage();
+        yield return new WaitForSeconds(time);
 
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
@@ -84,13 +70,10 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
 
-        LeanTween.alpha(blackScreenRect, 0f, fadeTime).setOnComplete(SignalTransitionEnd);
-    }
+        StageController.Instance.PullCurtain(time);
 
-    private void SignalTransitionEnd()
-    {
+        yield return new WaitForSeconds(time);
+
         OnSceneTransitionEnd?.Invoke();
-
-        blackScreenRect.gameObject.SetActive(false);
     }
 }

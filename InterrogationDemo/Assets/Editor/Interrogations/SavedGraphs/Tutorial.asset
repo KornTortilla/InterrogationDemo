@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: Tutorial
-  <PartnerName>k__BackingField: Santa
-  <IntroText>k__BackingField: '!add Ace, place Ace right
+  <PartnerName>k__BackingField: Snake
+  <IntroText>k__BackingField: '!add Ace, place Ace right, add Snake, place Snake
+    offscreenleft
 
 '
   <NoHintResponse>k__BackingField: 'Santa: Uhh... did you need anything?
@@ -54,36 +55,6 @@ MonoBehaviour:
     <ID>k__BackingField: 7aa9d9b9-e8ce-46de-b0d4-43b5dd8cf969
     <Text>k__BackingField: The company reported a net worth of 20 million.
   <DialogueNodes>k__BackingField:
-  - <Name>k__BackingField: Start
-    <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
-    <Text>k__BackingField: 'Ace: We''ll run over the basic ideas you''ll need to
-      be familiar in this position.
-
-      Ace: Before any interrogation, you''ll
-      be given evidence having to due with the case.
-
-      Ace: It can be found
-      in the locker to the [tutorial locker]left. [anim Ace Smile]Feel free to look
-      through it. I''ve filled it with some sample evidence for further demonstration.
-
-      #anim
-      Ace Idle
-
-      Ace: Moving forward, a core part of interrogations here are
-      asking question in order to gain more information.
-
-      #anim Ace Smile
-
-      Ace:
-      Go ahead and ask me a question.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: What am I supposed to ask?
-      <NodeID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
-      <KeyIDs>k__BackingField: []
-      <Hint>k__BackingField: 
-      <Type>k__BackingField: 0
-    <Errors>k__BackingField: []
-    <Position>k__BackingField: {x: 415, y: 282}
   - <Name>k__BackingField: What Do I Ask
     <ID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
     <Text>k__BackingField: '#anim Ace Smile
@@ -212,6 +183,53 @@ MonoBehaviour:
       - 5c7eed41-56eb-477c-afa8-0c8aefd9000d
       Type: 2
     <Position>k__BackingField: {x: 1501, y: 282}
+  - <Name>k__BackingField: Start
+    <ID>k__BackingField: 2a96fc2d-020e-43d3-8704-4cf8c7b43f89
+    <Text>k__BackingField: 'Ace: We''ll run over the basic ideas you''ll need to
+      be familiar in this position.
+
+      Ace: Before any interrogation, you''ll
+      be given evidence having to due with the case.
+
+      Ace: It can be found
+      in the locker to the [tutorial locker]left. [anim Ace Smile]Feel free to look
+      through it. I''ve filled it with some sample evidence for further demonstration.
+
+      #anim
+      Ace Idle
+
+      #move Snake left 0.25 false
+
+      Snake: Actually, it was
+      me who filled them.
+
+      #anim Ace Headshake
+
+      Ace: Yes, my mistake.
+      You did.
+
+      #anim Snake Smile
+
+      Snake: Thank you for the acknowledgement.
+
+      #move
+      Snake offscreenleft 0.25 false
+
+      Ace: *Sigh* [p 0.2]Moving forward, a
+      core part of interrogations here are asking question in order to gain more
+      information.
+
+      #anim Ace Smile
+
+      Ace: Go ahead and ask me a question.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: What am I supposed to ask?
+      <NodeID>k__BackingField: 3d3089f4-6644-4d3c-baad-73021dc5cb34
+      <KeyIDs>k__BackingField: []
+      <Hint>k__BackingField: 
+      <Type>k__BackingField: 0
+    <Errors>k__BackingField: []
+    <Position>k__BackingField: {x: 415, y: 282}
   <RepNodes>k__BackingField:
   - <Name>k__BackingField: Autopsy Report
     <ID>k__BackingField: fa78992a-508c-46b2-9b67-9e4ba471f9bb
@@ -229,11 +247,11 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 2036, y: 741}
     <NodeType>k__BackingField: 1
   <OldDialogueNames>k__BackingField:
-  - Start
   - What Do I Ask
   - Whats Your Favorite Color
   - Its Actually Red
   - He Was Stabbed
+  - Start
   <OldEvidenceNames>k__BackingField:
   - Autopsy Report
   - Financial Records

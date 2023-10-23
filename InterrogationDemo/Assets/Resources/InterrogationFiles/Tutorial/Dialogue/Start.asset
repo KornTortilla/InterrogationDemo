@@ -26,13 +26,30 @@ MonoBehaviour:
     #anim Ace
     Idle
 
-    Ace: Moving forward, a core part of interrogations here are asking
-    question in order to gain more information.
+    #move Snake left 0.25 false
+
+    Snake: Actually, it was me who filled
+    them.
+
+    #anim Ace Headshake
+
+    Ace: Yes, my mistake. You did.
+
+    #anim
+    Snake Smile
+
+    Snake: Thank you for the acknowledgement.
+
+    #move Snake offscreenleft
+    0.25 false
+
+    Ace: *Sigh* [p 0.2]Moving forward, a core part of interrogations
+    here are asking question in order to gain more information.
 
     #anim Ace Smile
 
-    Ace: Go
-    ahead and ask me a question.'
+    Ace:
+    Go ahead and ask me a question.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: What am I supposed to ask?
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 5545833bb421f6241bd2ee3c8c659ccf, type: 2}

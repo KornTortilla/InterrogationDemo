@@ -18,7 +18,6 @@ public class VerticalDrawerTween : MonoBehaviour
 
         Canvas parentCanvas = transform.parent.GetComponent<Canvas>();
         float parentHeight = parentCanvas.pixelRect.height / parentCanvas.scaleFactor;
-        Debug.Log("Parent Height: " + parentHeight);
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, parentHeight);
         
         //Get left side by anchored position assuming object is set to be anchored to the left of canvas

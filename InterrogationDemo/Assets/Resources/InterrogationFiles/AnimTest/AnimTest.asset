@@ -20,8 +20,9 @@ MonoBehaviour:
   <EvidenceList>k__BackingField:
   - {fileID: 11400000, guid: aa07681e6e1e09e479e19ee563d2aebf, type: 2}
   <PartnerName>k__BackingField: Ace
-  <IntroText>k__BackingField: '!background InterrogationRoom, move Ace offscreenright'
+  <IntroText>k__BackingField: '!background InterrogationRoom 0.2, add Ace, move Ace
+    offscreenright 0.1 false'
   <NoHintResponse>k__BackingField: '#anim Ace Headshake
 
     Ace: Sorry, I got nothing.'
-  <DefaultErrorResponse>k__BackingField: 'Seven: Uhh, what?'
+  <DefaultErrorResponse>k__BackingField: 'Ace: Uhh, what?'

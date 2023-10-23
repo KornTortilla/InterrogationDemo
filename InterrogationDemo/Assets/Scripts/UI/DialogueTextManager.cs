@@ -10,7 +10,7 @@ public class DialogueTextManager : MonoBehaviour
     public static Action<string, string> SentenceFinished;
     public static Action<string> TutorialActivation;
 
-    public GameObject nameBox;
+    public GameObject nameText;
     public TextMeshProUGUI dialogueText;
     public GameObject ctcObject;
     public Button ctcButton;
@@ -97,7 +97,7 @@ public class DialogueTextManager : MonoBehaviour
             //Initializing beginning to simulate talking
             dialogueText.text = "";
             //By default, sets nameBox to be hidden unless utilized
-            nameBox.SetActive(false);
+            nameText.SetActive(false);
             ctcObject.SetActive(false);
 
             //If colon detected, name is given
@@ -318,7 +318,7 @@ public class DialogueTextManager : MonoBehaviour
                 break;
 
             case "scene":
-                GameManager.Instance.TransitionScenes(terms[1], bool.Parse(terms[2]), float.Parse(terms[3]), terms[4]);
+                StartCoroutine(GameManager.Instance.SceneTransition(terms[1], bool.Parse(terms[2]), float.Parse(terms[3]), terms[4]));
                 break;
 
             case "tutorial":
@@ -372,8 +372,8 @@ public class DialogueTextManager : MonoBehaviour
         string name = sentence.Substring(0, colon);
         sentence = sentence.Substring(colon + 2);
 
-        nameBox.SetActive(true);
-        nameBox.GetComponentInChildren<TMP_Text>().text = name;
+        nameText.SetActive(true);
+        nameText.GetComponent<TMP_Text>().text = name;
 
         return new string[] { name, sentence };
     }

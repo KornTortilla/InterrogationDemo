@@ -21,7 +21,7 @@ public class StageController : MonoBehaviour
 
     public enum Position
     {
-        right, middle, left, offscreenright
+        right, middle, left, offscreenright, offscreenleft
     }
 
     private void Awake()
@@ -270,6 +270,10 @@ public class StageController : MonoBehaviour
                 newXValue = 13f;
                 break;
 
+            case Position.offscreenleft:
+                newXValue = -13f;
+                break;
+
             default:
                 Debug.LogWarning("Position Enum not found.");
                 break;
@@ -315,7 +319,10 @@ public class StageController : MonoBehaviour
             
             foreach (GameObject character in characters.Values)
             {
-                character.GetComponent<Actor>().StepIn();
+                if(!(character.GetComponent<SpriteRenderer>().color.a == 0))
+                {
+                    character.GetComponent<Actor>().StepIn();
+                }
             }
 
             placement = 13f;

@@ -25,8 +25,6 @@ public class UIManager : MonoBehaviour
 
     private void FadeIn(float time)
     {
-        Debug.Log("Time: " + time);
-
         LeanTween.alphaCanvas(canvasGroup, 1f, time);
     }
 

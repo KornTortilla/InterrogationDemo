@@ -19,6 +19,11 @@ public class DialogueInjector : MonoBehaviour
     private void Awake()
     {
         dialogueTextManager.CheckForPriorityCommand(dialogueSO.Text);
+
+        if (GameManager.Instance.testing)
+        {
+            Inject();
+        }
     }
 
     public void Inject()

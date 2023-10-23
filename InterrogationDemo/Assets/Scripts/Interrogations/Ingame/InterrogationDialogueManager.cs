@@ -38,7 +38,7 @@ namespace Interrogation.Ingame
         {
             //Debug.Log(GameManager.Instance.TransitionData);
 
-            if(!GameManager.Instance.testing)
+            if(!(GameManager.Instance.TransitionData == null))
             {
                 dialogueManager = Resources.Load("InterrogationFiles/" + GameManager.Instance.TransitionData + "/" + GameManager.Instance.TransitionData) as DialogueManagerInterrogationSO;
             }
@@ -46,7 +46,7 @@ namespace Interrogation.Ingame
             //Instantiates dynamic stack
             pastDialogues = new Stack<DialogueInterrogationSO>();
 
-            partnerName = dialogueManager.PartnerName;
+            //partnerName = dialogueManager.PartnerName;
 
             Debug.Log(partnerName);
 
@@ -67,7 +67,7 @@ namespace Interrogation.Ingame
 
             dialogueTextManager.CheckForPriorityCommand(dialogueManager.IntroText);
 
-            if(GameManager.Instance.testing) StartInterrogation();
+            if(GameManager.Instance.TransitionData == null) StartInterrogation();
         }
 
         //Temporary initialization by screen fade in to start script after full
@@ -485,6 +485,8 @@ namespace Interrogation.Ingame
                     {
                         openedPath = choiceData;
                         contradictionFound = true;
+
+                        break;
                     }
                 }
             }
