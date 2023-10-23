@@ -75,5 +75,9 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4628498479623304906, guid: 249089dba7d6f5544b97ae0d242a0bdf, type: 3}
+      propertyPath: voicePitch
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 249089dba7d6f5544b97ae0d242a0bdf, type: 3}

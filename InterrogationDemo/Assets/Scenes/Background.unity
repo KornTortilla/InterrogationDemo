@@ -1231,6 +1231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 529159547499884500, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
+      propertyPath: Banks.Array.data[0]
+      value: Master
+      objectReference: {fileID: 0}
     - target: {fileID: 5071271118043606803, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1243,6 +1247,26 @@ PrefabInstance:
       propertyPath: tempMusic
       value: 
       objectReference: {fileID: 11400000, guid: dff05d91d6965664bba1cef4c486a619, type: 2}
+    - target: {fileID: 5071271118043606812, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
+      propertyPath: voiceReference.Path
+      value: event:/SFX/VoiceType
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071271118043606812, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
+      propertyPath: voiceReference.Guid.Data1
+      value: 942971338
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071271118043606812, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
+      propertyPath: voiceReference.Guid.Data2
+      value: 1280915041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071271118043606812, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
+      propertyPath: voiceReference.Guid.Data3
+      value: -1000853831
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071271118043606812, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
+      propertyPath: voiceReference.Guid.Data4
+      value: -1615900959
+      objectReference: {fileID: 0}
     - target: {fileID: 5071271118043606813, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1287,7 +1311,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
 --- !u!1 &1262896226
 GameObject:
@@ -1852,7 +1877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8466c342fdc234c4ab71c9346ff7c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testing: 0
+  testing: 1
   fadeTime: 0
 --- !u!1 &1941792201
 GameObject:

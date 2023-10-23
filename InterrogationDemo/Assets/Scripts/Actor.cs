@@ -9,6 +9,9 @@ public class Actor : MonoBehaviour
     public string screenName;
     public bool isActing;
 
+    [Range(0.0f, 1.0f)]
+    public float voicePitch = 0.5f;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

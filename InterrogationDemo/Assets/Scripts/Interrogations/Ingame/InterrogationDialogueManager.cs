@@ -494,7 +494,7 @@ namespace Interrogation.Ingame
             //When contradiction found, try to add a new music layer, open up the path that was locked, and continue onto the choice
             if (contradictionFound)
             {
-                AudioManager.Instance.AddMusicLayer();
+                //AudioManager.Instance.AddMusicLayer();
 
                 openedPath.Opened = true;
 

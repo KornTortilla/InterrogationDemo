@@ -20,15 +20,17 @@ public class DialogueTextManager : MonoBehaviour
     public float textSpeed;
     private float pauseTime;
 
-    private AudioClip blip;
+    private FMODUnity.StudioEventEmitter voiceEmitter;
 
     private bool clickProcessed;
     private bool interruptTyping;
     private bool stageReady = true;
 
+    private bool odd;
+
     private void Awake()
     {
-        blip = Resources.Load("Audio/BlipMale") as AudioClip;
+        voiceEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
     private void OnEnable()
@@ -109,6 +111,9 @@ public class DialogueTextManager : MonoBehaviour
                 name = sentenceArray[0];
                 currentLine = sentenceArray[1];
 
+                float pitch = StageController.Instance.GetCharacterPitch(name);
+                AudioManager.Instance.ChangeVoicePitch(pitch);
+
                 StageController.Instance.ChooseSpeaker(name);
             }
 
@@ -139,7 +144,7 @@ public class DialogueTextManager : MonoBehaviour
 
                 StageController.Instance.SetCurrentSpeakerTalking(true);
 
-                //odd = !odd;
+                odd = !odd;
 
                 //If using punctuation, increase time delay and stop animation to simulate actual speech better
                 if (letter == '.' || letter == '?' || letter == '!')
@@ -162,12 +167,10 @@ public class DialogueTextManager : MonoBehaviour
 
                     continue;
                 }
-                /*
                 else if(letter != ' ')
                 {
-                    if(odd) AudioManager.Instance.PlayEffect(blip);
+                    if (odd) AudioManager.Instance.PlayVoice();
                 }
-                */
 
                 dialogueText.text += letter;
 

@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 2807940020086153695}
   - component: {fileID: 2807940020086153693}
   - component: {fileID: 8625889864167040302}
+  - component: {fileID: 1927168358321532240}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -558,6 +559,37 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1927168358321532240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2807940020086153681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 942971338
+      Data2: 1280915041
+      Data3: -1000853831
+      Data4: -1615900959
+    Path: event:/SFX/VoiceType
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2807940020175097078
 GameObject:
   m_ObjectHideFlags: 0

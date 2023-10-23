@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
         if(!testing)
         {
             SceneManager.LoadSceneAsync("Title", LoadSceneMode.Additive);
-
-            AudioManager.Instance.PlayNewTrack("Title");
         }
     }
 

@@ -215,6 +215,15 @@ public class StageController : MonoBehaviour
         }
     }
 
+    public float GetCharacterPitch(string characterName)
+    {
+        GameObject character = GetCharacterFromString(characterName);
+
+        if (character == null) return 0.5f;
+
+        return character.GetComponent<Actor>().voicePitch;
+    }
+
     public void SetCharacterPosition(string characterName, string positionString)
     {
         GameObject character = GetCharacterFromString(characterName);
