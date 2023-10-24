@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5071271118043606813}
   - component: {fileID: 5071271118043606812}
-  - component: {fileID: 529159547499884500}
-  - component: {fileID: -6043649662120560560}
+  - component: {fileID: 1359378873445728580}
+  - component: {fileID: 2147513682187200707}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -46,10 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702696b0defd8aa4a817a12d2acb859a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
-  effectSource: {fileID: 0}
-  musicObject: {fileID: 0}
---- !u!114 &529159547499884500
+  voiceReference:
+    Guid:
+      Data1: 942971338
+      Data2: 1280915041
+      Data3: -1000853831
+      Data4: -1615900959
+    Path: event:/SFX/VoiceType
+--- !u!114 &1359378873445728580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +71,7 @@ MonoBehaviour:
   - Master
   CollisionTag: 
   PreloadSamples: 0
---- !u!114 &-6043649662120560560
+--- !u!114 &2147513682187200707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

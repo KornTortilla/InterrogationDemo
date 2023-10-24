@@ -208,10 +208,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 698524340}
   m_HandleRect: {fileID: 2042038812}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: 0
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -892,10 +892,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2049079275}
   m_HandleRect: {fileID: 606143636}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: 0
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1312,7 +1312,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 0}
+    - {fileID: 5071271118043606802, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec75c0637bf10584ca21364dc7000574, type: 3}
 --- !u!1 &1262896226
 GameObject:
@@ -1964,10 +1964,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1643529912}
   m_HandleRect: {fileID: 1555712933}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: 0
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

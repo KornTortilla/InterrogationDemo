@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using FMOD.Studio;
 using FMODUnity;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [SerializeField] private AudioMixer mixer;
+    private EventInstance musicInstance;
 
-    private FMOD.Studio.EventInstance musicInstance;
+    private Bus masterBus;
+    private Bus musicBus;
+    private Bus sfxBus;
 
     [SerializeField]
-    private FMODUnity.EventReference voiceReference;
-    private FMOD.Studio.EventInstance voiceInstance;
+    private EventReference voiceReference;
+    private EventInstance voiceInstance;
 
     void Awake()
     {
@@ -28,23 +30,33 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        masterBus = RuntimeManager.GetBus("bus:/");
+        musicBus = RuntimeManager.GetBus("bus:/Music");
+        sfxBus = RuntimeManager.GetBus("bus:/SFX");
+
         voiceInstance = RuntimeManager.CreateInstance(voiceReference);
     }
 
     #region Volume Methods
     public void SetMasterVolume(float volume)
     {
-        mixer.SetFloat("Master Volume", volume);
+        masterBus.setVolume(volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        mixer.SetFloat("Music Volume", volume);
+        musicBus.setVolume(volume);
     }
 
     public void SetSFXVolume(float volume)
     {
-        mixer.SetFloat("SFX Volume", volume);
+        sfxBus.setVolume(volume);
+    }
+
+    private float DecibelToLinear(float db)
+    {
+        float linear = Mathf.Pow(10.0f, db / 20f);
+        return linear;
     }
     #endregion
 
@@ -53,12 +65,12 @@ public class AudioManager : MonoBehaviour
         voiceInstance.start();
     }
 
-    public void ChangeVoicePitch(float pitch)
+    public void SetVoicePitch(float pitch)
     {
         voiceInstance.setParameterByName("VoicePitch", pitch);
     }
 
-    public void PlayNewTrack(string name)
+    public void StartNewMusic(string name)
     {
         musicInstance = RuntimeManager.CreateInstance("event:" + name);
         musicInstance.start();
@@ -66,13 +78,11 @@ public class AudioManager : MonoBehaviour
 
     public void AddMusicLayer()
     {
-        //musicInstance.setParameterByID();
+        
     }
 
     public void StopMusic()
     {
-        Debug.Log("Stopping music");
-
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

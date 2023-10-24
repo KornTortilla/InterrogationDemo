@@ -3,15 +3,14 @@ using UnityEngine.UI;
 
 public class TitleScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Awake()
     {
-        AudioManager.Instance.PlayNewTrack("/MusicRegular/Title");
+        AudioManager.Instance.StartNewMusic("/MusicRegular/Title");
     }
 
-    public void StartGame()
+    public void StartGame(Button button)
     {
         GameManager.Instance.StartGame();
-        GetComponent<Button>().interactable = false;
+        button.interactable = false;
     }
 }

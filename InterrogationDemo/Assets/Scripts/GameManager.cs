@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator SceneTransition(string newScene, bool isBlackScreenTransition, float time = 1f, string arg = null)
     {
+        testing = false;
+
         OnSceneTransitionBegin?.Invoke(time);
 
         fadeTime = time;

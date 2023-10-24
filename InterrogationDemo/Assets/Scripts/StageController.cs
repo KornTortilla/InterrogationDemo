@@ -199,6 +199,15 @@ public class StageController : MonoBehaviour
         if(characters.ContainsKey(characterName))
         {
             currentSpeaker = characters[characterName].GetComponent<Animator>();
+
+            float pitch = characters[characterName].GetComponent<Actor>().voicePitch;
+            AudioManager.Instance.SetVoicePitch(pitch);
+        }
+        else if(characterName == "Anna") 
+        {
+            AudioManager.Instance.SetVoicePitch(0.6f);
+
+            currentSpeaker = null;
         }
         else
         {

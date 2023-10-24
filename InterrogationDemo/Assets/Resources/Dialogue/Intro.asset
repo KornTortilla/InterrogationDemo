@@ -12,70 +12,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa53886abf707b499589a8e79505a00, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  <Text>k__BackingField: 'Anna: (Okay, Anna. You got this. Whole new start for you.)
+  <Text>k__BackingField: '#add Ace, hide Ace
 
-    Anna:
-    (Hm. The chief isn''t here...)
+    Anna: (Okay, Anna. You got this.
+    Whole new start for you.)
 
-    ???: Oh? Aren''t you early, Anna.
+    Anna: (Hm. The chief isn''t here...)
 
-    #add
-    Ace, anim Ace Smile
+    ???{Ace}:
+    Oh? Aren''t you early, Anna.
 
-    Anna: Oh! Sorry chief, I uhh... [p 1]didn''t mean to
-    intrude.
+    #show Ace, anim Ace smile
 
-    Ace: You are perfectly fine, Anna. Musn''t be so worried.
+    Anna: Oh! Sorry
+    chief, I uhh... [p 1]didn''t mean to intrude.
 
-    #anim
-    Ace Idle
+    Ace: You are perfectly fine,
+    Anna. Musn''t be so worried.
 
-    Ace: Are you ready for your training?
+    #anim Ace Idle
 
-    Anna: Of course, I won''t
-    let you down!
+    Ace: Are you ready for
+    your training?
 
-    #anim Ace Smile
-
-    Ace: Wonderful, follow me.
-
-    #hide
-    text
-
-    #curtain fall 1
-
-    #background InterrogationRoom 0, hide Ace
-
-    #curtain
-    rise 1
-
-    #show Ace
-
-    Ace: This is the interrogation room. I imagine you''ll
-    find yourself in here countless times in the future.
+    Anna: Of course, I won''t let you down!
 
     #anim Ace Smile
 
     Ace:
-    First though, I have someone you must meet.
+    Wonderful, follow me.
 
-    #add Snake, place Snake left,
-    move Ace right 0.25 false, anim Ace Idle
+    #hide text
 
-    Ace: This is Snake, he''s in charge
-    of monitoring interrogations and will be assisting you for the foreseeable future.
+    #curtain fall 1
 
-    Snake:
-    Pleasure, miss Anna.
+    #background InterrogationRoom
+    0, hide Ace
 
-    Anna: Of course, great to meet you.
+    #curtain rise 1
 
-    #anim Ace
-    Smile
+    #show Ace
 
-    Ace: We have an activity to assist you. Before we do that, though,
-    let''s go through the basics.
+    Ace: This is the interrogation
+    room. I imagine you''ll find yourself in here countless times in the future.
+
+    #anim
+    Ace Smile
+
+    Ace: First though, I have someone you must meet.
+
+    #add Snake,
+    place Snake left, move Ace right 0.25 false, anim Ace Idle
+
+    Ace: This is
+    Snake, he''s in charge of monitoring interrogations and will be assisting you
+    for the foreseeable future.
+
+    Snake: Pleasure, miss Anna.
+
+    Anna: Of course,
+    great to meet you.
+
+    #anim Ace Smile
+
+    Ace: We have an activity to assist
+    you. Before we do that, though, let''s go through the basics.
 
     #hide Snake
 
-    #scene Tutorial false 1 Tutorial'
+    #scene
+    Tutorial false 1 Tutorial'

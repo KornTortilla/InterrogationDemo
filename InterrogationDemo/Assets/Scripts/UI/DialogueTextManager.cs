@@ -22,6 +22,9 @@ public class DialogueTextManager : MonoBehaviour
 
     private FMODUnity.StudioEventEmitter voiceEmitter;
 
+    private AudioClip blip;
+    private bool odd;
+
     private bool clickProcessed;
     private bool interruptTyping;
     private bool stageReady = true;
@@ -110,11 +113,6 @@ public class DialogueTextManager : MonoBehaviour
                 string[] sentenceArray = SeparateSentenceAndShowName(currentLine);
                 name = sentenceArray[0];
                 currentLine = sentenceArray[1];
-
-                float pitch = StageController.Instance.GetCharacterPitch(name);
-                AudioManager.Instance.ChangeVoicePitch(pitch);
-
-                StageController.Instance.ChooseSpeaker(name);
             }
 
             char[] letterArray = currentLine.ToCharArray();
@@ -167,7 +165,7 @@ public class DialogueTextManager : MonoBehaviour
 
                     continue;
                 }
-                else if(letter != ' ')
+                else if(letter != ' ' || letter != '(' || letter != ')')
                 {
                     if (odd) AudioManager.Instance.PlayVoice();
                 }
@@ -317,7 +315,7 @@ public class DialogueTextManager : MonoBehaviour
 
             case "music":
                 if (terms[1] == "stop") AudioManager.Instance.StopMusic();
-                else AudioManager.Instance.PlayNewTrack(terms[1]);
+                else AudioManager.Instance.StartNewMusic(terms[1]);
                 break;
 
             case "scene":
@@ -374,6 +372,18 @@ public class DialogueTextManager : MonoBehaviour
         int colon = sentence.IndexOf(":");
         string name = sentence.Substring(0, colon);
         sentence = sentence.Substring(colon + 2);
+
+        if (name.Contains("{")) {
+            string realSpeaker = name.Split('{', '}')[1];
+
+            StageController.Instance.ChooseSpeaker(realSpeaker);
+
+            name = name.Substring(0, name.IndexOf("{"));
+        }
+        else
+        {
+            StageController.Instance.ChooseSpeaker(name);
+        }
 
         nameText.SetActive(true);
         nameText.GetComponent<TMP_Text>().text = name;
